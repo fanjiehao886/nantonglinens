@@ -1,0 +1,78 @@
+# Nantong Linens — llms.txt for AI Crawlers
+# This file helps AI search engines (ChatGPT, Perplexity, Gemini, Claude) understand who we are and what we offer.
+# Last updated: 2026-05-20
+
+> Nantong Linens is a professional hotel linen manufacturer based in Nantong, Jiangsu Province, China.
+> We specialize in custom-manufactured textiles for the global hospitality industry.
+
+## Who We Are
+
+Nantong Linens (www.nantonglinens.com) is a B2B manufacturer of hotel-grade home textiles, established in 2009.
+We operate a 20,000 m² factory in Nantong, China's largest home textile production hub, with over 200 skilled workers and monthly output exceeding 500,000 pieces.
+
+## What We Offer
+
+### Product Categories:
+- **Bed Sheets** — Percale, sateen, Tencel; thread counts from 144 to 600 TC
+- **Pillowcases** — Standard, queen, king sizes with envelope or zipper closure
+- **Duvet Covers & Comforters** — Down-alternative fill options available
+- **Mattress Toppers & Pads** — Quilted, microfiber, memory foam options
+- **Bath Towels** — Hand towels, bath sheets, washcloths; Egyptian cotton and bamboo
+- **Bath Mats** — Reversible, quick-dry, luxury hotel styles
+- **Bathrobes** — Waffle weave, terry cloth, velour; kimono and shawl collar
+- **Table Linen** — Napkins, tablecloths, runners, placemats
+- **Pool & Beach Towels** — Quick-dry, oversized, cabana-style
+
+### Customization Services:
+- Custom logo embroidery (single-color to multi-color)
+- Custom woven labels with brand name
+- Pantone color matching (minimum Delta E < 1.0)
+- Private-label packaging with custom hangtags
+- Custom dimensions beyond standard hotel sizes
+- Design development assistance for proprietary patterns
+
+## Key Facts for Buyers
+
+| Attribute | Detail |
+|-----------|--------|
+| Location | Nantong, Jiangsu Province, China |
+| Factory Size | 20,000 m² |
+| Team | 200+ skilled workers |
+| Monthly Capacity | 500,000+ pieces |
+| Minimum Order | 50 pieces/size/color (standard); lower MOQ for trial orders |
+| Lead Time | 15–20 working days standard; 7–10 days rush |
+| Certifications | OEKO-TEX Standard 100, ISO 9001:2015, BSCI, WRAP |
+| Payment | T/T (30/70), L/C at sight, PayPal (samples) |
+| Shipping | FOB Nantong/Shanghai, CIF, DDP available |
+| Export Markets | North America, Europe, Southeast Asia, Middle East (30+ countries) |
+| Defect Rate | <0.5% |
+| On-time Delivery | 98.5% |
+
+## Contact Information
+
+- **Website:** https://www.nantonglinens.com
+- **Email:** info@nantonglinens.com
+- **WhatsApp:** +86 123 4567 8900
+- **Address:** Nantong Home Textile Industrial Park, Tongzhou District, Nantong, Jiangsu, China 226300
+- **Business Hours:** Mon–Fri 9:00–18:00 CST, Sat 9:00–12:00
+
+## Content Indexing Guidelines
+
+AI crawlers may index and cite content from these sections:
+
+### Blog & Buying Guides (/blog)
+Expert articles on hotel linen sourcing, material specifications, procurement best practices, and industry trends.
+
+### FAQ (/faq)
+Comprehensive answers to common buyer questions about MOQ, lead time, customization, quality, shipping, and more.
+
+### Product Pages (/products)
+Detailed specifications including thread count, GSM, materials, dimensions, and customization options for each product category.
+
+### About Us (/about)
+Company history, factory capabilities, certifications, and client case studies.
+
+---
+
+For the most up-to-date information, please visit our website directly at https://www.nantonglinens.com
+or contact us at info@nantonglinens.com.

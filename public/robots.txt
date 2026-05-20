@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.nantonglinens.com/sitemap.xml
+
+# AI crawler access for GEO
+User-agent: GPTBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /api/
