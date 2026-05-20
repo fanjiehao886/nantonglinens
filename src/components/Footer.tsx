@@ -101,7 +101,7 @@ export function Footer() {
           </div>
           <div className="flex gap-3">
             <a
-              href="https://wa.me/8612345678900"
+              href="https://wa.me/86151361119"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-600 transition-colors"

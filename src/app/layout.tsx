@@ -83,7 +83,7 @@ export default function RootLayout({
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "sales",
-                email: "info@nantonglinens.com",
+                email: "fanjieboy@gmail.com",
                 availableLanguage: ["English", "Chinese"],
               },
               sameAs: [

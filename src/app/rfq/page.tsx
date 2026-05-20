@@ -106,7 +106,7 @@ export default function RFQPage() {
             <Link href="/products" className="rounded-full border px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors">
               Browse More Products
             </Link>
-            <a href={`https://wa.me/8612345678900?text=Hi, I just submitted an RFQ for ${form.productCategory}`} target="_blank" rel="noopener noreferrer" className="rounded-full bg-green-500 px-6 py-2.5 text-sm font-medium text-white hover:bg-green-600 transition-colors">
+            <a href={`https://wa.me/86151361119?text=Hi, I just submitted an RFQ for ${form.productCategory}`} target="_blank" rel="noopener noreferrer" className="rounded-full bg-green-500 px-6 py-2.5 text-sm font-medium text-white hover:bg-green-600 transition-colors">
               Follow up on WhatsApp
             </a>
           </div>

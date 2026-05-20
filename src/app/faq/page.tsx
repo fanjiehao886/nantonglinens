@@ -127,7 +127,7 @@ export default function FAQPage() {
                 Submit an RFQ
               </Link>
               <a
-                href="https://wa.me/8612345678900"
+                href="https://wa.me/86151361119"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-green-500 px-7 py-3 text-sm font-semibold text-white hover:bg-green-600 transition-colors"

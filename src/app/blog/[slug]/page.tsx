@@ -146,7 +146,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 Request Quote
               </Link>
               <a
-                href={`https://wa.me/8612345678900?text=Hi, I read your blog about "${encodeURIComponent(post.title)}"`}
+                href={`https://wa.me/86151361119?text=Hi, I read your blog about "${encodeURIComponent(post.title)}"`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-green-500 px-6 py-2.5 text-sm font-semibold text-white hover:bg-green-600 transition-colors"

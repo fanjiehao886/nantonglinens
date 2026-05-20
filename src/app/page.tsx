@@ -293,7 +293,7 @@ export default async function HomePage() {
               Start Your RFQ
             </Link>
             <a
-              href="https://wa.me/8612345678900"
+              href="https://wa.me/86151361119"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"

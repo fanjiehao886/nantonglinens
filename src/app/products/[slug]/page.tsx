@@ -183,7 +183,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 Order Samples
               </a>
               <a
-                href={`https://wa.me/8612345678900?text=Hi, I'm interested in ${encodeURIComponent(product.name)}`}
+                href={`https://wa.me/86151361119?text=Hi, I'm interested in ${encodeURIComponent(product.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-6 py-3.5 text-base font-medium text-white hover:bg-green-600 transition-colors"

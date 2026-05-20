@@ -29,15 +29,15 @@ export default function ContactPage() {
                 {
                   icon: "\u2709\ufe0f",
                   title: "Email",
-                  lines: ["info@nantonglinens.com"],
+                  lines: ["fanjieboy@gmail.com"],
                   desc: "Best for detailed inquiries",
                 },
                 {
                   icon: "\ud83d\udcf1",
                   title: "WhatsApp",
-                  lines: ["+86 123 4567 8900"],
+                  lines: ["+86 15151361119"],
                   desc: "Quick responses in English",
-                  href: "https://wa.me/8612345678900",
+                  href: "https://wa.me/86151361119",
                 },
                 {
                   icon: "\ud83d\udd27",
