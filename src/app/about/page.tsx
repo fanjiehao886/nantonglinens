@@ -2,118 +2,157 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us - Nantong Linen Factory | Hotel Textile Manufacturer",
+  title: "About Us - Hotel Linen Sourcing Agent | Dieshiqiao, Nantong",
   description:
-    "Learn about Nantong Linens: 15+ years of hotel textile manufacturing in Nantong, China. OEKO-TEX certified factory serving hospitality brands worldwide.",
+    "Based in Dieshiqiao — the world's largest home textile market — we help hotel buyers source premium linens from vetted Nantong factories with full QC and export service.",
 };
 
-const certifications = [
+const advantages = [
   {
-    name: "OEKO-TEX Standard 100",
-    desc: "All products tested for harmful substances. Class I (baby-safe) certification for select lines.",
-    icon: "\ud83c\udf1f",
+    name: "Local Presence in Dieshiqiao",
+    desc: "We operate daily inside the Dieshiqiao (叠石桥) textile market — China's #1 home textile hub with 6,000+ factories. We compare real-time prices, visit production lines, and negotiate on your behalf. No information lag, no inflated middleman costs.",
+    icon: "📍",
   },
   {
-    name: "ISO 9001:2015",
-    desc: "Quality management system certified. Consistent production quality across all orders.",
-    icon: "\u2705",
+    name: "Deep Product & Pricing Knowledge",
+    desc: "We specialize exclusively in hotel linens — bed sheets, towels, bathrobes, and table linen. We understand thread counts, GSM weights, weave constructions, and fair market pricing. When you describe your spec, we can tell you immediately what it should cost and who makes it best.",
+    icon: "📋",
   },
   {
-    name: "BSCI Certified",
-    desc: "Business Social Compliance Initiative — ethical labor practices and safe working conditions.",
-    icon: "\ud83c\udded",
+    name: "Strict Quality Control",
+    desc: "Every order goes through pre-shipment inspection at the factory. We check count, weight, dimensions, stitching, color consistency, and packaging before a single carton leaves. All partner factories hold OEKO-TEX Standard 100 and ISO 9001 certifications.",
+    icon: "🔍",
   },
   {
-    name: "WRAP Accredited",
-    desc: "Worldwide Responsible Accredited Production — global standard for ethical manufacturing.",
-    icon: "\ud83d\udcce",
+    name: "Complete Export Handling",
+    desc: "We are fully conversant in international trade procedures — commercial invoice, packing list, certificate of origin, customs declaration, and freight booking. We ship FOB Nantong or coordinate DDP delivery directly to your property, whichever fits your operation.",
+    icon: "🚢",
   },
 ];
 
-const caseStudies = [
+const serviceSteps = [
   {
-    client: "Marriott-franchised property (200 rooms)",
-    location: "Florida, USA",
-    result: "18% cost reduction vs previous US-based supplier",
-    product: "Full room set (sheets, towels, robes)",
+    step: "01",
+    title: "Requirement Intake",
+    desc: "You share your product needs — type, material, size, quantity, customizations (logo, color, label). We ask the right clarifying questions upfront so there are no surprises later.",
   },
   {
-    client: "Boutique resort (80 rooms)",
-    location: "Cancun, Mexico",
-    result: "Custom Pantone-matched linens delivered in 12 days",
-    product: "Bathrobes & pool towels with logo embroidery",
+    step: "02",
+    title: "Factory Matching & Sampling",
+    desc: "We identify 2–3 suitable factory options from our local network and arrange physical samples. You evaluate the samples yourself before approving any production.",
   },
   {
-    client: "Hotel group (6 properties)",
-    location: "Ontario, Canada",
-    result: "Centralized procurement, consistent quality across all locations",
-    product: "Bed sheets & pillowcases, 3-year supply contract",
+    step: "03",
+    title: "Transparent Quotation",
+    desc: "You receive a clear, itemized price breakdown — unit cost, packaging, inland transport, and freight. No hidden fees. We explain every line if you need us to.",
+  },
+  {
+    step: "04",
+    title: "Production Monitoring & QC",
+    desc: "Once production begins, we provide progress updates and conduct an on-site inspection at the factory before shipment. You receive a photo and video QC report.",
+  },
+  {
+    step: "05",
+    title: "Export Documentation & Shipping",
+    desc: "We prepare all required export documents, coordinate with the freight forwarder, and keep you updated on shipment status until delivery is confirmed.",
+  },
+];
+
+const partnerCertifications = [
+  {
+    name: "OEKO-TEX Standard 100",
+    desc: "All partner factories are OEKO-TEX tested. No harmful substances in any product we source.",
+    icon: "🌿",
+  },
+  {
+    name: "ISO 9001:2015",
+    desc: "Partner factories operate under ISO-certified quality management systems for consistent output.",
+    icon: "✅",
+  },
+  {
+    name: "BSCI Audited Factories",
+    desc: "We prioritize factories that have passed BSCI social compliance audits — ethical working conditions.",
+    icon: "🏭",
+  },
+  {
+    name: "Pre-Shipment Inspection",
+    desc: "We conduct our own independent QC inspection before every shipment departs — above and beyond factory self-inspection.",
+    icon: "🔎",
   },
 ];
 
 export default function AboutPage() {
   return (
     <>
+      {/* Hero */}
       <section className="bg-gray-50 border-b border-gray-100 py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-gray-900">About Nantong Linens</h1>
-          <p className="mt-2 max-w-2xl text-gray-500">
-            Your direct connection to China&apos;s largest home textile manufacturing hub.
-            Premium hotel linens for the global hospitality industry since 2009.
+          <span className="text-sm font-medium text-blue-800 uppercase tracking-wider">
+            Who We Are
+          </span>
+          <h1 className="mt-3 text-3xl font-bold text-gray-900">
+            Your Sourcing Partner in Dieshiqiao
+          </h1>
+          <p className="mt-3 max-w-2xl text-gray-500">
+            We are an independent hotel linen sourcing agent based in Dieshiqiao, Nantong —
+            the world&apos;s largest home textile market. We help hospitality buyers across
+            North America, Europe, the Middle East, and Southeast Asia source the right
+            products at the right price, with strict QC and full export service from day one.
           </p>
         </div>
       </section>
 
-      {/* Story section */}
+      {/* Story / Position */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 items-center">
+          <div className="grid gap-12 lg:grid-cols-2 items-start">
             <div>
               <span className="text-sm font-medium text-blue-800 uppercase tracking-wider">
-                Our Story
+                Our Position
               </span>
               <h2 className="mt-3 text-2xl font-bold text-gray-900">
-                From Nantong&apos;s Textile Heartland to Hotels Worldwide
+                Right in the Middle of the World&apos;s Largest Textile Market
               </h2>
               <div className="mt-6 space-y-4 text-sm leading-relaxed text-gray-600">
                 <p>
-                  Nantong is known as China&apos;s &quot;Home Textile Capital&quot; — a city where over
-                  30% of the world&apos;s home textiles are produced. Founded in 2009, Nantong Linens
-                  was built on this legacy, combining generations of weaving expertise with modern
-                  international quality standards.
+                  Dieshiqiao (叠石桥), in Nantong city, Jiangsu Province, is not just a market —
+                  it is the global epicenter of home textile production. Over 6,000 factories,
+                  10,000+ wholesale storefronts, and hundreds of thousands of workers produce
+                  a substantial share of the world&apos;s hotel linens, bedding, and bath products
+                  within just a few square kilometers.
                 </p>
                 <p>
-                  What started as a small workshop serving domestic hotels has grown into a
-                  full-scale export facility spanning 20,000 m² with over 200 skilled workers and
-                  a monthly output exceeding 500,000 pieces. Today we ship to hotels, resorts,
-                  and distributors across North America, Europe, Southeast Asia, and the Middle East.
+                  We are physically embedded in this ecosystem. Every working day, we are on
+                  the market floor — comparing materials, checking production runs, building
+                  relationships with mill owners. That proximity is our advantage, and we make
+                  it yours.
                 </p>
                 <p>
-                  We&apos;re not just a manufacturer — we&apos;re a partner. Our team includes
-                  English-speaking sales engineers who understand hospitality procurement,
-                  an R&D department that develops new fabric constructions each season,
-                  and a QC team that inspects every single piece before it leaves our dock.
+                  As a sourcing agent, our role is clear: we work for you, not for the factory.
+                  We find you the best-fit supplier for your spec and budget, negotiate the price,
+                  monitor the quality, and manage the logistics — so you get factory-direct value
+                  without the complexity of managing an overseas supply chain yourself.
                 </p>
               </div>
             </div>
 
-            {/* Factory stats */}
+            {/* Key facts panel */}
             <div className="rounded-2xl bg-blue-950 p-8 text-white">
-              <h3 className="text-lg font-semibold mb-6">By The Numbers</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <h3 className="text-lg font-semibold mb-6">The Dieshiqiao Advantage</h3>
+              <div className="space-y-4">
                 {[
-                  { value: "20,000+", label: "m² Factory Area" },
-                  { value: "200+", label: "Skilled Workers" },
-                  { value: "500K+", label: "Pieces/Month Capacity" },
-                  { value: "15+", label: "Years of Experience" },
-                  { value: "30+", label: "Export Countries" },
-                  { value: "98.5%", label: "On-Time Delivery Rate" },
-                  { value: "<0.5%", label: "Defect Rate" },
-                  { value: "150+", label: "Repeat Clients" },
-                ].map((stat) => (
-                  <div key={stat.label} className="rounded-xl bg-white/5 p-4 border border-white/10">
-                    <p className="text-2xl font-bold">{stat.value}</p>
-                    <p className="mt-0.5 text-xs text-blue-200">{stat.label}</p>
+                  { label: "Market scale", value: "6,000+ factories within 10 km" },
+                  { label: "Product range", value: "Every hotel linen category, all specs" },
+                  { label: "Our role", value: "Independent agent — we work for you" },
+                  { label: "Language", value: "Fluent English, Chinese-native sourcing" },
+                  { label: "Response time", value: "Quote within 24 hours of inquiry" },
+                  { label: "Minimum order", value: "Low MOQ — suitable for small hotels" },
+                  { label: "Shipping terms", value: "FOB Nantong or DDP destination" },
+                  { label: "Payment", value: "T/T, L/C accepted" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-start justify-between gap-4 border-b border-white/10 pb-3 last:border-0 last:pb-0">
+                    <p className="text-sm text-blue-300">{item.label}</p>
+                    <p className="text-sm font-medium text-white text-right">{item.value}</p>
                   </div>
                 ))}
               </div>
@@ -122,21 +161,72 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Certifications */}
-      <section id="certifications" className="bg-white py-16 border-t border-gray-100">
+      {/* Core Advantages */}
+      <section className="bg-gray-50 py-16 border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900">Certifications &amp; Quality Standards</h2>
+            <h2 className="text-2xl font-bold text-gray-900">What Makes Us Different</h2>
             <p className="mt-2 text-gray-500">
-              Internationally recognized certifications that give your procurement team confidence.
+              Four reasons hospitality buyers trust us to source on their behalf
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {advantages.map((adv) => (
+              <div
+                key={adv.name}
+                className="rounded-xl border border-gray-100 bg-white p-6"
+              >
+                <span className="text-3xl">{adv.icon}</span>
+                <h3 className="mt-4 font-semibold text-gray-900">{adv.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-500">{adv.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Process */}
+      <section className="bg-white py-16 border-t border-gray-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-gray-900">Our Service Process</h2>
+            <p className="mt-2 text-gray-500">
+              A structured, transparent process from first inquiry to final delivery
+            </p>
+          </div>
+
+          <div className="mt-10 space-y-4 max-w-3xl mx-auto">
+            {serviceSteps.map((item) => (
+              <div key={item.step} className="flex gap-5 rounded-xl border border-gray-100 p-5">
+                <div className="shrink-0 flex h-10 w-10 items-center justify-center rounded-full bg-blue-900 text-sm font-bold text-white">
+                  {item.step}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-gray-500">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partner Certifications */}
+      <section id="certifications" className="bg-gray-50 py-16 border-t border-gray-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-gray-900">Quality Standards We Enforce</h2>
+            <p className="mt-2 text-gray-500">
+              We only work with factories that meet these standards — and we verify it ourselves
             </p>
           </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {certifications.map((cert) => (
+            {partnerCertifications.map((cert) => (
               <div
                 key={cert.name}
-                className="rounded-xl border border-gray-100 p-6 text-center hover:border-blue-200 hover:bg-blue-50/30 transition-all"
+                className="rounded-xl border border-gray-100 bg-white p-6 text-center hover:border-blue-200 hover:bg-blue-50/30 transition-all"
               >
                 <span className="text-3xl">{cert.icon}</span>
                 <h3 className="mt-3 font-semibold text-gray-900 text-sm">{cert.name}</h3>
@@ -147,60 +237,49 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Factory tour placeholder */}
-      <section id="factory" className="bg-gray-50 py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900">Factory Tour</h2>
-            <p className="mt-2 text-gray-500">
-              See where your hotel linens are made. Video tour available on request.
-            </p>
-          </div>
-
-          <div className="mt-8 aspect-[21/9] rounded-xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center border border-gray-200">
-            <div className="text-center">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="1.5" className="mx-auto">
-                <rect x="2" y="2" width="20" height="20" rx="4" />
-                <path d="M10 9l5 3-5 3V9z" fill="#9ca3af" stroke="none" />
-              </svg>
-              <p className="mt-3 text-sm text-gray-400">Factory video will be embedded here</p>
-              <a href="/contact" className="mt-2 inline-block text-sm text-blue-800 hover:underline">
-                Contact us to receive the full factory tour video
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Case studies */}
+      {/* Market coverage — replacing fake case studies */}
       <section className="bg-white py-16 border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900">Client Success Stories</h2>
-            <p className="mt-2 text-gray-500">
-              Real results from real hospitality buyers around the world.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {caseStudies.map((cs) => (
-              <div
-                key={cs.client}
-                className="rounded-xl border border-gray-100 p-6"
-              >
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-sm">{cs.client}</h3>
-                    <p className="mt-0.5 text-xs text-gray-400">{cs.location}</p>
-                  </div>
-                  <span className="rounded-full bg-green-50 px-2.5 py-1 text-xs font-semibold text-green-700">
-                    Success
-                  </span>
-                </div>
-                <p className="mt-4 text-base font-medium text-blue-900">{cs.result}</p>
-                <p className="mt-2 text-sm text-gray-500">{cs.product}</p>
+          <div className="grid gap-10 lg:grid-cols-2 items-center">
+            <div>
+              <span className="text-sm font-medium text-blue-800 uppercase tracking-wider">
+                Who We Serve
+              </span>
+              <h2 className="mt-3 text-2xl font-bold text-gray-900">
+                Hotels, Resorts &amp; Hospitality Procurement Teams
+              </h2>
+              <div className="mt-6 space-y-4 text-sm leading-relaxed text-gray-600">
+                <p>
+                  Our clients are hotel operators, purchasing managers, and hospitality procurement
+                  teams across North America, Europe, the Middle East, and Southeast Asia — looking
+                  for factory-direct pricing on quality linens without the complexity of managing
+                  an overseas supplier themselves.
+                </p>
+                <p>
+                  Whether you are outfitting a single boutique property, a mid-scale hotel group,
+                  or managing multi-property procurement, we scale our service to fit your volume
+                  and timeline.
+                </p>
+                <p>
+                  We are equally comfortable handling a first-time trial order of a few hundred
+                  pieces and a repeat annual supply contract. Every client gets the same level of
+                  communication and on-the-ground support.
+                </p>
               </div>
-            ))}
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { region: "North America", desc: "USA, Canada" },
+                { region: "Europe", desc: "UK, Germany, France, Nordics" },
+                { region: "Middle East", desc: "UAE, Saudi Arabia, Qatar, Kuwait" },
+                { region: "Southeast Asia", desc: "Vietnam, Singapore, Thailand, Malaysia" },
+              ].map((item) => (
+                <div key={item.region} className="rounded-xl border border-gray-100 p-5">
+                  <h3 className="font-semibold text-gray-900 text-sm">{item.region}</h3>
+                  <p className="mt-1 text-xs text-gray-400">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -209,17 +288,27 @@ export default function AboutPage() {
       <section className="bg-blue-950 py-14">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-white">
-            Let&apos;s Build Something Great Together
+            Ready to Source Smarter?
           </h2>
           <p className="mt-3 text-blue-200/80">
-            Whether you need 50 pieces or 50,000, we treat every order with the same attention to detail.
+            Tell us what you need. We&apos;ll send a sourcing plan and initial pricing within 24 hours.
           </p>
-          <Link
-            href="/rfq"
-            className="mt-8 inline-flex items-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors"
-          >
-            Start Your Project
-          </Link>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/rfq"
+              className="inline-flex items-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors"
+            >
+              Submit an RFQ
+            </Link>
+            <a
+              href="https://wa.me/8615151361119"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
+            >
+              WhatsApp Us
+            </a>
+          </div>
         </div>
       </section>
     </>

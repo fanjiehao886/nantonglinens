@@ -7,7 +7,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Products", href: "/products" },
   { name: "Custom / RFQ", href: "/rfq" },
-  { name: "About & Factory", href: "/about" },
+  { name: "About & Services", href: "/about" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];

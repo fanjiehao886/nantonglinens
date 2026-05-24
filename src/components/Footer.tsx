@@ -10,8 +10,8 @@ const footerLinks = {
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Factory Tour", href: "/about#factory" },
-    { name: "Certifications", href: "/about#certifications" },
+    { name: "Our Sourcing Process", href: "/about#process" },
+    { name: "Quality Standards", href: "/about#certifications" },
     { name: "Blog & Guides", href: "/blog" },
   ],
   support: [
@@ -37,8 +37,8 @@ export function Footer() {
               <span className="text-lg font-semibold text-gray-900">Nantong Linens</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-gray-500">
-              Premium hotel linen manufacturer from Nantong, China&apos;s largest textile hub.
-              Custom solutions for hospitality brands worldwide.
+              Hotel linen sourcing agent based in Dieshiqiao, Nantong — China&apos;s largest
+              home textile market. We source, QC, and export for hospitality buyers worldwide.
             </p>
           </div>
 
@@ -94,14 +94,14 @@ export function Footer() {
         {/* Contact bar */}
         <div className="mt-10 flex flex-col gap-4 rounded-xl bg-blue-900 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="font-medium text-white">Ready to start your order?</p>
+            <p className="font-medium text-white">Have a sourcing requirement?</p>
             <p className="mt-1 text-sm text-blue-200">
-              Free swatch samples available. Response within 24 hours.
+              Free samples available. We respond within 24 hours.
             </p>
           </div>
           <div className="flex gap-3">
             <a
-              href="https://wa.me/86151361119"
+              href="https://wa.me/8615151361119"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-600 transition-colors"
@@ -120,8 +120,8 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-8 border-t border-gray-200 pt-6 text-center">
           <p className="text-xs text-gray-400">
-            &copy; {new Date().getFullYear()} Nantong Linens. All rights reserved.
-            Based in Nantong, Jiangsu, China — Serving hotels worldwide.
+            &copy; {new Date().getFullYear() > 2026 ? new Date().getFullYear() : 2024} Nantong Linens. All rights reserved.
+            Sourcing agent based in Dieshiqiao, Nantong, Jiangsu, China — serving hospitality buyers worldwide.
           </p>
         </div>
       </div>
