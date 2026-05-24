@@ -50,7 +50,7 @@ export const FEATURED_PRODUCTS_QUERY = `
     name,
     slug,
     shortDescription,
-    images[0] { asset -> { url }, alt },
+    images[] { asset-> { url }, alt },
     category,
     moq,
     priceRange,
@@ -73,11 +73,11 @@ export const POSTS_QUERY = `
     excerpt,
     publishedAt,
     mainImage {
-      asset -> { url, metadata { dimensions, lqip } },
+      asset->{ url, metadata { dimensions, lqip } },
       alt
     },
     categories[]->{ title, slug },
-    author -> { name, image { asset -> { url } } },
+    author->{ name, image { asset->{ url } } },
   }
 `;
 
@@ -90,11 +90,11 @@ export const POST_BY_SLUG_QUERY = `
     body,
     publishedAt,
     mainImage {
-      asset -> { url, metadata { dimensions, lqip } },
+      asset->{ url, metadata { dimensions, lqip } },
       alt
     },
     categories[]->{ title, slug },
-    author -> { name, image { asset -> { url } } },
+    author->{ name, image { asset->{ url } } },
   }
 `;
 
