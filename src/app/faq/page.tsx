@@ -31,12 +31,12 @@ const faqs = [
   {
     q: "What quality certifications does your factory hold?",
     a:
-      'Our manufacturing facility holds multiple international certifications:\n\n• OEKO-TEX Standard 100 (all product lines)\n• ISO 9001:2015 Quality Management System\n• BSCI (Business Social Compliance Initiative)\n• WRAP (Worldwide Responsible Accredited Production)\n\nWe also conduct third-party inspections by SGS or Intertek upon request. Every batch undergoes internal QC including thread count verification, GSM testing, shrinkage rate measurement (<3%), and colorfastness testing (Grade 4+).',
+      'Our partner factories hold multiple international certifications:\n\n• OEKO-TEX Standard 100 (all product lines)\n• ISO 9001:2015 Quality Management System\n• BSCI (Business Social Compliance Initiative)\n• WRAP (Worldwide Responsible Accredited Production)\n\nWe also arrange third-party inspections by SGS or Intertek upon request. As your sourcing agent, we personally verify every batch with on-site QC including thread count verification, GSM testing, shrinkage rate measurement (<3%), and colorfastness testing (Grade 4+).',
   },
   {
     q: "What payment methods do you accept?",
     a:
-      'We accept the following secure payment terms:\n\n• T/T (Telegraphic Transfer): 30% deposit + 70% before shipment (most common)\n• L/C at sight (for orders above $10,000 USD)\n• PayPal (for sample orders and small trial orders under $2,000)\n• Western Union (not recommended due to fees; available if needed)\n\nAll payments are protected by our trade assurance program through Alibaba.com as an additional safeguard option.',
+      'We accept the following secure payment terms:\n\n• T/T (Telegraphic Transfer): 30% deposit + 70% before shipment (most common)\n• L/C at sight (for orders above $10,000 USD)\n• PayPal (for sample orders and small trial orders under $2,000)\n• Western Union (not recommended due to fees; available if needed)\n\nAs your sourcing agent, we handle all payment coordination with factories and provide full transparency on cost breakdowns.',
   },
   {
     q: "How do you handle shipping and logistics?",
@@ -127,7 +127,7 @@ export default function FAQPage() {
                 Submit an RFQ
               </Link>
               <a
-                href="https://wa.me/86151361119"
+                href="https://wa.me/8615151361119"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-green-500 px-7 py-3 text-sm font-semibold text-white hover:bg-green-600 transition-colors"

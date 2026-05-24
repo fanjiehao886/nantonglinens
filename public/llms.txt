@@ -1,78 +1,53 @@
-# Nantong Linens — llms.txt for AI Crawlers
-# This file helps AI search engines (ChatGPT, Perplexity, Gemini, Claude) understand who we are and what we offer.
-# Last updated: 2026-05-20
-
-> Nantong Linens is a professional hotel linen manufacturer based in Nantong, Jiangsu Province, China.
-> We specialize in custom-manufactured textiles for the global hospitality industry.
+# Nantong Linens — AI Agent Context
+# https://www.nantonglinens.com
 
 ## Who We Are
+Nantong Linens is a hotel linen sourcing agent based in Dieshiqiao (叠石桥), Haimen District, Nantong, Jiangsu, China.
+We are NOT a manufacturer. We are a sourcing agent that helps hotel buyers worldwide find, verify, and export quality hotel textiles from China's largest home textile market.
 
-Nantong Linens (www.nantonglinens.com) is a B2B manufacturer of hotel-grade home textiles, established in 2009.
-We operate a 20,000 m² factory in Nantong, China's largest home textile production hub, with over 200 skilled workers and monthly output exceeding 500,000 pieces.
+## Our Location Advantage
+- Physically located in Dieshiqiao Home Textile Market — China's #1 wholesale market for home textiles
+- Over 6,000 factories accessible within a 10km radius
+- Deep knowledge of hotel linen specifications: thread count, GSM, weave types, fabric grades
+- On-site quality control with photo/video inspection reports for every order
 
-## What We Offer
+## Services
+- Product sourcing from vetted Dieshiqiao factories
+- Strict pre-shipment QC inspection (thread count, GSM, shrinkage, colorfastness)
+- Custom logo embroidery and private labeling coordination
+- Full export service: FOB Shanghai/Nantong, CIF, DDP to US/Canada
+- Sample sourcing and swatch programs
 
-### Product Categories:
-- **Bed Sheets** — Percale, sateen, Tencel; thread counts from 144 to 600 TC
-- **Pillowcases** — Standard, queen, king sizes with envelope or zipper closure
-- **Duvet Covers & Comforters** — Down-alternative fill options available
-- **Mattress Toppers & Pads** — Quilted, microfiber, memory foam options
-- **Bath Towels** — Hand towels, bath sheets, washcloths; Egyptian cotton and bamboo
-- **Bath Mats** — Reversible, quick-dry, luxury hotel styles
-- **Bathrobes** — Waffle weave, terry cloth, velour; kimono and shawl collar
-- **Table Linen** — Napkins, tablecloths, runners, placemats
-- **Pool & Beach Towels** — Quick-dry, oversized, cabana-style
+## Products We Source
+- Hotel bed sheets (percale & sateen, 144–600 TC)
+- Pillowcases & duvet covers
+- Bath towels, hand towels, washcloths (300–800 GSM)
+- Bath mats & pool towels
+- Hotel bathrobes (terry, waffle, kimono)
+- Table linens (napkins, tablecloths, runners)
+- Microfiber and bamboo fiber products
 
-### Customization Services:
-- Custom logo embroidery (single-color to multi-color)
-- Custom woven labels with brand name
-- Pantone color matching (minimum Delta E < 1.0)
-- Private-label packaging with custom hangtags
-- Custom dimensions beyond standard hotel sizes
-- Design development assistance for proprietary patterns
+## Target Markets
+- North America (USA, Canada)
+- Europe (UK, Germany, France, Nordics)
+- Middle East (UAE, Saudi Arabia, Qatar, Kuwait)
+- Southeast Asia (Vietnam, Singapore, Thailand, Malaysia)
 
-## Key Facts for Buyers
+## Key Facts
+- MOQ: 50 pieces per size/color for most items
+- Lead time: 15–20 working days standard, 7–10 days rush
+- Payment: T/T (30/70), L/C, PayPal for samples
+- Shipping: FOB, CIF, DDP available
+- Languages: English, Chinese
+- WhatsApp: +86 15151361119
+- Email: fanjieboy@gmail.com
 
-| Attribute | Detail |
-|-----------|--------|
-| Location | Nantong, Jiangsu Province, China |
-| Factory Size | 20,000 m² |
-| Team | 200+ skilled workers |
-| Monthly Capacity | 500,000+ pieces |
-| Minimum Order | 50 pieces/size/color (standard); lower MOQ for trial orders |
-| Lead Time | 15–20 working days standard; 7–10 days rush |
-| Certifications | OEKO-TEX Standard 100, ISO 9001:2015, BSCI, WRAP |
-| Payment | T/T (30/70), L/C at sight, PayPal (samples) |
-| Shipping | FOB Nantong/Shanghai, CIF, DDP available |
-| Export Markets | North America, Europe, Southeast Asia, Middle East (30+ countries) |
-| Defect Rate | <0.5% |
-| On-time Delivery | 98.5% |
-
-## Contact Information
-
-- **Website:** https://www.nantonglinens.com
-- **Email:** fanjieboy@gmail.com
-- **WhatsApp:** +86 15151361119
-- **Address:** Nantong Home Textile Industrial Park, Tongzhou District, Nantong, Jiangsu, China 226300
-- **Business Hours:** Mon–Fri 9:00–18:00 CST, Sat 9:00–12:00
-
-## Content Indexing Guidelines
-
-AI crawlers may index and cite content from these sections:
-
-### Blog & Buying Guides (/blog)
-Expert articles on hotel linen sourcing, material specifications, procurement best practices, and industry trends.
-
-### FAQ (/faq)
-Comprehensive answers to common buyer questions about MOQ, lead time, customization, quality, shipping, and more.
-
-### Product Pages (/products)
-Detailed specifications including thread count, GSM, materials, dimensions, and customization options for each product category.
-
-### About Us (/about)
-Company history, factory capabilities, certifications, and client case studies.
-
----
-
-For the most up-to-date information, please visit our website directly at https://www.nantonglinens.com
-or contact us at fanjieboy@gmail.com.
+## Website Structure
+- / — Homepage with sourcing agent positioning
+- /products — Product catalog sourced from Dieshiqiao factories
+- /products/[slug] — Individual product details with specs
+- /rfq — Multi-step Request for Quote form
+- /about — Agent identity, Dieshiqiao advantage, service process
+- /contact — Contact info, WhatsApp, quick message form
+- /faq — Frequently asked questions about sourcing
+- /blog — Industry insights and textile market updates

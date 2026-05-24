@@ -33,18 +33,18 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.nantonglinens.com",
     siteName: "Nantong Linens",
-    title: "Nantong Linens - Premium Hotel Linen Manufacturer",
+    title: "Nantong Linens - Hotel Linen Sourcing Agent | Dieshiqiao, China",
     description:
-      "Custom hotel linens from Nantong's largest textile hub. OEM/ODM manufacturing for hospitality industry.",
+      "Hotel linen sourcing agent based in Dieshiqiao, China's #1 home textile market. We source, QC, and ship bed sheets, towels, bathrobes, and table linens for hotels worldwide.",
     images: [
       { url: "/og-image.jpg", width: 1200, height: 630, alt: "Nantong Linens" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nantong Linens - Hotel Linen Manufacturer",
+    title: "Nantong Linens - Hotel Linen Sourcing Agent",
     description:
-      "Custom hotel linens manufactured in Nantong, China. OEM/ODM, competitive pricing.",
+      "Sourcing agent in Dieshiqiao, China's largest home textile market. We find, inspect, and export hotel linens worldwide.",
   },
   robots: {
     index: true,
@@ -78,10 +78,10 @@ export default function RootLayout({
               url: "https://www.nantonglinens.com",
               logo: "https://www.nantonglinens.com/logo.png",
               description:
-                "Professional hotel linen manufacturer based in Nantong, China. Specializing in custom bed sheets, towels, bathrobes, and table linens for the global hospitality industry.",
+                "Hotel linen sourcing agent based in Dieshiqiao, Nantong — China's #1 home textile market. We source, QC, and export quality hotel linens worldwide.",
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Nantong",
+                addressLocality: "Dieshiqiao, Haimen",
                 addressRegion: "Jiangsu",
                 addressCountry: "CN",
               },
@@ -91,9 +91,6 @@ export default function RootLayout({
                 email: "fanjieboy@gmail.com",
                 availableLanguage: ["English", "Chinese"],
               },
-              sameAs: [
-                "https://linkedin.com/company/nantonglinens",
-              ],
             }),
           }}
         />
@@ -107,12 +104,8 @@ export default function RootLayout({
               name: "Nantong Linens",
               url: "https://www.nantonglinens.com",
               potentialAction: {
-                "@type": "SearchAction",
-                target: {
-                  "@type": "EntryPoint",
-                  urlTemplate: "https://www.nantonglinens.com/search?q={search_term_string}",
-                },
-                "query-input": "required name=search_term_string",
+                "@type": "ReadAction",
+                target: "https://www.nantonglinens.com/products",
               },
             }),
           }}

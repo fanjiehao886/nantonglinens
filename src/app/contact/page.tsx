@@ -3,9 +3,9 @@ import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Nantong Linens - Hotel Linen Manufacturer",
+  title: "Contact Us | Nantong Linens - Hotel Linen Sourcing Agent",
   description:
-    "Contact Nantong Linens for custom hotel linen quotes, sample requests, and OEM/ODM inquiries. WhatsApp, email, or submit an RFQ online.",
+    "Contact Nantong Linens for hotel linen sourcing quotes, sample requests, and procurement inquiries. WhatsApp, email, or submit an RFQ online.",
 };
 
 export default function ContactPage() {
@@ -37,7 +37,7 @@ export default function ContactPage() {
                   title: "WhatsApp",
                   lines: ["+86 15151361119"],
                   desc: "Quick responses in English",
-                  href: "https://wa.me/86151361119",
+                  href: "https://wa.me/8615151361119",
                 },
                 {
                   icon: "\ud83d\udd27",
@@ -47,13 +47,13 @@ export default function ContactPage() {
                 },
                 {
                   icon: "\ud83d\udccd",
-                  title: "Factory Address",
+                  title: "Office Address",
                   lines: [
-                    "Nantong Home Textile Industrial Park",
-                    "Tongzhou District, Nantong",
-                    "Jiangsu Province, China 226300",
+                    "Dieshiqiao Home Textile Market",
+                    "Haimen District, Nantong",
+                    "Jiangsu Province, China 226100",
                   ],
-                  desc: "Welcome to visit our factory!",
+                  desc: "Located in China's largest home textile market",
                 },
               ].map((card) => (
                 <div

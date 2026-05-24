@@ -4,12 +4,12 @@ import { client } from "@/lib/sanity";
 import { PRODUCTS_QUERY, CATEGORIES_QUERY } from "@/lib/queries";
 
 export const metadata: Metadata = {
-  title: "Hotel Linens Products - Custom Bed Sheets, Towels, Bathrobes",
+  title: "Hotel Linens Catalog - Bed Sheets, Towels, Bathrobes & More",
   description:
-    "Browse our full catalog of hotel linens: bed sheets, pillowcases, towels, bathrobes, table linens, and more. Custom OEM/ODM manufacturing for hospitality brands.",
+    "Browse our sourced hotel linen catalog: bed sheets, pillowcases, towels, bathrobes, table linens, and more. Competitive pricing from Dieshiqiao's top factories.",
   openGraph: {
     title: "Hotel Linen Products Catalog | Nantong Linens",
-    description: "Custom hotel linens manufactured in Nantong, China. Browse bed sheets, towels, bathrobes, and table linens.",
+    description: "Source quality hotel linens from Dieshiqiao, China's #1 textile market. Bed sheets, towels, bathrobes, and table linens at competitive prices.",
   },
 };
 
@@ -47,8 +47,8 @@ export default async function ProductsPage({ searchParams }: PageProps) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900">Hotel Linens Catalog</h1>
           <p className="mt-2 text-gray-500">
-            Custom-manufactured textiles for hotels, resorts, and hospitality brands.
-            All products available with logo customization and private labeling.
+            Sourced from Dieshiqiao's best factories — competitive pricing, strict QC, global shipping.
+            Logo customization and private labeling available on all products.
           </p>
         </div>
       </section>
@@ -89,7 +89,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
           <div className="py-20 text-center">
             <p className="text-lg text-gray-400">No products found in this category yet.</p>
             <a href="/rfq" className="mt-4 inline-block text-blue-800 hover:underline">
-              Tell us what you need — we can make it.
+              Tell us what you need — we can source it.
             </a>
           </div>
         )}
@@ -99,19 +99,19 @@ export default async function ProductsPage({ searchParams }: PageProps) {
           <h2 className="text-lg font-semibold text-gray-900">About Our Hotel Linen Collection</h2>
           <div className="mt-4 space-y-3 text-sm leading-relaxed text-gray-600">
             <p>
-              Nantong Linens offers a comprehensive range of hotel-grade textile products,
-              manufactured in Nantong — China&apos;s largest home textile production base.
-              Our facility spans over 20,000 m² with a monthly output exceeding 500,000 pieces.
+              Nantong Linens is a sourcing agent based in Dieshiqiao — China&apos;s largest home textile wholesale market
+              with over 6,000 factories. We handpick the best manufacturers for every product category,
+              ensuring competitive pricing and consistent quality.
             </p>
             <p>
-              All hotel linens are produced using premium long-staple cotton (Egyptian or Pima),
-              bamboo fiber, and microfiber blends. Each product line is designed to withstand
+              All hotel linens are sourced from vetted factories using premium long-staple cotton (Egyptian or Pima),
+              bamboo fiber, and microfiber blends. Each product line is selected to withstand
               commercial laundering cycles of 100+ washes while maintaining colorfastness and softness.
             </p>
             <p>
-              We support OEM/ODM orders starting from as low as 50 pieces per size/color combination,
+              We support orders starting from as low as 50 pieces per size/color combination,
               making us ideal for boutique hotels, independent properties, and large chain renovations alike.
-              Standard lead time is 15-20 days from order confirmation to shipment readiness.
+              Our on-site QC team inspects every order before shipment. Standard lead time is 15–20 days from order confirmation.
             </p>
           </div>
 
@@ -120,10 +120,10 @@ export default async function ProductsPage({ searchParams }: PageProps) {
             {[
               "hotel bedding wholesale",
               "bulk bath towels",
-              "custom hotel robes",
-              "hospitality linens supplier",
-              "OEM hotel sheets China",
-              "Nantong textile manufacturer",
+              "hotel robes sourcing",
+              "hospitality linens agent",
+              "Dieshiqiao hotel sheets",
+              "Nantong textile sourcing",
               "hotel linen MOQ",
               "white hotel sheets bulk",
             ].map((keyword) => (
