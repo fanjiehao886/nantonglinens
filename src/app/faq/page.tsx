@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "FAQ - Hotel Linen Sourcing, MOQ, Lead Time & More | Nantong Linens",
   description:
     "Frequently asked questions about sourcing hotel linens from Nantong, China. Learn about MOQ, lead times, customization options, quality certifications, and shipping.",
+  alternates: { canonical: "/faq" },
 };
 
 const faqs = [

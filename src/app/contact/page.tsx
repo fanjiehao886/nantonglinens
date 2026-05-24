@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Contact Us | Nantong Linens - Hotel Linen Sourcing Agent",
   description:
     "Contact Nantong Linens for hotel linen sourcing quotes, sample requests, and procurement inquiries. WhatsApp, email, or submit an RFQ online.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

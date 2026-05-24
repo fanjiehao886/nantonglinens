@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Blog - Hotel Linen Buying Guides & Hospitality Textile Tips",
   description:
     "Expert guides on sourcing hotel linens, understanding GSM and thread count, choosing the right bedding for your hotel, and more. By Nantong Linens.",
+  alternates: { canonical: "/blog" },
 };
 
 export const revalidate = 60; // ISR: revalidate every 60 seconds

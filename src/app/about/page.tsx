@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "About Us - Hotel Linen Sourcing Agent | Dieshiqiao, Nantong",
   description:
     "Based in Dieshiqiao — the world's largest home textile market — we help hotel buyers source premium linens from vetted Nantong factories with full QC and export service.",
+  alternates: { canonical: "/about" },
 };
 
 const advantages = [

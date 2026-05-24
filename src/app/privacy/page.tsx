@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Privacy policy for Nantong Linens — how we collect, use, and protect your personal information when you use our website or services.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPolicy() {

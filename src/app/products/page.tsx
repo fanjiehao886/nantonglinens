@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Hotel Linens Catalog - Bed Sheets, Towels, Bathrobes & More",
   description:
     "Browse our sourced hotel linen catalog: bed sheets, pillowcases, towels, bathrobes, table linens, and more. Competitive pricing from Dieshiqiao's top factories.",
+  alternates: { canonical: "/products" },
   openGraph: {
     title: "Hotel Linen Products Catalog | Nantong Linens",
     description: "Source quality hotel linens from Dieshiqiao, China's #1 textile market. Bed sheets, towels, bathrobes, and table linens at competitive prices.",

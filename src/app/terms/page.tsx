@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Terms of service for Nantong Linens — the rules and agreements governing your use of our website and hotel linen sourcing services.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsOfService() {

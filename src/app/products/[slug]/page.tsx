@@ -22,6 +22,7 @@ export async function generateMetadata({
     description:
       product.shortDescription ||
       `Source ${product.name} in bulk through Nantong Linens — competitive pricing from Dieshiqiao factories, custom logo, low MOQ.`,
+    alternates: { canonical: `/products/${slug}` },
     openGraph: {
       title: `${product.name} | Nantong Linens`,
       description: product.shortDescription || "",

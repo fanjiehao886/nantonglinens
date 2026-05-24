@@ -1,7 +1,12 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { ProductCard } from "@/components/ProductCard";
 import { client } from "@/lib/sanity";
 import { FEATURED_PRODUCTS_QUERY } from "@/lib/queries";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default async function HomePage() {
   const featuredProducts = await client.fetch(FEATURED_PRODUCTS_QUERY);
