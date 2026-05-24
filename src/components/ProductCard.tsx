@@ -14,7 +14,10 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const imageUrl = product.images?.[0]?.asset?.url;
+  // images could be an array or a single projected object from GROQ
+  const imageUrl = Array.isArray(product.images)
+    ? product.images[0]?.asset?.url
+    : (product.images as any)?.asset?.url;
 
   return (
     <Link href={`/products/${product.slug.current}`} className="group block">

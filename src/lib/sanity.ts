@@ -42,7 +42,8 @@ export const client = {
 // Image URL builder with safe fallback
 let _builder: ReturnType<typeof imageUrlBuilder> | null = null;
 
-export function urlFor(source: any) {
+// Eagerly initialize builder when projectId is available
+function getBuilder() {
   if (!_builder && projectId) {
     try {
       const c = getClient();
@@ -51,8 +52,22 @@ export function urlFor(source: any) {
       // ignore
     }
   }
-  if (!_builder) {
-    return { url: (): string => "" };
+  return _builder;
+}
+
+export function urlFor(source: any) {
+  const builder = getBuilder();
+  if (!builder) {
+    // Chainable mock so callers don't crash
+    const mock: any = () => mock;
+    mock.url = () => "";
+    mock.width = () => mock;
+    mock.height = () => mock;
+    mock.quality = () => mock;
+    mock.format = () => mock;
+    mock.crop = () => mock;
+    mock.fit = () => mock;
+    return mock;
   }
-  return _builder.image(source);
+  return builder.image(source);
 }

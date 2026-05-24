@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     "Expert guides on sourcing hotel linens, understanding GSM and thread count, choosing the right bedding for your hotel, and more. By Nantong Linens.",
 };
 
+export const revalidate = 60; // ISR: revalidate every 60 seconds
+
 export default async function BlogPage() {
   const posts = await client.fetch(POSTS_QUERY);
 

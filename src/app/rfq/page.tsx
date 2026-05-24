@@ -83,9 +83,25 @@ export default function RFQPage() {
     }));
   };
 
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
   const handleSubmit = async () => {
-    // In production, this sends to your API route → Resend email
-    setSubmitted(true);
+    setSubmitError("");
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/rfq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Something went wrong. Please email us directly at fanjieboy@gmail.com.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -106,7 +122,7 @@ export default function RFQPage() {
             <Link href="/products" className="rounded-full border px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors">
               Browse More Products
             </Link>
-            <a href={`https://wa.me/86151361119?text=Hi, I just submitted an RFQ for ${form.productCategory}`} target="_blank" rel="noopener noreferrer" className="rounded-full bg-green-500 px-6 py-2.5 text-sm font-medium text-white hover:bg-green-600 transition-colors">
+            <a href={`https://wa.me/8615151361119?text=Hi, I just submitted an RFQ for ${form.productCategory}`} target="_blank" rel="noopener noreferrer" className="rounded-full bg-green-500 px-6 py-2.5 text-sm font-medium text-white hover:bg-green-600 transition-colors">
               Follow up on WhatsApp
             </a>
           </div>
