@@ -10,56 +10,58 @@ export default async function HomePage() {
     <>
       {/* ========== HERO SECTION ========== */}
       <section className="relative overflow-hidden text-white">
-        {/* Background image */}
+        {/* Background image — focus higher on mobile so the building sign is visible */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-no-repeat bg-[center_30%] sm:bg-center"
           style={{ backgroundImage: "url('/hero-dieshiqiao.jpg')" }}
         />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/85 via-blue-900/75 to-blue-950/60" />
+        {/* Dark overlay — vertical on mobile, horizontal on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-blue-950/80 to-blue-950/70 sm:bg-gradient-to-r sm:from-blue-950/85 sm:via-blue-900/75 sm:to-blue-950/60" />
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <span className="inline-block rounded-full border border-blue-400/30 px-4 py-1.5 text-sm font-medium text-blue-200">
-                Your Sourcing Agent in Dieshiqiao — China&apos;s #1 Home Textile Hub
+              {/* Mobile: short label / Desktop: full label */}
+              <span className="inline-block rounded-full border border-blue-400/30 px-4 py-1.5 text-xs font-medium text-blue-200 sm:text-sm">
+                <span className="sm:hidden">Sourcing Agent in Dieshiqiao</span>
+                <span className="hidden sm:inline">Your Sourcing Agent in Dieshiqiao — China&apos;s #1 Home Textile Hub</span>
               </span>
-              <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 text-3xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
                 Hotel Linens Sourced
                 <br />
                 <span className="text-blue-300">Right From the Source</span>
               </h1>
-              <p className="mt-6 max-w-lg text-lg leading-relaxed text-blue-100/80">
+              <p className="mt-6 max-w-lg text-base leading-relaxed text-blue-100/80 sm:text-lg">
                 Based in Dieshiqiao — the world&apos;s largest home textile trading hub —
                 we connect hotel buyers worldwide with vetted factories. From spec to
                 shipment, we handle sourcing, sampling, QC, and export on your behalf.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
                 <Link
                   href="/rfq"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors shadow-lg"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-900 hover:bg-gray-100 transition-colors shadow-lg sm:px-7 sm:py-3.5 sm:text-base"
                 >
                   Request a Quote
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="sm:w-[18px] sm:h-[18px]">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors sm:px-7 sm:py-3.5 sm:text-base"
                 >
                   Browse Products
                 </Link>
               </div>
 
-              {/* Trust indicators */}
-              <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-blue-200/70">
+              {/* Trust indicators — stacked on mobile, row on desktop */}
+              <div className="mt-10 flex flex-col gap-3 text-sm text-blue-200/70 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
                 <div className="flex items-center gap-2">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M9 12l2 2 4-4" />
                     <circle cx="12" cy="12" r="10" />
                   </svg>
-                  Partner Factories: OEKO-TEX &amp; ISO 9001
+                  OEKO-TEX &amp; ISO 9001 Factories
                 </div>
                 <div className="flex items-center gap-2">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -78,7 +80,7 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Hero visual */}
+            {/* Hero visual — desktop card */}
             <div className="hidden lg:block">
               <div className="relative rounded-2xl bg-gradient-to-br from-blue-800/50 to-blue-950/50 p-8 backdrop-blur border border-white/10">
                 <p className="text-xs font-medium text-blue-300/70 uppercase tracking-widest mb-4">Why Source Through Us</p>
@@ -112,6 +114,21 @@ export default async function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Mobile-only compact stats row — replaces hidden desktop card */}
+          <div className="mt-10 grid grid-cols-4 gap-3 lg:hidden">
+            {[
+              { label: "Local Presence", value: "On-site" },
+              { label: "Response Time", value: "24 hr" },
+              { label: "Factory Network", value: "50+" },
+              { label: "Export Exp.", value: "FOB/DDP" },
+            ].map((stat) => (
+              <div key={stat.label} className="rounded-xl bg-white/10 backdrop-blur-sm p-3 text-center border border-white/10">
+                <p className="text-lg font-bold text-white">{stat.value}</p>
+                <p className="mt-0.5 text-[11px] leading-tight text-blue-200/80">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
