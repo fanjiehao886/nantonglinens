@@ -5,6 +5,10 @@ import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   title: {
     default: "Nantong Linens - Hotel Linen Sourcing Agent | Dieshiqiao, China",
     template: "%s | Nantong Linens",
