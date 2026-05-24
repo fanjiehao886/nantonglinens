@@ -1,35 +1,125 @@
-import { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { client } from "@/lib/sanity";
+import { client, urlFor } from "@/lib/sanity";
 import { POST_BY_SLUG_QUERY, POSTS_QUERY } from "@/lib/queries";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  _parent: ResolvingMetadata
+): Promise<Metadata> {
   const { slug } = await params;
   const post = await client.fetch(POST_BY_SLUG_QUERY, { slug });
 
   if (!post) return {};
 
+  // Truncate description to 160 chars for SEO best practice
+  const desc = (post.excerpt || "").slice(0, 157) + (post.excerpt && post.excerpt.length > 157 ? "..." : "");
+
   return {
     title: `${post.title} | Nantong Linens Blog`,
-    description: post.excerpt,
+    description: desc,
     openGraph: {
       title: post.title,
-      description: post.excerpt,
+      description: desc,
       type: "article",
-      publishedTime: post.publishedAt,
-      authors: [post.author?.name || "Nantong Linens"],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
+      publishedTime: post.publishedAt || undefined,
+      authors: post.author?.name ? [post.author.name] : undefined,
+      images: post.mainImage?.asset?.url
+        ? [{ url: post.mainImage.asset.url, alt: post.mainImage.alt || "" }]
+        : [],
     },
   };
+}
+
+export async function generateStaticParams() {
+  const posts = await client.fetch(POSTS_QUERY).catch(() => []);
+  return (posts || []).map((p: any) => ({
+    slug: p.slug?.current,
+  }));
+}
+
+/* ---- Minimal Portable Text renderer ---- */
+function PortableTextContent({ content }: { content: any[] }) {
+  if (!content) return null;
+  return (
+    <div className="space-y-4 text-base leading-relaxed text-gray-700">
+      {content.map((block: any, i: number) => {
+        if (block._type === "image") {
+          const url = urlFor(block).width(1200).url();
+          return (
+            <img
+              key={i}
+              src={url}
+              alt={block.alt || ""}
+              className="my-6 rounded-xl w-full"
+            />
+          );
+        }
+        if (block._type === "callout") {
+          const color =
+            block.type === "warning"
+              ? "border-yellow-300 bg-yellow-50 text-yellow-800"
+              : block.type === "tip"
+              ? "border-green-300 bg-green-50 text-green-800"
+              : "border-blue-300 bg-blue-50 text-blue-800";
+          return (
+            <div key={i} className={`rounded-xl border p-4 ${color}`}>
+              <PortableTextContent content={block.content} />
+            </div>
+          );
+        }
+        if (block._type !== "block") return null;
+        const text =
+          block.children?.map((c: any) => c.text).join("") || "";
+        switch (block.style) {
+          case "h1":
+            return (
+              <h1 key={i} className="mt-8 text-2xl font-bold text-gray-900">
+                {text}
+              </h1>
+            );
+          case "h2":
+            return (
+              <h2 key={i} className="mt-6 text-xl font-bold text-gray-900">
+                {text}
+              </h2>
+            );
+          case "h3":
+            return (
+              <h3 key={i} className="mt-4 text-lg font-semibold text-gray-900">
+                {text}
+              </h3>
+            );
+          case "blockquote":
+            return (
+              <blockquote
+                key={i}
+                className="border-l-4 border-blue-200 pl-4 italic text-gray-500"
+              >
+                {text}
+              </blockquote>
+            );
+          default:
+            if (!text.trim()) return null;
+            return (
+              <p key={i} className="mt-2">
+                {text}
+              </p>
+            );
+        }
+      })}
+    </div>
+  );
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
@@ -38,185 +128,176 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   if (!post) notFound();
 
-  const recentPosts = await client.fetch(POSTS_QUERY);
+  /* Fetch related posts (same category, excluding current) */
+  const allPosts = await client.fetch(POSTS_QUERY).catch(() => []);
+  const related = (allPosts || [])
+    .filter((p: any) => p.slug?.current !== slug)
+    .slice(0, 3);
 
   return (
     <>
-      {/* Breadcrumb */}
-      <section className="border-b border-gray-100 bg-gray-50 py-4">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center gap-2 text-sm text-gray-400">
-            <Link href="/" className="hover:text-blue-800">Home</Link>
-            <span>/</span>
-            <Link href="/blog" className="hover:text-blue-800">Blog</Link>
-            <span>/</span>
-            <span className="text-gray-900 truncate">{post.title}</span>
-          </nav>
+      {/* Article Schema for SEO/GEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.excerpt || "",
+            datePublished: post.publishedAt || undefined,
+            author: post.author?.name
+              ? { "@type": "Person", name: post.author.name }
+              : undefined,
+            publisher: {
+              "@type": "Organization",
+              name: "Nantong Linens",
+              url: "https://www.nantonglinens.com",
+            },
+            mainEntityOfPage: `https://www.nantonglinens.com/blog/${slug}`,
+            ...(post.mainImage?.asset?.url
+              ? { image: post.mainImage.asset.url }
+              : {}),
+          }),
+        }}
+      />
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.nantonglinens.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://www.nantonglinens.com/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: post.title,
+                item: `https://www.nantonglinens.com/blog/${slug}`,
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* Article header */}
+      <section className="bg-gray-50 border-b border-gray-100 py-10">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          {(post.categories || []).length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {post.categories.map((cat: any) => (
+                <span
+                  key={cat.slug}
+                  className="text-xs font-medium text-blue-800 bg-blue-50 px-2 py-0.5 rounded"
+                >
+                  {cat.title}
+                </span>
+              ))}
+            </div>
+          )}
+          <h1 className="text-3xl font-bold text-gray-900 leading-snug">
+            {post.title}
+          </h1>
+          <div className="mt-4 flex items-center gap-3 text-sm text-gray-400">
+            {post.publishedAt && (
+              <time dateTime={post.publishedAt}>
+                {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </time>
+            )}
+            {post.author?.name && (
+              <>
+                <span>·</span>
+                <span>{post.author.name}</span>
+              </>
+            )}
+          </div>
         </div>
       </section>
 
-      <article className="py-12">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <header className="max-w-3xl">
-            {(post.categories || []).length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-4">
-                {post.categories.map((cat: any) => (
-                  <Link
-                    key={cat.title}
-                    href={`/blog?category=${cat.slug?.current}`}
-                    className="text-xs font-medium text-blue-800 bg-blue-50 px-2.5 py-1 rounded hover:bg-blue-100 transition-colors"
-                  >
-                    {cat.title}
-                  </Link>
-                ))}
-              </div>
-            )}
-
-            <h1 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-              {post.title}
-            </h1>
-
-            {post.excerpt && (
-              <p className="mt-4 text-lg leading-relaxed text-gray-500">{post.excerpt}</p>
-            )}
-
-            {/* Meta */}
-            <div className="mt-6 flex flex-wrap items-center gap-4 border-y border-gray-100 py-4 text-sm text-gray-400">
-              {post.author?.name && (
-                <span className="flex items-center gap-2">
-                  {authorImage(post.author)}
-                  {post.author.name}
-                </span>
-              )}
-              {post.publishedAt && (
-                <time dateTime={post.publishedAt}>
-                  {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </time>
-              )}
-              <span>~5 min read</span>
-            </div>
-          </header>
-
-          {/* Main image */}
-          {post.mainImage?.asset?.url && (
-            <div className="mt-8 overflow-hidden rounded-xl">
-              <img
-                src={post.mainImage.asset.url}
-                alt={post.mainImage.alt || post.title}
-                className="w-full object-cover"
-              />
-            </div>
-          )}
-
-          {/* Body content */}
-          <div className="mt-10 max-w-3xl prose prose-gray prose-headings:font-semibold prose-a:text-blue-800 prose-img:rounded-xl">
-            {post.body ? (
-              <PortableTextContent blocks={post.body} />
-            ) : (
-              <div className="space-y-4 text-sm leading-relaxed text-gray-600">
-                <p>
-                  This article is being prepared by our team. Check back soon for the full version,
-                  or subscribe to our updates to be notified when it&apos;s published.
-                </p>
-                <p>In the meantime, feel free to reach out with any questions about this topic.</p>
-                <Link href="/rfq" className="inline-flex items-center rounded-full bg-blue-900 px-6 py-2.5 text-sm font-medium text-white hover:bg-blue-800 transition-colors mt-4">
-                  Ask Us a Question
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* CTA after article */}
-          <div className="mt-12 rounded-xl bg-blue-950 p-8 max-w-3xl mx-auto">
-            <h2 className="text-lg font-bold text-white">Need help with your hotel linen sourcing?</h2>
-            <p className="mt-2 text-sm text-blue-200/80">
-              Our team can answer specific questions about materials, pricing, or custom requirements.
-              Get a free quote within 24 hours.
-            </p>
-            <div className="mt-4 flex gap-3">
-              <Link
-                href="/rfq"
-                className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-blue-900 hover:bg-gray-100 transition-colors"
-              >
-                Request Quote
-              </Link>
-              <a
-                href={`https://wa.me/86151361119?text=Hi, I read your blog about "${encodeURIComponent(post.title)}"`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-green-500 px-6 py-2.5 text-sm font-semibold text-white hover:bg-green-600 transition-colors"
-              >
-                WhatsApp
-              </a>
-            </div>
+      {/* Featured image */}
+      {post.mainImage && (
+        <div className="mx-auto max-w-4xl px-4 pt-8 sm:px-6 lg:px-8">
+          <div className="aspect-[21/9] overflow-hidden rounded-xl bg-gray-50">
+            <img
+              src={urlFor(post.mainImage).width(1200).url()}
+              alt={post.mainImage.alt || post.title}
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
-      </article>
+      )}
 
-      {/* Recent posts sidebar */}
-      <aside className="bg-gray-50 border-t border-gray-100 py-12">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-lg font-bold text-gray-900 mb-6">More Articles</h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {(recentPosts || [])
-              .filter((p: any) => p._id !== post?._id)
-              .slice(0, 3)
-              .map((rp: any) => (
+      {/* Article body */}
+      <section className="py-12">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          {post.body ? (
+            <PortableTextContent content={post.body} />
+          ) : (
+            <p className="text-gray-400 italic">No content available.</p>
+          )}
+
+          {/* Share / CTA */}
+          <div className="mt-12 rounded-xl bg-blue-950 p-8 text-center">
+            <h2 className="text-xl font-bold text-white">
+              Need help sourcing hotel linens?
+            </h2>
+            <p className="mt-2 text-blue-200/80">
+              Get a free quote within 24 hours. No commitment required.
+            </p>
+            <Link
+              href="/rfq"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors"
+            >
+              Request a Quote
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related posts */}
+      {related.length > 0 && (
+        <section className="bg-gray-50 py-12 border-t border-gray-100">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-6">
+              Related Articles
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {related.map((p: any) => (
                 <Link
-                  key={rp._id}
-                  href={`/blog/${rp.slug.current}`}
-                  className="group rounded-lg border border-gray-100 bg-white p-4 hover:border-blue-200 transition-colors"
+                  key={p._id}
+                  href={`/blog/${p.slug?.current}`}
+                  className="group block rounded-xl border border-gray-100 bg-white p-5 hover:shadow-lg transition-shadow"
                 >
-                  <h3 className="font-medium text-sm text-gray-900 group-hover:text-blue-800 line-clamp-2">
-                    {rp.title}
+                  <h3 className="font-semibold text-gray-900 group-hover:text-blue-800 transition-colors line-clamp-2">
+                    {p.title}
                   </h3>
-                  {rp.publishedAt && (
-                    <p className="mt-1.5 text-xs text-gray-400">
-                      {new Date(rp.publishedAt).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
+                  {p.excerpt && (
+                    <p className="mt-2 text-sm text-gray-500 line-clamp-2">
+                      {p.excerpt}
                     </p>
                   )}
                 </Link>
               ))}
+            </div>
           </div>
-        </div>
-      </aside>
+        </section>
+      )}
     </>
   );
-}
-
-function PortableTextContent({ blocks }: { blocks: any[] }) {
-  // Simplified portable text renderer for now — in production you'd use @portabletext/react
-  return (
-    <div className="space-y-4 text-base leading-relaxed text-gray-700">
-      {blocks.map((block, i) => (
-        <div key={i}>
-          {block._type === "block" && (
-            <p>{(block.children as any[])?.map((c: any) => c.text).join("")}</p>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function authorImage(author: any) {
-  if (author.image?.asset?.url) {
-    return (
-      <img
-        src={author.image.asset.url}
-        alt={author.name}
-        className="h-7 w-7 rounded-full object-cover"
-      />
-    );
-  }
-  return null;
 }
