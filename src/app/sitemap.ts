@@ -1,9 +1,12 @@
 import { MetadataRoute } from "next";
+import { client } from "@/lib/sanity";
+import { PRODUCTS_QUERY, POSTS_QUERY } from "@/lib/queries";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.nantonglinens.com";
 
-  return [
+  // 静态页面
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -59,4 +62,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
   ];
+
+  // 动态获取产品页
+  let productPages: MetadataRoute.Sitemap = [];
+  try {
+    const products = await client.fetch(PRODUCTS_QUERY);
+    productPages = (products || []).map((p: any) => ({
+      url: `${baseUrl}/products/${p.slug?.current}`,
+      lastModified: p._createdAt ? new Date(p._createdAt) : new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }));
+  } catch {
+    // Sanity 不可用时跳过，不影响静态页面
+  }
+
+  // 动态获取博客文章页
+  let blogPages: MetadataRoute.Sitemap = [];
+  try {
+    const posts = await client.fetch(POSTS_QUERY);
+    blogPages = (posts || []).map((p: any) => ({
+      url: `${baseUrl}/blog/${p.slug?.current}`,
+      lastModified: p.publishedAt ? new Date(p.publishedAt) : new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+  } catch {
+    // Sanity 不可用时跳过
+  }
+
+  return [...staticPages, ...productPages, ...blogPages];
 }
