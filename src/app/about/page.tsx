@@ -249,7 +249,7 @@ export default function AboutPage() {
                 Who We Serve
               </span>
               <h2 className="mt-3 text-2xl font-bold text-gray-900">
-                Hotels, Resorts &amp; Hospitality Procurement Teams
+                Hotels, Resorts & Hospitality Procurement Teams
               </h2>
               <div className="mt-6 space-y-4 text-sm leading-relaxed text-gray-600">
                 <p>

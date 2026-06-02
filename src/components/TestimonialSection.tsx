@@ -17,19 +17,19 @@ export function TestimonialSection() {
               quote:
                 "Having someone physically in Dieshiqiao who can visit factories, pull samples, and send real-time QC photos has completely changed how we source linens. We no longer guess about quality — we see it before it ships.",
               author: "Typical Feedback from Hotel Procurement Managers",
-              role: "North America &amp; Europe",
+              role: "North America & Europe",
             },
             {
               quote:
                 "The biggest difference is transparency. Instead of negotiating with a factory sales rep who may overpromise, we get an honest, itemized quote with market-context pricing. No surprises on arrival.",
               author: "Common Experience of Independent Hotel Owners",
-              role: "Middle East &amp; Southeast Asia",
+              role: "Middle East & Southeast Asia",
             },
             {
               quote:
                 "What sold us was the free guidance first — the fabric guides, GSM tables, and QC checklists showed deep product knowledge before we ever spent a dollar. When we were ready to order, trust was already built.",
               author: "Shared by First-Time Buyers from China",
-              role: "Boutique &amp; Mid-Scale Hotels",
+              role: "Boutique & Mid-Scale Hotels",
             },
           ].map((item, i) => (
             <div

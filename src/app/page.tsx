@@ -65,7 +65,7 @@ export default async function HomePage() {
                     <path d="M9 12l2 2 4-4" />
                     <circle cx="12" cy="12" r="10" />
                   </svg>
-                  Free Guides &amp; Resources
+                  Free Guides & Resources
                 </div>
                 <div className="flex items-center gap-2">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -90,10 +90,10 @@ export default async function HomePage() {
                 <p className="text-xs font-medium text-blue-300/70 uppercase tracking-widest mb-4">Free Resources</p>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { label: "Fabric Guides", value: "GSM &amp; TC", desc: "Thread count, weave types" },
+                    { label: "Fabric Guides", value: "GSM/TC", desc: "Weight, density & weave types" },
                     { label: "QC Checklists", value: "Ready-to-Use", desc: "Pre-shipment inspection" },
                     { label: "Pricing Data", value: "Real Market", desc: "Price bands by spec" },
-                    { label: "Market Reports", value: "Monthly", desc: "Trends &amp; analysis" },
+                    { label: "Market Reports", value: "Monthly", desc: "Trends & analysis" },
                   ].map((stat) => (
                     <div key={stat.label} className="rounded-xl bg-white/5 p-5 border border-white/10">
                       <p className="text-lg font-bold text-white">{stat.value}</p>
@@ -105,7 +105,7 @@ export default async function HomePage() {
 
                 {/* Popular guide previews */}
                 <div className="mt-6 grid grid-cols-3 gap-3">
-                  {["GSM Guide", "Thread Count", "MOQ &amp; Shipping"].map((item) => (
+                  {["GSM Guide", "Thread Count", "MOQ & Shipping"].map((item) => (
                     <div key={item} className="rounded-lg bg-white/5 p-3 text-center border border-white/10">
                       <div className="mx-auto h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-2">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-200">

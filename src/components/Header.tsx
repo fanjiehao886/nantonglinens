@@ -117,7 +117,7 @@ export function Header() {
             href="/about"
             className="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
           >
-            About &amp; Services
+            About & Services
           </Link>
           <Link
             href="/contact"
@@ -206,7 +206,7 @@ export function Header() {
             onClick={() => setMobileOpen(false)}
             className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-800"
           >
-            About &amp; Services
+            About & Services
           </Link>
           <Link
             href="/contact"
