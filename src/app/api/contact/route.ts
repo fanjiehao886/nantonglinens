@@ -16,7 +16,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const TO_EMALL = process.env.CONTACT_TO_EMALL || "fanjieboy@gmail.com";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMALL || "fanjieboy@gmail.com";
 
 // In-memory rate limiter (resets on cold start, fine for serverless)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
         },
         body: JSON.stringify({
           from: "Nantong Linens <info@nantonglinens.com>",
-          to: [TO_EMALL],
+          to: [TO_EMAIL],
           reply_to: email,
           subject: `[Contact] ${subject || "New message"} — ${name}`,
           html: `

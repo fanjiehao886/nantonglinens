@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
         },
         body: JSON.stringify({
           from: "Nantong Linens <info@nantonglinens.com>",
-          to: [process.env.CONTACT_TO_EMALL || "fanjieboy@gmail.com"],
+          to: [process.env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMALL || "fanjieboy@gmail.com"],
           subject: `[Lead Magnet] New guide download from ${email}`,
           html: `<p>${email} downloaded the Hotel Linen Buying Guide PDF.</p>`,
         }),

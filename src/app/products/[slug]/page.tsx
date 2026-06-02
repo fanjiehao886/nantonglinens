@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { client } from "@/lib/sanity";
-import { urlFor } from "@/lib/sanity";
 import { PRODUCT_BY_SLUG_QUERY, PRODUCTS_QUERY } from "@/lib/queries";
 
 interface PageProps {
@@ -45,11 +44,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
   const product = await client.fetch(PRODUCT_BY_SLUG_QUERY, { slug });
 
   if (!product) notFound();
-
-  const imageUrl = (src: any) => {
-    if (!src?.asset?.url) return "";
-    return src.asset.url;
-  };
 
   return (
     <>
@@ -295,7 +289,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{
           __html: (() => {
             // Extract a price number from priceRange string (e.g. "$2.50 - $5.00/pc")
-            let price: number | undefined;
             let minPrice: number | undefined;
             let maxPrice: number | undefined;
             if (product.priceRange) {
@@ -305,7 +298,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
               if (numbers && numbers.length > 0) {
                 minPrice = Math.min(...numbers);
                 maxPrice = Math.max(...numbers);
-                price = minPrice; // Use minimum price as primary
               }
             }
 

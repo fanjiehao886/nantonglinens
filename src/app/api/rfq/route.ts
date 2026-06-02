@@ -11,7 +11,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY!;
-const TO_EMALL = process.env.CONTACT_TO_EMALL || "fanjieboy@gmail.com";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMALL || "fanjieboy@gmail.com";
 
 interface RFQBody {
   company: string;
@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
         },
         body: JSON.stringify({
           from: "Nantong Linens <info@nantonglinens.com>",
-          to: [TO_EMALL],
+          to: [TO_EMAIL],
           bcc: ["fanjieboy@gmail.com"],
           reply_to: email,
           subject: `[RFQ] ${productCategory} — ${company || name}`,
