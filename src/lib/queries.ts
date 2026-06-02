@@ -98,6 +98,22 @@ export const POST_BY_SLUG_QUERY = `
   }
 `;
 
+export const POSTS_BY_CATEGORY_QUERY = `
+  *[_type == "post" && $category in categories[]->slug.current && !(_id in path("drafts.**"))] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    excerpt,
+    publishedAt,
+    mainImage {
+      asset->{ url, metadata { dimensions, lqip } },
+      alt
+    },
+    categories[]->{ title, slug },
+    author->{ name, image { asset->{ url } } },
+  }
+`;
+
 export const SITE_SETTINGS_QUERY = `
   *[_type == "siteSettings"][0] {
     siteName,

@@ -214,7 +214,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               {post.categories.map((cat: any) => (
                 <Link
                   key={cat.slug?.current || cat.title}
-                  href={`/blog?category=${cat.slug?.current}`}
+                  href={`/blog/${cat.slug?.current}`}
                   className="text-xs font-medium text-blue-800 bg-blue-50 px-2 py-0.5 rounded hover:bg-blue-100 transition-colors"
                 >
                   {cat.title}

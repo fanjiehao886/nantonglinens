@@ -5,10 +5,10 @@ import { useState, useRef, useEffect } from "react";
 
 const knowledgeHubLinks = [
   { name: "All Guides", href: "/blog" },
-  { name: "Buying Guide", href: "/blog?category=buying-guide" },
-  { name: "Fabric Encyclopedia", href: "/blog?category=fabric-encyclopedia" },
-  { name: "QC Checklist", href: "/blog?category=qc-checklist" },
-  { name: "Market Reports", href: "/blog?category=market-reports" },
+  { name: "Buying Guide", href: "/blog/buying-guide" },
+  { name: "Fabric Encyclopedia", href: "/blog/fabric-encyclopedia" },
+  { name: "QC Checklist", href: "/blog/qc-checklist" },
+  { name: "Market Reports", href: "/blog/market-reports" },
   { name: "---", href: "#", divider: true },
   { name: "Free PDF Guide", href: "/guides/download", highlight: true },
 ];
