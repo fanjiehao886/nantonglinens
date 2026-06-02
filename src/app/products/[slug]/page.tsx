@@ -293,30 +293,56 @@ export default async function ProductDetailPage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Product",
-            name: product.name,
-            description: product.shortDescription || "",
-            brand: {
-              "@type": "Brand",
-              name: product.category || "Hotel Linen",
-            },
-            offers: {
-              "@type": "Offer",
-              seller: {
-                "@type": "Organization",
-                name: "Nantong Linens",
+          __html: (() => {
+            // Extract a price number from priceRange string (e.g. "$2.50 - $5.00/pc")
+            let price: number | undefined;
+            let minPrice: number | undefined;
+            let maxPrice: number | undefined;
+            if (product.priceRange) {
+              const numbers = product.priceRange
+                .match(/\d+(?:\.\d+)?/g)
+                ?.map(Number);
+              if (numbers && numbers.length > 0) {
+                minPrice = Math.min(...numbers);
+                maxPrice = Math.max(...numbers);
+                price = minPrice; // Use minimum price as primary
+              }
+            }
+
+            return JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: product.name,
+              description: product.shortDescription || "",
+              brand: {
+                "@type": "Brand",
+                name: product.category || "Hotel Linen",
               },
-              priceCurrency: "USD",
-              availability: "https://schema.org/InStock",
-              url: `https://www.nantonglinens.com/products/${product.slug?.current || slug}`,
-            },
-            category: product.category,
-            ...(product.images?.[0]?.asset?.url
-              ? { image: product.images[0].asset.url }
-              : {}),
-          }),
+              ...(product.images?.[0]?.asset?.url
+                ? { image: product.images[0].asset.url }
+                : {}),
+              offers: {
+                "@type": "AggregateOffer",
+                offerCount: 1,
+                lowPrice: minPrice,
+                highPrice: maxPrice,
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+                url: `https://www.nantonglinens.com/products/${product.slug?.current || slug}`,
+                seller: {
+                  "@type": "Organization",
+                  name: "Nantong Linens",
+                },
+                ...(product.moq
+                  ? { eligibleQuantity: { "@type": "QuantitativeValue", value: product.moq, unitText: "pcs" } }
+                  : {}),
+              },
+              category: product.category,
+              ...(product.specifications?.material
+                ? { material: product.specifications.material }
+                : {}),
+            });
+          })(),
         }}
       />
       {/* BreadcrumbList Schema for SEO/GEO */}

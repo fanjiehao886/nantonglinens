@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 
 export default function ContactForm() {
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState("");
+  const pageLoadTime = useRef(Date.now());
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -19,6 +20,8 @@ export default function ContactForm() {
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       subject: (form.elements.namedItem("subject") as HTMLSelectElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      website: (form.elements.namedItem("website") as HTMLInputElement).value,
+      _ts: Date.now() - pageLoadTime.current, // milliseconds since page load
     };
 
     try {
@@ -27,10 +30,19 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error("Failed to send");
+      if (!res.ok) {
+        if (res.status === 429) {
+          throw new Error("Too many submissions. Please try again later.");
+        }
+        throw new Error("Failed to send");
+      }
       setDone(true);
-    } catch (err) {
-      setError("Something went wrong. Please email us directly at fanjieboy@gmail.com.");
+    } catch (err: any) {
+      setError(
+        err.message === "Too many submissions. Please try again later."
+          ? "You've submitted too many messages. Please wait 15 minutes and try again."
+          : "Something went wrong. Please email us directly at fanjieboy@gmail.com."
+      );
     } finally {
       setSending(false);
     }
@@ -60,6 +72,18 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+      {/* Honeypot — hidden from humans, filled by bots */}
+      <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1.5">

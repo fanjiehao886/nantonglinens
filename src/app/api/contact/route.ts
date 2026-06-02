@@ -8,26 +8,74 @@
  *   RESEND_API_KEY  — your Resend API key
  *   CONTACT_TO_EMALL — recipient email (e.g. fanjieboy@gmail.com)
  *
- * If Resend is not configured, the route logs the submission and returns 200
- * so the form still feels "submitted" in development.
+ * Rate limiting: 5 submissions per IP per 15 minutes.
+ * Honeypot: rejects submissions where the hidden "website" field is filled.
+ * Timestamp check: rejects submissions that arrive < 3 seconds after page load.
  */
+
 import { type NextRequest, NextResponse } from "next/server";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const TO_EMALL = process.env.CONTACT_TO_EMALL || "fanjieboy@gmail.com";
+
+// In-memory rate limiter (resets on cold start, fine for serverless)
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const MAX_REQUESTS = 5;
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + WINDOW_MS });
+    return true;
+  }
+
+  if (entry.count >= MAX_REQUESTS) return false;
+
+  entry.count++;
+  return true;
+}
 
 interface ContactBody {
   name: string;
   email: string;
   subject: string;
   message: string;
+  website?: string; // honeypot field
+  _ts?: number; // client-side timestamp (milliseconds since pageload, NOT epoch)
 }
 
 export async function POST(request: NextRequest) {
   try {
+    // --- Rate limiting ---
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      request.headers.get("x-real-ip") ||
+      "unknown";
+
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json(
+        { error: "Too many submissions. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const body: ContactBody = await request.json();
 
-    const { name, email, subject, message } = body;
+    const { name, email, subject, message, website, _ts } = body;
+
+    // --- Honeypot check ---
+    if (website) {
+      // Bot filled the hidden field — silently accept but don't send email
+      return NextResponse.json({ success: true });
+    }
+
+    // --- Timestamp check (faster than 3 seconds = bot) ---
+    if (_ts && _ts < 3000) {
+      return NextResponse.json({ success: true });
+    }
 
     // Basic validation
     if (!name || !email || !message) {

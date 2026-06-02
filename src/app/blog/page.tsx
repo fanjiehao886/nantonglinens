@@ -12,15 +12,17 @@ export const metadata: Metadata = {
 
 export const revalidate = 60;
 
+const POSTS_PER_PAGE = 9;
 const CATEGORIES_QUERY = `*[_type == "category"]{ title, slug }`;
 
 export default async function BlogPage({
   searchParams,
 }: {
-  searchParams: Promise<{ category?: string }>;
+  searchParams: Promise<{ category?: string; page?: string }>;
 }) {
   const params = await searchParams;
   const activeCategory = params.category || null;
+  const currentPage = Math.max(1, parseInt(params.page || "1", 10) || 1);
 
   const [posts, categories] = await Promise.all([
     client.fetch(POSTS_QUERY),
@@ -36,6 +38,8 @@ export default async function BlogPage({
       )
     : (posts as any[]);
 
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
+
   return (
     <BlogListPage
       posts={filteredPosts}
@@ -43,6 +47,9 @@ export default async function BlogPage({
       activeCategory={activeCategory}
       heroTitle="Free Hotel Linen Procurement Guides"
       heroDescription="GSM explained, thread count comparisons, QC checklists, and sourcing strategies — all from daily experience in Dieshiqiao, the world's largest textile hub."
+      currentPage={currentPage}
+      totalPages={totalPages}
+      basePath="/blog"
     />
   );
 }

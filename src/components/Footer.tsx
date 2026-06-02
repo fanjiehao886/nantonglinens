@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NewsletterForm from "./NewsletterForm";
 
 const footerLinks = {
   products: [
@@ -29,7 +30,7 @@ export function Footer() {
       {/* Main footer */}
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          {/* Brand */}
+          {/* Brand + Newsletter */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <div className="h-8 w-8 rounded-lg bg-blue-900 flex items-center justify-center text-white font-bold text-sm">
@@ -41,6 +42,9 @@ export function Footer() {
               Hotel linen buying guides and sourcing service based in Dieshiqiao, Nantong —
               the world&apos;s largest textile market. Free procurement resources + factory-direct sourcing.
             </p>
+            <div className="mt-5">
+              <NewsletterForm />
+            </div>
           </div>
 
           {/* Products */}

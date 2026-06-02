@@ -1,4 +1,8 @@
+"use client";
+
+import { useState, useMemo } from "react";
 import Link from "next/link";
+import BlogSearch from "./BlogSearch";
 
 interface BlogListPageProps {
   posts: any[];
@@ -6,6 +10,9 @@ interface BlogListPageProps {
   activeCategory: string | null;
   heroTitle: string;
   heroDescription: string;
+  currentPage: number;
+  totalPages: number;
+  basePath: string;
 }
 
 const HUB_TABS = [
@@ -16,20 +23,58 @@ const HUB_TABS = [
   { label: "Market Reports", slug: "market-reports", href: "/blog/market-reports" },
 ];
 
+const POSTS_PER_PAGE = 9;
+
 export default function BlogListPage({
   posts,
   categories,
   activeCategory,
   heroTitle,
   heroDescription,
+  currentPage,
+  totalPages,
+  basePath,
 }: BlogListPageProps) {
-  // Build tab list: predefined tabs that have matching categories in Sanity
+  const [searchQuery, setSearchQuery] = useState("");
+
   const availableSlugs = new Set(
     (categories as any[]).map((c: any) => c.slug.current)
   );
   const tabs = HUB_TABS.filter(
     (t) => t.slug === null || availableSlugs.has(t.slug)
   );
+
+  // Filter posts by search query
+  const filteredPosts = useMemo(() => {
+    if (!searchQuery.trim()) return posts;
+    const q = searchQuery.toLowerCase();
+    return posts.filter(
+      (post: any) =>
+        post.title?.toLowerCase().includes(q) ||
+        post.excerpt?.toLowerCase().includes(q) ||
+        (post.categories || []).some((c: any) =>
+          c.title?.toLowerCase().includes(q)
+        )
+    );
+  }, [posts, searchQuery]);
+
+  // Paginate filtered results
+  const paginatedPosts = useMemo(() => {
+    const start = (currentPage - 1) * POSTS_PER_PAGE;
+    return filteredPosts.slice(start, start + POSTS_PER_PAGE);
+  }, [filteredPosts, currentPage]);
+
+  const filteredTotalPages = Math.max(
+    1,
+    Math.ceil(filteredPosts.length / POSTS_PER_PAGE)
+  );
+
+  // Build pagination URL helper
+  const pageUrl = (p: number) => {
+    const suffix = p > 1 ? `?page=${p}` : "";
+    const searchSuffix = searchQuery ? `${p > 1 ? "&" : "?"}q=${encodeURIComponent(searchQuery)}` : "";
+    return `${basePath}${suffix}${searchSuffix}`;
+  };
 
   return (
     <>
@@ -44,7 +89,7 @@ export default function BlogListPage({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Category Filter Tabs */}
           {tabs.length > 1 && (
-            <div className="mb-10 flex flex-wrap gap-2 border-b border-gray-200 pb-4">
+            <div className="mb-6 flex flex-wrap gap-2 border-b border-gray-200 pb-4">
               {tabs.map((tab) => {
                 const isActive = tab.slug === activeCategory;
                 return (
@@ -64,10 +109,20 @@ export default function BlogListPage({
             </div>
           )}
 
-          {posts && posts.length > 0 ? (
+          {/* Search */}
+          <div className="mb-8 max-w-md">
+            <BlogSearch onSearch={setSearchQuery} />
+            {searchQuery && (
+              <p className="mt-2 text-sm text-gray-500">
+                {filteredPosts.length} result{filteredPosts.length !== 1 ? "s" : ""} for &quot;{searchQuery}&quot;
+              </p>
+            )}
+          </div>
+
+          {filteredPosts.length > 0 ? (
             <>
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {posts.map((post: any) => (
+                {paginatedPosts.map((post: any) => (
                   <Link
                     key={post._id}
                     href={`/blog/${post.slug.current}`}
@@ -148,18 +203,49 @@ export default function BlogListPage({
                 ))}
               </div>
 
-              {/* Empty state for filtered results */}
-              {posts.length === 0 && activeCategory && (
-                <div className="text-center py-16">
+              {/* Pagination */}
+              {filteredTotalPages > 1 && (
+                <div className="mt-12 flex items-center justify-center gap-2">
+                  {currentPage > 1 && (
+                    <Link
+                      href={pageUrl(currentPage - 1)}
+                      className="rounded-full border border-gray-200 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors"
+                    >
+                      &larr; Previous
+                    </Link>
+                  )}
+                  {Array.from({ length: filteredTotalPages }, (_, i) => i + 1).map(
+                    (p) => (
+                      <Link
+                        key={p}
+                        href={pageUrl(p)}
+                        className={`rounded-full w-10 h-10 flex items-center justify-center text-sm font-medium transition-colors ${
+                          p === currentPage
+                            ? "bg-blue-800 text-white"
+                            : "border border-gray-200 text-gray-600 hover:bg-gray-50"
+                        }`}
+                      >
+                        {p}
+                      </Link>
+                    )
+                  )}
+                  {currentPage < filteredTotalPages && (
+                    <Link
+                      href={pageUrl(currentPage + 1)}
+                      className="rounded-full border border-gray-200 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors"
+                    >
+                      Next &rarr;
+                    </Link>
+                  )}
+                </div>
+              )}
+
+              {/* Empty search results */}
+              {searchQuery && paginatedPosts.length === 0 && (
+                <div className="text-center py-12">
                   <p className="text-gray-500">
-                    No articles in this category yet. Check back soon.
+                    No results for &quot;{searchQuery}&quot;. Try a different keyword.
                   </p>
-                  <Link
-                    href="/blog"
-                    className="mt-4 inline-flex text-sm font-medium text-blue-800 hover:text-blue-600"
-                  >
-                    &larr; View all guides
-                  </Link>
                 </div>
               )}
             </>

@@ -12,13 +12,23 @@ export const metadata: Metadata = {
 
 export const revalidate = 60;
 
+const POSTS_PER_PAGE = 9;
 const CATEGORIES_QUERY = `*[_type == "category"]{ title, slug }`;
 
-export default async function MarketReportsPage() {
+export default async function MarketReportsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const params = await searchParams;
+  const currentPage = Math.max(1, parseInt(params.page || "1", 10) || 1);
+
   const [posts, categories] = await Promise.all([
     client.fetch(POSTS_BY_CATEGORY_QUERY, { category: "market-reports" }),
     client.fetch(CATEGORIES_QUERY),
   ]);
+
+  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
 
   return (
     <BlogListPage
@@ -27,6 +37,9 @@ export default async function MarketReportsPage() {
       activeCategory="market-reports"
       heroTitle="Market Reports & Pricing Trends"
       heroDescription="Stay ahead with monthly data on cotton prices, factory capacity, and shipping rates — all focused on hotel linen procurement from China."
+      currentPage={currentPage}
+      totalPages={totalPages}
+      basePath="/blog/market-reports"
     />
   );
 }
