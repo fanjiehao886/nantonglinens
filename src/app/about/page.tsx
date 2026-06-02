@@ -89,17 +89,17 @@ export default function AboutPage() {
       <section className="bg-gray-50 border-b border-gray-100 py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-sm font-medium text-blue-800 uppercase tracking-wider">
-            Who We Are
+            Who We Are — 15+ Years in Dieshiqiao
           </span>
           <h1 className="mt-3 text-3xl font-bold text-gray-900">
             We Know Hotel Linens Because We Live It Every Day
           </h1>
           <p className="mt-3 max-w-2xl text-gray-500">
-            We are based inside Dieshiqiao, Nantong — the world&apos;s largest home textile market.
-            Every day, we walk factory floors, compare fabric samples, and negotiate with mill
-            owners. The guides, specs, and procurement resources on this site come from that
-            first-hand experience. And when you need someone on the ground to source, QC, and
-            ship — we do that too.
+            Since 2010, we have been based inside Dieshiqiao, Nantong — the world&apos;s
+            largest home textile market. Every day, we walk factory floors, compare fabric
+            samples, and negotiate with mill owners. The guides, specs, and procurement
+            resources on this site come from 15+ years of first-hand experience. And when
+            you need someone on the ground to source, QC, and ship — we do that too.
           </p>
         </div>
       </section>
@@ -140,9 +140,10 @@ export default function AboutPage() {
 
             {/* Key facts panel */}
             <div className="rounded-2xl bg-blue-950 p-8 text-white">
-              <h3 className="text-lg font-semibold mb-6">The Dieshiqiao Advantage</h3>
+              <h3 className="text-lg font-semibold mb-6">Our Sourcing Stats</h3>
               <div className="space-y-4">
                 {[
+                  { label: "Experience", value: "15+ years in Dieshiqiao" },
                   { label: "Market scale", value: "6,000+ factories within 10 km" },
                   { label: "Product range", value: "Every hotel linen category, all specs" },
                   { label: "Our role", value: "Independent agent — we work for you" },

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProductCardProps {
   product: {
@@ -14,7 +15,6 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  // images could be an array or a single projected object from GROQ
   const imageUrl = Array.isArray(product.images)
     ? product.images[0]?.asset?.url
     : (product.images as any)?.asset?.url;
@@ -25,11 +25,12 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* Image */}
         <div className="relative aspect-[4/3] bg-gray-50">
           {imageUrl ? (
-            <img
+            <Image
               src={imageUrl}
               alt={product.name}
-              className="h-full w-full object-cover transition-transform group-hover:scale-105"
-              loading="lazy"
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover transition-transform group-hover:scale-105"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center text-gray-300">
@@ -43,7 +44,7 @@ export function ProductCard({ product }: ProductCardProps) {
             </div>
           )}
           {/* Category badge */}
-          <span className="absolute left-3 top-3 rounded-full bg-blue-900/90 px-3 py-1 text-xs font-medium text-white">
+          <span className="absolute left-3 top-3 rounded-full bg-blue-900/90 px-3 py-1 text-xs font-medium text-white z-10">
             {product.category}
           </span>
         </div>

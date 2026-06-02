@@ -30,7 +30,7 @@ export default function ContactPage() {
                 {
                   icon: "\u2709\ufe0f",
                   title: "Email",
-                  lines: ["fanjieboy@gmail.com"],
+                  lines: ["info@nantonglinens.com"],
                   desc: "Best for detailed inquiries",
                 },
                 {

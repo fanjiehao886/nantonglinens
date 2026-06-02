@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { ProductCard } from "@/components/ProductCard";
+import { TrustBar } from "@/components/TrustBar";
+import { TestimonialSection } from "@/components/TestimonialSection";
 import { client } from "@/lib/sanity";
 import { FEATURED_PRODUCTS_QUERY } from "@/lib/queries";
 
@@ -222,6 +224,9 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ========== TRUST BAR ========== */}
+      <TrustBar />
+
       {/* ========== DIESHIQIAO ADVANTAGE BANNER ========== */}
       <section className="bg-blue-900 text-white py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -414,6 +419,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ========== TESTIMONIALS / SOCIAL PROOF ========== */}
+      <TestimonialSection />
 
       {/* ========== CTA BANNER ========== */}
       <section className="bg-blue-950 py-16">

@@ -41,7 +41,7 @@ export default function ContactForm() {
       setError(
         err.message === "Too many submissions. Please try again later."
           ? "You've submitted too many messages. Please wait 15 minutes and try again."
-          : "Something went wrong. Please email us directly at fanjieboy@gmail.com."
+          : "Something went wrong. Please email us directly at info@nantonglinens.com."
       );
     } finally {
       setSending(false);

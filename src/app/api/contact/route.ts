@@ -6,7 +6,7 @@
  *
  * Env vars required:
  *   RESEND_API_KEY  — your Resend API key
- *   CONTACT_TO_EMALL — recipient email (e.g. fanjieboy@gmail.com)
+ *   CONTACT_TO_EMALL — recipient email (e.g. info@nantonglinens.com)
  *
  * Rate limiting: 5 submissions per IP per 15 minutes.
  * Honeypot: rejects submissions where the hidden "website" field is filled.
@@ -16,7 +16,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMALL || "fanjieboy@gmail.com";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMALL || "info@nantonglinens.com";
 
 // In-memory rate limiter (resets on cold start, fine for serverless)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();

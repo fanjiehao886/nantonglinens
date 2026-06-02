@@ -113,8 +113,8 @@ export default function PrivacyPolicy() {
           </ul>
           <p className="mt-3">
             To exercise any of these rights, contact us at{" "}
-            <a href="mailto:fanjieboy@gmail.com" className="text-blue-800 hover:underline">
-              fanjieboy@gmail.com
+            <a href="mailto:info@nantonglinens.com" className="text-blue-800 hover:underline">
+              info@nantonglinens.com
             </a>.
             We will respond within 30 days.
           </p>
@@ -164,7 +164,7 @@ export default function PrivacyPolicy() {
             If you have any questions about this privacy policy, please contact us:
           </p>
           <ul className="mt-2 list-none space-y-1">
-            <li><strong>Email:</strong> <a href="mailto:fanjieboy@gmail.com" className="text-blue-800 hover:underline">fanjieboy@gmail.com</a></li>
+            <li><strong>Email:</strong> <a href="mailto:info@nantonglinens.com" className="text-blue-800 hover:underline">info@nantonglinens.com</a></li>
             <li><strong>WhatsApp:</strong> +86 15151361119</li>
             <li><strong>Address:</strong> Dieshiqiao Home Textile Market, Haimen District, Nantong, Jiangsu, China 226100</li>
           </ul>

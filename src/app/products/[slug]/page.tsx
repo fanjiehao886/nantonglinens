@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { client } from "@/lib/sanity";
 import { PRODUCT_BY_SLUG_QUERY, PRODUCTS_QUERY } from "@/lib/queries";
@@ -71,12 +72,15 @@ export default async function ProductDetailPage({ params }: PageProps) {
             {/* Image gallery */}
             <div>
               {/* Main image */}
-              <div className="aspect-[4/3] overflow-hidden rounded-xl bg-gray-50">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-50">
                 {product.images?.[0]?.asset?.url ? (
-                  <img
-                    src={product.images?.[0]?.asset?.url}
-                    alt={product.images?.[0]?.alt || product.name}
-                    className="h-full w-full object-cover"
+                  <Image
+                    src={product.images[0].asset.url}
+                    alt={product.images[0].alt || product.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    priority
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center text-gray-300">
@@ -93,13 +97,15 @@ export default async function ProductDetailPage({ params }: PageProps) {
                   {product.images.map((img: any, i: number) => (
                     <div
                       key={i}
-                      className="h-20 w-20 overflow-hidden rounded-lg bg-gray-50 border border-gray-100"
+                      className="relative h-20 w-20 overflow-hidden rounded-lg bg-gray-50 border border-gray-100"
                     >
                       {img.asset?.url ? (
-                        <img
+                        <Image
                           src={img.asset.url}
                           alt={img.alt || `${product.name} ${i + 1}`}
-                          className="h-full w-full object-cover"
+                          fill
+                          sizes="80px"
+                          className="object-cover"
                         />
                       ) : null}
                     </div>

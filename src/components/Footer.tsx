@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NewsletterForm from "./NewsletterForm";
+import { TrustBadges } from "./TrustBadges";
 
 const footerLinks = {
   products: [
@@ -130,12 +131,17 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-8 border-t border-gray-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-400">
-            &copy; {new Date().getFullYear() > 2026 ? new Date().getFullYear() : 2024} Nantong Linens. All rights reserved.
-          </p>
-          <div className="flex gap-4 text-xs text-gray-400">
-            <Link href="/privacy" className="hover:text-blue-800 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-blue-800 transition-colors">Terms of Service</Link>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <TrustBadges />
+          </div>
+          <div className="flex flex-col items-center sm:items-end gap-2">
+            <p className="text-xs text-gray-400">
+              &copy; {new Date().getFullYear()} Nantong Linens. All rights reserved.
+            </p>
+            <div className="flex gap-4 text-xs text-gray-400">
+              <Link href="/privacy" className="hover:text-blue-800 transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-blue-800 transition-colors">Terms of Service</Link>
+            </div>
           </div>
         </div>
       </div>

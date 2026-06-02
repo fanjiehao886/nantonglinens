@@ -37,6 +37,12 @@ export const metadata: Metadata = {
   authors: [{ name: "Nantong Linens" }],
   creator: "Nantong Linens",
   metadataBase: new URL("https://www.nantonglinens.com"),
+  alternates: {
+    canonical: "https://www.nantonglinens.com",
+    languages: {
+      en: "https://www.nantonglinens.com",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -99,7 +105,7 @@ export default function RootLayout({
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "sales",
-                email: "fanjieboy@gmail.com",
+                email: "info@nantonglinens.com",
                 availableLanguage: ["English", "Chinese"],
               },
             }),

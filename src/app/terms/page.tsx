@@ -158,7 +158,7 @@ export default function TermsOfService() {
           <h2 className="text-xl font-semibold text-gray-900">14. Contact</h2>
           <p className="mt-3">For questions about these Terms of Service:</p>
           <ul className="mt-2 list-none space-y-1">
-            <li><strong>Email:</strong> <a href="mailto:fanjieboy@gmail.com" className="text-blue-800 hover:underline">fanjieboy@gmail.com</a></li>
+            <li><strong>Email:</strong> <a href="mailto:info@nantonglinens.com" className="text-blue-800 hover:underline">info@nantonglinens.com</a></li>
             <li><strong>WhatsApp:</strong> +86 15151361119</li>
             <li><strong>Address:</strong> Dieshiqiao Home Textile Market, Haimen District, Nantong, Jiangsu, China 226100</li>
           </ul>

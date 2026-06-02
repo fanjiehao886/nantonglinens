@@ -98,7 +98,7 @@ export default function RFQPage() {
       if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
     } catch {
-      setSubmitError("Something went wrong. Please email us directly at fanjieboy@gmail.com.");
+      setSubmitError("Something went wrong. Please email us directly at info@nantonglinens.com.");
     } finally {
       setSubmitting(false);
     }
