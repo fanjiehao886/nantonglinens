@@ -452,7 +452,7 @@ export default function RFQPage() {
             at no cost for serious buyers.
           </p>
           <a
-            href="#"
+            href="/contact"
             className="mt-6 inline-flex items-center gap-2 rounded-full border border-blue-900 bg-white px-7 py-3 text-sm font-medium text-blue-900 hover:bg-blue-50 transition-colors"
           >
             Request Free Swatches

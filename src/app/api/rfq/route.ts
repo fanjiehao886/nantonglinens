@@ -76,6 +76,7 @@ export async function POST(request: NextRequest) {
     `;
 
     if (RESEND_API_KEY) {
+      // 1. Notification to us
       const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
@@ -95,6 +96,47 @@ export async function POST(request: NextRequest) {
         const err = await res.json().catch(() => ({}));
         console.error("Resend RFQ error:", err);
       }
+
+      // 2. Confirmation email to the buyer
+      const confirmHtml = `
+        <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;">
+          <h2 style="color:#1e3a5f;">Thank you for your inquiry, ${name}!</h2>
+          <p>We have received your RFQ for <strong>${productCategory}</strong> and will review it immediately.</p>
+          <p><strong>What happens next:</strong></p>
+          <ol>
+            <li>We review your specifications and match them with suitable factories in Dieshiqiao.</li>
+            <li>We prepare a detailed quote with pricing, MOQ, lead time, and shipping options.</li>
+            <li>You typically receive our response within <strong>24 hours</strong> (often sooner).</li>
+          </ol>
+          <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;" />
+          <p style="font-size:14px;color:#666;">While you wait, explore our free procurement guides:</p>
+          <ul style="font-size:14px;">
+            <li><a href="https://www.nantonglinens.com/blog?category=buying-guide" style="color:#1e3a5f;">Buying Guide — How to Source Hotel Linens from China</a></li>
+            <li><a href="https://www.nantonglinens.com/blog?category=fabric-encyclopedia" style="color:#1e3a5f;">Fabric Encyclopedia — GSM, Thread Count & Weave Types</a></li>
+            <li><a href="https://www.nantonglinens.com/blog?category=qc-checklist" style="color:#1e3a5f;">QC Checklist — Pre-Shipment Inspection Guide</a></li>
+            <li><a href="https://www.nantonglinens.com/blog?category=market-reports" style="color:#1e3a5f;">Market Report — Pricing Trends & Cotton Outlook</a></li>
+          </ul>
+          <p style="font-size:14px;color:#666;">Questions? Reply to this email or message us on <a href="https://wa.me/8615151361119" style="color:#1e3a5f;">WhatsApp</a>.</p>
+          <p style="font-size:12px;color:#999;margin-top:24px;">
+            Nantong Linens — Dieshiqiao, Nantong, China<br/>
+            <a href="https://www.nantonglinens.com" style="color:#999;">www.nantonglinens.com</a>
+          </p>
+        </div>
+      `;
+
+      await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "Nantong Linens <info@nantonglinens.com>",
+          to: [email],
+          subject: `We received your RFQ — ${productCategory} inquiry`,
+          html: confirmHtml,
+        }),
+      });
     } else {
       console.log("[RFQ]", body);
     }

@@ -129,10 +129,23 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   if (!post) notFound();
 
-  /* Fetch related posts (same category, excluding current) */
+  /* Fetch related posts: match by same categories, excluding current */
   const allPosts = await client.fetch(POSTS_QUERY).catch(() => []);
+  const currentCatSlugs = new Set(
+    (post.categories || []).map((c: any) => c.slug?.current).filter(Boolean)
+  );
   const related = (allPosts || [])
     .filter((p: any) => p.slug?.current !== slug)
+    .sort((a: any, b: any) => {
+      // Score: number of matching categories (higher = more relevant)
+      const aMatches = (a.categories || []).filter((c: any) =>
+        currentCatSlugs.has(c.slug?.current)
+      ).length;
+      const bMatches = (b.categories || []).filter((c: any) =>
+        currentCatSlugs.has(c.slug?.current)
+      ).length;
+      return bMatches - aMatches;
+    })
     .slice(0, 3);
 
   return (
@@ -199,12 +212,13 @@ export default async function BlogPostPage({ params }: PageProps) {
           {(post.categories || []).length > 0 && (
             <div className="flex flex-wrap gap-2 mb-4">
               {post.categories.map((cat: any) => (
-                <span
-                  key={cat.slug}
-                  className="text-xs font-medium text-blue-800 bg-blue-50 px-2 py-0.5 rounded"
+                <Link
+                  key={cat.slug?.current || cat.title}
+                  href={`/blog?category=${cat.slug?.current}`}
+                  className="text-xs font-medium text-blue-800 bg-blue-50 px-2 py-0.5 rounded hover:bg-blue-100 transition-colors"
                 >
                   {cat.title}
-                </span>
+                </Link>
               ))}
             </div>
           )}

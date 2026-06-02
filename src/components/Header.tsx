@@ -1,19 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+
+const knowledgeHubLinks = [
+  { name: "All Guides", href: "/blog" },
+  { name: "Buying Guide", href: "/blog?category=buying-guide" },
+  { name: "Fabric Encyclopedia", href: "/blog?category=fabric-encyclopedia" },
+  { name: "QC Checklist", href: "/blog?category=qc-checklist" },
+  { name: "Market Reports", href: "/blog?category=market-reports" },
+];
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Products", href: "/products" },
-  { name: "Guides", href: "/blog" },
-  { name: "Custom / RFQ", href: "/rfq" },
-  { name: "About & Services", href: "/about" },
-  { name: "Contact", href: "/contact" },
 ];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
@@ -39,6 +56,57 @@ export function Header() {
               {item.name}
             </Link>
           ))}
+
+          {/* Knowledge Hub dropdown */}
+          <div ref={dropdownRef} className="relative">
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
+            >
+              Knowledge Hub
+              <svg
+                className={`h-4 w-4 transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {dropdownOpen && (
+              <div className="absolute left-0 mt-2 w-56 rounded-xl border border-gray-100 bg-white shadow-lg py-2 z-50">
+                {knowledgeHubLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setDropdownOpen(false)}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-800 transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <Link
+            href="/rfq"
+            className="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
+          >
+            Custom / RFQ
+          </Link>
+          <Link
+            href="/about"
+            className="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
+          >
+            About &amp; Services
+          </Link>
+          <Link
+            href="/contact"
+            className="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
+          >
+            Contact
+          </Link>
           <Link
             href="/rfq"
             className="rounded-full bg-blue-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 transition-colors"
@@ -76,6 +144,43 @@ export function Header() {
               {item.name}
             </Link>
           ))}
+          {/* Knowledge Hub section in mobile */}
+          <div className="py-2 border-t border-gray-50 mt-1">
+            <span className="block py-2 text-xs font-semibold uppercase text-gray-400 tracking-wider">
+              Knowledge Hub
+            </span>
+            {knowledgeHubLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-2 pl-3 text-sm font-medium text-gray-700 hover:text-blue-800"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+          <Link
+            href="/rfq"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-800"
+          >
+            Custom / RFQ
+          </Link>
+          <Link
+            href="/about"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-800"
+          >
+            About &amp; Services
+          </Link>
+          <Link
+            href="/contact"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-800"
+          >
+            Contact
+          </Link>
           <Link
             href="/rfq"
             onClick={() => setMobileOpen(false)}
