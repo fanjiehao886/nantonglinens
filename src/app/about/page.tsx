@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us - Hotel Linen Sourcing Agent | Dieshiqiao, Nantong",
+  title: "About Us — Why We Know Hotel Linens | Based in Dieshiqiao",
   description:
-    "Based in Dieshiqiao — the world's largest home textile market — we help hotel buyers source premium linens from vetted Nantong factories with full QC and export service.",
+    "We live and work inside Dieshiqiao, the world's largest textile market. Our procurement guides, fabric knowledge, and sourcing service come from daily boots-on-the-ground experience — not a desk on another continent.",
   alternates: { canonical: "/about" },
 };
 
@@ -92,13 +92,14 @@ export default function AboutPage() {
             Who We Are
           </span>
           <h1 className="mt-3 text-3xl font-bold text-gray-900">
-            Your Sourcing Partner in Dieshiqiao
+            We Know Hotel Linens Because We Live It Every Day
           </h1>
           <p className="mt-3 max-w-2xl text-gray-500">
-            We are an independent hotel linen sourcing agent based in Dieshiqiao, Nantong —
-            the world&apos;s largest home textile market. We help hospitality buyers across
-            North America, Europe, the Middle East, and Southeast Asia source the right
-            products at the right price, with strict QC and full export service from day one.
+            We are based inside Dieshiqiao, Nantong — the world&apos;s largest home textile market.
+            Every day, we walk factory floors, compare fabric samples, and negotiate with mill
+            owners. The guides, specs, and procurement resources on this site come from that
+            first-hand experience. And when you need someone on the ground to source, QC, and
+            ship — we do that too.
           </p>
         </div>
       </section>
@@ -109,10 +110,10 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-2 items-start">
             <div>
               <span className="text-sm font-medium text-blue-800 uppercase tracking-wider">
-                Our Position
+                Our Advantage
               </span>
               <h2 className="mt-3 text-2xl font-bold text-gray-900">
-                Right in the Middle of the World&apos;s Largest Textile Market
+                Inside the World&apos;s Largest Textile Market
               </h2>
               <div className="mt-6 space-y-4 text-sm leading-relaxed text-gray-600">
                 <p>
@@ -125,8 +126,8 @@ export default function AboutPage() {
                 <p>
                   We are physically embedded in this ecosystem. Every working day, we are on
                   the market floor — comparing materials, checking production runs, building
-                  relationships with mill owners. That proximity is our advantage, and we make
-                  it yours.
+                  relationships with mill owners. That proximity fuels the content on this site:
+                  real guides written from real experience, not desk research.
                 </p>
                 <p>
                   As a sourcing agent, our role is clear: we work for you, not for the factory.

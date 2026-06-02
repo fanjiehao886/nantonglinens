@@ -47,7 +47,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: "daily",
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/privacy`,
@@ -69,7 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const products = await client.fetch(PRODUCTS_QUERY);
     productPages = (products || []).map((p: any) => ({
       url: `${baseUrl}/products/${p.slug?.current}`,
-      lastModified: p._createdAt ? new Date(p._createdAt) : new Date(),
+      lastModified: p._updatedAt ? new Date(p._updatedAt) : new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.7,
     }));

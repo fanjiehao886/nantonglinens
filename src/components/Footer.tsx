@@ -12,7 +12,7 @@ const footerLinks = {
     { name: "About Us", href: "/about" },
     { name: "Our Sourcing Process", href: "/about#process" },
     { name: "Quality Standards", href: "/about#certifications" },
-    { name: "Blog & Guides", href: "/blog" },
+    { name: "Free Guides", href: "/blog" },
   ],
   support: [
     { name: "Request a Quote", href: "/rfq" },
@@ -37,8 +37,8 @@ export function Footer() {
               <span className="text-lg font-semibold text-gray-900">Nantong Linens</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-gray-500">
-              Hotel linen sourcing agent based in Dieshiqiao, Nantong — China&apos;s largest
-              home textile market. We source, QC, and export for hospitality buyers worldwide.
+              Hotel linen buying guides and sourcing service based in Dieshiqiao, Nantong —
+              the world&apos;s largest textile market. Free procurement resources + factory-direct sourcing.
             </p>
           </div>
 
@@ -94,9 +94,9 @@ export function Footer() {
         {/* Contact bar */}
         <div className="mt-10 flex flex-col gap-4 rounded-xl bg-blue-900 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="font-medium text-white">Have a sourcing requirement?</p>
+            <p className="font-medium text-white">Ready to source? Browse our free guides first</p>
             <p className="mt-1 text-sm text-blue-200">
-              Free samples available. We respond within 24 hours.
+              Learn the specs, then tell us what you need. Free samples available.
             </p>
           </div>
           <div className="flex gap-3">

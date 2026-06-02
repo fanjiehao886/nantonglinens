@@ -11,25 +11,28 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   title: {
-    default: "Nantong Linens - Hotel Linen Sourcing Agent | Dieshiqiao, China",
+    default:
+      "Nantong Linens — Hotel Linen Buying Guide, Specs & Sourcing from China",
     template: "%s | Nantong Linens",
   },
   description:
-    "Hotel linen sourcing agent based in Dieshiqiao, Nantong — China's #1 home textile market. We source, QC, and export bed sheets, towels, bathrobes, and table linens for hotels worldwide.",
+    "Everything you need to know about buying hotel linens from China. Free guides on GSM, thread count, weave types, procurement checklists, and pricing — built from daily experience in Dieshiqiao, the world's largest textile market. Sourcing service available.",
   keywords: [
+    "hotel linen buying guide",
+    "hotel towel GSM guide",
+    "hotel bedding thread count",
+    "hotel linen procurement China",
     "hotel linen sourcing agent",
-    "hotel linen supplier China",
     "Dieshiqiao textile market",
     "Nantong hotel linens",
     "hotel bedding wholesale China",
     "custom hotel towels sourcing",
-    "hospitality textile procurement",
-    "China sourcing agent hotel",
+    "hotel linen quality checklist",
+    "China textile factory sourcing",
     "hotel linen export China",
     "bulk hotel linens Nantong",
-    "hotel linen Middle East",
-    "hotel textile Vietnam",
-    "hotel linen Dubai Saudi",
+    "hotel linen price guide",
+    "hospitality textile procurement",
   ],
   authors: [{ name: "Nantong Linens" }],
   creator: "Nantong Linens",
@@ -39,18 +42,19 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.nantonglinens.com",
     siteName: "Nantong Linens",
-    title: "Nantong Linens - Hotel Linen Sourcing Agent | Dieshiqiao, China",
+    title:
+      "Nantong Linens — Hotel Linen Buying Guide, Specs & Sourcing from China",
     description:
-      "Hotel linen sourcing agent based in Dieshiqiao, China's #1 home textile market. We source, QC, and ship bed sheets, towels, bathrobes, and table linens for hotels worldwide.",
+      "Free guides on hotel linen GSM, thread count, procurement checklists, and factory-direct sourcing from Dieshiqiao — the world's largest textile market.",
     images: [
-      { url: "/og-image.jpg", width: 1200, height: 630, alt: "Nantong Linens" },
+      { url: "/og-image.jpg", width: 1200, height: 630, alt: "Nantong Linens — Hotel Linen Buying Guide & Sourcing from China" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nantong Linens - Hotel Linen Sourcing Agent",
+    title: "Nantong Linens — Hotel Linen Buying Guide & Sourcing",
     description:
-      "Sourcing agent in Dieshiqiao, China's largest home textile market. We find, inspect, and export hotel linens worldwide.",
+      "Free hotel linen procurement guides: GSM, thread count, QC checklists, and factory-direct sourcing from China's largest textile hub.",
   },
   robots: {
     index: true,
@@ -85,7 +89,7 @@ export default function RootLayout({
               url: "https://www.nantonglinens.com",
               logo: "https://www.nantonglinens.com/logo.png",
               description:
-                "Hotel linen sourcing agent based in Dieshiqiao, Nantong — China's #1 home textile market. We source, QC, and export quality hotel linens worldwide.",
+                "Hotel linen buying guide and sourcing service based in Dieshiqiao, Nantong — China's #1 home textile market. Free procurement guides, fabric specs, and factory-direct sourcing for hotels worldwide.",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Dieshiqiao, Haimen",

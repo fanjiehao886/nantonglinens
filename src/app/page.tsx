@@ -13,60 +13,57 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* ========== HERO SECTION ========== */}
+      {/* ========== HERO — Knowledge Hub Positioning ========== */}
       <section className="relative overflow-hidden text-white">
-        {/* Background image — focus higher on mobile so the building sign is visible */}
         <div
           className="absolute inset-0 bg-cover bg-no-repeat bg-[center_30%] sm:bg-center"
           style={{ backgroundImage: "url('/hero-dieshiqiao.jpg')" }}
         />
-        {/* Dark overlay — vertical on mobile, horizontal on desktop */}
         <div className="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-blue-950/80 to-blue-950/70 sm:bg-gradient-to-r sm:from-blue-950/85 sm:via-blue-900/75 sm:to-blue-950/60" />
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              {/* Mobile: short label / Desktop: full label */}
               <span className="inline-block rounded-full border border-blue-400/30 px-4 py-1.5 text-xs font-medium text-blue-200 sm:text-sm">
-                <span className="sm:hidden">Sourcing Agent in Dieshiqiao</span>
-                <span className="hidden sm:inline">Your Sourcing Agent in Dieshiqiao — China&apos;s #1 Home Textile Hub</span>
+                <span className="sm:hidden">Hotel Linen Knowledge Hub</span>
+                <span className="hidden sm:inline">Hotel Linen Knowledge Hub — Based in Dieshiqiao, China</span>
               </span>
               <h1 className="mt-6 text-3xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-                Hotel Linens Sourced
+                Everything About
                 <br />
-                <span className="text-blue-300">Right From the Source</span>
+                <span className="text-blue-300">Buying Hotel Linens from China</span>
               </h1>
               <p className="mt-6 max-w-lg text-base leading-relaxed text-blue-100/80 sm:text-lg">
-                Based in Dieshiqiao — the world&apos;s largest home textile trading hub —
-                we connect hotel buyers worldwide with vetted factories. From spec to
-                shipment, we handle sourcing, sampling, QC, and export on your behalf.
+                Free guides, fabric specs, procurement checklists, and pricing insights — built
+                from daily boots-on-the-ground experience inside Dieshiqiao, the world&apos;s
+                largest home textile market. When you&apos;re ready to buy, we source for you.
               </p>
               <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
                 <Link
-                  href="/rfq"
+                  href="/blog"
                   className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-900 hover:bg-gray-100 transition-colors shadow-lg sm:px-7 sm:py-3.5 sm:text-base"
                 >
-                  Request a Quote
+                  Browse Free Guides
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="sm:w-[18px] sm:h-[18px]">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </Link>
                 <Link
-                  href="/products"
+                  href="/rfq"
                   className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors sm:px-7 sm:py-3.5 sm:text-base"
                 >
-                  Browse Products
+                  Request a Quote
                 </Link>
               </div>
 
-              {/* Trust indicators — stacked on mobile, row on desktop */}
+              {/* Trust indicators */}
               <div className="mt-10 flex flex-col gap-3 text-sm text-blue-200/70 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
                 <div className="flex items-center gap-2">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M9 12l2 2 4-4" />
                     <circle cx="12" cy="12" r="10" />
                   </svg>
-                  OEKO-TEX &amp; ISO 9001 Factories
+                  Free Guides &amp; Resources
                 </div>
                 <div className="flex items-center gap-2">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -85,28 +82,28 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Hero visual — desktop card */}
+            {/* Desktop card — knowledge focus */}
             <div className="hidden lg:block">
               <div className="relative rounded-2xl bg-gradient-to-br from-blue-800/50 to-blue-950/50 p-8 backdrop-blur border border-white/10">
-                <p className="text-xs font-medium text-blue-300/70 uppercase tracking-widest mb-4">Why Source Through Us</p>
+                <p className="text-xs font-medium text-blue-300/70 uppercase tracking-widest mb-4">Free Resources</p>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { label: "Local Presence", value: "On-site", desc: "In Dieshiqiao market daily" },
-                    { label: "Response Time", value: "24 hr", desc: "Quote turnaround" },
-                    { label: "Factory Network", value: "50+", desc: "Vetted partner mills" },
-                    { label: "Export Experience", value: "FOB/DDP", desc: "Full logistics handled" },
+                    { label: "Fabric Guides", value: "GSM &amp; TC", desc: "Thread count, weave types" },
+                    { label: "QC Checklists", value: "Ready-to-Use", desc: "Pre-shipment inspection" },
+                    { label: "Pricing Data", value: "Real Market", desc: "Price bands by spec" },
+                    { label: "Market Reports", value: "Monthly", desc: "Trends &amp; analysis" },
                   ].map((stat) => (
                     <div key={stat.label} className="rounded-xl bg-white/5 p-5 border border-white/10">
-                      <p className="text-2xl font-bold text-white">{stat.value}</p>
+                      <p className="text-lg font-bold text-white">{stat.value}</p>
                       <p className="mt-1 text-sm font-medium text-blue-200">{stat.label}</p>
                       <p className="text-xs text-blue-300/60">{stat.desc}</p>
                     </div>
                   ))}
                 </div>
 
-                {/* Product preview cards */}
+                {/* Popular guide previews */}
                 <div className="mt-6 grid grid-cols-3 gap-3">
-                  {["Bed Sheets", "Towels", "Bathrobes"].map((item) => (
+                  {["GSM Guide", "Thread Count", "MOQ &amp; Shipping"].map((item) => (
                     <div key={item} className="rounded-lg bg-white/5 p-3 text-center border border-white/10">
                       <div className="mx-auto h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-2">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-200">
@@ -121,13 +118,13 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Mobile-only compact stats row — replaces hidden desktop card */}
+          {/* Mobile-only compact stats */}
           <div className="mt-10 grid grid-cols-4 gap-3 lg:hidden">
             {[
-              { label: "Local Presence", value: "On-site" },
-              { label: "Response Time", value: "24 hr" },
-              { label: "Factory Network", value: "50+" },
-              { label: "Export Exp.", value: "FOB/DDP" },
+              { label: "Fabric Guides", value: "GSM/TC" },
+              { label: "QC Lists", value: "Free" },
+              { label: "Pricing", value: "Real" },
+              { label: "Reports", value: "Monthly" },
             ].map((stat) => (
               <div key={stat.label} className="rounded-xl bg-white/10 backdrop-blur-sm p-3 text-center border border-white/10">
                 <p className="text-lg font-bold text-white">{stat.value}</p>
@@ -138,31 +135,117 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ========== KNOWLEDGE HUB — Main content entry points ========== */}
+      <section className="bg-white py-16 border-b border-gray-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-gray-900">Start Here — Free Hotel Linen Procurement Resources</h2>
+            <p className="mt-2 text-gray-500">
+              Everything you need to make informed buying decisions, built from real-world Dieshiqiao experience
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                title: "Buying Guide",
+                subtitle: "How to source hotel linens from China step by step",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-800">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                  </svg>
+                ),
+                href: "/blog",
+                highlight: "Most Popular",
+              },
+              {
+                title: "Fabric Encyclopedia",
+                subtitle: "GSM, thread count, weave types — explained for hotel buyers",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-800">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                  </svg>
+                ),
+                href: "/blog",
+              },
+              {
+                title: "QC Checklist",
+                subtitle: "Pre-shipment inspection: what to check before your order ships",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-800">
+                    <path d="M9 11l3 3L22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                ),
+                href: "/blog",
+              },
+              {
+                title: "Market Reports",
+                subtitle: "Pricing trends, tariff updates, and Dieshiqiao market insights",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-800">
+                    <line x1="18" y1="20" x2="18" y2="10" />
+                    <line x1="12" y1="20" x2="12" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="14" />
+                  </svg>
+                ),
+                href: "/blog",
+              },
+            ].map((card) => (
+              <Link
+                key={card.title}
+                href={card.href}
+                className="group relative rounded-xl border border-gray-100 bg-gray-50/50 p-6 hover:border-blue-200 hover:bg-blue-50/30 transition-all"
+              >
+                {card.highlight && (
+                  <span className="absolute -top-2.5 right-4 rounded-full bg-blue-900 px-3 py-0.5 text-[11px] font-medium text-white">
+                    {card.highlight}
+                  </span>
+                )}
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white group-hover:bg-blue-100 transition-colors">
+                  {card.icon}
+                </div>
+                <h3 className="font-semibold text-gray-900">{card.title}</h3>
+                <p className="mt-1.5 text-sm text-gray-500 leading-relaxed">{card.subtitle}</p>
+                <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-blue-800 group-hover:underline">
+                  Explore
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ========== DIESHIQIAO ADVANTAGE BANNER ========== */}
       <section className="bg-blue-900 text-white py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-6 text-center md:flex-row md:text-left md:justify-between">
             <div>
-              <h2 className="text-lg font-semibold">Why Dieshiqiao Matters</h2>
+              <h2 className="text-lg font-semibold">Based in Dieshiqiao — The World&apos;s Largest Textile Hub</h2>
               <p className="mt-1 text-sm text-blue-200/80 max-w-xl">
-                Dieshiqiao (叠石桥) in Nantong is the world&apos;s single largest home textile
-                wholesale market — over 6,000 factories and 10,000+ storefronts within a few square
-                kilometers. Being based here means real-time pricing, direct factory access, and no
-                information gap between you and the source.
+                Dieshiqiao (叠石桥) in Nantong is the global epicenter of home textile production — 6,000+
+                factories within a few square kilometers. Being here means we compare live prices, visit
+                production lines daily, and bring you factory-direct value without the information gap.
               </p>
             </div>
             <Link
               href="/about"
               className="shrink-0 inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors"
             >
-              Learn More
+              About Our Location
             </Link>
           </div>
         </div>
       </section>
 
       {/* ========== CATEGORY QUICK LINKS ========== */}
-      <section className="border-b border-gray-100 bg-white py-16">
+      <section className="bg-white py-16 border-b border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-gray-900">Hotel Linens by Category</h2>
@@ -224,7 +307,7 @@ export default async function HomePage() {
           <div className="flex items-end justify-between">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Featured Hotel Linens</h2>
-              <p className="mt-1 text-gray-500">Top products sourced from our partner factories</p>
+              <p className="mt-1 text-gray-500">Products sourced from our partner factories — reference only</p>
             </div>
             <Link
               href="/products"
@@ -258,13 +341,13 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ========== WHY CHOOSE US ========== */}
+      {/* ========== WHY A SOURCING AGENT ========== */}
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900">Why Work With a Dieshiqiao Sourcing Agent?</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Why Buyers Work With a Dieshiqiao-Based Sourcing Agent</h2>
             <p className="mt-2 text-gray-500">
-              Local expertise + transparent process = better results than sourcing blindly
+              When you&apos;re ready to place an order, here&apos;s what changes with local expertise on your side
             </p>
           </div>
 
@@ -335,25 +418,24 @@ export default async function HomePage() {
       {/* ========== CTA BANNER ========== */}
       <section className="bg-blue-950 py-16">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-          <h2 className="text-3xl font-bold text-white">Ready to Source Your Hotel Linens?</h2>
+          <h2 className="text-3xl font-bold text-white">Read the Guides, Then Let&apos;s Source Together</h2>
           <p className="mt-4 text-lg text-blue-200/80">
-            Send us your requirements — we reply with a sourcing plan within 24 hours.
+            Browse our free procurement resources first. When you&apos;re ready to place an order,
+            send us your requirements — we reply with a sourcing plan within 24 hours.
           </p>
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
+            >
+              Browse Free Guides
+            </Link>
             <Link
               href="/rfq"
               className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors"
             >
               Start Your RFQ
             </Link>
-            <a
-              href="https://wa.me/8615151361119"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
-            >
-              WhatsApp Us
-            </a>
           </div>
         </div>
       </section>

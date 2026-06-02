@@ -4,9 +4,9 @@ import { client } from "@/lib/sanity";
 import { POSTS_QUERY } from "@/lib/queries";
 
 export const metadata: Metadata = {
-  title: "Blog - Hotel Linen Buying Guides & Hospitality Textile Tips",
+  title: "Hotel Linen Buying Guides — GSM, Thread Count, Sourcing Tips",
   description:
-    "Expert guides on sourcing hotel linens, understanding GSM and thread count, choosing the right bedding for your hotel, and more. By Nantong Linens.",
+    "Free procurement guides for hotel buyers. Learn about GSM, thread count, fabric types, QC checklists, MOQ requirements, and how to source hotel linens from China. Based on real Dieshiqiao market experience.",
   alternates: { canonical: "/blog" },
 };
 
@@ -19,10 +19,10 @@ export default async function BlogPage() {
     <>
       <section className="bg-gray-50 border-b border-gray-100 py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-gray-900">Blog &amp; Buying Guides</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Free Hotel Linen Procurement Guides</h1>
           <p className="mt-2 text-gray-500 max-w-xl">
-            Expert insights for hotel procurement managers, interior designers,
-            and hospitality buyers. Learn how to source smart.
+            GSM explained, thread count comparisons, QC checklists, and sourcing strategies —
+            all from daily experience in Dieshiqiao, the world&apos;s largest textile hub.
           </p>
         </div>
       </section>
