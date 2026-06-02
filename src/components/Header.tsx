@@ -9,6 +9,8 @@ const knowledgeHubLinks = [
   { name: "Fabric Encyclopedia", href: "/blog?category=fabric-encyclopedia" },
   { name: "QC Checklist", href: "/blog?category=qc-checklist" },
   { name: "Market Reports", href: "/blog?category=market-reports" },
+  { name: "---", href: "#", divider: true },
+  { name: "Free PDF Guide", href: "/guides/download", highlight: true },
 ];
 
 const navigation = [
@@ -75,16 +77,32 @@ export function Header() {
             </button>
             {dropdownOpen && (
               <div className="absolute left-0 mt-2 w-56 rounded-xl border border-gray-100 bg-white shadow-lg py-2 z-50">
-                {knowledgeHubLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setDropdownOpen(false)}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-800 transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+                {knowledgeHubLinks.map((link) =>
+                  link.divider ? (
+                    <div key="divider" className="my-1 border-t border-gray-100" />
+                  ) : link.highlight ? (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setDropdownOpen(false)}
+                      className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 transition-colors"
+                    >
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                      </svg>
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setDropdownOpen(false)}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-800 transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )
+                )}
               </div>
             )}
           </div>
@@ -149,16 +167,32 @@ export function Header() {
             <span className="block py-2 text-xs font-semibold uppercase text-gray-400 tracking-wider">
               Knowledge Hub
             </span>
-            {knowledgeHubLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="block py-2 pl-3 text-sm font-medium text-gray-700 hover:text-blue-800"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {knowledgeHubLinks.map((link) =>
+              link.divider ? (
+                <div key="divider-m" className="my-1 border-t border-gray-100" />
+              ) : link.highlight ? (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 py-2.5 pl-3 text-sm font-semibold text-blue-700"
+                >
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                  </svg>
+                  {link.name}
+                </Link>
+              ) : (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block py-2 pl-3 text-sm font-medium text-gray-700 hover:text-blue-800"
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </div>
           <Link
             href="/rfq"

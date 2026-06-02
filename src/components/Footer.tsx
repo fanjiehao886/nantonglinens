@@ -13,6 +13,7 @@ const footerLinks = {
     { name: "Our Sourcing Process", href: "/about#process" },
     { name: "Quality Standards", href: "/about#certifications" },
     { name: "Free Guides", href: "/blog" },
+    { name: "Free PDF Guide", href: "/guides/download" },
   ],
   support: [
     { name: "Request a Quote", href: "/rfq" },
@@ -94,12 +95,18 @@ export function Footer() {
         {/* Contact bar */}
         <div className="mt-10 flex flex-col gap-4 rounded-xl bg-blue-900 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="font-medium text-white">Ready to source? Browse our free guides first</p>
+            <p className="font-medium text-white">Ready to source? Get the free buying guide first</p>
             <p className="mt-1 text-sm text-blue-200">
-              Learn the specs, then tell us what you need. Free samples available.
+              A step-by-step PDF covering specs, MOQ, QC, and shipping from China.
             </p>
           </div>
           <div className="flex gap-3">
+            <Link
+              href="/guides/download"
+              className="inline-flex items-center rounded-full bg-white px-5 py-2.5 text-sm font-medium text-blue-900 hover:bg-gray-100 transition-colors"
+            >
+              Free PDF Guide
+            </Link>
             <a
               href="https://wa.me/8615151361119"
               target="_blank"
@@ -110,7 +117,7 @@ export function Footer() {
             </a>
             <Link
               href="/rfq"
-              className="inline-flex items-center rounded-full bg-white px-5 py-2.5 text-sm font-medium text-blue-900 hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center rounded-full bg-white/10 px-5 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition-colors"
             >
               Request Quote
             </Link>
