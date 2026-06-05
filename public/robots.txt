@@ -16,6 +16,9 @@ Allow: /
 
 # Block bad bots
 User-agent: AhrefsBot
-# Block admin/studio pages from indexing
+Disallow: /
+
+# Block admin/studio pages from all crawlers
+User-agent: *
 Disallow: /studio
 Disallow: /api/

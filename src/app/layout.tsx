@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   },
   title: {
     default:
-      "Nantong Linens — Hotel Linen Buying Guide, Specs & Sourcing from China",
+      "Hotel Linen Buying Guide, GSM & Thread Count — Nantong Linens",
     template: "%s | Nantong Linens",
   },
   description:
-    "Everything you need to know about buying hotel linens from China. Free guides on GSM, thread count, weave types, procurement checklists, and pricing — built from daily experience in Dieshiqiao, the world's largest textile market. Sourcing service available.",
+    "Free hotel linen procurement guides: GSM, thread count, QC checklists, and sourcing tips from Dieshiqiao — the world's largest textile market. Real specs, real prices, no fluff.",
   keywords: [
     "hotel linen buying guide",
     "hotel towel GSM guide",
@@ -49,18 +49,18 @@ export const metadata: Metadata = {
     url: "https://www.nantonglinens.com",
     siteName: "Nantong Linens",
     title:
-      "Nantong Linens — Hotel Linen Buying Guide, Specs & Sourcing from China",
+      "Hotel Linen Buying Guide, GSM & Thread Count — Nantong Linens",
     description:
-      "Free guides on hotel linen GSM, thread count, procurement checklists, and factory-direct sourcing from Dieshiqiao — the world's largest textile market.",
+      "Free hotel linen procurement guides: GSM, thread count, QC checklists, and sourcing tips from Dieshiqiao. Real specs, real prices, no fluff.",
     images: [
       { url: "/og-image.jpg", width: 1200, height: 630, alt: "Nantong Linens — Hotel Linen Buying Guide & Sourcing from China" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nantong Linens — Hotel Linen Buying Guide & Sourcing",
+    title: "Hotel Linen Buying Guide & Sourcing — Nantong Linens",
     description:
-      "Free hotel linen procurement guides: GSM, thread count, QC checklists, and factory-direct sourcing from China's largest textile hub.",
+      "Free hotel linen procurement guides: GSM, thread count, QC checklists, and sourcing from China's largest textile hub.",
   },
   robots: {
     index: true,

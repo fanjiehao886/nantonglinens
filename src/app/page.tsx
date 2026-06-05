@@ -7,7 +7,16 @@ import { client } from "@/lib/sanity";
 import { FEATURED_PRODUCTS_QUERY } from "@/lib/queries";
 
 export const metadata: Metadata = {
+  title: "Hotel Linen Buying Guide, GSM & Thread Count — Nantong Linens",
+  description:
+    "Free hotel linen procurement guides: GSM explained, thread count comparisons, QC checklists, and sourcing tips from Dieshiqiao — the world's largest textile market. Real specs, real prices, no fluff.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Hotel Linen Buying Guide, GSM & Thread Count — Nantong Linens",
+    description:
+      "Free hotel linen procurement guides: GSM, thread count, QC checklists, and sourcing tips from Dieshiqiao. Real specs, real prices, no fluff.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Hotel Linen Buying Guide — Nantong Linens" }],
+  },
 };
 
 export default async function HomePage() {
@@ -105,15 +114,19 @@ export default async function HomePage() {
 
                 {/* Popular guide previews */}
                 <div className="mt-6 grid grid-cols-3 gap-3">
-                  {["GSM Guide", "Thread Count", "MOQ & Shipping"].map((item) => (
-                    <div key={item} className="rounded-lg bg-white/5 p-3 text-center border border-white/10">
+                  {[
+                    { label: "GSM Guide", href: "/guides/hotel-towel-gsm" },
+                    { label: "Thread Count", href: "/guides/hotel-bedding-thread-count" },
+                    { label: "MOQ & Shipping", href: "/blog/buying-guide" },
+                  ].map((item) => (
+                    <Link key={item.label} href={item.href} className="rounded-lg bg-white/5 p-3 text-center border border-white/10 hover:bg-white/10 transition-colors">
                       <div className="mx-auto h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-2">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-200">
                           <rect x="3" y="3" width="18" height="18" rx="2" />
                         </svg>
                       </div>
-                      <p className="text-xs font-medium text-blue-200">{item}</p>
-                    </div>
+                      <p className="text-xs font-medium text-blue-200">{item.label}</p>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -171,7 +184,7 @@ export default async function HomePage() {
                     <path d="M2 12l10 5 10-5" />
                   </svg>
                 ),
-                href: "/blog",
+                href: "/guides/hotel-bedding-thread-count",
               },
               {
                 title: "QC Checklist",

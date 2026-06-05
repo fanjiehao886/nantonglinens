@@ -18,13 +18,13 @@ export async function generateMetadata({
   if (!product) return {};
 
   return {
-    title: `${product.name} | Nantong Linens`,
+    title: `${product.name} — Hotel Linen Specs & Pricing | Nantong Linens`,
     description:
       product.shortDescription ||
-      `Source ${product.name} in bulk through Nantong Linens — competitive pricing from Dieshiqiao factories, custom logo, low MOQ.`,
+      `Source ${product.name} in bulk — competitive pricing from Dieshiqiao factories, custom logo, low MOQ. GSM, thread count, and material specs available.`,
     alternates: { canonical: `/products/${slug}` },
     openGraph: {
-      title: `${product.name} | Nantong Linens`,
+      title: `${product.name} — Hotel Linen Specs & Pricing | Nantong Linens`,
       description: product.shortDescription || "",
       images: product.images?.[0]?.asset?.url
         ? [product.images[0].asset.url]

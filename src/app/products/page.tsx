@@ -4,13 +4,13 @@ import { client } from "@/lib/sanity";
 import { PRODUCTS_QUERY, CATEGORIES_QUERY } from "@/lib/queries";
 
 export const metadata: Metadata = {
-  title: "Hotel Linens Catalog - Bed Sheets, Towels, Bathrobes & More",
+  title: "Hotel Linen Catalog — Bed Sheets, Towels & Bathrobes by Specs",
   description:
-    "Browse our sourced hotel linen catalog: bed sheets, pillowcases, towels, bathrobes, table linens, and more. Competitive pricing from Dieshiqiao's top factories.",
+    "Browse hotel linens by specification: GSM, thread count, and material. Sourced from Dieshiqiao's top factories — competitive pricing, strict QC, low MOQ, global shipping.",
   alternates: { canonical: "/products" },
   openGraph: {
-    title: "Hotel Linen Products Catalog | Nantong Linens",
-    description: "Source quality hotel linens from Dieshiqiao, China's #1 textile market. Bed sheets, towels, bathrobes, and table linens at competitive prices.",
+    title: "Hotel Linen Catalog — Bed Sheets, Towels & Bathrobes by Specs | Nantong Linens",
+    description: "Source quality hotel linens by specification from Dieshiqiao, China's #1 textile market. Bed sheets, towels, bathrobes, and table linens at competitive prices.",
   },
 };
 
@@ -119,18 +119,18 @@ export default async function ProductsPage({ searchParams }: PageProps) {
           {/* Internal links for SEO */}
           <div className="mt-6 flex flex-wrap gap-3">
             {[
-              "hotel bedding wholesale",
-              "bulk bath towels",
-              "hotel robes sourcing",
-              "hospitality linens agent",
-              "Dieshiqiao hotel sheets",
-              "Nantong textile sourcing",
-              "hotel linen MOQ",
-              "white hotel sheets bulk",
-            ].map((keyword) => (
-              <span key={keyword} className="rounded-full bg-white px-3 py-1 text-xs text-gray-500 border border-gray-200">
-                {keyword}
-              </span>
+              { label: "hotel bedding wholesale", href: "/products?category=bed-sheets" },
+              { label: "bulk bath towels", href: "/products?category=bath-towels" },
+              { label: "hotel robes sourcing", href: "/products?category=bathrobes" },
+              { label: "hospitality linens agent", href: "/about" },
+              { label: "Dieshiqiao hotel sheets", href: "/products?category=bed-sheets" },
+              { label: "Nantong textile sourcing", href: "/about" },
+              { label: "hotel linen MOQ", href: "/blog/buying-guide" },
+              { label: "white hotel sheets bulk", href: "/products?category=bed-sheets" },
+            ].map((kw) => (
+              <a key={kw.label} href={kw.href} className="rounded-full bg-white px-3 py-1 text-xs text-gray-500 border border-gray-200 hover:text-blue-800 hover:border-blue-200 transition-colors">
+                {kw.label}
+              </a>
             ))}
           </div>
         </aside>
