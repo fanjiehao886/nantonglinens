@@ -282,10 +282,10 @@ export default function HotelBeddingThreadCountGuide() {
               Request a Quote
             </Link>
             <Link
-              href="/blog/fabric-encyclopedia"
+              href="/products/bed-sheets"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
             >
-              More Fabric Guides
+              Browse Bed Sheets
             </Link>
           </div>
         </div>

@@ -13,21 +13,39 @@ const knowledgeHubLinks = [
   { name: "Free PDF Guide", href: "/guides/download", highlight: true },
 ];
 
+const productLinks = [
+  { name: "All Products", href: "/products" },
+  { name: "---", href: "#", divider: true },
+  { name: "Bed Sheets", href: "/products/bed-sheets" },
+  { name: "Pillowcases", href: "/products/pillowcases" },
+  { name: "Duvet Covers", href: "/products/duvet-covers" },
+  { name: "Bath Towels", href: "/products/bath-towels" },
+  { name: "Bathrobes", href: "/products/bathrobes" },
+  { name: "Pool & Beach Towels", href: "/products/pool-beach-towels" },
+  { name: "Bath Mats", href: "/products/bath-mats" },
+  { name: "Table Linen", href: "/products/table-linen" },
+  { name: "Mattress Toppers", href: "/products/mattress-toppers" },
+];
+
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Products", href: "/products" },
 ];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const productsRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setDropdownOpen(false);
+      }
+      if (productsRef.current && !productsRef.current.contains(event.target as Node)) {
+        setProductsOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -58,6 +76,42 @@ export function Header() {
               {item.name}
             </Link>
           ))}
+
+          {/* Products dropdown */}
+          <div ref={productsRef} className="relative">
+            <button
+              onClick={() => setProductsOpen(!productsOpen)}
+              className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
+            >
+              Products
+              <svg
+                className={`h-4 w-4 transition-transform ${productsOpen ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {productsOpen && (
+              <div className="absolute left-0 mt-2 w-52 rounded-xl border border-gray-100 bg-white shadow-lg py-2 z-50">
+                {productLinks.map((link) =>
+                  link.divider ? (
+                    <div key="pdivider" className="my-1 border-t border-gray-100" />
+                  ) : (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setProductsOpen(false)}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-800 transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )
+                )}
+              </div>
+            )}
+          </div>
 
           {/* Knowledge Hub dropdown */}
           <div ref={dropdownRef} className="relative">
@@ -162,6 +216,26 @@ export function Header() {
               {item.name}
             </Link>
           ))}
+          {/* Products section in mobile */}
+          <div className="py-2 border-t border-gray-50 mt-1">
+            <span className="block py-2 text-xs font-semibold uppercase text-gray-400 tracking-wider">
+              Products
+            </span>
+            {productLinks.map((link) =>
+              link.divider ? (
+                <div key="pdivider-m" className="my-1 border-t border-gray-100" />
+              ) : (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block py-2 pl-3 text-sm font-medium text-gray-700 hover:text-blue-800"
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
+          </div>
           {/* Knowledge Hub section in mobile */}
           <div className="py-2 border-t border-gray-50 mt-1">
             <span className="block py-2 text-xs font-semibold uppercase text-gray-400 tracking-wider">

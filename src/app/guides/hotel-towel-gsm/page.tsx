@@ -335,6 +335,13 @@ export default function HotelTowelGSMGuide() {
             <li>Colorfastness requirement (e.g., AATCC Grade 3–4 minimum after 20 washes)</li>
             <li>Bordered or borderless, dobby band style</li>
           </ul>
+          <p className="mt-4">
+            For a deeper dive into cotton grades, pile construction, border styles, and QC testing protocols,
+            see our{" "}
+            <Link href="/guides/hotel-towel-quality-guide" className="text-blue-800 hover:underline font-medium">
+              complete Hotel Towel Quality Guide
+            </Link>.
+          </p>
         </div>
       </article>
 
@@ -356,10 +363,10 @@ export default function HotelTowelGSMGuide() {
               Request a Quote
             </Link>
             <Link
-              href="/blog/fabric-encyclopedia"
+              href="/products/bath-towels"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
             >
-              More Fabric Guides
+              Browse Towel Products
             </Link>
           </div>
         </div>

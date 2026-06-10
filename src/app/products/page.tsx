@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
 import { client } from "@/lib/sanity";
 import { PRODUCTS_QUERY, CATEGORIES_QUERY } from "@/lib/queries";
@@ -15,15 +16,15 @@ export const metadata: Metadata = {
 };
 
 const CATEGORIES = [
-  { name: "All", slug: "" },
-  { name: "Bed Sheets", slug: "bed-sheets" },
-  { name: "Pillowcases", slug: "pillowcases" },
-  { name: "Duvet Covers", slug: "duvet-covers" },
-  { name: "Bath Towels", slug: "bath-towels" },
-  { name: "Bath Mats", slug: "bath-mats" },
-  { name: "Bathrobes", slug: "bathrobes" },
-  { name: "Table Linen", slug: "table-linen" },
-  { name: "Pool Towels", slug: "pool-towels" },
+  { name: "All", href: "/products" },
+  { name: "Bed Sheets", href: "/products/bed-sheets" },
+  { name: "Pillowcases", href: "/products/pillowcases" },
+  { name: "Duvet Covers", href: "/products/duvet-covers" },
+  { name: "Bath Towels", href: "/products/bath-towels" },
+  { name: "Bathrobes", href: "/products/bathrobes" },
+  { name: "Pool & Beach Towels", href: "/products/pool-beach-towels" },
+  { name: "Bath Mats", href: "/products/bath-mats" },
+  { name: "Table Linen", href: "/products/table-linen" },
 ];
 
 interface PageProps {
@@ -58,19 +59,22 @@ export default async function ProductsPage({ searchParams }: PageProps) {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Category pills */}
         <div className="flex flex-wrap gap-2 mb-8">
-          {CATEGORIES.map((cat) => (
-            <a
-              key={cat.slug || "all"}
-              href={cat.slug ? `/products?category=${cat.slug}` : "/products"}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                (!categoryParam && !cat.slug) || categoryParam === cat.slug
-                  ? "bg-blue-900 text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
-            >
-              {cat.name}
-            </a>
-          ))}
+          {CATEGORIES.map((cat) => {
+            const isActive = cat.href === "/products" ? !categoryParam : false;
+            return (
+              <Link
+                key={cat.href}
+                href={cat.href}
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  isActive
+                    ? "bg-blue-900 text-white"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
+              >
+                {cat.name}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Results count */}
@@ -89,9 +93,9 @@ export default async function ProductsPage({ searchParams }: PageProps) {
         ) : (
           <div className="py-20 text-center">
             <p className="text-lg text-gray-400">No products found in this category yet.</p>
-            <a href="/rfq" className="mt-4 inline-block text-blue-800 hover:underline">
+            <Link href="/rfq" className="mt-4 inline-block text-blue-800 hover:underline">
               Tell us what you need — we can source it.
-            </a>
+            </Link>
           </div>
         )}
 
@@ -119,18 +123,18 @@ export default async function ProductsPage({ searchParams }: PageProps) {
           {/* Internal links for SEO */}
           <div className="mt-6 flex flex-wrap gap-3">
             {[
-              { label: "hotel bedding wholesale", href: "/products?category=bed-sheets" },
-              { label: "bulk bath towels", href: "/products?category=bath-towels" },
-              { label: "hotel robes sourcing", href: "/products?category=bathrobes" },
+              { label: "hotel bedding wholesale", href: "/products/bed-sheets" },
+              { label: "bulk bath towels", href: "/products/bath-towels" },
+              { label: "hotel robes sourcing", href: "/products/bathrobes" },
               { label: "hospitality linens agent", href: "/about" },
-              { label: "Dieshiqiao hotel sheets", href: "/products?category=bed-sheets" },
+              { label: "Dieshiqiao hotel sheets", href: "/products/bed-sheets" },
               { label: "Nantong textile sourcing", href: "/about" },
               { label: "hotel linen MOQ", href: "/blog/buying-guide" },
-              { label: "white hotel sheets bulk", href: "/products?category=bed-sheets" },
+              { label: "white hotel sheets bulk", href: "/products/bed-sheets" },
             ].map((kw) => (
-              <a key={kw.label} href={kw.href} className="rounded-full bg-white px-3 py-1 text-xs text-gray-500 border border-gray-200 hover:text-blue-800 hover:border-blue-200 transition-colors">
+              <Link key={kw.label} href={kw.href} className="rounded-full bg-white px-3 py-1 text-xs text-gray-500 border border-gray-200 hover:text-blue-800 hover:border-blue-200 transition-colors">
                 {kw.label}
-              </a>
+              </Link>
             ))}
           </div>
         </aside>
