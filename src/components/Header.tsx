@@ -180,6 +180,12 @@ export function Header() {
             Contact
           </Link>
           <Link
+            href="/wholesale"
+            className="text-sm font-medium text-blue-800 hover:text-blue-700 transition-colors"
+          >
+            Wholesale
+          </Link>
+          <Link
             href="/rfq"
             className="rounded-full bg-blue-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 transition-colors"
           >
@@ -288,6 +294,13 @@ export function Header() {
             className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-800"
           >
             Contact
+          </Link>
+          <Link
+            href="/wholesale"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2.5 text-sm font-semibold text-blue-800"
+          >
+            Wholesale
           </Link>
           <Link
             href="/rfq"

@@ -2,14 +2,14 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Hotel Towel GSM Guide — What Weight to Buy for Every Hotel Tier",
+  title: "Hotel Towel GSM Meaning: 400, 500, 550, 600 GSM Explained — Buyer's Guide",
   description:
-    "Complete GSM guide for hotel towels. Learn what GSM means, recommended weights for bath towels, hand towels, and washcloths by hotel tier, and how GSM affects absorbency, durability, and cost. Based on real Dieshiqiao sourcing experience.",
+    "What does 450 GSM vs 600 GSM mean for hotel towels? GSM (grams per square meter) buying guide: recommended weights by hotel tier, cotton types, and how GSM affects absorbency, durability, and laundry cost. From Dieshiqiao sourcing experts.",
   alternates: { canonical: "/guides/hotel-towel-gsm" },
   openGraph: {
-    title: "Hotel Towel GSM Guide — What Weight to Buy for Every Hotel Tier",
+    title: "Hotel Towel GSM Meaning: 400, 500, 550, 600 GSM Explained",
     description:
-      "What GSM should hotel towels be? This guide covers ideal GSM ranges by hotel tier, cotton types, and how to avoid overpaying. From Dieshiqiao sourcing experts.",
+      "450 gsm vs 600 gsm — which should your hotel buy? GSM (grams per square meter) guide covering towel weights by hotel tier, cotton grades, absorbency, and pricing. Real Dieshiqiao market data.",
   },
 };
 
@@ -112,7 +112,7 @@ export default function HotelTowelGSMGuide() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <span className="text-sm font-medium text-blue-800 uppercase tracking-wider">Fabric Encyclopedia</span>
           <h1 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
-            Hotel Towel GSM Guide — What Weight to Specify for Your Property
+            Hotel Towel GSM Meaning: 400, 500, 550, 600 GSM Explained
           </h1>
           <p className="mt-4 text-lg text-gray-500 leading-relaxed">
             GSM (grams per square meter) is the single most important spec when buying hotel towels.
@@ -423,8 +423,8 @@ export default function HotelTowelGSMGuide() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Hotel Towel GSM Guide — What Weight to Specify for Your Property",
-            description: "Complete GSM guide for hotel towels. Learn recommended weights by hotel tier, cotton types, and how GSM affects absorbency, durability, and cost.",
+            headline: "Hotel Towel GSM Meaning: 400, 500, 550, 600 GSM Explained — Buyer's Guide",
+            description: "What does 450 GSM vs 600 GSM mean for hotel towels? Complete GSM buying guide covering recommended towel weights by hotel tier, cotton types, absorbency, durability, and laundry cost.",
             author: { "@type": "Organization", name: "Nantong Linens" },
             publisher: {
               "@type": "Organization",

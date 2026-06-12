@@ -4,6 +4,7 @@ import { TrustBadges } from "./TrustBadges";
 
 const footerLinks = {
   products: [
+    { name: "Wholesale", href: "/wholesale" },
     { name: "Bed Sheets", href: "/products?category=bed-sheets" },
     { name: "Pillowcases", href: "/products?category=pillowcases" },
     { name: "Bath Towels", href: "/products?category=bath-towels" },

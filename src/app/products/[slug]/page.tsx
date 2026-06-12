@@ -138,9 +138,9 @@ const CATEGORY_DATA: Record<string, {
   },
   "bed-sheets": {
     name: "Bed Sheets",
-    title: "Hotel Bed Sheets — Wholesale Flat & Fitted Sheet Sourcing",
-    description: "Source wholesale hotel bed sheets from Dieshiqiao: flat sheets and fitted sheets in all TC ranges and cotton types. 200–1000 TC, percale and sateen. Competitive pricing, strict QC, global shipping.",
-    keywords: "hotel bed sheets wholesale, flat sheet supplier China, fitted sheet manufacturer, hotel bedding wholesale, TC bed sheets",
+    title: "Hotel Bedding Wholesale — Bulk Bed Sheets & Linen Supply from China",
+    description: "Wholesale hotel bedding direct from Dieshiqiao factories. Source hotel bed sheets, flat sheets, fitted sheets in bulk — custom TC ranges, cotton types, and sizes. Competitive FOB pricing, strict QC, global shipping from Nantong.",
+    keywords: "hotel bedding wholesale, hotel bed sheets wholesale, bulk hotel sheets China, hotel linen manufacturer, hotel bedding suppliers, hotel bedding wholesale manufacturer, Dieshiqiao bed sheets",
     intro: "Bed sheets are the foundation of the guest sleep experience. We source flat and fitted sheets across all standard hotel sizes — from single to emperor — in thread counts ranging from budget 200 TC poly-cotton to ultra-luxury 1000 TC Egyptian cotton sateen.",
     specs: [
       "Thread Count: 200–1000 TC (single-ply count)",
