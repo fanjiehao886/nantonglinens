@@ -363,43 +363,85 @@ export default async function HomePage() {
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900">Why Buyers Work With a Dieshiqiao-Based Sourcing Agent</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Why Buyers Come to Us — Not Just Any Agent</h2>
             <p className="mt-2 text-gray-500">
-              When you&apos;re ready to place an order, here&apos;s what changes with local expertise on your side
+              Two reasons stand above the rest. Everything else is table stakes.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {/* === TOP 2 hero cards === */}
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {/* Card 1 — Group-buy pricing */}
+            <div className="rounded-2xl border-2 border-blue-900 bg-blue-950 p-8 text-white">
+              <div className="flex items-center gap-3">
+                <span className="text-4xl">🏷️</span>
+                <span className="rounded-full bg-amber-400 px-3 py-0.5 text-xs font-bold uppercase tracking-wide text-blue-950">
+                  #1 Reason
+                </span>
+              </div>
+              <h3 className="mt-5 text-xl font-bold">Prices You Can&apos;t Get Elsewhere</h3>
+              <p className="mt-3 text-blue-100 leading-relaxed">
+                We consolidate orders across multiple hotel buyers — giving you the buying power of a large chain, even if you&apos;re ordering for a single property.
+                The factory prices we negotiate <strong className="text-white">are simply not available</strong> to buyers who approach factories directly or through importers.
+                No middleman markup. No mystery pricing. Just the real Dieshiqiao wholesale rate.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3 text-sm">
+                <span className="rounded-full border border-blue-400/40 px-3 py-1 text-blue-200">Group purchasing power</span>
+                <span className="rounded-full border border-blue-400/40 px-3 py-1 text-blue-200">Direct factory FOB price</span>
+                <span className="rounded-full border border-blue-400/40 px-3 py-1 text-blue-200">No importer margin</span>
+              </div>
+            </div>
+
+            {/* Card 2 — Strict QC */}
+            <div className="rounded-2xl border-2 border-gray-200 bg-gray-50 p-8">
+              <div className="flex items-center gap-3">
+                <span className="text-4xl">🔍</span>
+                <span className="rounded-full bg-green-600 px-3 py-0.5 text-xs font-bold uppercase tracking-wide text-white">
+                  #2 Reason
+                </span>
+              </div>
+              <h3 className="mt-5 text-xl font-bold text-gray-900">Rigorous QC — Every Single Order</h3>
+              <p className="mt-3 text-gray-600 leading-relaxed">
+                Most buyers only discover quality problems after the container arrives. We inspect at the factory — before it ships.
+                We check GSM weight, stitching, color fastness, and dimensional accuracy on-site, and send you a full photo/video report.
+                Our partner factories hold OEKO-TEX and ISO 9001 certification. <strong className="text-gray-900">If it doesn&apos;t pass our inspection, it doesn&apos;t leave the factory.</strong>
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3 text-sm">
+                <span className="rounded-full border border-gray-300 bg-white px-3 py-1 text-gray-600">Pre-shipment inspection</span>
+                <span className="rounded-full border border-gray-300 bg-white px-3 py-1 text-gray-600">Photo + video QC report</span>
+                <span className="rounded-full border border-gray-300 bg-white px-3 py-1 text-gray-600">OEKO-TEX &amp; ISO 9001</span>
+              </div>
+            </div>
+          </div>
+
+          {/* === Secondary cards === */}
+          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "Inside Market Access",
+                title: "Local Market Presence",
                 description:
-                  "We are physically based in Dieshiqiao market. We compare live prices across dozens of factories and negotiate directly — no inflated importer margins.",
+                  "We are physically based in Dieshiqiao — the world&apos;s largest home textile hub. We walk the factories. You don&apos;t have to.",
                 icon: "📍",
               },
               {
                 title: "Deep Product Knowledge",
                 description:
-                  "We know hotel linen specs: thread counts, GSM, weave types, and certifications. We match your requirements to the right factory — no guesswork.",
+                  "Thread counts, GSM, weave types, certifications — we match your specs to the right factory, not just the cheapest one.",
                 icon: "📋",
               },
               {
-                title: "Strict QC Before Shipment",
+                title: "Full Export Service",
                 description:
-                  "We personally inspect every order at the factory before it ships. Partner factories are OEKO-TEX and ISO 9001 certified. No surprises at your door.",
-                icon: "🔍",
-              },
-              {
-                title: "End-to-End Export Service",
-                description:
-                  "We handle the full export chain: factory coordination, customs documentation, freight booking (FOB or DDP), and shipping updates from day one.",
+                  "Factory coordination, customs docs, freight booking (FOB or DDP), and real-time shipping updates from day one.",
                 icon: "🚢",
               },
             ].map((feature) => (
               <div key={feature.title} className="rounded-xl border border-gray-100 p-6">
                 <span className="text-3xl">{feature.icon}</span>
                 <h3 className="mt-4 font-semibold text-gray-900">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-500">{feature.description}</p>
+                <p className="mt-2 text-sm leading-relaxed text-gray-500"
+                   dangerouslySetInnerHTML={{ __html: feature.description }}
+                />
               </div>
             ))}
           </div>
