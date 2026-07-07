@@ -2,5 +2,18 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://www.nantonglinens.com/:path*",
+      "statusCode": 301,
+      "has": [
+        {
+          "type": "host",
+          "value": "nantonglinens.com"
+        }
+      ]
+    }
+  ]
 }
