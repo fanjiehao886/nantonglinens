@@ -19,8 +19,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 3600;
+
 export default async function HomePage() {
-  const featuredProducts = await client.fetch(FEATURED_PRODUCTS_QUERY);
+  const featuredProducts = await client.fetch(FEATURED_PRODUCTS_QUERY, {}, { next: { revalidate: 3600 } });
 
   return (
     <>
@@ -51,7 +53,7 @@ export default async function HomePage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
                 <Link
-                  href="/blog"
+                  href="/guides/hotel-bedding-thread-count"
                   className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-900 hover:bg-gray-100 transition-colors shadow-lg sm:px-7 sm:py-3.5 sm:text-base"
                 >
                   Browse Free Guides
@@ -117,7 +119,7 @@ export default async function HomePage() {
                   {[
                     { label: "GSM Guide", href: "/guides/hotel-towel-gsm" },
                     { label: "Thread Count", href: "/guides/hotel-bedding-thread-count" },
-                    { label: "MOQ & Shipping", href: "/blog/buying-guide" },
+                    { label: "MOQ & Shipping", href: "/guides/hotel-towel-quality-guide" },
                   ].map((item) => (
                     <Link key={item.label} href={item.href} className="rounded-lg bg-white/5 p-3 text-center border border-white/10 hover:bg-white/10 transition-colors">
                       <div className="mx-auto h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-2">
@@ -163,20 +165,20 @@ export default async function HomePage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                title: "Buying Guide",
-                subtitle: "How to source hotel linens from China step by step",
+                title: "Thread Count Guide",
+                subtitle: "Percale vs sateen, what TC ratings really mean for hotels",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-800">
                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                     <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
                   </svg>
                 ),
-                href: "/blog",
+                href: "/guides/hotel-bedding-thread-count",
                 highlight: "Most Popular",
               },
               {
-                title: "Fabric Encyclopedia",
-                subtitle: "GSM, thread count, weave types — explained for hotel buyers",
+                title: "Towel GSM Guide",
+                subtitle: "GSM weight, absorbency, and durability explained for buyers",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-800">
                     <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -184,30 +186,31 @@ export default async function HomePage() {
                     <path d="M2 12l10 5 10-5" />
                   </svg>
                 ),
-                href: "/guides/hotel-bedding-thread-count",
+                href: "/guides/hotel-towel-gsm",
               },
               {
-                title: "QC Checklist",
-                subtitle: "Pre-shipment inspection: what to check before your order ships",
+                title: "Quality & QC Guide",
+                subtitle: "Cotton grades, loop density, absorbency tests, inspection points",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-800">
                     <path d="M9 11l3 3L22 4" />
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                   </svg>
                 ),
-                href: "/blog",
+                href: "/guides/hotel-towel-quality-guide",
               },
               {
-                title: "Market Reports",
-                subtitle: "Pricing trends, tariff updates, and Dieshiqiao market insights",
+                title: "Free PDF Download",
+                subtitle: "Get our 2026 hotel linen buying guide PDF — sent to your inbox",
                 icon: (
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-800">
-                    <line x1="18" y1="20" x2="18" y2="10" />
-                    <line x1="12" y1="20" x2="12" y2="4" />
-                    <line x1="6" y1="20" x2="6" y2="14" />
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
                   </svg>
                 ),
-                href: "/blog",
+                href: "/guides/download",
+                highlight: "Lead Magnet",
               },
             ].map((card) => (
               <Link
@@ -420,7 +423,7 @@ export default async function HomePage() {
               {
                 title: "Local Market Presence",
                 description:
-                  "We are physically based in Dieshiqiao — the world&apos;s largest home textile hub. We walk the factories. You don&apos;t have to.",
+                  "We are physically based in Dieshiqiao — the world's largest home textile hub. We walk the factories. You don't have to.",
                 icon: "📍",
               },
               {
@@ -439,9 +442,9 @@ export default async function HomePage() {
               <div key={feature.title} className="rounded-xl border border-gray-100 p-6">
                 <span className="text-3xl">{feature.icon}</span>
                 <h3 className="mt-4 font-semibold text-gray-900">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-500"
-                   dangerouslySetInnerHTML={{ __html: feature.description }}
-                />
+                <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -478,6 +481,37 @@ export default async function HomePage() {
       {/* ========== TESTIMONIALS / SOCIAL PROOF ========== */}
       <TestimonialSection />
 
+      {/* ========== EMAIL CAPTURE / LEAD MAGNET ========== */}
+      <section className="bg-gray-50 py-16 border-t border-gray-100">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+          <div className="rounded-2xl border border-blue-100 bg-white p-8 sm:p-10">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-blue-50">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-800">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <h2 className="mt-5 text-2xl font-bold text-gray-900">Get the Free Hotel Linen Buying Guide</h2>
+            <p className="mt-3 text-gray-500 leading-relaxed">
+              A 4-page PDF packed with GSM charts, thread count comparisons, QC checklists, and
+              real Dieshiqiao factory price ranges. Delivered to your inbox instantly.
+            </p>
+            <Link
+              href="/guides/download"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-900 px-7 py-3 text-sm font-semibold text-white hover:bg-blue-800 transition-colors"
+            >
+              Download Free PDF Guide
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+            </Link>
+            <p className="mt-3 text-xs text-gray-400">No spam. Unsubscribe anytime.</p>
+          </div>
+        </div>
+      </section>
+
       {/* ========== CTA BANNER ========== */}
       <section className="bg-blue-950 py-16">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
@@ -488,7 +522,7 @@ export default async function HomePage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/blog"
+              href="/guides/hotel-bedding-thread-count"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
             >
               Browse Free Guides

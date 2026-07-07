@@ -57,10 +57,19 @@ export default async function ProductsPage({ searchParams }: PageProps) {
 
       {/* Category filter + product grid */}
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        {/* Trust bar */}
+        <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-600">
+          <span className="font-semibold text-gray-900">Why source with us:</span>
+          <span className="flex items-center gap-1"><span className="text-green-600">✓</span> Vetted Dieshiqiao factories</span>
+          <span className="flex items-center gap-1"><span className="text-green-600">✓</span> On-site QC before shipment</span>
+          <span className="flex items-center gap-1"><span className="text-green-600">✓</span> 15–20 day lead time</span>
+        </div>
+
         {/* Category pills */}
         <div className="flex flex-wrap gap-2 mb-8">
           {CATEGORIES.map((cat) => {
-            const isActive = cat.href === "/products" ? !categoryParam : false;
+            const isAll = cat.href === "/products";
+            const isActive = isAll ? !categoryParam : cat.href === `/products/${categoryParam}`;
             return (
               <Link
                 key={cat.href}
@@ -120,22 +129,25 @@ export default async function ProductsPage({ searchParams }: PageProps) {
             </p>
           </div>
 
-          {/* Internal links for SEO */}
-          <div className="mt-6 flex flex-wrap gap-3">
-            {[
-              { label: "hotel bedding wholesale", href: "/products/bed-sheets" },
-              { label: "bulk bath towels", href: "/products/bath-towels" },
-              { label: "hotel robes sourcing", href: "/products/bathrobes" },
-              { label: "hospitality linens agent", href: "/about" },
-              { label: "Dieshiqiao hotel sheets", href: "/products/bed-sheets" },
-              { label: "Nantong textile sourcing", href: "/about" },
-              { label: "hotel linen MOQ", href: "/blog/buying-guide" },
-              { label: "white hotel sheets bulk", href: "/products/bed-sheets" },
-            ].map((kw) => (
-              <Link key={kw.label} href={kw.href} className="rounded-full bg-white px-3 py-1 text-xs text-gray-500 border border-gray-200 hover:text-blue-800 hover:border-blue-200 transition-colors">
-                {kw.label}
-              </Link>
-            ))}
+          {/* Blog cross-links */}
+          <div className="mt-8">
+            <h3 className="mb-3 text-sm font-semibold text-gray-900">Related Buying Guides</h3>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { title: "Hotel Procurement Guide 2026", href: "/blog/china-hotel-procurement-guide-2026" },
+                { title: "Hotel Bedding Thread Count Guide", href: "/guides/hotel-bedding-thread-count" },
+                { title: "Hotel Towel GSM Guide", href: "/guides/hotel-towel-gsm" },
+                { title: "Cotton Market & Procurement Window", href: "/blog/cotton-market-june-2026-hotel-linen" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-blue-300 hover:text-blue-800"
+                >
+                  {link.title} →
+                </Link>
+              ))}
+            </div>
           </div>
         </aside>
       </div>

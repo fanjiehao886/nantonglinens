@@ -267,6 +267,31 @@ export default async function BlogPostPage({ params }: PageProps) {
             <p className="text-gray-400 italic">No content available.</p>
           )}
 
+          {/* In-article product cross-links */}
+          <div className="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-6">
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-gray-400">
+              Shop Related Products
+            </h3>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { label: "Hotel Bed Sheets", desc: "60S–80S · 100+ wash", href: "/products/bed-sheets" },
+                { label: "Bulk Bath Towels", desc: "500–700 GSM · 100% cotton", href: "/products/bath-towels" },
+                { label: "Hotel Bathrobes", desc: "Custom embroidery · MOQ 50", href: "/products/bathrobes" },
+                { label: "Duvet Covers", desc: "Sateen · percale · custom sizes", href: "/products/duvet-covers" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block rounded-lg border border-gray-200 bg-white p-4 transition-colors hover:border-blue-300 hover:text-blue-800"
+                >
+                  <p className="font-semibold text-gray-900">{item.label}</p>
+                  <p className="mt-1 text-xs text-gray-400">{item.desc}</p>
+                  <p className="mt-2 text-xs font-medium text-blue-700">View catalog →</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           {/* Download CTA (Lead Magnet) */}
           <div className="mt-12 rounded-xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-8">
             <div className="flex flex-col sm:flex-row items-center gap-6">

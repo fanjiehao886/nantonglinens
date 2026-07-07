@@ -1,109 +1,144 @@
-"""Upload blog cover images to Sanity and patch post documents with mainImage."""
-
-from __future__ import annotations
-
+#!/usr/bin/env python3
+"""Organize generated images, upload to Sanity, and patch posts with mainImage."""
+import os
+import glob
+import urllib.request
+import urllib.parse
 import json
-import requests
-from pathlib import Path
+import shutil
 
-TOKEN = "skJlnKsUiRegErbeTJ2iCy6fM8tv6gsrnC7kmVLPv0wfakib9coE9tnZkavUsuOrtn91bFcEFxBYdMVGldL09M9RnbhBwGO8md6y2BWKIhRt4MgRpzrggsPLuxh7bIZx1VQ5VVBSJ8AB9q1ww4ClolfvKQQf4oPi7O4Rklz5bvXnn6vL7r6e"
-PROJECT_ID = "nk89o1k8"
-DATASET = "production"
-API_BASE = f"https://{PROJECT_ID}.api.sanity.io/v2024-01-01"
+TOKEN = "skWFHcgBgCZaKIBps0LbdTip88hEmh4GkfRF1lBhwDL9hNpziCwc9BuBzmuM7YjugQkWWbAHDXdUs9I6fcRkucCOBFXvXV0TXfSXfZJsq3tRkdnUWrYo9IKS9xpAejKLQ2VDEsGQq2IQBeIb5TVfGG1LzupeVxxYtpV5NTeEuaVu9LUVSClD"
+PROJECT = "nk89o1k8"
+ASSET_API = f"https://{PROJECT}.api.sanity.io/v2021-06-07/assets/images/production"
+MUTATE_API = f"https://{PROJECT}.api.sanity.io/v2023-01-01/data/mutate/production"
+BASE = "/Users/nantongribao/Desktop/workspace/nantonglinens/generated-images"
 
-HEADERS = {"Authorization": f"Bearer {TOKEN}"}
+# Mapping: post_id -> (directory, filename_prefix)
+MAPPING = {
+    # Fabric Encyclopedia
+    "fabric-encyclopedia-cotton-types": ("fabric-encyclopedia", "Professional_photograph_of_dif"),
+    "fabric-encyclopedia-percale-vs-sateen": ("fabric-encyclopedia", "Close_up_comparison_of_percale"),
+    "fabric-encyclopedia-tencel-lyocell": ("fabric-encyclopedia", "Luxurious_Tencel_lyocell_hotel"),
+    "fabric-encyclopedia-tc-blends": ("fabric-encyclopedia", "Polyester_cotton_blend_fabric"),
+    "fabric-encyclopedia-finishing": ("fabric-encyclopedia", "Hotel_linen_fabric_finishing_p"),
+    "fabric-encyclopedia-bamboo-fibers": ("qc-checklist", "Bamboo_fiber_hotel_bedding"),
+    "seed-hotel-linen-fabric-guide-gsm-thread-count-weave-types": ("qc-checklist", "Comprehensive_hotel_linen_fabr"),
+    # QC Checklist
+    "qc-checklist-bed-sheets": ("qc-checklist", "Hotel_bed_sheet_quality_inspec"),
+    "qc-checklist-towels": ("qc-checklist", "Hotel_towel_quality_control_te"),
+    "qc-checklist-duvet-pillowcase": ("qc-checklist", "Hotel_duvet_cover_and_pillowca"),
+    "qc-checklist-bathrobes": ("qc-checklist", "Hotel_bathrobe_quality_inspect"),
+    "qc-checklist-table-linen": ("qc-checklist", "Hotel_table_linen_and_napkin_q"),
+    "qc-checklist-pre-shipment": ("qc-checklist", "Hotel_linen_pre_shipment_quali"),
+    "seed-hotel-linen-quality-control-checklist-pre-shipment-inspection": ("market-reports", "Hotel_linen_quality_control_ch"),
+    # Market Reports
+    "market-report-raw-material-q2-2026": ("market-reports", "Textile_raw_materials_price_in"),
+    "market-report-dieshiqiao-june-2026": ("market-reports", "Nantong_Dieshiqiao_textile_mar"),
+    "market-report-global-trends-2026": ("market-reports", "Global_hotel_linen_procurement"),
+    "market-report-cotton-outlook-2026": ("market-reports", "China_cotton_market_forecast"),
+    "market-report-import-regulations-2026": ("market-reports", "International_shipping_contain"),
+    "market-report-sustainable-linen-2026": ("market-reports", "Sustainable_hotel_linen_market"),
+    "seed-china-hotel-linen-market-report-pricing-trends-2026": ("market-reports", "China_hotel_linen_market_analy"),
+}
 
-# Map: image filename -> (post slug, alt text)
-MAPPING = [
-    ("choose-linens.png", "how-to-choose-hotel-linens-guide", "Hospitality buyer inspecting premium hotel bed sheets"),
-    ("laundry-care.png", "hotel-linen-laundry-care-guide", "Commercial hotel laundry room with fresh white linens"),
-    ("cotton-types.png", "cotton-types-hotel-bedding-comparison", "Comparison of three hotel bedding cotton fabric types"),
-    ("moq-lead-time.png", "hotel-linen-moq-lead-time-explained", "Textile factory floor with shipping documents and linen fabric"),
-]
+def find_file(directory, prefix):
+    """Find the image file in directory that starts with prefix."""
+    pattern = os.path.join(BASE, directory, f"{prefix}*.png")
+    matches = glob.glob(pattern)
+    if matches:
+        return matches[0]
+    return None
 
-BLOG_DIR = Path(__file__).parent.parent / "public" / "blog"
-
-
-def upload_image(filepath: Path) -> dict:
-    """Upload image to Sanity and return the asset doc."""
-    ext = filepath.suffix.lstrip(".")
-    mime = {"png": "image/png", "jpg": "image/jpeg", "jpeg": "image/jpeg"}.get(ext, "image/png")
-
+def upload_image(filepath, post_id):
+    """Upload image to Sanity assets and return the asset _id."""
     with open(filepath, "rb") as f:
         image_data = f.read()
 
-    resp = requests.post(
-        f"{API_BASE}/assets/images/{DATASET}",
-        headers={**HEADERS, "Content-Type": mime},
+    req = urllib.request.Request(
+        ASSET_API,
         data=image_data,
-    )
-    resp.raise_for_status()
-    asset = resp.json()
-    print(f"  Uploaded: {filepath.name} -> assetId: {asset['document']['_id']}")
-    return asset["document"]
-
-
-def get_post_by_slug(slug: str) -> str | None:
-    """Find post _id by slug (skip drafts, most recently created first)."""
-    query = f'*[_type=="post" && !(_id in path("drafts.**")) && slug.current=="{slug}"] | order(_createdAt desc)[0]._id'
-    resp = requests.get(
-        f"{API_BASE}/data/query/{DATASET}",
-        headers=HEADERS,
-        params={"query": query},
-    )
-    resp.raise_for_status()
-    result = resp.json()["result"]
-    return result
-
-
-def patch_post_mainimage(post_id: str, asset_id: str, alt: str):
-    """Patch a post document to add mainImage."""
-    patch = {
-        "set": {
-            "mainImage": {
-                "_type": "image",
-                "asset": {
-                    "_type": "reference",
-                    "_ref": asset_id,
-                },
-                "alt": alt,
-            }
-        }
-    }
-    resp = requests.post(
-        f"{API_BASE}/data/mutate/{DATASET}",
-        headers={**HEADERS, "Content-Type": "application/json"},
-        json={
-            "mutations": [
-                {"patch": {"id": post_id, "set": patch["set"]}}
-            ]
+        headers={
+            "Authorization": f"Bearer {TOKEN}",
+            "Content-Type": "image/png",
         },
+        method="POST",
     )
-    resp.raise_for_status()
-    print(f"  Patched: {post_id}")
+    try:
+        with urllib.request.urlopen(req) as resp:
+            result = json.loads(resp.read())
+        return result["document"]["_id"]
+    except Exception as e:
+        print(f"  ERROR uploading {filepath}: {e}")
+        return None
 
+def patch_post(post_id, asset_id):
+    """Patch the Sanity post with mainImage reference."""
+    mutation = {
+        "mutations": [{
+            "patch": {
+                "id": post_id,
+                "set": {
+                    "mainImage": {
+                        "_type": "image",
+                        "asset": {
+                            "_type": "reference",
+                            "_ref": asset_id,
+                        },
+                    }
+                },
+            }
+        }]
+    }
+    data = json.dumps(mutation).encode("utf-8")
+    req = urllib.request.Request(
+        MUTATE_API,
+        data=data,
+        headers={
+            "Authorization": f"Bearer {TOKEN}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req) as resp:
+            result = json.loads(resp.read())
+        return result
+    except Exception as e:
+        print(f"  ERROR patching {post_id}: {e}")
+        return None
 
 def main():
-    for filename, slug, alt in MAPPING:
-        filepath = BLOG_DIR / filename
-        print(f"\nProcessing: {filename} -> {slug}")
-
-        # 1. Upload image
-        asset = upload_image(filepath)
-        asset_id = asset["_id"]
-
-        # 2. Find post
-        post_id = get_post_by_slug(slug)
-        if not post_id:
-            print(f"  WARNING: No post found for slug '{slug}', skipping")
+    results = []
+    for post_id, (directory, prefix) in MAPPING.items():
+        filepath = find_file(directory, prefix)
+        if not filepath:
+            print(f"SKIP {post_id}: no file found for prefix '{prefix}' in {directory}")
+            results.append((post_id, "SKIP", None))
             continue
-        print(f"  Found post: {post_id}")
 
-        # 3. Patch post
-        patch_post_mainimage(post_id, asset_id, alt)
+        print(f"Uploading {post_id}: {os.path.basename(filepath)} ({os.path.getsize(filepath)} bytes)")
+        asset_id = upload_image(filepath, post_id)
+        if not asset_id:
+            results.append((post_id, "UPLOAD_FAIL", None))
+            continue
 
-    print("\nDone! All blog images uploaded and linked.")
+        print(f"  Asset ID: {asset_id}")
+        print(f"  Patching {post_id}...")
+        patch_result = patch_post(post_id, asset_id)
+        if patch_result:
+            results.append((post_id, "OK", asset_id))
+            print(f"  DONE")
+        else:
+            results.append((post_id, "PATCH_FAIL", asset_id))
 
+    print("\n" + "=" * 60)
+    print("SUMMARY:")
+    ok = sum(1 for _, status, _ in results if status == "OK")
+    fail = sum(1 for _, status, _ in results if status != "OK")
+    print(f"  Total: {len(results)}, OK: {ok}, Failed: {fail}")
+    for post_id, status, asset_id in results:
+        marker = "✓" if status == "OK" else "✗"
+        print(f"  {marker} {post_id} -> {status} {asset_id or ''}")
 
 if __name__ == "__main__":
     main()

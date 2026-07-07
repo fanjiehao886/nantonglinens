@@ -110,25 +110,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
-    // Blog category pages (additional)
-    {
-      url: `${baseUrl}/blog/hospitality-tips`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/hotel-bedding`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/textile-quality`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    },
     // Guides
     {
       url: `${baseUrl}/guides/hotel-towel-quality-guide`,
