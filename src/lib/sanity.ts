@@ -28,12 +28,13 @@ export function getClient(): SanityClient | null {
 
 // Compatibility shim — mimics SanityClient.fetch interface
 export const client = {
-  async fetch(query: string, params?: Record<string, any>): Promise<any> {
+  async fetch(query: string, params?: Record<string, any>, options?: any): Promise<any> {
     const c = getClient();
     if (!c) return [];
     try {
-      return await c.fetch(query, params);
-    } catch {
+      return await c.fetch(query, params, options);
+    } catch (err) {
+      console.error("[sanity] fetch error:", err);
       return [];
     }
   },

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { ProductCard } from "@/components/ProductCard";
 import { TrustBar } from "@/components/TrustBar";
@@ -28,9 +29,13 @@ export default async function HomePage() {
     <>
       {/* ========== HERO — Knowledge Hub Positioning ========== */}
       <section className="relative overflow-hidden text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-no-repeat bg-[center_30%] sm:bg-center"
-          style={{ backgroundImage: "url('/hero-dieshiqiao.jpg')" }}
+        <Image
+          src="/hero-dieshiqiao.webp"
+          alt="Dieshiqiao home textile market — world's largest home textile hub"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_30%] sm:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-blue-950/80 to-blue-950/70 sm:bg-gradient-to-r sm:from-blue-950/85 sm:via-blue-900/75 sm:to-blue-950/60" />
 
