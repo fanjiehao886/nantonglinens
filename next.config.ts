@@ -32,6 +32,22 @@ const nextConfig: NextConfig = {
         destination: "/blog/china-textile-industry-q1-2026-complete-report",
         permanent: true,
       },
+      // 博客分类页 404 → /blog（这些页面从未存在，已在 sitemap 中删除）
+      {
+        source: "/blog/textile-quality",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/hospitality-tips",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/hotel-bedding",
+        destination: "/blog",
+        permanent: true,
+      },
     ];
   },
 };
