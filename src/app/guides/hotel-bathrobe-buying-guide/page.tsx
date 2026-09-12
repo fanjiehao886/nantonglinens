@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { TrackedLink } from "@/components/TrackedLink";
+import { GuideCTA } from "@/components/GuideCTA";
 
 export const metadata: Metadata = {
   title: "Hotel Bathrobe Buying Guide — Waffle, Terry & Velour Robe Sourcing",
@@ -235,6 +236,16 @@ export default function HotelBathrobeGuide() {
               </div>
             ))}
           </div>
+
+          {/* Mid-content RFQ CTA */}
+          <GuideCTA
+            category="Bathrobes"
+            ctaLocation="guide_bathrobe_mid"
+            heading="Sourcing robes with custom embroidery?"
+            body="Send us your fabric, GSM, size range, and logo artwork — we quote factory-direct FOB prices from 3–5 Dieshiqiao factories within 24 hours, including embroidery sampling."
+            secondaryHref="/products/bathrobes"
+            secondaryLabel="View Bathrobe Catalog"
+          />
 
           <h2>Sizing — One Size Does Not Fit All</h2>
           <p>

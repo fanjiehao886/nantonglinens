@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { TrackedLink } from "@/components/TrackedLink";
+import { GuideCTA } from "@/components/GuideCTA";
 
 export const metadata: Metadata = {
   title: "Hotel Towel Quality Guide — How to Source Premium Towels from China",
@@ -312,6 +313,16 @@ export default function HotelTowelQualityGuide() {
               </tbody>
             </table>
           </div>
+
+          {/* Mid-content RFQ CTA */}
+          <GuideCTA
+            category="Bath Towels"
+            ctaLocation="guide_towel_quality_mid"
+            heading="Want towels that pass this checklist?"
+            body="Send us your GSM, cotton grade, and quantity — we shortlist 3–5 Dieshiqiao factories, verify QC reports, and quote factory-direct FOB prices within 24 hours."
+            secondaryHref="/products/bath-towels"
+            secondaryLabel="View Towel Catalog"
+          />
 
           <h2>What to Specify in Your Purchase Order</h2>
           <p>When ordering hotel towels, write a spec sheet that covers these points. Ambiguity is expensive.</p>

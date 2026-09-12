@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { TrackedLink } from "@/components/TrackedLink";
+import { GuideCTA } from "@/components/GuideCTA";
 
 export const metadata: Metadata = {
   title: "Hotel Bedding Thread Count Guide 2026: 200 vs 400 vs 600 TC",
@@ -155,6 +156,16 @@ export default function HotelBeddingThreadCountGuide() {
               </tbody>
             </table>
           </div>
+
+          {/* Mid-content RFQ CTA */}
+          <GuideCTA
+            category="Bed Sheets"
+            ctaLocation="guide_thread_count_mid"
+            heading="Sourcing bed sheets at a specific thread count?"
+            body="Tell us your hotel tier and target TC — we compare 3–5 Dieshiqiao factories and quote factory-direct FOB prices within 24 hours, with fabric samples available."
+            secondaryHref="/products/bed-sheets"
+            secondaryLabel="View Bed Sheet Catalog"
+          />
 
           <h2>Percale vs Sateen — Why Weave Matters More Than TC</h2>
           <p>
