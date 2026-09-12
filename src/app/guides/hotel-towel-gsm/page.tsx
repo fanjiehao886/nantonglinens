@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
-  title: "550 GSM Towel Meaning: 300/400/500/550/600 GSM Hotel Housekeeping Guide",
+  title: "550 GSM Towel Meaning: 300–600 GSM Hotel Guide (2026 Prices)",
   description:
-    "What 450 GSM vs 600 GSM means for housekeeping — towel GSM guide covering hotel-tier weights, cotton grades, absorbency, durability, and laundry cost. Real Dieshiqiao data.",
+    "300 vs 400 vs 500 vs 600 GSM compared: hotel-tier weights, cotton types, absorbency, laundry cost, and real FOB prices from Dieshiqiao, China.",
   alternates: { canonical: "/guides/hotel-towel-gsm" },
   openGraph: {
     title: "550 GSM Towel Meaning — Hotel Housekeeping GSM Guide (300–600 GSM)",
@@ -120,7 +121,7 @@ export default function HotelTowelGSMGuide() {
             and breaks down how GSM affects absorbency, durability, and laundry cost — from daily sourcing in Dieshiqiao.
           </p>
           <div className="mt-6 flex items-center gap-4 text-sm text-gray-400">
-            <span>Updated June 2026</span>
+            <span>Updated August 2026</span>
             <span className="w-1 h-1 rounded-full bg-gray-300" />
             <span>10 min read</span>
             <span className="w-1 h-1 rounded-full bg-gray-300" />
@@ -174,6 +175,29 @@ export default function HotelTowelGSMGuide() {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Mid-content RFQ CTA */}
+          <div className="not-prose my-10 rounded-xl border-2 border-blue-900 bg-blue-50 p-6 sm:p-8">
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">Sourcing towels at a specific GSM?</h3>
+                <p className="mt-1 text-sm text-gray-600">
+                  Send us your target GSM, size, and quantity — we compare 3–5 Dieshiqiao factories and quote factory-direct FOB prices within 24 hours.
+                </p>
+              </div>
+              <TrackedLink
+                ctaName="guide_inline_quote"
+                eventParams={{ cta_location: "guide_towel_gsm_mid" }}
+                href="/rfq"
+                className="shrink-0 inline-flex items-center gap-2 rounded-full bg-blue-900 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-800 transition-colors"
+              >
+                Get a 24h Quote
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </TrackedLink>
+            </div>
           </div>
 
           <h2>Cotton Types and How They Affect GSM Performance</h2>
@@ -275,7 +299,7 @@ export default function HotelTowelGSMGuide() {
               commercial wash. Specify &quot;GSM after 5 washes&quot; in your purchase order.
             </li>
             <li>
-              <strong>Compare同类产品 across factories.</strong> In Dieshiqiao, we weigh the same-spec towel from 3–5
+              <strong>Compare same-spec towels across factories.</strong> In Dieshiqiao, we weigh the same-spec towel from 3–5
               factories before recommending one. GSM variance of 5–8% is common even within the same claimed spec.
             </li>
           </ol>
@@ -342,6 +366,27 @@ export default function HotelTowelGSMGuide() {
               complete Hotel Towel Quality Guide
             </Link>.
           </p>
+
+          {/* Related guides — internal links */}
+          <div className="not-prose mt-10 rounded-xl border border-gray-200 bg-gray-50 p-6">
+            <h3 className="font-semibold text-gray-900">Keep Reading — Related Buying Guides</h3>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {[
+                { title: "Hotel Towel Quality Guide: Cotton Grades & QC Checklist", href: "/guides/hotel-towel-quality-guide" },
+                { title: "Hotel Bedding Thread Count Guide (200–1000 TC)", href: "/guides/hotel-bedding-thread-count" },
+                { title: "Hotel Bathrobe Buying Guide: Fabric, Style & Pricing", href: "/guides/hotel-bathrobe-buying-guide" },
+                { title: "Wholesale Bath Towels by GSM — Product Catalog", href: "/products/bath-towels" },
+              ].map((g) => (
+                <Link
+                  key={g.href}
+                  href={g.href}
+                  className="rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-blue-300 hover:text-blue-800"
+                >
+                  {g.title} →
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </article>
 
@@ -356,18 +401,22 @@ export default function HotelTowelGSMGuide() {
             with samples shipped from Dieshiqiao within 5 business days.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link
+            <TrackedLink
+              ctaName="guide_bottom_quote"
+              eventParams={{ cta_location: "guide_towel_gsm" }}
               href="/rfq"
               className="inline-flex items-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors"
             >
               Request a Quote
-            </Link>
-            <Link
+            </TrackedLink>
+            <TrackedLink
+              ctaName="guide_browse_products"
+              eventParams={{ cta_location: "guide_towel_gsm" }}
               href="/products/bath-towels"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
             >
               Browse Towel Products
-            </Link>
+            </TrackedLink>
           </div>
         </div>
       </section>
@@ -422,6 +471,14 @@ export default function HotelTowelGSMGuide() {
               },
               {
                 "@type": "Question",
+                name: "What is the difference between 400, 500 and 600 GSM towels?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "400 GSM towels are lightweight and fast-drying, best for budget hotels and gym areas. 500 GSM is the mid-range standard: absorbent, quick to dry, and cost-efficient for high-turnover properties. 600 GSM towels feel plusher and more luxurious, absorb more water, but need longer drying cycles and cost roughly 30–45% more per piece. Most 3–4 star hotels standardize on 500–600 GSM ring-spun cotton.",
+                },
+              },
+              {
+                "@type": "Question",
                 name: "Why is GSM important in hotel housekeeping?",
                 acceptedAnswer: {
                   "@type": "Answer",
@@ -448,7 +505,7 @@ export default function HotelTowelGSMGuide() {
               logo: { "@type": "ImageObject", url: "https://www.nantonglinens.com/logo.png" },
             },
             datePublished: "2026-06-05",
-            dateModified: "2026-06-05",
+            dateModified: "2026-08-19",
             url: "https://www.nantonglinens.com/guides/hotel-towel-gsm",
           }),
         }}

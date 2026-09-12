@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Hotel Bathrobe Buying Guide — Waffle, Terry & Velour Robe Sourcing",
@@ -331,18 +332,22 @@ export default function HotelBathrobeGuide() {
             from Dieshiqiao robe factories — with logo embroidery samples available within 7 business days.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link
+            <TrackedLink
+              ctaName="guide_bottom_quote"
+              eventParams={{ cta_location: "guide_bathrobe" }}
               href="/rfq"
               className="inline-flex items-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors"
             >
               Request Bathrobe Quote
-            </Link>
-            <Link
+            </TrackedLink>
+            <TrackedLink
+              ctaName="guide_browse_products"
+              eventParams={{ cta_location: "guide_bathrobe" }}
               href="/products/bathrobes"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
             >
               Browse Bathrobes
-            </Link>
+            </TrackedLink>
           </div>
         </div>
       </section>

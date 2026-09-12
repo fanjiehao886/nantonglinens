@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { trackEvent } from "@/lib/gtag";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -29,6 +30,9 @@ export default function NewsletterForm() {
       }
       setStatus("success");
       setMessage("Subscribed! Check your inbox for our buying guide.");
+      trackEvent("newsletter_subscribe", {
+        method: "footer",
+      });
       setEmail("");
     } catch (err: any) {
       setStatus("error");

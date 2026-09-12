@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { ProductCard } from "@/components/ProductCard";
 import { TrustBar } from "@/components/TrustBar";
 import { TestimonialSection } from "@/components/TestimonialSection";
+import { StickyCTA } from "@/components/StickyCTA";
 import { client } from "@/lib/sanity";
 import { FEATURED_PRODUCTS_QUERY } from "@/lib/queries";
 
@@ -55,6 +56,9 @@ export default async function HomePage() {
                 Free guides, fabric specs, procurement checklists, and pricing insights — built
                 from daily boots-on-the-ground experience inside Dieshiqiao, the world&apos;s
                 largest home textile market. When you&apos;re ready to buy, we source for you.
+                <span className="mt-2 block text-blue-200 font-medium">
+                  RFQ replies within 24 hours — samples ship worldwide.
+                </span>
               </p>
               <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
                 <Link
@@ -157,6 +161,31 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ========== QUICK ANSWERS — reduce bounce, answer-first navigation ========== */}
+      <section className="border-b border-gray-100 bg-white py-5">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <span className="text-sm font-semibold text-gray-900">Looking for a quick answer?</span>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { label: "What does GSM mean?", href: "/guides/hotel-towel-gsm" },
+                { label: "Best thread count?", href: "/guides/hotel-bedding-thread-count" },
+                { label: "Towel prices by GSM", href: "/guides/hotel-towel-gsm" },
+                { label: "QC checklist", href: "/guides/hotel-towel-quality-guide" },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="rounded-full border border-gray-200 bg-gray-50 px-4 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:border-blue-300 hover:bg-blue-50 hover:text-blue-800"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ========== KNOWLEDGE HUB — Main content entry points ========== */}
       <section className="bg-white py-16 border-b border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -247,6 +276,56 @@ export default async function HomePage() {
 
       {/* ========== TRUST BAR ========== */}
       <TrustBar />
+
+      {/* ========== FREE SAMPLES BANNER — low-friction entry ========== */}
+      <section className="bg-amber-50 border-b border-amber-100 py-4">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 text-lg">🎁</span>
+              <div>
+                <p className="text-sm font-semibold text-gray-900">Not sure about quality? Order free swatch samples first.</p>
+                <p className="text-xs text-gray-600">We ship fabric and towel swatches worldwide at no cost for serious buyers.</p>
+              </div>
+            </div>
+            <div className="flex shrink-0 gap-2">
+              <Link
+                href="/rfq"
+                className="rounded-full bg-blue-900 px-5 py-2 text-sm font-medium text-white hover:bg-blue-800 transition-colors"
+              >
+                Request Free Samples
+              </Link>
+              <Link
+                href="/guides/download"
+                className="rounded-full border border-amber-200 bg-white px-5 py-2 text-sm font-medium text-gray-700 hover:bg-amber-100 transition-colors"
+              >
+                Get PDF Guide
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== MARKETS WE SERVE — SEA-first (top traffic source) ========== */}
+      <section className="bg-white py-10 border-b border-gray-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-5 text-center md:flex-row md:justify-between md:text-left">
+            <div>
+              <h2 className="text-lg font-semibold text-gray-900">Shipping Worldwide from Nantong — FOB or DDP</h2>
+              <p className="mt-1 max-w-2xl text-sm text-gray-500">
+                We export hotel linens to <strong className="text-gray-700">Singapore, Vietnam, Thailand &amp; Malaysia</strong>,
+                the UAE, Saudi Arabia &amp; Qatar, the UK, Germany &amp; the EU, the US &amp; Canada, and Australia.
+                Ocean freight consolidation, full export documentation, and WhatsApp-updated order tracking included.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-wrap justify-center gap-2 text-xs font-medium text-gray-600">
+              {["🇸🇬 Singapore", "🇻🇳 Vietnam", "🇹🇭 Thailand", "🇦🇪 UAE", "🇬🇧 UK", "🇺🇸 USA"].map((m) => (
+                <span key={m} className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5">{m}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ========== DIESHIQIAO ADVANTAGE BANNER ========== */}
       <section className="bg-blue-900 text-white py-10">
@@ -541,6 +620,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ========== STICKY BOTTOM CTA ========== */}
+      <StickyCTA />
     </>
   );
 }

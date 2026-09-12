@@ -1,13 +1,14 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
-  title: "Hotel Bedding Thread Count Guide — What TC Means for Your Property",
+  title: "Hotel Bedding Thread Count Guide 2026: 200 vs 400 vs 600 TC",
   description:
-    "Complete guide to hotel bedding thread count. Learn what TC numbers really mean, how thread count affects durability and feel, recommended TC by hotel tier, and why higher TC is not always better. Based on real Dieshiqiao sourcing experience.",
+    "What TC means for hotels: 200 vs 400 vs 600 compared, percale vs sateen, TC by hotel tier, and supplier tricks to avoid. From Dieshiqiao, China.",
   alternates: { canonical: "/guides/hotel-bedding-thread-count" },
   openGraph: {
-    title: "Hotel Bedding Thread Count Guide — What TC Means for Your Property",
+    title: "Hotel Bedding Thread Count Guide 2026 — 200 vs 400 vs 600 TC",
     description:
       "What thread count should you choose for hotel bedding? This guide covers TC ranges by hotel tier, percale vs sateen, and common supplier tricks. From Dieshiqiao sourcing experts.",
   },
@@ -99,7 +100,7 @@ export default function HotelBeddingThreadCountGuide() {
             what ranges to specify by hotel tier, and how to spot inflated counts — based on daily sourcing experience in Dieshiqiao.
           </p>
           <div className="mt-6 flex items-center gap-4 text-sm text-gray-400">
-            <span>Updated June 2026</span>
+            <span>Updated August 2026</span>
             <span className="w-1 h-1 rounded-full bg-gray-300" />
             <span>12 min read</span>
             <span className="w-1 h-1 rounded-full bg-gray-300" />
@@ -243,7 +244,7 @@ export default function HotelBeddingThreadCountGuide() {
           </div>
 
           <p className="text-sm text-gray-400 italic">
-            Prices are indicative FOB Nantong prices as of June 2025. Actual pricing depends on order volume, customization,
+            Prices are indicative FOB Nantong prices as of August 2026. Actual pricing depends on order volume, customization,
             and cotton market conditions at time of order.
           </p>
 
@@ -261,6 +262,27 @@ export default function HotelBeddingThreadCountGuide() {
             Being specific protects you from &quot;creative interpretation&quot; by suppliers and ensures you get exactly the
             product your property needs.
           </p>
+
+          {/* Related guides — internal links */}
+          <div className="not-prose mt-10 rounded-xl border border-gray-200 bg-gray-50 p-6">
+            <h3 className="font-semibold text-gray-900">Keep Reading — Related Buying Guides</h3>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {[
+                { title: "Hotel Towel GSM Guide: 300–600 GSM Explained (2026 Prices)", href: "/guides/hotel-towel-gsm" },
+                { title: "Hotel Towel Quality Guide: Cotton Grades & QC Checklist", href: "/guides/hotel-towel-quality-guide" },
+                { title: "Hotel Bathrobe Buying Guide: Fabric, Style & Pricing", href: "/guides/hotel-bathrobe-buying-guide" },
+                { title: "Wholesale Bed Sheets by Thread Count — Catalog", href: "/products/bed-sheets" },
+              ].map((g) => (
+                <Link
+                  key={g.href}
+                  href={g.href}
+                  className="rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-blue-300 hover:text-blue-800"
+                >
+                  {g.title} →
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </article>
 
@@ -275,18 +297,22 @@ export default function HotelBeddingThreadCountGuide() {
             the right TC, weave, and material — with sample availability and transparent pricing.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link
+            <TrackedLink
+              ctaName="guide_bottom_quote"
+              eventParams={{ cta_location: "guide_thread_count" }}
               href="/rfq"
               className="inline-flex items-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors"
             >
               Request a Quote
-            </Link>
-            <Link
+            </TrackedLink>
+            <TrackedLink
+              ctaName="guide_browse_products"
+              eventParams={{ cta_location: "guide_thread_count" }}
               href="/products/bed-sheets"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
             >
               Browse Bed Sheets
-            </Link>
+            </TrackedLink>
           </div>
         </div>
       </section>
@@ -331,6 +357,14 @@ export default function HotelBeddingThreadCountGuide() {
                   text: "Percale uses a plain weave (one-over-one-under) for a crisp, matte finish and better durability. Sateen uses a satin weave (three-over-one-under) for a silky, lustrous feel preferred by luxury hotels. Percale generally outlasts sateen in commercial laundry.",
                 },
               },
+              {
+                "@type": "Question",
+                name: "What thread count do 5-star hotels use?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most 5-star hotels specify 400–600 TC sateen woven from long-staple combed cotton (Pima, Supima, or Egyptian). The key is yarn quality and finish, not chasing 1000 TC — many flagship properties use 400 TC percale for its crisp feel and superior laundering durability.",
+                },
+              },
             ],
           }),
         }}
@@ -351,7 +385,7 @@ export default function HotelBeddingThreadCountGuide() {
               logo: { "@type": "ImageObject", url: "https://www.nantonglinens.com/logo.png" },
             },
             datePublished: "2026-06-05",
-            dateModified: "2026-06-05",
+            dateModified: "2026-08-19",
             url: "https://www.nantonglinens.com/guides/hotel-bedding-thread-count",
           }),
         }}

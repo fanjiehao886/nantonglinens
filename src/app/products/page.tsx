@@ -5,12 +5,12 @@ import { client } from "@/lib/sanity";
 import { PRODUCTS_QUERY, CATEGORIES_QUERY } from "@/lib/queries";
 
 export const metadata: Metadata = {
-  title: "Hotel Linen Catalog — Bed Sheets, Towels & Bathrobes by Specs",
+  title: "Hotel Linen Wholesale Catalog — Bed Sheets, Towels & Bathrobes by Spec",
   description:
-    "Browse hotel linens by specification: GSM, thread count, and material. Sourced from Dieshiqiao's top factories — competitive pricing, strict QC, low MOQ, global shipping.",
+    "Wholesale hotel linens by GSM, thread count, and material from Dieshiqiao factories. Low MOQ, 15–20 day lead time, on-site QC, FOB or DDP shipping worldwide.",
   alternates: { canonical: "/products" },
   openGraph: {
-    title: "Hotel Linen Catalog — Bed Sheets, Towels & Bathrobes by Specs | Nantong Linens",
+    title: "Hotel Linen Wholesale Catalog — Bed Sheets, Towels & Bathrobes | Nantong Linens",
     description: "Source quality hotel linens by specification from Dieshiqiao, China's #1 textile market. Bed sheets, towels, bathrobes, and table linens at competitive prices.",
   },
 };
@@ -108,6 +108,35 @@ export default async function ProductsPage({ searchParams }: PageProps) {
           </div>
         )}
 
+        {/* Long-tail keyword sections */}
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold text-gray-900">Wholesale Hotel Towels by GSM</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-600">
+            We source bulk hotel towels in every weight class — from 400 GSM economy bath towels for motels and gyms,
+            500–600 GSM ring-spun cotton standards for 3–4 star properties, up to 750+ GSM Egyptian cotton luxury towels
+            for five-star resorts. Bath sheets, hand towels, washcloths, and bath mats can be mixed in one consolidated order.
+            Read the <Link href="/guides/hotel-towel-gsm" className="font-medium text-blue-800 hover:underline">Hotel Towel GSM Guide</Link> for
+            recommended weights by hotel tier, or <Link href="/products/bath-towels" className="font-medium text-blue-800 hover:underline">browse the towel catalog</Link>.
+          </p>
+
+          <h2 className="mt-10 text-2xl font-bold text-gray-900">Bulk Bed Sheets by Thread Count &amp; Weave</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-600">
+            Order wholesale hotel bed sheets by exact specification: 200 TC poly-cotton percale for budget properties,
+            300–400 TC 100% cotton for mid-scale hotels, and 400–600 TC long-staple sateen for luxury rooms.
+            Fitted sheets, flat sheets, duvet covers, and pillowcases available in white, ivory, and custom colors —
+            with logo embroidery or jacquard borders. See the{" "}
+            <Link href="/guides/hotel-bedding-thread-count" className="font-medium text-blue-800 hover:underline">Thread Count Guide</Link> or{" "}
+            <Link href="/products/bed-sheets" className="font-medium text-blue-800 hover:underline">browse bed sheets</Link>.
+          </p>
+
+          <h2 className="mt-10 text-2xl font-bold text-gray-900">Hotel Bathrobes, Table Linen &amp; More</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-600">
+            Complete your property program with waffle and terry bathrobes, pool and beach towels, tablecloths and napkins,
+            and mattress toppers — all from the same vetted Dieshiqiao factory network, consolidated into a single shipment.
+            Start with the <Link href="/guides/hotel-bathrobe-buying-guide" className="font-medium text-blue-800 hover:underline">Hotel Bathrobe Buying Guide</Link>.
+          </p>
+        </section>
+
         {/* SEO-friendly bottom section */}
         <aside className="mt-16 rounded-xl bg-gray-50 p-8">
           <h2 className="text-lg font-semibold text-gray-900">About Our Hotel Linen Collection</h2>
@@ -151,6 +180,51 @@ export default async function ProductsPage({ searchParams }: PageProps) {
           </div>
         </aside>
       </div>
+
+      {/* FAQ Schema — AI-search friendly */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What is the minimum order quantity for wholesale hotel linens?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Orders start from as low as 50 pieces per size/color combination, making us ideal for boutique hotels and independent properties. Larger chain orders get volume-based factory pricing.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does hotel linen production take?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Standard lead time is 15–20 days from order confirmation, plus ocean transit time. Rush production can be arranged for urgent openings or renovations.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you ship hotel linens to Singapore, the UAE, and Europe?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. We ship worldwide from Nantong on FOB, CIF, or DDP terms — including Singapore, Vietnam, Thailand, Malaysia, the UAE, Saudi Arabia, the UK, EU, US, Canada, and Australia, with full export documentation.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can I get samples before placing a bulk hotel linen order?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. We arrange physical samples from shortlisted factories for your approval before any commitment, and every production run is inspected on-site before shipment.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

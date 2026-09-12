@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { client, urlFor } from "@/lib/sanity";
 import { POST_BY_SLUG_QUERY, POSTS_QUERY } from "@/lib/queries";
+import { TrackedLink } from "@/components/TrackedLink";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -50,11 +51,25 @@ export async function generateStaticParams() {
 }
 
 /* ---- Minimal Portable Text renderer ---- */
-function PortableTextContent({ content }: { content: any[] }) {
+function PortableTextContent({
+  content,
+  inlineCta,
+}: {
+  content: any[];
+  inlineCta?: React.ReactNode;
+}) {
   if (!content) return null;
+  const mid = inlineCta ? Math.floor(content.length / 2) : -1;
   return (
     <div className="space-y-4 text-base leading-relaxed text-gray-700">
       {content.map((block: any, i: number) => {
+        if (inlineCta && i === mid) {
+          return (
+            <div key={`cta-${i}`}>
+              {inlineCta}
+            </div>
+          );
+        }
         if (block._type === "image") {
           const url = urlFor(block).width(1200).url();
           return (
@@ -262,7 +277,47 @@ export default async function BlogPostPage({ params }: PageProps) {
       <section className="py-12">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           {post.body ? (
-            <PortableTextContent content={post.body} />
+            <PortableTextContent
+              content={post.body}
+              inlineCta={
+                <div className="my-10 rounded-2xl border-2 border-blue-200 bg-white p-7 shadow-sm">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-blue-900">
+                      <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.8" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">
+                        Need these specs quoted for your property?
+                      </h3>
+                      <p className="mt-1 text-sm text-gray-600">
+                        Tell us your hotel tier, quantities and timeline — get a free,
+                        no-obligation quote within 24 hours.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <TrackedLink
+                      ctaName="blog_inline_quote"
+                      eventParams={{ cta_location: "blog_mid_article" }}
+                      href="/rfq"
+                      className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
+                    >
+                      Request a Free Quote
+                    </TrackedLink>
+                    <TrackedLink
+                      ctaName="blog_inline_whatsapp"
+                      eventParams={{ cta_location: "blog_mid_article" }}
+                      href="https://wa.me/8615151361119?text=Hi%2C%20I%20found%20your%20blog%20post%20and%20want%20a%20quote."
+                      className="inline-flex items-center gap-2 rounded-full border border-green-500 bg-white px-6 py-2.5 text-sm font-semibold text-green-700 hover:bg-green-50 transition-colors"
+                    >
+                      WhatsApp Us
+                    </TrackedLink>
+                  </div>
+                </div>
+              }
+            />
           ) : (
             <p className="text-gray-400 italic">No content available.</p>
           )}
@@ -279,15 +334,17 @@ export default async function BlogPostPage({ params }: PageProps) {
                 { label: "Hotel Bathrobes", desc: "Custom embroidery · MOQ 50", href: "/products/bathrobes" },
                 { label: "Duvet Covers", desc: "Sateen · percale · custom sizes", href: "/products/duvet-covers" },
               ].map((item) => (
-                <Link
+                <TrackedLink
                   key={item.href}
+                  ctaName="blog_related_product"
+                  eventParams={{ cta_location: "blog_end", product: item.href }}
                   href={item.href}
                   className="block rounded-lg border border-gray-200 bg-white p-4 transition-colors hover:border-blue-300 hover:text-blue-800"
                 >
                   <p className="font-semibold text-gray-900">{item.label}</p>
                   <p className="mt-1 text-xs text-gray-400">{item.desc}</p>
                   <p className="mt-2 text-xs font-medium text-blue-700">View catalog →</p>
-                </Link>
+                </TrackedLink>
               ))}
             </div>
           </div>
@@ -310,12 +367,14 @@ export default async function BlogPostPage({ params }: PageProps) {
                   Step-by-step procurement guide covering specs, MOQ, pricing, QC, and shipping — based on real Dieshiqiao experience.
                 </p>
               </div>
-              <Link
+              <TrackedLink
+                ctaName="blog_lead_magnet"
+                eventParams={{ cta_location: "blog_end" }}
                 href="/guides/download"
                 className="flex-shrink-0 inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
               >
                 Download Free Guide
-              </Link>
+              </TrackedLink>
             </div>
           </div>
 
@@ -327,12 +386,14 @@ export default async function BlogPostPage({ params }: PageProps) {
             <p className="mt-2 text-blue-200/80">
               Get a free quote within 24 hours. No commitment required.
             </p>
-            <Link
+            <TrackedLink
+              ctaName="blog_bottom_quote"
+              eventParams={{ cta_location: "blog_end" }}
               href="/rfq"
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors"
             >
               Request a Quote
-            </Link>
+            </TrackedLink>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { trackEvent, trackLead } from "@/lib/gtag";
 
 export default function DownloadForm() {
   const [email, setEmail] = useState("");
@@ -24,6 +25,9 @@ export default function DownloadForm() {
       if (res.ok) {
         setStatus("success");
         setMessage(data.message || "Guide sent! Check your inbox.");
+        // Fire conversion event for GA4 (mark lead_magnet_download as a conversion)
+        trackEvent("lead_magnet_download", { source: "download_page" });
+        trackLead("pdf_guide", { source: "download_page" });
         setEmail("");
       } else {
         setStatus("error");

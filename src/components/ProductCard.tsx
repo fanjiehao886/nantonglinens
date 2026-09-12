@@ -19,10 +19,12 @@ export function ProductCard({ product }: ProductCardProps) {
     ? product.images[0]?.asset?.url
     : (product.images as any)?.asset?.url;
 
+  const rfqHref = `/rfq?category=${encodeURIComponent(product.category)}`;
+
   return (
-    <Link href={`/products/${product.slug.current}`} className="group block">
-      <div className="overflow-hidden rounded-xl border border-gray-100 bg-white transition-shadow hover:shadow-lg">
-        {/* Image */}
+    <div className="group overflow-hidden rounded-xl border border-gray-100 bg-white transition-shadow hover:shadow-lg">
+      {/* Image */}
+      <Link href={`/products/${product.slug.current}`} className="block">
         <div className="relative aspect-[4/3] bg-gray-50">
           {imageUrl ? (
             <Image
@@ -48,9 +50,11 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.category}
           </span>
         </div>
+      </Link>
 
-        {/* Info */}
-        <div className="p-4">
+      {/* Info */}
+      <div className="p-4">
+        <Link href={`/products/${product.slug.current}`} className="block">
           <h3 className="font-semibold text-gray-900 transition-colors group-hover:text-blue-800 line-clamp-1">
             {product.name}
           </h3>
@@ -67,16 +71,27 @@ export function ProductCard({ product }: ProductCardProps) {
               <span>{product.priceRange}</span>
             )}
           </div>
+        </Link>
 
-          {/* CTA */}
-          <div className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-blue-800 opacity-0 transition-opacity group-hover:opacity-100">
+        {/* CTAs */}
+        <div className="mt-4 flex items-center gap-3">
+          <Link
+            href={`/products/${product.slug.current}`}
+            className="inline-flex items-center gap-1 text-sm font-medium text-blue-800 hover:underline"
+          >
             View Details
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </div>
+          </Link>
+          <Link
+            href={rfqHref}
+            className="ml-auto inline-flex items-center rounded-full bg-blue-900 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800 transition-colors"
+          >
+            Request Quote
+          </Link>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

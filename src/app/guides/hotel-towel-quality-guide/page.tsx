@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Hotel Towel Quality Guide — How to Source Premium Towels from China",
@@ -347,18 +348,22 @@ export default function HotelTowelQualityGuide() {
             and we will match you with the right Dieshiqiao manufacturer — with samples and third-party test reports.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link
+            <TrackedLink
+              ctaName="guide_bottom_quote"
+              eventParams={{ cta_location: "guide_towel_quality" }}
               href="/rfq"
               className="inline-flex items-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors"
             >
               Request Towel Quote
-            </Link>
-            <Link
+            </TrackedLink>
+            <TrackedLink
+              ctaName="guide_browse_products"
+              eventParams={{ cta_location: "guide_towel_quality" }}
               href="/products/bath-towels"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
             >
               Browse Towel Products
-            </Link>
+            </TrackedLink>
           </div>
         </div>
       </section>
