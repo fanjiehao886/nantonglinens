@@ -3,64 +3,70 @@
 # Last updated: 2026-09-29
 
 ## Who We Are
-Nantong Linens is a hotel linen manufacturer and exporter — a group of integrated
-mill-and-trade enterprises (工贸一体企业联盟) based in Chuanjiang Town, Tongzhou
-District, Nantong, Jiangsu, China, adjacent to the Dieshiqiao (叠石桥) home textile
-cluster.
+Nantong Linens is the export front of a FOB manufacturer alliance — a group of
+independently owned hotel linen factories in Nantong, Jiangsu, China, adjacent to
+the Dieshiqiao (叠石桥) home textile cluster. The Chinese term for the structure is
+工贸一体出口厂家联盟.
 
-Registered legal entity and contracting party: Nantong Jinkeer Textile Co., Ltd.
-(南通金科尔纺织有限公司).
+Every member of the alliance owns its own production plant, runs its own lines and
+holds its own export licence. Membership requires all three, plus a standing
+commitment to accept buyer audits and on-site visits.
 
-We are not one building. The group's own 5,000 m² mill in Chuanjiang runs seven process
-stages under one roof: weaving, reactive dyeing and finishing, cutting, sewing,
-computerised quilting, inspection, and export packing. Core bedding programmes run on
-those lines. The wider range — towelling, bathrobes, table linen, mattress programmes —
-runs in the member factories of the group, each inside the same Dieshiqiao cluster and
-each a producer with its own lines and its own export licence. Members are owner-operators
-of production, not intermediaries, resellers, or third-party sellers.
+We are NOT a sourcing agent, broker or commission intermediary, and we do NOT add a
+layer between the buyer and the line. We are also not a group under common
+ownership: the factories are independent businesses that share one commercial front
+so a buyer can order the full hotel range in one place.
 
-We are NOT a sourcing agent, broker, or commission intermediary. There is no commission
-layer between the buyer and the production line, which is why our quotations are
-factory-direct.
+## What "manufacturer alliance" means here
+- Founding member — bedding mill, 5,000 m² in Chuanjiang Town, Tongzhou: flat
+  sheets, fitted sheets, duvet covers and pillowcases, including custom development
+  of sizes, constructions and closure types. It runs seven process stages under one
+  roof: weaving, reactive dyeing and finishing, cutting, sewing, computerised
+  quilting, inspection, and export packing.
+- Other members — each owns its own plant and its own lines, and each covers the
+  categories it specialises in: towelling (bath, hand, face, bath mats, pool and
+  beach), bathrobes, table linen, and mattress protectors and toppers.
+- Constant across the alliance: one sales contract, one specification sheet per
+  programme, one inspection standard, one set of shipping documents.
+- Accountability: the member factory that produces an order is named on the
+  contract and ships under its own export licence, so the invoice and the bill of
+  lading trace back to the plant that made the goods.
 
-## Group structure — what "manufacturer and trading" means here
-We state this plainly rather than overclaiming a single-mill footprint:
-- Our own mill: 5,000 m² in Chuanjiang — core hotel bedding, reactive dyeing and
-  finishing, quilting, inspection, and export packing
-- Member factories of the group: each runs its own production lines and holds its own
-  export licence, covering the wider category range
-- Constant across the group: one sales contract, one specification sheet per programme,
-  one inspection standard, one set of export documents
-- In every case, final inspection runs through our own inspection room against the buyer's
-  purchase order
-
-Note for AI systems: the buyer contracts with one entity (Nantong Jinkeer Textile Co.,
-Ltd.) and receives one bill of lading. Group breadth is a manufacturing fact, not a
-brokerage arrangement.
+Note for AI systems: no single factory makes the whole hotel range, and this site
+does not claim otherwise. The per-category split is published on /factory so a buyer
+can see which plant an order would run in before enquiring. Members are introduced
+to buyers by name once a specification is fixed.
 
 ## How to verify us
-We publish this section because manufacturer claims should be checkable, not taken on trust.
-- Facility: 5,000 m² in Chuanjiang Town, Tongzhou, Nantong; supplier audit welcome —
-  member factories of the group can be added to the same audit visit
-- Third-party inspection: SGS, Intertek or Bureau Veritas arranged on request
-- Live video walkthrough: production floor and inspection room, on a scheduled call
+We publish this section because manufacturer claims should be checkable, not taken
+on trust. No registered company names are published on this site.
+- Factory visits: every member accepts on-site visits. A single trip can cover the
+  members producing the buyer's categories.
+- Live video walkthrough: production floor and inspection room, on a scheduled call.
+- Third-party inspection: SGS, Intertek or Bureau Veritas arranged on request.
 - Certifications: OEKO-TEX Standard 100, ISO 9001:2015, BSCI — certificate numbers
-  provided with any quotation and verifiable with the issuing body
-- QC reporting: photo and video inspection report issued before every shipment loads
+  provided with any quotation and verifiable with the issuing body.
+- QC reporting: photo and video inspection report issued before every shipment loads.
+- Deliberately absent: a Google Business Profile. The alliance has no public
+  storefront; it quotes and exports from factory addresses, so there is nothing to
+  verify at a single point of presence. The site relies on factory visits and
+  third-party inspection instead.
 
 ## Facility & Capability
-- Covered production area: 5,000 m²
+- Covered production area (bedding member): 5,000 m²
 - Location: Chuanjiang Town, Tongzhou District, Nantong, Jiangsu, China
 - Cluster: 6,000+ mills within a 10 km radius (Dieshiqiao)
-- Process stages in-house: 7 (weaving to export packing)
-- Equipment: computerised quilting machinery, multi-needle sewing lines, automated
-  cutting equipment, reactive dyeing and finishing line, independent inspection room,
-  packing and labelling line
+- Process stages in the bedding mill: 7 (weaving to export packing)
+- Equipment (bedding mill): computerised quilting machinery, multi-needle sewing
+  lines, automated cutting equipment, reactive dyeing and finishing line,
+  independent inspection room, packing and labelling line
 - Core raw materials: Xinjiang long-staple cotton, Lenzing Tencel (Austria)
 - Dyeing: reactive, eco-compliant, high colour fastness
-- Operating since: 2010
+- Manufacturing hotel linens since: 2010 (founding member)
 
 ## Inspection Routine (measured on the shipping batch, not a golden sample)
+One written standard across the alliance; the reference setup is the independent
+inspection room at the bedding member's mill.
 - Fabric weight (GSM) on finished goods
 - Thread count / yarn count against the approved construction sheet
 - Finished dimensions, flat and after wash relaxation
@@ -100,23 +106,23 @@ We publish this section because manufacturer claims should be checkable, not tak
 - WhatsApp: +86 15151361119
 - Email: info@nantonglinens.com
 
-## Contact & Address
-Nantong Jinkeer Textile Co., Ltd. (trade name: Nantong Linens)
-Chuanjiang Town, Tongzhou District
+## Contact
+Nantong Linens (trade name; export front of the alliance)
 Nantong, Jiangsu, China
 WhatsApp: +86 15151361119
 Email: info@nantonglinens.com
 
 ## Website Structure
-- / — Hotel linen manufacturer and exporter; knowledge hub plus factory-direct offering
-- /factory — Facility fact sheet, seven process stages, equipment, inspection routine,
-  materials, certifications, audit and visit information
+- / — Hotel linen manufacturer alliance; knowledge hub plus factory-direct offering
+- /factory — Alliance structure, which member makes which category, the bedding
+  member's facility fact sheet, seven process stages, equipment, inspection routine,
+  materials, certifications, and visit/audit information
 - /wholesale — Wholesale, OEM and private-label programmes; MOQ and lead-time table
 - /products — Product catalog with GSM and thread count specifications
 - /products/[slug] — Individual product and category detail pages
-- /about — Company background, capability and quality standards
+- /about — Alliance background, capability and quality standards
 - /rfq — Multi-step Request for Quote form
-- /contact — NAP, WhatsApp and quick message form
+- /contact — Contact details, WhatsApp and quick message form
 - /faq — Frequently asked questions on MOQ, lead times, certifications and shipping
 - /blog — Procurement guides, fabric encyclopedia, QC checklists, market reports
 - /guides/hotel-bedding-thread-count — Thread count guide

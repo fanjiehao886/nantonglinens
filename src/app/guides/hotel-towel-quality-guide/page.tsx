@@ -356,7 +356,7 @@ export default function HotelTowelQualityGuide() {
           </h2>
           <p className="mt-3 text-blue-200/80">
             We physically inspect towels at the factory before shipment. Tell us your specs
-            and we will match you with the right Dieshiqiao manufacturer — with samples and third-party test reports.
+            and we will run it at the member factory that specialises in it — with samples and third-party test reports.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <TrackedLink

@@ -23,7 +23,7 @@ const CATEGORY_DATA: Record<string, {
     title: "Hotel Bath Towels — Wholesale GSM, Factory-Direct from Nantong",
     description: "Wholesale hotel bath towels, hand towels, and washcloths — manufactured factory-direct in Nantong. Custom GSM, cotton types, and sizes. Competitive pricing, strict QC, global shipping.",
     keywords: "hotel bath towels wholesale, bulk towels China, hotel towel supplier, terry towel manufacturer, factory-direct hotel towels",
-    intro: "Hotel towels are one of the highest-touch items in any property. Guests judge quality by the towel's weight, absorbency, and softness within seconds. We manufacture bath towels, hand towels, face cloths, and bath mats on our own terry lines in Nantong — each held to GSM consistency, colorfastness, and commercial laundry durability.",
+    intro: "Hotel towels are one of the highest-touch items in any property. Guests judge quality by the towel's weight, absorbency, and softness within seconds. We manufacture bath towels, hand towels, face cloths, and bath mats on the towelling member's own terry lines in Nantong — each held to GSM consistency, colorfastness, and commercial laundry durability.",
     specs: [
       "GSM: 400–900 (see our towel GSM guide for hotel tier recommendations)",
       "Material: 100% Cotton (ring-spun, combed, Egyptian), poly-cotton blends available",
@@ -86,7 +86,7 @@ const CATEGORY_DATA: Record<string, {
     title: "Pool & Beach Towels — Wholesale Bulk Supply from Dieshiqiao",
     description: "Wholesale pool and beach towels manufactured factory-direct in Nantong. Custom sizes, colors, and stripes. High GSM for absorbency and durability. Resort, gym, and waterpark supply.",
     keywords: "pool towels wholesale, beach towels bulk China, resort towel supplier, gym towels manufacturer, striped beach towels",
-    intro: "Pool and beach towels face different demands than bathroom towels: they are larger, need to handle chlorine and sun exposure, and often serve as visual branding for resorts and waterparks. Our own towel production lines specialise in bold-striped beach towels and durable pool towels with high colorfastness and fast drying times.",
+    intro: "Pool and beach towels face different demands than bathroom towels: they are larger, need to handle chlorine and sun exposure, and often serve as visual branding for resorts and waterparks. The towelling member's own lines specialise in bold-striped beach towels and durable pool towels with high colorfastness and fast drying times.",
     specs: [
       "GSM: 350–500 (medium weight, optimized for poolside use)",
       "Material: 100% Cotton, cotton-polyester blend (for quick-dry pool use)",
@@ -300,7 +300,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${product.name} — Hotel Linen Specs & Pricing | Nantong Linens`,
-    description: product.shortDescription || `${product.name} in bulk — factory-direct pricing from our own group factories in Nantong.`,
+    description: product.shortDescription || `${product.name} in bulk — factory-direct pricing from member-owned factories in Nantong.`,
     alternates: { canonical: `/products/${slug}` },
     openGraph: {
       title: `${product.name} — Hotel Linen Specs & Pricing | Nantong Linens`,
@@ -365,7 +365,7 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
             <div className="py-20 text-center">
               <div className="mx-auto max-w-md">
                 <p className="text-lg text-gray-500">No products listed in {data.name} yet, but we manufacture these daily.</p>
-                <p className="mt-2 text-sm text-gray-400">Our group&apos;s factories cover {data.name.toLowerCase()} across every spec combination.</p>
+                <p className="mt-2 text-sm text-gray-400">Alliance factories cover {data.name.toLowerCase()} across every spec combination.</p>
                 <Link href="/rfq" className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-900 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-800 transition-colors">
                   Tell us what you need →
                 </Link>
@@ -412,6 +412,24 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
             </div>
           </aside>
 
+          {/* Factory / audit internal link — category pages are the top entry point
+              for "hotel X manufacturer" queries, so they must link to /factory. */}
+          <div className="mt-8 rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
+            <h2 className="text-lg font-semibold text-gray-900">Where {data.name} is made</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-gray-600">
+              This category runs at the alliance member factory that owns those production lines — not at
+              a third party we buy from. On the factory page you can see which member makes it, what the
+              inspection standard covers, and how to arrange a site visit or a third-party audit before
+              you place an order.
+            </p>
+            <Link
+              href="/factory"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-blue-900 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-800 transition-colors"
+            >
+              Visit or audit our factories
+            </Link>
+          </div>
+
           {/* Cross-sell other categories */}
           <div className="mt-8 rounded-xl border border-blue-100 bg-blue-50/50 p-8">
             <h2 className="text-lg font-semibold text-gray-900">Looking for other hotel linen categories?</h2>
@@ -433,7 +451,7 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
           <div className="mt-12 rounded-2xl bg-blue-950 p-10 text-center">
             <h2 className="text-2xl font-bold text-white">Need custom {data.name.toLowerCase()} specifications?</h2>
             <p className="mt-3 text-blue-200/80 max-w-2xl mx-auto">
-              Tell us your required specs and quantity. We will run it on the right line within our group — samples shipped within 5 business days.
+              Tell us your required specs and quantity. We will run it on the right member factory&apos;s line — samples shipped within 5 business days.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link href="/rfq" className="inline-flex items-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors">

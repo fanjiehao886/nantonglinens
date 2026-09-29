@@ -28,27 +28,27 @@ export default function TermsOfService() {
         <section>
           <h2 className="text-xl font-semibold text-gray-900">2. Our Services</h2>
           <p className="mt-3">
-            Nantong Linens is a <strong>hotel linen manufacturer and exporter (manufacturer + trading
-            company)</strong> based in Nantong, Jiangsu, China, operating as a group of integrated
-            mill-and-trade enterprises (工贸一体企业联盟). We produce hotel linens — bed sheets,
-            pillowcases, duvet covers, towels, bathrobes, and table linens — in our own mill in
-            Chuanjiang and in the member factories of our group across the surrounding Dieshiqiao
-            home textile cluster.
+            Nantong Linens is the export front of a <strong>FOB manufacturer alliance of independent
+            hotel linen factories</strong> based in Nantong, Jiangsu, China (工贸一体出口厂家联盟).
+            Hotel linens — bed sheets, pillowcases, duvet covers, towels, bathrobes and table linen —
+            are produced by the member factories of the alliance, each of which owns its own plant,
+            holds its own export licence, and is located in or around the Dieshiqiao home textile
+            cluster in Nantong.
           </p>
           <p className="mt-3">Our services include:</p>
           <ul className="mt-2 list-disc pl-6 space-y-1">
             <li>Manufacturing to buyer specifications (thread count, GSM, weave, size, colour)</li>
             <li>OEM and private-label production, including labelling and packaging</li>
-            <li>Quality control inspection in our own inspection room before shipment</li>
+            <li>Quality control inspection against one written standard before shipment</li>
             <li>Export coordination and documentation, customs, and freight booking</li>
             <li>Sampling, written specification sheets, and production reporting</li>
           </ul>
           <p className="mt-3">
-            <strong>Important:</strong> Nantong Linens is both the manufacturer and the exporter of the
-            products it supplies. Where a product is produced by a member factory of our group, that
-            member is a producer within the group — not a third-party seller — and we remain your single
-            contractual counterpart, responsible for specification, inspection, and export. We do not act
-            as an agent, broker, or commission intermediary.
+            <strong>Important:</strong> the manufacturer and exporter of the products you order is the
+            member factory that produces them, and it owns the plant where they are made. That member is
+            part of the alliance, not an unrelated third-party seller, and we act as your single
+            contractual counterpart responsible for specification, inspection and export coordination.
+            We do not act as an agent, broker or commission intermediary towards the factories.
           </p>
         </section>
 
@@ -106,7 +106,7 @@ export default function TermsOfService() {
           <h2 className="text-xl font-semibold text-gray-900">8. Returns and Refunds</h2>
           <ul className="mt-3 list-disc pl-6 space-y-2">
             <li>Custom-made or custom-labeled products cannot be returned unless they do not match the agreed specifications.</li>
-            <li>If products fail to meet the agreed specifications, we will arrange replacement or compensation, from our own production or from the member factory concerned.</li>
+            <li>If products fail to meet the agreed specifications, we will arrange replacement or compensation from the member factory concerned.</li>
             <li>Claims must be filed within 7 days of delivery with supporting evidence (photos, test reports).</li>
             <li>Refund amounts and methods will be determined on a case-by-case basis.</li>
           </ul>
@@ -124,7 +124,7 @@ export default function TermsOfService() {
         <section>
           <h2 className="text-xl font-semibold text-gray-900">10. Limitation of Liability</h2>
           <ul className="mt-3 list-disc pl-6 space-y-2">
-            <li>Nantong Linens is the manufacturer and exporter of the products it supplies. While we exercise due diligence in producing to the agreed specifications and in coordinating the member factories of our group, our liability is limited as set out below.</li>
+            <li>The products you order are manufactured and exported by the member factory that produces them. While we exercise due diligence in coordinating those members and in holding them to the agreed specification and inspection standard, our liability is limited as set out below.</li>
             <li>Our total liability for any claim arising from an order shall not exceed the invoiced value of the products in that order.</li>
             <li>We are not liable for indirect, incidental, consequential, or punitive damages.</li>
           </ul>

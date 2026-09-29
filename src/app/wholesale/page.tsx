@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Wholesale Hotel Linen Manufacturer & OEM Supplier — Factory-Direct Pricing",
   description:
-    "Wholesale hotel linens factory-direct from our own group factories in Nantong, China. Bed sheets, towels, duvet covers, bathrobes and table linen in bulk — OEM and private label, low MOQ, FOB pricing, global shipping. Request a wholesale quote today.",
+    "Wholesale hotel linens factory-direct from member-owned factories in Nantong, China. Bed sheets, towels, bathrobes, table linen — OEM, low MOQ, FOB pricing.",
   keywords:
-    "wholesale hotel linen manufacturer, hotel linen manufacturer China, hotel bedding wholesale, hotel linen wholesale supplier, OEM hotel linens, private label hotel linens, bulk hotel linen China, hotel linen distributor supply, Dieshiqiao hotel bedding, Nantong textile factory wholesale",
+    "wholesale hotel linen manufacturer, hotel linen manufacturer China, hotel bedding wholesale, hotel linen wholesale supplier, OEM hotel linens, private label hotel linens, bulk hotel linen China, hotel linen distributor supply, Dieshiqiao hotel bedding, Nantong textile factory wholesale, hotel linen manufacturer alliance, hotel linen factory audit China",
   alternates: { canonical: "/wholesale" },
   openGraph: {
     title: "Wholesale Hotel Linen Manufacturer — Factory-Direct from Nantong",
     description:
-      "Our group's member factories manufacture hotel linens in Nantong and we export them ourselves. Wholesale, OEM and private-label programs — bed sheets, towels, duvet covers, bathrobes, table linen.",
+      "Member factories of our alliance manufacture hotel linens in Nantong and ship them under their own export licences. Wholesale, OEM and private-label programs — bed sheets, towels, duvet covers, bathrobes, table linen.",
   },
 };
 
@@ -29,12 +29,12 @@ const productCategories = [
 
 const advantages = [
   {
-    title: "Factory-direct pricing (the group owns the factories)",
-    desc: "Your quote comes from our own group's production cost — no intermediary sits between you and the line. There is no agent commission and no importer margin built in, which is why wholesale buyers consistently land 15–25% below distributor quotes on comparable specs.",
+    title: "Factory-direct pricing (the factories are the members)",
+    desc: "Your quote comes from the producing member's own cost base — no intermediary sits between you and the line. There is no agent commission and no importer margin built in, which is why wholesale buyers consistently land 15–25% below distributor quotes on comparable specs.",
   },
   {
     title: "Flexible MOQ from 50 pcs",
-    desc: "Because the lines are ours, we can accept 50–200 pieces per spec without waiting for a container-level minimum. Ideal for distributors testing a new SKU, boutique hotels, and pilot orders.",
+    desc: "Because the lines belong to the member factories, we can accept 50–200 pieces per spec without waiting for a container-level minimum. Ideal for distributors testing a new SKU, boutique hotels, and pilot orders.",
   },
   {
     title: "OEM & private label",
@@ -46,7 +46,7 @@ const advantages = [
   },
   {
     title: "In-house QC before every shipment",
-    desc: "GSM, thread count, measurements, shrinkage, colourfastness, and construction are checked in our own inspection room against your PO spec. You receive a photo/video report before the container is loaded.",
+    desc: "GSM, thread count, measurements, shrinkage, colourfastness and construction are checked on the running batch against your PO spec, to one written standard. You receive a photo/video report before the container is loaded.",
   },
   {
     title: "Export handled by us, not a third party",
@@ -84,15 +84,15 @@ const moqTiers = [
 const faqs = [
   {
     q: "Are you a manufacturer or a trading company?",
-    a: "Both. We are a group of integrated mill-and-trade enterprises (工贸一体企业联盟) — every member manufactures and every member trades, so there is no broker in the middle. Our own 5,000 m² mill in Chuanjiang, Tongzhou runs weaving, dyeing and finishing, cutting, sewing, quilting, inspection and packing; other categories and volumes run in the member factories of our group across the same Dieshiqiao cluster. Export documentation, customs and freight are handled by our own team, so you deal with one company from production to bill of lading.",
+    a: "Neither label fits on its own, and that is deliberate. We are a FOB manufacturer alliance (工贸一体出口厂家联盟): the factories that make the goods are independent companies, and each one owns its own plant and holds its own export licence. Our founding member's 5,000 m² mill in Chuanjiang, Tongzhou runs weaving, dyeing and finishing, cutting, sewing, quilting, inspection and packing for the bedding; towelling, bathrobes, table linen and mattress programmes run at the members that specialise in them. There is no agent and no commission layer in between, the member that makes your order is named on the contract, and you can audit any of them before you buy.",
   },
   {
     q: "What is the minimum order quantity for wholesale hotel linens?",
-    a: "MOQ varies by product: bed sheets, duvet covers, pillowcases and bathrobes from 100 pieces per size/colour; towels and table linen from 200 pieces per colour. Trial orders can start from 50 pieces. Because the lines are ours, we do not require container-level minimums.",
+    a: "MOQ varies by product: bed sheets, duvet covers, pillowcases and bathrobes from 100 pieces per size/colour; towels and table linen from 200 pieces per colour. Trial orders can start from 50 pieces. Because the lines belong to the member factories, we do not require container-level minimums.",
   },
   {
     q: "Where are your hotel linen products manufactured?",
-    a: "Our core programmes are manufactured in our own 5,000 m² mill in Chuanjiang, Tongzhou District, Nantong — minutes from the Dieshiqiao market, the world's largest home textile cluster with over 6,000 mills. Other categories and surge volumes are produced by the member factories of our group in the same cluster, under our own specification sheets and inspection.",
+    a: "Bedding — flat sheets, fitted sheets, duvet covers and pillowcases — is manufactured at our founding member's 5,000 m² mill in Chuanjiang, Tongzhou District, Nantong, minutes from the Dieshiqiao market. Towelling, bathrobes, table linen and mattress programmes are produced by the other member factories in the same cluster, under the same specification sheets and the same inspection standard. Each member owns its plant and its export licence, and every one accepts a buyer audit.",
   },
   {
     q: "Do you offer OEM and private-label production?",
@@ -127,18 +127,18 @@ export default function WholesalePage() {
       <section className="bg-white py-16 border-b border-gray-100">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-sm font-medium text-blue-800 uppercase tracking-wider">
-            Manufacturer &amp; Exporter — Chuanjiang, Nantong, China
+            FOB Manufacturer Alliance — Nantong, China
           </span>
           <h1 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl sm:leading-tight">
             Wholesale Hotel Linens — Factory-Direct, No Middleman
           </h1>
           <p className="mt-5 text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto">
-            We are a group of integrated mill-and-trade enterprises. Our own mill in Nantong
-            produces bed sheets, towels, duvet covers, pillowcases, bathrobes, and table linen;
-            member factories of the group cover the wider range, and we export it all ourselves.
-            Wholesalers, distributors, hospitality suppliers, and
-            hotel groups buy from us at factory-direct FOB prices, with OEM and private-label
-            programmes available on flexible MOQ.
+            We are a FOB manufacturer alliance of independent export factories in Nantong. The
+            bedding member&apos;s mill makes bed sheets, duvet covers and pillowcases; the other members
+            make the towels, bathrobes and table linen, each shipping under its own export licence.
+            Wholesalers, distributors, hospitality suppliers and hotel groups buy from us at
+            factory-direct FOB prices, with OEM and private-label programmes available on flexible
+            MOQ.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
@@ -161,7 +161,7 @@ export default function WholesalePage() {
             </Link>
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-400">
-            <span>Own group factories in Nantong</span>
+            <span>Member-owned factories in Nantong</span>
             <span className="w-1 h-1 rounded-full bg-gray-300 self-center hidden sm:inline" />
             <span>MOQ from 50 pcs</span>
             <span className="w-1 h-1 rounded-full bg-gray-300 self-center hidden sm:inline" />
@@ -181,8 +181,8 @@ export default function WholesalePage() {
             Wholesale Hotel Linen Product Range
           </h2>
           <p className="mt-3 text-gray-500 text-center max-w-2xl mx-auto">
-            Every hotel textile category — produced on our own lines or in the member factories of
-            our group, priced factory-direct, FOB from Nantong
+            Every hotel textile category — produced in the member factory that specialises in it,
+            priced factory-direct, FOB from Nantong
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {productCategories.map((cat) => (
@@ -285,8 +285,8 @@ export default function WholesalePage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-4">
             {[
               { step: "01", title: "Send Requirements", desc: "Tell us whether you buy as a hotel, wholesaler, or private-label supplier — plus specs (TC/GSM/size), volumes, and target price." },
-              { step: "02", title: "Quote & Samples", desc: "We cost your spec on our own group production lines and ship free physical samples for approval." },
-              { step: "03", title: "Produce & QC", desc: "Production runs on our line. We inspect the batch in-house and send you a photo/video QC report before loading." },
+              { step: "02", title: "Quote & Samples", desc: "We cost your spec on the producing member's lines and ship free physical samples for approval." },
+              { step: "03", title: "Produce & QC", desc: "Production runs on the member's line to one written standard, and you get a photo/video QC report before loading." },
               { step: "04", title: "Ship & Deliver", desc: "FOB, CIF or DDP — we handle export docs, customs clearance, and logistics ourselves." },
             ].map((s) => (
               <div key={s.step} className="text-left">
@@ -358,19 +358,9 @@ export default function WholesalePage() {
             "@type": "WebPage",
             name: "Wholesale Hotel Linens — Factory-Direct from a Nantong Manufacturer",
             description:
-              "Wholesale hotel linens factory-direct from our own group factories in Nantong: bed sheets, towels, duvet covers, pillowcases, bathrobes and table linen. OEM, private label, low MOQ, FOB pricing, global shipping.",
+              "Wholesale hotel linens factory-direct from member-owned factories in Nantong: bed sheets, towels, duvet covers, pillowcases, bathrobes and table linen. OEM, private label, low MOQ, FOB pricing, global shipping.",
             url: "https://www.nantonglinens.com/wholesale",
-            publisher: {
-              "@type": ["Organization", "Manufacturer"],
-              name: "Nantong Linens",
-              url: "https://www.nantonglinens.com",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Chuanjiang, Tongzhou",
-                addressRegion: "Jiangsu",
-                addressCountry: "CN",
-              },
-            },
+            publisher: { "@id": "https://www.nantonglinens.com/#organization" },
             mainEntity: {
               "@type": "FAQPage",
               mainEntity: faqs.map((f) => ({

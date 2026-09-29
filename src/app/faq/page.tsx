@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "FAQ - Hotel Linen Manufacturing, MOQ, Lead Time & More | Nantong Linens",
   description:
-    "Frequently asked questions about buying hotel linens factory-direct from a Nantong manufacturer. Learn about OEM and private label, MOQ, lead times, quality certifications, and shipping.",
+    "FAQ on buying hotel linens factory-direct from Nantong factories: OEM and private label, MOQ, lead times, certifications, factory visits and shipping.",
   alternates: { canonical: "/faq" },
 };
 
@@ -12,7 +12,7 @@ const faqs = [
   {
     q: "Are you a manufacturer or a trading company?",
     a:
-      "Both — we are a group of integrated mill-and-trade enterprises (工贸一体企业联盟), so every member manufactures and every member trades. Our own 5,000 m² mill in Chuanjiang, Tongzhou District, Nantong runs weaving, dyeing and finishing, cutting, sewing, quilting, inspection and export packing; other categories and volumes run in the member factories of our group across the same Dieshiqiao cluster. Because the group owns the production rather than brokering it, your quotation reflects production cost — there is no agent commission layer built into the price.",
+      "Neither label on its own, and that is deliberate. We are a FOB manufacturer alliance (工贸一体出口厂家联盟): the factories that make the goods are independent companies, each owning its own plant and holding its own export licence. Our founding member's 5,000 m² mill in Chuanjiang, Tongzhou District, Nantong runs weaving, dyeing and finishing, cutting, sewing, quilting, inspection and export packing for the bedding; towelling, bathrobes, table linen and mattress programmes run at the members that specialise in them. Because the members own the production rather than brokering it, your quotation reflects production cost — there is no agent commission layer built into the price, the factory that makes your order is named on your contract, and you can audit it before you buy.",
   },
   {
     q: "What is the minimum order quantity (MOQ) for hotel linens?",
@@ -37,12 +37,12 @@ const faqs = [
   {
     q: "What quality certifications do your factories hold?",
     a:
-      'Our own mill and the member factories of our group hold multiple international certifications:\n\n• OEKO-TEX Standard 100 (all product lines)\n• ISO 9001:2015 Quality Management System\n• BSCI (Business Social Compliance Initiative)\n• WRAP (Worldwide Responsible Accredited Production)\n\nWe also arrange third-party inspections by SGS or Intertek upon request. As the manufacturer, we verify every batch in our own inspection room — thread count verification, GSM testing, shrinkage rate measurement (<3%), and colorfastness testing (Grade 4+).',
+      'Member factories of our alliance hold multiple international certifications:\n\n• OEKO-TEX Standard 100 (all product lines)\n• ISO 9001:2015 Quality Management System\n• BSCI (Business Social Compliance Initiative)\n• WRAP (Worldwide Responsible Accredited Production)\n\nWe also arrange third-party inspections by SGS or Intertek upon request. Every batch is verified against one written inspection standard before it is packed — thread count verification, GSM testing, shrinkage rate measurement (<3%), and colorfastness testing (Grade 4+).',
   },
   {
     q: "What payment methods do you accept?",
     a:
-      'We accept the following secure payment terms:\n\n• T/T (Telegraphic Transfer): 30% deposit + 70% before shipment (most common)\n• L/C at sight (for orders above $10,000 USD)\n• PayPal (for sample orders and small trial orders under $2,000)\n• Western Union (not recommended due to fees; available if needed)\n\nAs the manufacturer and exporter, we invoice you directly and provide full transparency on the cost breakdown.',
+      'We accept the following secure payment terms:\n\n• T/T (Telegraphic Transfer): 30% deposit + 70% before shipment (most common)\n• L/C at sight (for orders above $10,000 USD)\n• PayPal (for sample orders and small trial orders under $2,000)\n• Western Union (not recommended due to fees; available if needed)\n\nThe member factory that produces your order invoices you directly under its own export licence, and provides full transparency on the cost breakdown.',
   },
   {
     q: "How do you handle shipping and logistics?",
@@ -57,7 +57,7 @@ const faqs = [
   {
     q: "What materials do you use for hotel linens?",
     a:
-      'We buy premium raw materials and produce with them in our own mill:\n\n• Egyptian cotton (long-staple Giza 86/88): Our premium line for luxury hotels (300–600 TC)\n• Xinjiang long-staple & Pima/Supima cotton: High-end standard (200–400 TC)\n• Upland cotton: Value range (144–180 TC), ideal for economy properties\n• Bamboo fiber: Eco-friendly option, naturally antimicrobial\n• Tencel/Lyocell: Sustainable alternative with exceptional softness\n• Microfiber: Budget-friendly, quick-drying for pool/spa areas\n• Cotton-polyester blends: Enhanced durability for high-wash environments',
+      'We buy premium raw materials and produce with them in the member factories:\n\n• Egyptian cotton (long-staple Giza 86/88): Our premium line for luxury hotels (300–600 TC)\n• Xinjiang long-staple & Pima/Supima cotton: High-end standard (200–400 TC)\n• Upland cotton: Value range (144–180 TC), ideal for economy properties\n• Bamboo fiber: Eco-friendly option, naturally antimicrobial\n• Tencel/Lyocell: Sustainable alternative with exceptional softness\n• Microfiber: Budget-friendly, quick-drying for pool/spa areas\n• Cotton-polyester blends: Enhanced durability for high-wash environments',
   },
   {
     q: "What is the difference between percale and sateen weave?",

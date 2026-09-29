@@ -237,7 +237,7 @@ def build_content(pdf):
 
     # Closing
     pdf.h2("Why Order Factory-Direct From Us?")
-    pdf.p("We are a group of integrated mill-and-trade enterprises in Chuanjiang, Nantong  --  next to the Dieshiqiao cluster. Core bedding programmes run on our own 5,000 sqm mill, other categories run in the member factories of our group, and every batch is inspected in our own inspection room. Sampling, production, QC and export paperwork sit with one team, so no commission layer sits between you and the production line.")
+    pdf.p("We are a FOB manufacturer alliance  --  independent hotel linen export factories in Nantong, next to the Dieshiqiao cluster. Every member owns its own plant and holds its own export licence. Our founding member's 5,000 sqm bedding mill makes the bed sheets, duvet covers and pillowcases, the other members make the towelling, bathrobes, table linen and mattress programmes, and every batch is inspected against one written standard before it ships. You can visit or audit any of them. Sampling, production, QC and export paperwork sit with one team, so no commission layer sits between you and the production line.")
 
     pdf.divider()
 
@@ -254,7 +254,7 @@ def build_content(pdf):
     pdf.cell(0, 6, "WhatsApp: +86 15151361119")
     pdf.ln(10)
 
-    pdf.callout("About Nantong Linens: We are a group of integrated mill-and-trade enterprises based in Chuanjiang, Nantong, China, adjacent to the Dieshiqiao textile cluster. We manufacture hotel bed linen, towels, bathrobes and table linen for hotels, distributors and wholesalers worldwide, and inspect every batch in our own inspection room before it ships. Certification and audit documents are available on request.")
+    pdf.callout("About Nantong Linens: a FOB manufacturer alliance of independent hotel linen factories based in Nantong, China, adjacent to the Dieshiqiao textile cluster. Every member owns its own plant and its own export licence, and every member accepts a buyer audit or on-site visit. Together we manufacture hotel bed linen, towels, bathrobes and table linen for hotels, distributors and wholesalers worldwide, inspected against one written standard before shipment. Certification and audit documents are available on request.")
 
     pdf.divider()
     pdf.set_font("Helvetica", "I", 7)

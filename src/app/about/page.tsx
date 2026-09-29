@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About Us — Hotel Linen Manufacturer & Exporter in Nantong",
   description:
-    "We are a group of integrated mill-and-trade enterprises in Chuanjiang, Nantong — our own 5,000 m² mill runs weaving, dyeing, cutting, sewing, inspection and packing, and the member factories of the group cover the wider range. Factory-direct wholesale since 2010.",
+    "A FOB manufacturer alliance of independent hotel linen factories in Nantong, China. Member-owned plants, one spec sheet, one QC standard, open to audits.",
   alternates: { canonical: "/about" },
 };
 
@@ -44,17 +44,17 @@ const capability = [
 const advantages = [
   {
     name: "Our Own Factories in the Textile Cluster",
-    desc: "Our group's mill sits in Chuanjiang, Tongzhou — minutes from the Dieshiqiao (叠石桥) market, China's #1 home textile hub with 6,000+ mills. Core programmes run on our own lines and other categories in the member factories of the group, so price and lead time are set by us rather than quoted to us.",
+    desc: "Our alliance's bedding mill sits in Chuanjiang, Tongzhou — minutes from the Dieshiqiao (叠石桥) market, China's #1 home textile hub with 6,000+ mills. Every category runs in the member factory that owns those lines, so price and lead time are set by the plant making the goods rather than quoted to us by a third party.",
     icon: "🏭",
   },
   {
-    name: "Manufacturer + Trader, Group-Wide",
-    desc: "Every member of our group is a mill-and-trader: it owns production and holds its own export licence. Export nonetheless runs through one team and one contract, so you get a single point of responsibility from yarn to bill of lading — no hand-offs, and no agent layer between you and the line.",
+    name: "Manufacturer-Owned, Alliance-Wide",
+    desc: "Every member of the alliance owns its production and holds its own export licence, and the factory that makes your order ships it in its own name. The commercial side is centralised, so you still get one contract, one specification sheet and one accountable counterpart — with no agent layer between you and the line.",
     icon: "🤝",
   },
   {
     name: "Strict Quality Control In-House",
-    desc: "Every order runs through our own inspection room before it is packed: count, weight, dimensions, stitching, shrinkage, and colour consistency. Our group's factories hold OEKO-TEX Standard 100 and ISO 9001, and you receive a photo/video QC report before loading.",
+    desc: "Every order is inspected before it is packed — count, weight, dimensions, stitching, shrinkage and colour consistency, measured on the running batch against one written standard. Alliance factories hold OEKO-TEX Standard 100 and ISO 9001, and you receive a photo/video QC report before loading.",
     icon: "🔍",
   },
   {
@@ -73,7 +73,7 @@ const serviceSteps = [
   {
     step: "02",
     title: "Production Planning & Sampling",
-    desc: "We cost your specification against our own production line — and against the member factories of our group for other categories — then ship physical samples. You approve the sample before any production starts.",
+    desc: "We cost your specification against the member factory that would run it, then ship physical samples. You approve the sample before any production starts.",
   },
   {
     step: "03",
@@ -83,7 +83,7 @@ const serviceSteps = [
   {
     step: "04",
     title: "Production & In-House QC",
-    desc: "Your order runs in our group's factories. We provide progress updates and inspect the running batch in our own inspection room before packing. You receive a photo and video QC report.",
+    desc: "Your order runs in the member factory that makes that category. We provide progress updates, inspect the running batch against the alliance standard before packing, and send you a photo and video QC report.",
   },
   {
     step: "05",
@@ -95,17 +95,17 @@ const serviceSteps = [
 const partnerCertifications = [
   {
     name: "OEKO-TEX Standard 100",
-    desc: "Our own production and the member factories of our group are OEKO-TEX tested. No harmful substances in anything we ship.",
+    desc: "The member factories producing your order are OEKO-TEX tested. No harmful substances in anything we ship.",
     icon: "🌿",
   },
   {
     name: "ISO 9001:2015",
-    desc: "Our group's factories operate ISO-certified quality management systems for consistent output across repeat orders.",
+    desc: "Alliance factories operate ISO-certified quality management systems, which is what keeps repeat orders consistent.",
     icon: "✅",
   },
   {
     name: "BSCI Audited Supply Chain",
-    desc: "Member factories of our group are BSCI social-compliance audited — ethical working conditions across the whole group.",
+    desc: "Member factories are BSCI social-compliance audited — ethical working conditions across the alliance.",
     icon: "🏭",
   },
   {
@@ -122,20 +122,22 @@ export default function AboutPage() {
       <section className="bg-gray-50 border-b border-gray-100 py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-sm font-medium text-blue-800 uppercase tracking-wider">
-            Who We Are — Hotel Linen Manufacturer &amp; Exporter Since 2010
+            Who We Are — A Manufacturer Alliance, Not an Agent
           </span>
           <h1 className="mt-3 text-3xl font-bold text-gray-900">
             We Manufacture Hotel Linens — And Export Them Ourselves
           </h1>
           <p className="mt-3 max-w-2xl text-gray-500">
-            We are a group of integrated mill-and-trade enterprises (工贸一体企业联盟) based in
-            Nantong, Jiangsu — not one building pretending to cover ten product categories. Our own
-            5,000 m² mill in Chuanjiang, minutes from the Dieshiqiao market, runs weaving, dyeing,
-            cutting, sewing, inspection and packing; the member factories of the group, each with its
-            own lines in the same cluster, cover the rest. The commercial side stays centralised, so
-            the price you see is production cost rather than a mill price with a commission added on
-            top. The guides, specs, and procurement resources on this site come free, from 15+ years
-            of making these products.
+            We are a FOB manufacturer alliance (工贸一体出口厂家联盟) of independent export factories
+            in Nantong, Jiangsu — not one building pretending to cover ten product categories. Our
+            founding member&apos;s 5,000 m² bedding mill in Chuanjiang, minutes from the Dieshiqiao
+            market, runs weaving, dyeing, cutting, sewing, inspection and packing; the other members
+            run their own lines in the same cluster for towelling, bathrobes, table linen and mattress
+            programmes. Every member owns its plant and its export licence, and every member accepts a
+            buyer audit. The commercial side stays centralised, so the price you see is the producing
+            factory&apos;s cost rather than a mill price with a commission added on top. The guides,
+            specs and procurement resources on this site come free, from 15+ years of making these
+            products.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
@@ -174,24 +176,26 @@ export default function AboutPage() {
                   means raw materials, dyeing, and finishing capacity are all within reach.
                 </p>
                 <p>
-                  We are a group of integrated mill-and-trade enterprises (工贸一体企业联盟) rather
-                  than a single mill. Our own 5,000 m² mill in Chuanjiang runs the full chain:
-                  fabric preparation and weaving, reactive dyeing and finishing with controlled
-                  shrinkage, automated cutting, multi-needle sewing, computer-controlled quilting,
-                  an independent inspection room, and export packing. Member factories of the group,
-                  each running its own lines in the same cluster, cover the wider category range.
-                  Core bedding programmes use long-staple cotton — including Xinjiang long-staple and
-                  certified Lyocell/Tencel — chosen for hand feel without sacrificing commercial
-                  laundry life.
+                  We are a FOB manufacturer alliance (工贸一体出口厂家联盟) of independent factories
+                  rather than a single mill. Our founding member&apos;s 5,000 m² bedding mill in
+                  Chuanjiang runs the full chain for bed sheets, duvet covers and pillowcases — fabric
+                  preparation and weaving, reactive dyeing and finishing with controlled shrinkage,
+                  automated cutting, multi-needle sewing, computer-controlled quilting, inspection and
+                  export packing. The other members, each running their own lines in the same cluster,
+                  cover towelling, bathrobes, table linen and mattress programmes. Bedding programmes
+                  use long-staple cotton — including Xinjiang long-staple and certified
+                  Lyocell/Tencel — chosen for hand feel without sacrificing commercial laundry life.
                 </p>
                 <p>
-                  What every member has in common matters more than the headcount: each one
-                  manufactures and each one trades — owner-operators of production, not
-                  intermediaries. Set against that, the commercial side is deliberately centralised.
-                  You sign one contract, work to one specification sheet, are held to one inspection
-                  standard, and receive one set of export documents. That is why our quotations are
-                  factory-direct, and why you deal with a single accountable counterpart rather than
-                  a factory on one side and an agent on the other.
+                  What every member has in common matters more than the headcount: each one owns a
+                  plant, holds an export licence, and accepts a buyer audit. Nobody earns from
+                  steering your order towards one factory over another, because nobody is choosing —
+                  the member that makes that category takes the order, and is named on your contract.
+                  Set against that, the commercial side is deliberately centralised: you sign one
+                  contract, work to one specification sheet, are held to one inspection standard, and
+                  receive one set of shipping documents. That is why our quotations are factory-direct,
+                  and why you deal with a single accountable counterpart rather than a factory on one
+                  side and an agent on the other.
                 </p>
               </div>
             </div>
@@ -202,12 +206,13 @@ export default function AboutPage() {
               <div className="space-y-4">
                 {[
                   { label: "Experience", value: "15+ years manufacturing hotel linens" },
-                  { label: "Our role", value: "Manufacturer + trading company (工贸一体)" },
-                  { label: "Facility", value: "Own production in Chuanjiang, Nantong" },
-                  { label: "Production chain", value: "Weaving → dyeing → sewing → QC → packing" },
+                  { label: "Our role", value: "FOB manufacturer alliance (工贸一体出口厂家联盟)" },
+                  { label: "Members", value: "Independent factories, each with its own plant" },
+                  { label: "Founding member", value: "Bedding mill in Chuanjiang, Nantong" },
                   { label: "Raw materials", value: "Long-staple cotton, Lyocell/Tencel, blends" },
                   { label: "Cluster access", value: "6,000+ mills within 10 km for surge capacity" },
                   { label: "Compliance", value: "OEKO-TEX Standard 100 · ISO 9001:2015" },
+                  { label: "Factory visits", value: "Open to buyer audits at every member" },
                   { label: "Minimum order", value: "From 50 pcs per size/colour" },
                   { label: "Shipping terms", value: "FOB Nantong/Shanghai or DDP destination" },
                   { label: "Payment", value: "T/T, L/C accepted" },
@@ -229,8 +234,8 @@ export default function AboutPage() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-gray-900">What We Run In-House</h2>
             <p className="mt-2 text-gray-500">
-              Six production steps that stay on our own lines — and the standard every member
-              factory of the group is held to, which is what makes &quot;factory-direct&quot; more than a slogan
+              Six production steps that run on member-owned lines — and the standard every factory
+              in the alliance is held to, which is what makes &quot;factory-direct&quot; more than a slogan
             </p>
           </div>
 
@@ -303,7 +308,7 @@ export default function AboutPage() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-gray-900">Quality Standards We Hold</h2>
             <p className="mt-2 text-gray-500">
-              Our own mill and every member factory of our group are measured against these — and we verify it ourselves
+              Every member factory of the alliance is measured against these — and we verify it ourselves
             </p>
           </div>
 

@@ -41,8 +41,9 @@ export function Footer() {
               <span className="text-lg font-semibold text-gray-900">Nantong Linens</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-gray-500">
-              Hotel linen manufacturer &amp; exporter in Nantong, China — a group of integrated
-              mill-and-trade enterprises. Factory-direct wholesale and OEM pricing, plus free procurement guides.
+              Hotel linen manufacturer and exporter in Nantong, China — a FOB manufacturer alliance
+              of independent factories, each with its own plant and export licence. Factory-direct
+              wholesale and OEM pricing, plus free procurement guides.
             </p>
             <div className="mt-5">
               <NewsletterForm />

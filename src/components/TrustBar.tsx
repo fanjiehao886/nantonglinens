@@ -6,13 +6,13 @@ export function TrustBar() {
           {[
             {
               value: "15+",
-              label: "Years Industry Experience",
-              sub: "In Dieshiqiao textile market",
+              label: "Years Manufacturing Hotel Linens",
+              sub: "Bedding produced since 2010",
             },
             {
-              value: "6,000+",
-              label: "Factories Within Reach",
-              sub: "Daily floor visits & price checks",
+              value: "100%",
+              label: "Factories Open to Audit",
+              sub: "Visit, or send your own inspector",
             },
             {
               value: "4 Continents",
