@@ -13,7 +13,7 @@ const footerLinks = {
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Our Factory & Process", href: "/about#process" },
+    { name: "Inside Our Factory", href: "/factory" },
     { name: "Quality Standards", href: "/about#certifications" },
     { name: "Free Guides", href: "/blog" },
     { name: "Free PDF Guide", href: "/guides/download" },

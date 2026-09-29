@@ -19,7 +19,7 @@ WHITE = (255, 255, 255)
 
 TITLE = "How to Buy Hotel Linens from China: The Complete 2026 Procurement Guide"
 SUBTITLE = "The Complete 2026 Procurement Guide for Hotel Buyers"
-EXCERPT = "A step-by-step procurement guide for hotel buyers sourcing bed sheets, towels, and bath linens from China. Covers MOQ, pricing, shipping, and quality control  --  based on insider experience in the Dieshiqiao textile market."
+EXCERPT = "A step-by-step procurement guide for hotel buyers sourcing bed sheets, towels, and bath linens from China. Covers MOQ, pricing, shipping, and quality control  --  based on factory-side experience in the Dieshiqiao textile cluster."
 
 
 class GuidePDF(FPDF):
@@ -94,7 +94,7 @@ class GuidePDF(FPDF):
             "Step 5: Quality Control  --  The Non-Negotiable Step",
             "Step 6: Shipping and Logistics",
             "What to Budget",
-            "Need Someone on the Ground?",
+            "Why Order Factory-Direct From Us?",
         ]
         self.set_font("Helvetica", "", 11)
         self.set_text_color(*BODY)
@@ -188,7 +188,7 @@ def build_content(pdf):
     pdf.bullet("Bed sheets: Most factories require 200-500 sets per size per color. Some will accept 100 sets with a small surcharge (5-10%).")
     pdf.bullet("Towels: 500-1000 pieces per type is standard. Bath towels, hand towels, and washcloths often count as separate MOQs.")
     pdf.bullet("Duvet covers & pillowcases: Similar to sheets  --  200-500 sets per size.")
-    pdf.p("Smaller factories or those in Dieshiqiao's wholesale corridors may accept lower MOQs (50-100 sets) but at higher per-unit prices. The tradeoff between MOQ and unit price is where a sourcing agent adds real value  --  knowing which factories are flexible and which aren't.")
+    pdf.p("Smaller factories or those in Dieshiqiao's wholesale corridors may accept lower MOQs (50-100 sets) but at higher per-unit prices. The tradeoff between MOQ and unit price is where local knowledge pays off  --  knowing which mills are flexible on minimums and which are not. A manufacturer running its own line can usually accept the lower trial quantity, because there is no third-party minimum to satisfy.")
 
     # Step 3
     pdf.h2("Step 3: Request and Compare Quotes")
@@ -210,7 +210,7 @@ def build_content(pdf):
 
     # Step 5
     pdf.h2("Step 5: Quality Control  --  The Non-Negotiable Step")
-    pdf.p("This is where most buyers who go direct lose money. You need eyes on the ground. The standard 3-stage QC process:")
+    pdf.p("This is where most buyers who order from an unknown factory lose money. Somebody has to be standing on the line. The standard 3-stage QC process:")
     pdf.bullet("Pre-production inspection: Verify raw materials, fabric rolls, dye lots before cutting. Catch problems at the cheapest stage.")
     pdf.bullet("In-production inspection (DPI): Random check when 20-30% of the order is produced. Check stitching, sizing, color consistency, and fabric feel against your PPS.")
     pdf.bullet("Pre-shipment inspection (PSI): Final random sampling when 80-100% is packed. AQL 2.5 (major defects) / AQL 4.0 (minor defects) is the industry standard for hotel linens.")
@@ -236,14 +236,14 @@ def build_content(pdf):
     pdf.p("Add approximately 15-25% for freight, insurance, and customs clearance to get your landed cost.")
 
     # Closing
-    pdf.h2("Need Someone on the Ground?")
-    pdf.p("We live and work in Dieshiqiao every day. We handle sampling, negotiate with factories, run QC inspections, and manage logistics  --  so you get factory-direct pricing with professional oversight.")
+    pdf.h2("Why Order Factory-Direct From Us?")
+    pdf.p("We are a hotel linen manufacturer and trading company in Chuanjiang, Nantong  --  next to the Dieshiqiao cluster. Core bedding programmes run on our own lines, other categories draw on audited cluster mills, and every batch is inspected in our own inspection room. Sampling, production, QC and export paperwork sit with one team, so there is no commission layer between you and the production line.")
 
     pdf.divider()
 
     pdf.set_font("Helvetica", "B", 12)
     pdf.set_text_color(*PRIMARY)
-    pdf.cell(0, 8, "Ready to Source Hotel Linens from China?")
+    pdf.cell(0, 8, "Ready to Order Factory-Direct Hotel Linens?")
     pdf.ln(10)
     pdf.set_font("Helvetica", "", 10)
     pdf.set_text_color(*BODY)
@@ -254,7 +254,7 @@ def build_content(pdf):
     pdf.cell(0, 6, "WhatsApp: +86 15151361119")
     pdf.ln(10)
 
-    pdf.callout("About Nantong Linens: We are a hotel linen sourcing agent based in the Dieshiqiao textile market, Nantong, China. We help hotel buyers worldwide find the right suppliers, negotiate pricing, inspect quality, and manage logistics  --  without the risk of going factory-direct alone.")
+    pdf.callout("About Nantong Linens: We are a hotel linen manufacturer and trading company based in Chuanjiang, Nantong, China, adjacent to the Dieshiqiao textile cluster. We manufacture hotel bed linen, towels, bathrobes and table linen for hotels, distributors and wholesalers worldwide, and inspect every batch in our own inspection room before it ships. Certification and audit documents are available on request.")
 
     pdf.divider()
     pdf.set_font("Helvetica", "I", 7)

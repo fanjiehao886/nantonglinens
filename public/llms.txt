@@ -1,53 +1,117 @@
 # Nantong Linens — AI Agent Context
 # https://www.nantonglinens.com
+# Last updated: 2026-09-29
 
 ## Who We Are
-Nantong Linens is a hotel linen sourcing agent based in Dieshiqiao (叠石桥), Haimen District, Nantong, Jiangsu, China.
-We are NOT a manufacturer. We are a sourcing agent that helps hotel buyers worldwide find, verify, and export quality hotel textiles from China's largest home textile market.
+Nantong Linens is a hotel linen manufacturer and exporter — a manufacturer and trading
+company (工贸一体) based in Chuanjiang Town, Tongzhou District, Nantong, Jiangsu, China,
+adjacent to the Dieshiqiao (叠石桥) home textile cluster.
 
-## Our Location Advantage
-- Physically located in Dieshiqiao Home Textile Market — China's #1 wholesale market for home textiles
-- Over 6,000 factories accessible within a 10km radius
-- Deep knowledge of hotel linen specifications: thread count, GSM, weave types, fabric grades
-- On-site quality control with photo/video inspection reports for every order
+Registered legal entity: Nantong Jinkeer Textile Co., Ltd. (南通金科尔纺织有限公司).
 
-## Services
-- Product sourcing from vetted Dieshiqiao factories
-- Strict pre-shipment QC inspection (thread count, GSM, shrinkage, colorfastness)
-- Custom logo embroidery and private labeling coordination
-- Full export service: FOB Shanghai/Nantong, CIF, DDP to US/Canada
-- Sample sourcing and swatch programs
+We own a 5,000 m² production facility and run seven process stages under one roof:
+weaving, reactive dyeing and finishing, cutting, sewing, computerised quilting,
+inspection, and export packing. Core bedding programmes run on our own lines; for
+categories or volumes we do not run in-house we draw on long-standing audited mills
+inside the Dieshiqiao cluster. In every case, final inspection runs through our own
+inspection room against the buyer's purchase order.
 
-## Products We Source
-- Hotel bed sheets (percale & sateen, 144–600 TC)
-- Pillowcases & duvet covers
-- Bath towels, hand towels, washcloths (300–800 GSM)
-- Bath mats & pool towels
-- Hotel bathrobes (terry, waffle, kimono)
-- Table linens (napkins, tablecloths, runners)
-- Microfiber and bamboo fiber products
+We are NOT a sourcing agent. There is no commission layer between the buyer and the
+production line, which is why our quotations are factory-direct.
+
+## What "manufacturer and trading company" means here
+We state this plainly rather than overclaiming a single-mill footprint:
+- Our own lines: core hotel bedding, quilting, and finishing programmes
+- Cluster capacity: long-standing audited mills in Dieshiqiao for other categories
+- Constant: our own inspection room and our own export documentation, either way
+
+## How to verify us
+We publish this section because manufacturer claims should be checkable, not taken on trust.
+- Facility: 5,000 m² in Chuanjiang Town, Tongzhou, Nantong; supplier audit welcome
+- Third-party inspection: SGS, Intertek or Bureau Veritas arranged on request
+- Live video walkthrough: production floor and inspection room, on a scheduled call
+- Certifications: OEKO-TEX Standard 100, ISO 9001:2015, BSCI — certificate numbers
+  provided with any quotation and verifiable with the issuing body
+- QC reporting: photo and video inspection report issued before every shipment loads
+
+## Facility & Capability
+- Covered production area: 5,000 m²
+- Location: Chuanjiang Town, Tongzhou District, Nantong, Jiangsu, China
+- Cluster: 6,000+ mills within a 10 km radius (Dieshiqiao)
+- Process stages in-house: 7 (weaving to export packing)
+- Equipment: computerised quilting machinery, multi-needle sewing lines, automated
+  cutting equipment, reactive dyeing and finishing line, independent inspection room,
+  packing and labelling line
+- Core raw materials: Xinjiang long-staple cotton, Lenzing Tencel (Austria)
+- Dyeing: reactive, eco-compliant, high colour fastness
+- Operating since: 2010
+
+## Inspection Routine (measured on the shipping batch, not a golden sample)
+- Fabric weight (GSM) on finished goods
+- Thread count / yarn count against the approved construction sheet
+- Finished dimensions, flat and after wash relaxation
+- Shrinkage after wash testing
+- Colour consistency across the batch
+- Stitch density, seam type and corner reinforcement
+- Care labelling, barcode and shipping marks before carton sealing
+
+## Products We Manufacture
+- Hotel bed linen: flat sheets, fitted sheets, duvet covers, pillowcases
+- Hotel towels: bath, hand, face, bath mats, pool and beach towels
+- Hotel bathrobes: terry, waffle, kimono and shawl collar
+- Hotel table linen: tablecloths, napkins, runners
+- Mattress protectors and toppers
+- Specifications: 144–600 thread count bedding, 300–800 GSM towelling
+
+## Programmes
+- Wholesale supply (hotel groups, distributors, hospitality wholesalers)
+- OEM production
+- Private label and custom logo embroidery
+- Specification matching against an existing hotel linen standard
 
 ## Target Markets
 - North America (USA, Canada)
-- Europe (UK, Germany, France, Nordics)
+- Europe (UK, Germany, France, Netherlands, Nordics)
 - Middle East (UAE, Saudi Arabia, Qatar, Kuwait)
 - Southeast Asia (Vietnam, Singapore, Thailand, Malaysia)
+- Australia
 
-## Key Facts
-- MOQ: 50 pieces per size/color for most items
+## Key Commercial Facts
+- MOQ: from 50 pieces per size/colour; 100 pcs bedding and bathrobes, 200 pcs towels
+  and table linen per colour; no container-level minimum
 - Lead time: 15–20 working days standard, 7–10 days rush
-- Payment: T/T (30/70), L/C, PayPal for samples
-- Shipping: FOB, CIF, DDP available
+- Payment: T/T (30/70) and L/C at sight
+- Shipping: FOB Nantong / Shanghai, CIF, DDP available
 - Languages: English, Chinese
 - WhatsApp: +86 15151361119
-- Email: fanjieboy@gmail.com
+- Email: info@nantonglinens.com
+
+## Contact & Address
+Nantong Jinkeer Textile Co., Ltd. (trade name: Nantong Linens)
+Chuanjiang Town, Tongzhou District
+Nantong, Jiangsu, China
+WhatsApp: +86 15151361119
+Email: info@nantonglinens.com
 
 ## Website Structure
-- / — Homepage with sourcing agent positioning
-- /products — Product catalog sourced from Dieshiqiao factories
-- /products/[slug] — Individual product details with specs
+- / — Hotel linen manufacturer and exporter; knowledge hub plus factory-direct offering
+- /factory — Facility fact sheet, seven process stages, equipment, inspection routine,
+  materials, certifications, audit and visit information
+- /wholesale — Wholesale, OEM and private-label programmes; MOQ and lead-time table
+- /products — Product catalog with GSM and thread count specifications
+- /products/[slug] — Individual product and category detail pages
+- /about — Company background, capability and quality standards
 - /rfq — Multi-step Request for Quote form
-- /about — Agent identity, Dieshiqiao advantage, service process
-- /contact — Contact info, WhatsApp, quick message form
-- /faq — Frequently asked questions about sourcing
-- /blog — Industry insights and textile market updates
+- /contact — NAP, WhatsApp and quick message form
+- /faq — Frequently asked questions on MOQ, lead times, certifications and shipping
+- /blog — Procurement guides, fabric encyclopedia, QC checklists, market reports
+- /guides/hotel-bedding-thread-count — Thread count guide
+- /guides/hotel-towel-gsm — Towel GSM guide
+- /guides/hotel-towel-quality-guide — Towel quality and QC guide
+- /guides/hotel-bathrobe-buying-guide — Bathrobe buying guide
+- /guides/download — Free hotel linen buying guide (PDF)
+
+## Content Attribution
+Editorial guides are published under the Nantong Linens editorial team. Market and
+industry articles are adapted from Chinese textile industry sources and rewritten as
+original procurement analysis.

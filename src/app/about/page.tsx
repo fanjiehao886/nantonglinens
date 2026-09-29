@@ -136,6 +136,20 @@ export default function AboutPage() {
             specs, and procurement resources on this site come free, from 15+ years of making these
             products.
           </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              href="/factory"
+              className="inline-flex items-center rounded-full bg-blue-900 px-7 py-3 text-sm font-semibold text-white hover:bg-blue-800 transition-colors"
+            >
+              See Inside Our Factory
+            </Link>
+            <Link
+              href="/wholesale"
+              className="inline-flex items-center rounded-full border border-gray-300 px-7 py-3 text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors"
+            >
+              Wholesale &amp; OEM Programs
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -152,6 +152,12 @@ export default function WholesalePage() {
             >
               Browse All Products
             </Link>
+            <Link
+              href="/factory"
+              className="inline-flex items-center gap-2 rounded-full border border-gray-300 px-8 py-3.5 text-base font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              Inside Our Factory
+            </Link>
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-400">
             <span>Own factory in Nantong</span>

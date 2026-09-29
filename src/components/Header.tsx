@@ -169,6 +169,12 @@ export function Header() {
             Custom / RFQ
           </Link>
           <Link
+            href="/factory"
+            className="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
+          >
+            Our Factory
+          </Link>
+          <Link
             href="/about"
             className="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
           >
@@ -281,6 +287,13 @@ export function Header() {
             className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-800"
           >
             Custom / RFQ
+          </Link>
+          <Link
+            href="/factory"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-800"
+          >
+            Our Factory
           </Link>
           <Link
             href="/about"

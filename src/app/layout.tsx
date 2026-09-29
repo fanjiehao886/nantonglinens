@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { organizationGraph } from "@/lib/company";
 
 export const metadata: Metadata = {
   icons: {
@@ -87,73 +88,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <GoogleAnalytics />
-        {/* Organization / Manufacturer Schema for GEO + AI answer engines */}
+        {/* Organization + WebSite schema, generated from the single NAP source of truth.
+            Note: schema.org has no "Manufacturer" type — manufacturing identity is
+            expressed through isicV4, knowsAbout and hasOfferCatalog instead. */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": ["Organization", "Manufacturer"],
-              name: "Nantong Linens",
-              url: "https://www.nantonglinens.com",
-              logo: "https://www.nantonglinens.com/logo.png",
-              description:
-                "Hotel linen manufacturer and exporter (manufacturer + trading company) based in Nantong, Jiangsu, China. Own production facility plus access to the 6,000+ mill Dieshiqiao textile cluster. Factory-direct wholesale, OEM and private-label hotel linens — bed sheets, towels, bathrobes, and table linen.",
-              foundingDate: "2010",
-              knowsAbout: [
-                "hotel bed linen manufacturing",
-                "hotel towel manufacturing",
-                "thread count and GSM specification",
-                "commercial laundry durability",
-                "OEKO-TEX and ISO 9001 compliance",
-                "FOB export documentation",
-              ],
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Chuanjiang, Tongzhou",
-                addressRegion: "Jiangsu",
-                addressCountry: "CN",
-              },
-              areaServed: [
-                { "@type": "Place", name: "North America" },
-                { "@type": "Place", name: "European Union" },
-                { "@type": "Place", name: "United Kingdom" },
-                { "@type": "Place", name: "Middle East" },
-                { "@type": "Place", name: "Southeast Asia" },
-                { "@type": "Place", name: "Australia" },
-              ],
-              contactPoint: {
-                "@type": "ContactPoint",
-                contactType: "sales",
-                email: "info@nantonglinens.com",
-                availableLanguage: ["English", "Chinese"],
-              },
-              makesOffer: {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "Factory-direct hotel linen supply (wholesale, OEM, private label)",
-                },
-                businessFunction: "http://purl.org/goodrelations/v1#Sell",
-              },
-            }),
-          }}
-        />
-        {/* Website Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Nantong Linens",
-              url: "https://www.nantonglinens.com",
-              potentialAction: {
-                "@type": "ReadAction",
-                target: "https://www.nantonglinens.com/products",
-              },
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationGraph()) }}
         />
       </head>
       <body className="min-h-screen bg-white text-gray-900 antialiased">

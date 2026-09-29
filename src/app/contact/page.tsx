@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import { company, napLines } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Contact Us | Nantong Linens — Hotel Linen Manufacturer & Exporter",
@@ -30,15 +31,15 @@ export default function ContactPage() {
                 {
                   icon: "\u2709\ufe0f",
                   title: "Email",
-                  lines: ["info@nantonglinens.com"],
+                  lines: [company.email],
                   desc: "Best for detailed inquiries",
                 },
                 {
                   icon: "\ud83d\udcf1",
                   title: "WhatsApp",
-                  lines: ["+86 15151361119"],
+                  lines: [company.whatsapp],
                   desc: "Quick responses in English",
-                  href: "https://wa.me/8615151361119",
+                  href: company.whatsappUrl,
                 },
                 {
                   icon: "\ud83d\udd27",
@@ -48,13 +49,9 @@ export default function ContactPage() {
                 },
                 {
                   icon: "\ud83d\udccd",
-                  title: "Office Address",
-                  lines: [
-                    "Dieshiqiao Home Textile Market",
-                    "Haimen District, Nantong",
-                    "Jiangsu Province, China 226100",
-                  ],
-                  desc: "Located in China's largest home textile market",
+                  title: "Factory & Registered Office",
+                  lines: napLines(),
+                  desc: "Chuanjiang, Tongzhou — adjacent to the Dieshiqiao textile cluster",
                 },
               ].map((card) => (
                 <div
