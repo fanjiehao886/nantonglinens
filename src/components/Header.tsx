@@ -67,7 +67,7 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -203,7 +203,7 @@ export function Header() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 text-gray-600"
+          className="lg:hidden p-2 text-gray-600"
           aria-label="Toggle menu"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -218,7 +218,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-gray-100 px-4 pb-4 pt-2">
+        <div className="lg:hidden border-t border-gray-100 px-4 pb-4 pt-2">
           {navigation.map((item) => (
             <Link
               key={item.name}
