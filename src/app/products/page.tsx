@@ -7,7 +7,7 @@ import { PRODUCTS_QUERY, CATEGORIES_QUERY } from "@/lib/queries";
 export const metadata: Metadata = {
   title: "Hotel Linen Wholesale Catalog — Factory-Direct Bed Sheets, Towels & Bathrobes",
   description:
-    "Wholesale hotel linens by GSM, thread count, and material — produced in our own Nantong facility. Low MOQ, 15–25 day lead time, in-house QC, factory-direct FOB or DDP shipping worldwide.",
+    "Wholesale hotel linens by GSM, thread count, and material — produced in our own group factories in Nantong. Low MOQ, 15–25 day lead time, in-house QC, factory-direct FOB or DDP shipping worldwide.",
   alternates: { canonical: "/products" },
   openGraph: {
     title: "Hotel Linen Wholesale Catalog — Factory-Direct | Nantong Linens",
@@ -49,7 +49,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900">Hotel Linens Catalog</h1>
           <p className="mt-2 text-gray-500">
-            Manufactured factory-direct in Nantong — our own production plus audited cluster mills,
+            Manufactured factory-direct in Nantong — our own production plus the member factories of our group,
             in-house QC, global shipping. Logo customization and private labeling available on all products.
           </p>
         </div>
@@ -132,7 +132,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
           <h2 className="mt-10 text-2xl font-bold text-gray-900">Hotel Bathrobes, Table Linen &amp; More</h2>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-600">
             Complete your property program with waffle and terry bathrobes, pool and beach towels, tablecloths and napkins,
-            and mattress toppers — all from our own production and the same audited Nantong mills, consolidated into a single shipment.
+            and mattress toppers — all from our own production and the same member Nantong factories, consolidated into a single shipment.
             Start with the <Link href="/guides/hotel-bathrobe-buying-guide" className="font-medium text-blue-800 hover:underline">Hotel Bathrobe Buying Guide</Link>.
           </p>
         </section>
@@ -144,8 +144,8 @@ export default async function ProductsPage({ searchParams }: PageProps) {
             <p>
               Nantong Linens is a hotel linen manufacturer and exporter based in Nantong, Jiangsu —
               minutes from Dieshiqiao, China&apos;s largest home textile market with over 6,000 mills.
-              We produce our core programs in our own facility and run everything else through audited
-              cluster mills, which means you buy factory-direct instead of paying a trading layer.
+              We produce our core programmes on our own lines and run everything else through the member
+              factories of our group, which means you buy factory-direct instead of paying a trading layer.
             </p>
             <p>
               All hotel linens are produced with premium long-staple cotton (including Xinjiang

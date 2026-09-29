@@ -35,7 +35,7 @@ export function TestimonialSection() {
             {
               stat: "18 days from RFQ to samples",
               quote:
-                "We needed white sateen duvet covers fast for a renovation opening. They matched a factory, sent physical samples, and we approved within 18 days of the first message.",
+                "We needed white sateen duvet covers fast for a renovation opening. They matched the spec to the right line in their group, sent physical samples, and we approved within 18 days of the first message.",
               author: "Independent Hotel Owner",
               role: "North America",
               badge: "Speed",

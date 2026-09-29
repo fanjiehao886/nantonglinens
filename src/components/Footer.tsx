@@ -13,7 +13,7 @@ const footerLinks = {
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Inside Our Factory", href: "/factory" },
+    { name: "Inside Our Factories", href: "/factory" },
     { name: "Quality Standards", href: "/about#certifications" },
     { name: "Free Guides", href: "/blog" },
     { name: "Free PDF Guide", href: "/guides/download" },
@@ -41,8 +41,8 @@ export function Footer() {
               <span className="text-lg font-semibold text-gray-900">Nantong Linens</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-gray-500">
-              Hotel linen manufacturer &amp; exporter in Nantong, China — our own factory plus the
-              Dieshiqiao cluster. Factory-direct wholesale and OEM pricing, plus free procurement guides.
+              Hotel linen manufacturer &amp; exporter in Nantong, China — a group of integrated
+              mill-and-trade enterprises. Factory-direct wholesale and OEM pricing, plus free procurement guides.
             </p>
             <div className="mt-5">
               <NewsletterForm />

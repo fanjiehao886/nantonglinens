@@ -23,7 +23,7 @@ const CATEGORY_DATA: Record<string, {
     title: "Hotel Bath Towels — Wholesale GSM, Factory-Direct from Nantong",
     description: "Wholesale hotel bath towels, hand towels, and washcloths — manufactured factory-direct in Nantong. Custom GSM, cotton types, and sizes. Competitive pricing, strict QC, global shipping.",
     keywords: "hotel bath towels wholesale, bulk towels China, hotel towel supplier, terry towel manufacturer, factory-direct hotel towels",
-    intro: "Hotel towels are one of the highest-touch items in any property. Guests judge quality by the towel's weight, absorbency, and softness within seconds. We manufacture bath towels, hand towels, face cloths, and bath mats on our own terry lines in Nantong — each vetted for GSM consistency, colorfastness, and commercial laundry durability.",
+    intro: "Hotel towels are one of the highest-touch items in any property. Guests judge quality by the towel's weight, absorbency, and softness within seconds. We manufacture bath towels, hand towels, face cloths, and bath mats on our own terry lines in Nantong — each held to GSM consistency, colorfastness, and commercial laundry durability.",
     specs: [
       "GSM: 400–900 (see our towel GSM guide for hotel tier recommendations)",
       "Material: 100% Cotton (ring-spun, combed, Egyptian), poly-cotton blends available",
@@ -300,7 +300,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${product.name} — Hotel Linen Specs & Pricing | Nantong Linens`,
-    description: product.shortDescription || `${product.name} in bulk — factory-direct pricing from our own Nantong factory.`,
+    description: product.shortDescription || `${product.name} in bulk — factory-direct pricing from our own group factories in Nantong.`,
     alternates: { canonical: `/products/${slug}` },
     openGraph: {
       title: `${product.name} — Hotel Linen Specs & Pricing | Nantong Linens`,
@@ -365,7 +365,7 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
             <div className="py-20 text-center">
               <div className="mx-auto max-w-md">
                 <p className="text-lg text-gray-500">No products listed in {data.name} yet, but we manufacture these daily.</p>
-                <p className="mt-2 text-sm text-gray-400">Our factory network covers {data.name.toLowerCase()} with every spec combination.</p>
+                <p className="mt-2 text-sm text-gray-400">Our group&apos;s factories cover {data.name.toLowerCase()} across every spec combination.</p>
                 <Link href="/rfq" className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-900 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-800 transition-colors">
                   Tell us what you need →
                 </Link>
@@ -433,7 +433,7 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
           <div className="mt-12 rounded-2xl bg-blue-950 p-10 text-center">
             <h2 className="text-2xl font-bold text-white">Need custom {data.name.toLowerCase()} specifications?</h2>
             <p className="mt-3 text-blue-200/80 max-w-2xl mx-auto">
-              Tell us your required specs and quantity. We will match you with the right Dieshiqiao factory — with samples shipped within 5 business days.
+              Tell us your required specs and quantity. We will run it on the right line within our group — samples shipped within 5 business days.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link href="/rfq" className="inline-flex items-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors">

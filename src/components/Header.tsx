@@ -172,7 +172,7 @@ export function Header() {
             href="/factory"
             className="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
           >
-            Our Factory
+            Our Factories
           </Link>
           <Link
             href="/about"
@@ -293,7 +293,7 @@ export function Header() {
             onClick={() => setMobileOpen(false)}
             className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-800"
           >
-            Our Factory
+            Our Factories
           </Link>
           <Link
             href="/about"

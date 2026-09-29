@@ -5,20 +5,21 @@ import { company, napLines } from "@/lib/company";
 export const metadata: Metadata = {
   title: "Inside Our Hotel Linen Factory in Nantong, China",
   description:
-    "Inside our 5,000 m² hotel linen production facility in Chuanjiang, Nantong: weaving, reactive dyeing, cutting, sewing, computerised quilting, in-house inspection and export packing. Manufacturer and trading company — factory-direct wholesale, OEM and private label.",
+    "Inside our 5,000 m² hotel linen mill in Chuanjiang, Nantong: weaving, reactive dyeing, cutting, sewing, computerised quilting, in-house inspection and export packing — plus the member factories of our group across the Dieshiqiao cluster. Factory-direct wholesale, OEM and private label.",
   keywords:
     "hotel linen factory China, hotel linen manufacturer Nantong, hotel bedding factory tour, textile factory audit China, hotel towel manufacturer China, OEKO-TEX hotel linen factory",
   alternates: { canonical: "/factory" },
   openGraph: {
     title: "Inside Our Hotel Linen Factory in Nantong, China | Nantong Linens",
     description:
-      "A walk-through of our own 5,000 m² hotel linen production facility in Chuanjiang, Nantong — seven process stages in-house, an independent inspection room, and an open invitation to audit.",
+      "A walk-through of our own 5,000 m² hotel linen mill in Chuanjiang, Nantong — seven process stages in-house, an independent inspection room, and an open invitation to audit.",
   },
 };
 
 /** Facts stated on this page. Every one of them is checkable at the facility. */
 const facilityFacts = [
-  { label: "Facility area", value: "5,000 m² covered production area" },
+  { label: "Facility area", value: "5,000 m² covered production area in our own mill" },
+  { label: "Group structure", value: "A group of integrated mill-and-trade enterprises; each member runs its own lines" },
   { label: "Location", value: "Chuanjiang Town, Tongzhou, Nantong, Jiangsu" },
   { label: "Cluster", value: "Adjacent to Dieshiqiao — 6,000+ mills within 10 km" },
   { label: "Process stages in-house", value: "7 — weaving to export packing" },
@@ -115,7 +116,7 @@ const certifications = [
   },
   {
     name: "BSCI social compliance",
-    desc: "Social compliance auditing across our own facility and the cluster mills we draw on.",
+    desc: "Social compliance auditing across our own mill and every member factory of our group.",
   },
 ];
 
@@ -405,20 +406,27 @@ export default function FactoryPage() {
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">
-                Our own lines — and the cluster behind them
+                Our own mill — and the group behind it
               </h2>
               <div className="mt-4 space-y-4 text-sm leading-relaxed text-gray-600">
                 <p>
-                  We are a manufacturer and trading company, and we say so plainly. Core bedding
-                  programs run on our own lines. For categories or volumes we do not run
-                  in-house, we draw on long-standing mills inside the Dieshiqiao cluster that we
-                  have worked with for years.
+                  We are a group of integrated mill-and-trade enterprises (工贸一体企业联盟), and we
+                  say so plainly rather than pretending one building covers ten categories. The
+                  5,000 m² mill described on this page is our own, and core bedding programmes run
+                  here.
                 </p>
                 <p>
-                  Wherever an order is produced, the inspection routine does not change. It still
-                  runs through our own inspection room against your purchase order, and you still
-                  receive the same photo and video report before loading. One supplier, one point
-                  of responsibility from yarn to bill of lading.
+                  The wider range — towelling, bathrobes, table linen, mattress programmes — runs in
+                  the member factories of the group, each of them inside the same Dieshiqiao cluster
+                  and each of them a producer with its own lines and its own export licence. They are
+                  not mills we buy from at arm&apos;s length, and they are not resellers: they are the
+                  group.
+                </p>
+                <p>
+                  Wherever an order is produced, the commercial and inspection routine does not
+                  change — one contract, one specification sheet, one inspection standard, one set of
+                  export documents. Inspection still runs through our own room against your purchase
+                  order, and you still receive the same photo and video report before loading.
                 </p>
                 <p>
                   That is the honest version of the arrangement, and it is also why we can quote
@@ -434,7 +442,8 @@ export default function FactoryPage() {
                 Buyers are welcome to audit. We can host a live video walkthrough across the
                 production floor and inspection room on a scheduled call — no travel required —
                 or arrange an in-person visit if you or your sourcing team are travelling through
-                Jiangsu. Third-party inspections (SGS, Intertek, Bureau Veritas) are arranged on
+                Jiangsu — the same visit can cover the member factories producing your particular
+                category. Third-party inspections (SGS, Intertek, Bureau Veritas) are arranged on
                 request and usually take two to three days to schedule.
               </p>
 

@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title:
       "Hotel Linen Manufacturer & Exporter — Factory-Direct Wholesale",
     description:
-      "Factory-direct hotel linens from our own Nantong production facility: bed sheets, towels, bathrobes, table linen. Free procurement guides included.",
+      "Factory-direct hotel linens from our own group factories in Nantong: bed sheets, towels, bathrobes, table linen. Free procurement guides included.",
     images: [
       { url: "/og-image.jpg", width: 1200, height: 630, alt: "Nantong Linens — Hotel Linen Manufacturer & Exporter, Factory-Direct Wholesale" },
     ],
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hotel Linen Manufacturer & Exporter — Factory-Direct | Nantong Linens",
     description:
-      "Factory-direct hotel linens from our own facility in Nantong, China. Wholesale, OEM and private label — plus free GSM, thread count and QC guides.",
+      "Factory-direct hotel linens from our own group factories in Nantong, China. Wholesale, OEM and private label — plus free GSM, thread count and QC guides.",
   },
   robots: {
     index: true,

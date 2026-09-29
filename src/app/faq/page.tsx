@@ -12,7 +12,7 @@ const faqs = [
   {
     q: "Are you a manufacturer or a trading company?",
     a:
-      "Both — we are a hotel linen manufacturer and trading company (工贸一体). We produce in our own facility in Chuanjiang, Tongzhou District, Nantong, running weaving, dyeing and finishing, cutting, sewing, quilting, inspection, and export packing. For categories or volumes outside our own lines, we produce with audited mills in the surrounding Dieshiqiao cluster. Because we manufacture rather than broker, your quotation reflects our production cost — there is no agent commission layer built into the price.",
+      "Both — we are a group of integrated mill-and-trade enterprises (工贸一体企业联盟), so every member manufactures and every member trades. Our own 5,000 m² mill in Chuanjiang, Tongzhou District, Nantong runs weaving, dyeing and finishing, cutting, sewing, quilting, inspection and export packing; other categories and volumes run in the member factories of our group across the same Dieshiqiao cluster. Because the group owns the production rather than brokering it, your quotation reflects production cost — there is no agent commission layer built into the price.",
   },
   {
     q: "What is the minimum order quantity (MOQ) for hotel linens?",
@@ -35,9 +35,9 @@ const faqs = [
       'We support full OEM/ODM customization:\n\n• Logo embroidery (single-color, multi-color, and metallic thread)\n• Custom woven labels with your brand name\n• Pantone color matching (minimum ΔE < 1.0)\n• Private-label packaging with custom hangtags\n• Custom dimensions (bed sheets up to California King, towels in any size)\n• Design development assistance for new textile patterns',
   },
   {
-    q: "What quality certifications does your factory hold?",
+    q: "What quality certifications do your factories hold?",
     a:
-      'Our own facility and the partner mills we use hold multiple international certifications:\n\n• OEKO-TEX Standard 100 (all product lines)\n• ISO 9001:2015 Quality Management System\n• BSCI (Business Social Compliance Initiative)\n• WRAP (Worldwide Responsible Accredited Production)\n\nWe also arrange third-party inspections by SGS or Intertek upon request. As the manufacturer, we verify every batch in our own inspection room — thread count verification, GSM testing, shrinkage rate measurement (<3%), and colorfastness testing (Grade 4+).',
+      'Our own mill and the member factories of our group hold multiple international certifications:\n\n• OEKO-TEX Standard 100 (all product lines)\n• ISO 9001:2015 Quality Management System\n• BSCI (Business Social Compliance Initiative)\n• WRAP (Worldwide Responsible Accredited Production)\n\nWe also arrange third-party inspections by SGS or Intertek upon request. As the manufacturer, we verify every batch in our own inspection room — thread count verification, GSM testing, shrinkage rate measurement (<3%), and colorfastness testing (Grade 4+).',
   },
   {
     q: "What payment methods do you accept?",
@@ -57,7 +57,7 @@ const faqs = [
   {
     q: "What materials do you use for hotel linens?",
     a:
-      'We buy premium raw materials and produce with them in our own facility:\n\n• Egyptian cotton (long-staple Giza 86/88): Our premium line for luxury hotels (300–600 TC)\n• Xinjiang long-staple & Pima/Supima cotton: High-end standard (200–400 TC)\n• Upland cotton: Value range (144–180 TC), ideal for economy properties\n• Bamboo fiber: Eco-friendly option, naturally antimicrobial\n• Tencel/Lyocell: Sustainable alternative with exceptional softness\n• Microfiber: Budget-friendly, quick-drying for pool/spa areas\n• Cotton-polyester blends: Enhanced durability for high-wash environments',
+      'We buy premium raw materials and produce with them in our own mill:\n\n• Egyptian cotton (long-staple Giza 86/88): Our premium line for luxury hotels (300–600 TC)\n• Xinjiang long-staple & Pima/Supima cotton: High-end standard (200–400 TC)\n• Upland cotton: Value range (144–180 TC), ideal for economy properties\n• Bamboo fiber: Eco-friendly option, naturally antimicrobial\n• Tencel/Lyocell: Sustainable alternative with exceptional softness\n• Microfiber: Budget-friendly, quick-drying for pool/spa areas\n• Cotton-polyester blends: Enhanced durability for high-wash environments',
   },
   {
     q: "What is the difference between percale and sateen weave?",

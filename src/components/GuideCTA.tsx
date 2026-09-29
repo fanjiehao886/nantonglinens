@@ -21,7 +21,7 @@ export function GuideCTA({
   category,
   ctaLocation,
   heading = "Ordering to these specs?",
-  body = "Send us your target specs and quantity — we quote factory-direct FOB prices from our own production line within 24 hours. Free samples available.",
+  body = "Send us your target specs and quantity — we quote factory-direct FOB prices from our own production lines within 24 hours. Free samples available.",
   secondaryHref,
   secondaryLabel = "Browse Products",
 }: GuideCTAProps) {

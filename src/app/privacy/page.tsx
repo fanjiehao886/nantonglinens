@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
           <h2 className="text-xl font-semibold text-gray-900">3. How We Use Your Information</h2>
           <ul className="mt-3 list-disc pl-6 space-y-1">
             <li>Process and respond to your RFQ and sample requests</li>
-            <li>Provide quotations and coordinate production with our factory and audited cluster mills</li>
+            <li>Provide quotations and coordinate production with our own mill and the member factories of our group</li>
             <li>Send order updates, shipping notifications, and QC reports</li>
             <li>Improve our website, products, and services</li>
             <li>Communicate about new products, market insights, or special offers (with your consent)</li>

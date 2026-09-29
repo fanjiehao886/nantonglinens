@@ -63,6 +63,47 @@ export const company = {
   /** ISIC Rev.4 1392 — manufacture of made-up textile articles (bed/bath linen). */
   isicV4: "1392",
 
+  /**
+   * Structure of the business.
+   *
+   * We are not a single mill. We are a group of integrated mill-and-trade
+   * enterprises (工贸一体企业联盟): every member runs its own production lines
+   * AND holds its own export licence. That is why the full category range can
+   * be quoted factory-direct without an intermediary layer.
+   *
+   * Public wording note: "group" (ownership) is used in buyer-facing copy,
+   * not "alliance". In English B2B, "alliance" reads like a trade association
+   * or a broker network — it re-creates the "somebody is adding a margin"
+   * suspicion this positioning exists to remove. "Alliance" stays as the
+   * explanatory gloss for Chinese readers.
+   */
+  group: {
+    /** Buyer-facing descriptor. */
+    descriptor: "manufacturer–exporter group",
+    /** Chinese equivalent, used in explanatory paragraphs only. */
+    descriptorLocal: "工贸一体企业联盟",
+    /** TODO: trading name of the group, if one may be published. */
+    name: undefined as string | undefined,
+    /** TODO: how many integrated mill-and-trade enterprises are in the group. */
+    memberCount: undefined as number | undefined,
+    /**
+     * TODO: confirm this is the entity that actually signs the sales contract.
+     * Google matches ONE entity — everything verifiable hangs off this single
+     * name + address + phone, so it must be the contracting party, not a
+     * convenient trade name.
+     */
+    contractingEntity: "Nantong Jinkeer Textile Co., Ltd.",
+    /** Term used for member production sites in copy. */
+    memberTerm: "member factories",
+    /** Constant across the group, whoever runs the line. */
+    constants: [
+      "one sales contract",
+      "one specification sheet per programme",
+      "one inspection standard",
+      "one set of export documents",
+    ],
+  },
+
   /** Facility facts used on /factory and in schema. */
   facility: {
     areaSqm: 5000,
@@ -134,9 +175,9 @@ export function organizationSchema() {
     },
     image: `${company.url}/og-image.jpg`,
     description:
-      "Hotel linen manufacturer and exporter (manufacturer + trading company) based in Nantong, Jiangsu, China. Own 5,000 sqm production facility plus audited capacity in the 6,000+ mill Dieshiqiao textile cluster. Factory-direct wholesale, OEM and private-label hotel linens.",
+      "Hotel linen manufacturer and exporter — a group of integrated mill-and-trade enterprises (manufacturer + trader, 工贸一体) based in Nantong, Jiangsu, China. Own 5,000 sqm mill in Chuanjiang plus member factories across the 6,000+ mill Dieshiqiao textile cluster. Factory-direct wholesale, OEM and private-label hotel linens.",
     foundingDate: company.foundingYear,
-    slogan: "Factory-direct hotel linens from our own Nantong facility",
+    slogan: "Factory-direct hotel linens from our own group mills in Nantong",
     email: company.email,
     telephone: company.telephone,
     address: postalAddress(),

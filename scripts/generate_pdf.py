@@ -237,7 +237,7 @@ def build_content(pdf):
 
     # Closing
     pdf.h2("Why Order Factory-Direct From Us?")
-    pdf.p("We are a hotel linen manufacturer and trading company in Chuanjiang, Nantong  --  next to the Dieshiqiao cluster. Core bedding programmes run on our own lines, other categories draw on audited cluster mills, and every batch is inspected in our own inspection room. Sampling, production, QC and export paperwork sit with one team, so there is no commission layer between you and the production line.")
+    pdf.p("We are a group of integrated mill-and-trade enterprises in Chuanjiang, Nantong  --  next to the Dieshiqiao cluster. Core bedding programmes run on our own 5,000 sqm mill, other categories run in the member factories of our group, and every batch is inspected in our own inspection room. Sampling, production, QC and export paperwork sit with one team, so no commission layer sits between you and the production line.")
 
     pdf.divider()
 
@@ -254,7 +254,7 @@ def build_content(pdf):
     pdf.cell(0, 6, "WhatsApp: +86 15151361119")
     pdf.ln(10)
 
-    pdf.callout("About Nantong Linens: We are a hotel linen manufacturer and trading company based in Chuanjiang, Nantong, China, adjacent to the Dieshiqiao textile cluster. We manufacture hotel bed linen, towels, bathrobes and table linen for hotels, distributors and wholesalers worldwide, and inspect every batch in our own inspection room before it ships. Certification and audit documents are available on request.")
+    pdf.callout("About Nantong Linens: We are a group of integrated mill-and-trade enterprises based in Chuanjiang, Nantong, China, adjacent to the Dieshiqiao textile cluster. We manufacture hotel bed linen, towels, bathrobes and table linen for hotels, distributors and wholesalers worldwide, and inspect every batch in our own inspection room before it ships. Certification and audit documents are available on request.")
 
     pdf.divider()
     pdf.set_font("Helvetica", "I", 7)
