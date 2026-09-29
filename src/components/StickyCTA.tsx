@@ -31,10 +31,10 @@ export function StickyCTA() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <div className="hidden sm:block">
           <p className="text-sm font-semibold text-gray-900">
-            Ready to source hotel linens?
+            Ready to order factory-direct?
           </p>
           <p className="text-xs text-gray-500">
-            Get an itemized quote within 24 hours — no commitment.
+            Get an itemized factory FOB quote within 24 hours — no commitment.
           </p>
         </div>
 

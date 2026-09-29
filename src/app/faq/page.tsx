@@ -2,17 +2,22 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "FAQ - Hotel Linen Sourcing, MOQ, Lead Time & More | Nantong Linens",
+  title: "FAQ - Hotel Linen Manufacturing, MOQ, Lead Time & More | Nantong Linens",
   description:
-    "Frequently asked questions about sourcing hotel linens from Nantong, China. Learn about MOQ, lead times, customization options, quality certifications, and shipping.",
+    "Frequently asked questions about buying hotel linens factory-direct from a Nantong manufacturer. Learn about OEM and private label, MOQ, lead times, quality certifications, and shipping.",
   alternates: { canonical: "/faq" },
 };
 
 const faqs = [
   {
+    q: "Are you a manufacturer or a trading company?",
+    a:
+      "Both — we are a hotel linen manufacturer and trading company (工贸一体). We produce in our own facility in Chuanjiang, Tongzhou District, Nantong, running weaving, dyeing and finishing, cutting, sewing, quilting, inspection, and export packing. For categories or volumes outside our own lines, we produce with audited mills in the surrounding Dieshiqiao cluster. Because we manufacture rather than broker, your quotation reflects our production cost — there is no agent commission layer built into the price.",
+  },
+  {
     q: "What is the minimum order quantity (MOQ) for hotel linens?",
     a:
-      'Our standard MOQ starts at 50 pieces per size/color combination for most product categories. For custom-embroidered or logo-branded items, the MOQ may be 100 pieces. We understand that boutique hotels and smaller properties need flexibility — if your order is below our standard MOQ, contact us to discuss. We often accommodate trial orders of 20–30 sets for new customers who are evaluating quality.',
+      'Our standard MOQ starts at 50 pieces per size/colour combination for most product categories. For custom-embroidered or logo-branded items, the MOQ may be 100 pieces. We understand that boutique hotels and smaller properties need flexibility — if your order is below our standard MOQ, contact us to discuss. We often accommodate trial orders of 20–30 sets for new customers who are evaluating quality.',
   },
   {
     q: "What is the typical production lead time?",
@@ -32,12 +37,12 @@ const faqs = [
   {
     q: "What quality certifications does your factory hold?",
     a:
-      'Our partner factories hold multiple international certifications:\n\n• OEKO-TEX Standard 100 (all product lines)\n• ISO 9001:2015 Quality Management System\n• BSCI (Business Social Compliance Initiative)\n• WRAP (Worldwide Responsible Accredited Production)\n\nWe also arrange third-party inspections by SGS or Intertek upon request. As your sourcing agent, we personally verify every batch with on-site QC including thread count verification, GSM testing, shrinkage rate measurement (<3%), and colorfastness testing (Grade 4+).',
+      'Our own facility and the partner mills we use hold multiple international certifications:\n\n• OEKO-TEX Standard 100 (all product lines)\n• ISO 9001:2015 Quality Management System\n• BSCI (Business Social Compliance Initiative)\n• WRAP (Worldwide Responsible Accredited Production)\n\nWe also arrange third-party inspections by SGS or Intertek upon request. As the manufacturer, we verify every batch in our own inspection room — thread count verification, GSM testing, shrinkage rate measurement (<3%), and colorfastness testing (Grade 4+).',
   },
   {
     q: "What payment methods do you accept?",
     a:
-      'We accept the following secure payment terms:\n\n• T/T (Telegraphic Transfer): 30% deposit + 70% before shipment (most common)\n• L/C at sight (for orders above $10,000 USD)\n• PayPal (for sample orders and small trial orders under $2,000)\n• Western Union (not recommended due to fees; available if needed)\n\nAs your sourcing agent, we handle all payment coordination with factories and provide full transparency on cost breakdowns.',
+      'We accept the following secure payment terms:\n\n• T/T (Telegraphic Transfer): 30% deposit + 70% before shipment (most common)\n• L/C at sight (for orders above $10,000 USD)\n• PayPal (for sample orders and small trial orders under $2,000)\n• Western Union (not recommended due to fees; available if needed)\n\nAs the manufacturer and exporter, we invoice you directly and provide full transparency on the cost breakdown.',
   },
   {
     q: "How do you handle shipping and logistics?",
@@ -52,7 +57,7 @@ const faqs = [
   {
     q: "What materials do you use for hotel linens?",
     a:
-      'We source premium raw materials globally:\n\n• Egyptian cotton (long-staple Giza 86/88): Our premium line for luxury hotels (300–600 TC)\n• Pima/Supima cotton: High-end standard (200–400 TC)\n• Upland cotton: Value range (144–180 TC), ideal for economy properties\n• Bamboo fiber: Eco-friendly option, naturally antimicrobial\n• Tencel/Lyocell: Sustainable alternative with exceptional softness\n• Microfiber: Budget-friendly, quick-drying for pool/spa areas\n• Cotton-polyester blends: Enhanced durability for high-wash environments',
+      'We buy premium raw materials and produce with them in our own facility:\n\n• Egyptian cotton (long-staple Giza 86/88): Our premium line for luxury hotels (300–600 TC)\n• Xinjiang long-staple & Pima/Supima cotton: High-end standard (200–400 TC)\n• Upland cotton: Value range (144–180 TC), ideal for economy properties\n• Bamboo fiber: Eco-friendly option, naturally antimicrobial\n• Tencel/Lyocell: Sustainable alternative with exceptional softness\n• Microfiber: Budget-friendly, quick-drying for pool/spa areas\n• Cotton-polyester blends: Enhanced durability for high-wash environments',
   },
   {
     q: "What is the difference between percale and sateen weave?",
@@ -73,7 +78,7 @@ export default function FAQPage() {
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h1>
           <p className="mt-2 text-gray-500">
-            Everything you need to know about sourcing hotel linens from Nantong Linens.
+            Everything you need to know about ordering hotel linens factory-direct from Nantong Linens.
           </p>
         </div>
       </section>

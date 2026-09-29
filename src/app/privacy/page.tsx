@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
             Nantong Linens (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed
             to protecting your personal data. This privacy policy explains how we collect, use,
             disclose, and safeguard your information when you visit our website
-            www.nantonglinens.com or engage with our hotel linen sourcing services.
+            www.nantonglinens.com or engage with our hotel linen manufacturing and export services.
           </p>
         </section>
 
@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
           <h2 className="text-xl font-semibold text-gray-900">3. How We Use Your Information</h2>
           <ul className="mt-3 list-disc pl-6 space-y-1">
             <li>Process and respond to your RFQ and sample requests</li>
-            <li>Provide sourcing quotes and coordinate with partner factories</li>
+            <li>Provide quotations and coordinate production with our factory and audited cluster mills</li>
             <li>Send order updates, shipping notifications, and QC reports</li>
             <li>Improve our website, products, and services</li>
             <li>Communicate about new products, market insights, or special offers (with your consent)</li>
@@ -68,7 +68,7 @@ export default function PrivacyPolicy() {
             We do <strong>not</strong> sell your personal information. We may share your data with:
           </p>
           <ul className="mt-2 list-disc pl-6 space-y-1">
-            <li><strong>Partner factories</strong> — only the information necessary to produce and ship your order (e.g., product specs, shipping address)</li>
+            <li><strong>Production partners</strong> — only the information necessary to produce and ship your order (e.g., product specs, shipping address)</li>
             <li><strong>Shipping carriers</strong> — to deliver samples and orders</li>
             <li><strong>Service providers</strong> — email (Resend), hosting (Vercel), analytics (Google Analytics)</li>
             <li><strong>Legal requirements</strong> — if required by law, regulation, or legal process</li>

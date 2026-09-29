@@ -4,7 +4,7 @@ import { TrustBadges } from "./TrustBadges";
 
 const footerLinks = {
   products: [
-    { name: "Wholesale", href: "/wholesale" },
+    { name: "Wholesale & OEM", href: "/wholesale" },
     { name: "Bed Sheets", href: "/products?category=bed-sheets" },
     { name: "Pillowcases", href: "/products?category=pillowcases" },
     { name: "Bath Towels", href: "/products?category=bath-towels" },
@@ -13,7 +13,7 @@ const footerLinks = {
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Our Sourcing Process", href: "/about#process" },
+    { name: "Our Factory & Process", href: "/about#process" },
     { name: "Quality Standards", href: "/about#certifications" },
     { name: "Free Guides", href: "/blog" },
     { name: "Free PDF Guide", href: "/guides/download" },
@@ -41,8 +41,8 @@ export function Footer() {
               <span className="text-lg font-semibold text-gray-900">Nantong Linens</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-gray-500">
-              Hotel linen buying guides and sourcing service based in Dieshiqiao, Nantong —
-              the world&apos;s largest textile market. Free procurement resources + factory-direct sourcing.
+              Hotel linen manufacturer &amp; exporter in Nantong, China — our own factory plus the
+              Dieshiqiao cluster. Factory-direct wholesale and OEM pricing, plus free procurement guides.
             </p>
             <div className="mt-5">
               <NewsletterForm />
@@ -101,7 +101,7 @@ export function Footer() {
         {/* Contact bar */}
         <div className="mt-10 flex flex-col gap-4 rounded-xl bg-blue-900 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="font-medium text-white">Ready to source? Get the free buying guide first</p>
+            <p className="font-medium text-white">Ready to order factory-direct? Get the free buying guide first</p>
             <p className="mt-1 text-sm text-blue-200">
               A step-by-step PDF covering specs, MOQ, QC, and shipping from China.
             </p>

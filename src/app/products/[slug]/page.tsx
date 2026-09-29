@@ -20,10 +20,10 @@ const CATEGORY_DATA: Record<string, {
 }> = {
   "bath-towels": {
     name: "Bath Towels",
-    title: "Hotel Bath Towels — Wholesale GSM Sourcing from Dieshiqiao",
-    description: "Source wholesale hotel bath towels, hand towels, and washcloths from Dieshiqiao's top factories. Custom GSM, cotton types, and sizes. Competitive pricing, strict QC, global shipping.",
-    keywords: "hotel bath towels wholesale, bulk towels China, hotel towel supplier, terry towel manufacturer, GSM towel sourcing",
-    intro: "Hotel towels are one of the highest-touch items in any property. Guests judge quality by the towel's weight, absorbency, and softness within seconds. We source bath towels, hand towels, face cloths, and bath mats from dedicated terry-weaving factories in Nantong's towel manufacturing cluster — each vetted for GSM consistency, colorfastness, and commercial laundry durability.",
+    title: "Hotel Bath Towels — Wholesale GSM, Factory-Direct from Nantong",
+    description: "Wholesale hotel bath towels, hand towels, and washcloths — manufactured factory-direct in Nantong. Custom GSM, cotton types, and sizes. Competitive pricing, strict QC, global shipping.",
+    keywords: "hotel bath towels wholesale, bulk towels China, hotel towel supplier, terry towel manufacturer, factory-direct hotel towels",
+    intro: "Hotel towels are one of the highest-touch items in any property. Guests judge quality by the towel's weight, absorbency, and softness within seconds. We manufacture bath towels, hand towels, face cloths, and bath mats on our own terry lines in Nantong — each vetted for GSM consistency, colorfastness, and commercial laundry durability.",
     specs: [
       "GSM: 400–900 (see our towel GSM guide for hotel tier recommendations)",
       "Material: 100% Cotton (ring-spun, combed, Egyptian), poly-cotton blends available",
@@ -44,17 +44,17 @@ const CATEGORY_DATA: Record<string, {
       { label: "hotel terry towels manufacturer", href: "/products/bath-towels" },
       { label: "white hotel hand towels", href: "/products/bath-towels" },
       { label: "Nantong towel factory", href: "/about" },
-      { label: "hotel linen sourcing agent", href: "/about" },
+      { label: "hotel linen manufacturer in China", href: "/about" },
       { label: "custom hotel towels logo", href: "/rfq" },
       { label: "pool and beach towels bulk", href: "/products/pool-beach-towels" },
     ],
   },
   "bathrobes": {
     name: "Bathrobes",
-    title: "Hotel Bathrobes — Wholesale Waffle & Terry Robe Sourcing",
-    description: "Source custom hotel bathrobes from Dieshiqiao manufacturers. Waffle-weave, terry velour, kimono and shawl collar styles. Logo embroidery available. Low MOQ, global shipping.",
+    title: "Hotel Bathrobes — Factory-Direct Waffle & Terry Robes",
+    description: "Custom hotel bathrobes manufactured factory-direct in Nantong. Waffle-weave, terry velour, kimono and shawl collar styles. Logo embroidery available. Low MOQ, global shipping.",
     keywords: "hotel bathrobes wholesale, waffle robe supplier China, terry bathrobe manufacturer, custom logo bathrobes, spa robes bulk",
-    intro: "A quality bathrobe transforms the guest bathroom experience. Whether for luxury suites, spa facilities, or standard rooms, we source from specialized robe manufacturers offering waffle-weave, terry velour, and microfiber robes — with custom embroidery, piping, and color matching available.",
+    intro: "A quality bathrobe transforms the guest bathroom experience. Whether for luxury suites, spa facilities, or standard rooms, we produce with specialised robe lines offering waffle-weave, terry velour, and microfiber robes — with custom embroidery, piping, and color matching available.",
     specs: [
       "Fabric: Waffle-weave (350–450 GSM), Terry velour (400–550 GSM), Microfiber (300–400 GSM)",
       "Material: 100% Cotton, cotton-polyester blend, bamboo fiber, microfiber",
@@ -76,7 +76,7 @@ const CATEGORY_DATA: Record<string, {
       { label: "custom logo hotel robes", href: "/products/bathrobes" },
       { label: "spa robes bulk manufacturer", href: "/products/bathrobes" },
       { label: "terry velour bathrobe", href: "/products/bathrobes" },
-      { label: "hotel linen sourcing agent", href: "/about" },
+      { label: "hotel linen manufacturer in China", href: "/about" },
       { label: "Dieshiqiao textile market", href: "/about" },
       { label: "request bathrobe samples", href: "/rfq" },
     ],
@@ -84,9 +84,9 @@ const CATEGORY_DATA: Record<string, {
   "pool-beach-towels": {
     name: "Pool & Beach Towels",
     title: "Pool & Beach Towels — Wholesale Bulk Supply from Dieshiqiao",
-    description: "Source wholesale pool towels and beach towels from Dieshiqiao factories. Custom sizes, colors, and stripes. High GSM for absorbency and durability. Resort, gym, and waterpark supply.",
+    description: "Wholesale pool and beach towels manufactured factory-direct in Nantong. Custom sizes, colors, and stripes. High GSM for absorbency and durability. Resort, gym, and waterpark supply.",
     keywords: "pool towels wholesale, beach towels bulk China, resort towel supplier, gym towels manufacturer, striped beach towels",
-    intro: "Pool and beach towels face different demands than bathroom towels: they are larger, need to handle chlorine and sun exposure, and often serve as visual branding for resorts and waterparks. Our towel factory partners specialize in bold-striped beach towels and durable pool towels with high colorfastness and fast drying times.",
+    intro: "Pool and beach towels face different demands than bathroom towels: they are larger, need to handle chlorine and sun exposure, and often serve as visual branding for resorts and waterparks. Our own towel production lines specialise in bold-striped beach towels and durable pool towels with high colorfastness and fast drying times.",
     specs: [
       "GSM: 350–500 (medium weight, optimized for poolside use)",
       "Material: 100% Cotton, cotton-polyester blend (for quick-dry pool use)",
@@ -111,10 +111,10 @@ const CATEGORY_DATA: Record<string, {
   },
   "bath-mats": {
     name: "Bath Mats",
-    title: "Hotel Bath Mats — Wholesale Cotton & Microfiber Sourcing",
-    description: "Source wholesale hotel bath mats from Dieshiqiao: cotton terry, microfiber, and memory foam options. Non-slip backing, fast-drying, commercial laundry compatible. Low MOQ.",
+    title: "Hotel Bath Mats — Factory-Direct Cotton & Microfiber",
+    description: "Wholesale hotel bath mats, factory-direct from Nantong: cotton terry, microfiber, and memory foam options. Non-slip backing, fast-drying, commercial laundry compatible. Low MOQ.",
     keywords: "hotel bath mats wholesale, bathroom mat supplier China, cotton bath mat, non-slip bath mat, hotel floor mat",
-    intro: "Bathroom safety and cleanliness start at floor level. Our bath mat sourcing covers traditional cotton terry mats, quick-dry microfiber mats, and memory foam mats — all with non-slip backing certified for commercial use and compatible with industrial washing machines.",
+    intro: "Bathroom safety and cleanliness start at floor level. Our bath mat production covers traditional cotton terry mats, quick-dry microfiber mats, and memory foam mats — all with non-slip backing certified for commercial use and compatible with industrial washing machines.",
     specs: [
       "Material: 100% Cotton terry, microfiber, memory foam with PVC/non-slip backing",
       "GSM: 600–900 for cotton terry mats",
@@ -132,16 +132,16 @@ const CATEGORY_DATA: Record<string, {
       { label: "non-slip bathroom mat China", href: "/products/bath-mats" },
       { label: "cotton terry bath mat supplier", href: "/products/bath-mats" },
       { label: "hotel bathroom accessories", href: "/products/bath-towels" },
-      { label: "hotel linen sourcing agent", href: "/about" },
+      { label: "hotel linen manufacturer in China", href: "/about" },
       { label: "request bath mat samples", href: "/rfq" },
     ],
   },
   "bed-sheets": {
     name: "Bed Sheets",
     title: "Hotel Bedding Wholesale — Bulk Bed Sheets & Linen Supply from China",
-    description: "Wholesale hotel bedding direct from Dieshiqiao factories. Source hotel bed sheets, flat sheets, fitted sheets in bulk — custom TC ranges, cotton types, and sizes. Competitive FOB pricing, strict QC, global shipping from Nantong.",
+    description: "Wholesale hotel bedding factory-direct from Nantong. Hotel bed sheets, flat sheets, and fitted sheets in bulk — custom TC ranges, cotton types, and sizes. Competitive FOB pricing, strict QC, global shipping from Nantong.",
     keywords: "hotel bedding wholesale, hotel bed sheets wholesale, bulk hotel sheets China, hotel linen manufacturer, hotel bedding suppliers, hotel bedding wholesale manufacturer, Dieshiqiao bed sheets",
-    intro: "Bed sheets are the foundation of the guest sleep experience. We source flat and fitted sheets across all standard hotel sizes — from single to emperor — in thread counts ranging from budget 200 TC poly-cotton to ultra-luxury 1000 TC Egyptian cotton sateen.",
+    intro: "Bed sheets are the foundation of the guest sleep experience. We manufacture flat and fitted sheets across all standard hotel sizes — from single to emperor — in thread counts ranging from budget 200 TC poly-cotton to ultra-luxury 1000 TC Egyptian cotton sateen.",
     specs: [
       "Thread Count: 200–1000 TC (single-ply count)",
       "Weave: Percale (crisp, breathable), Sateen (silky, lustrous)",
@@ -160,15 +160,15 @@ const CATEGORY_DATA: Record<string, {
       { label: "TC buying guide", href: "/guides/hotel-bedding-thread-count" },
       { label: "Dieshiqiao hotel sheets", href: "/products/bed-sheets" },
       { label: "Nantong textile factory", href: "/about" },
-      { label: "hotel linen sourcing agent", href: "/about" },
+      { label: "hotel linen manufacturer in China", href: "/about" },
     ],
   },
   "pillowcases": {
     name: "Pillowcases",
-    title: "Hotel Pillowcases — Wholesale Cotton & Sateen Sourcing",
-    description: "Source wholesale hotel pillowcases from Dieshiqiao: oxford, housewife, and envelope closure styles. All TC ranges, cotton types, and sizes. Custom embroidery available.",
+    title: "Hotel Pillowcases — Factory-Direct Cotton & Sateen",
+    description: "Wholesale hotel pillowcases, factory-direct from Nantong: oxford, housewife, and envelope closure styles. All TC ranges, cotton types, and sizes. Custom embroidery available.",
     keywords: "hotel pillowcases wholesale, oxford pillowcase supplier China, sateen pillowcase manufacturer, hotel bedding pillowcases",
-    intro: "Pillowcases are the closest textile to the guest's face — quality here is disproportionately noticed. We source standard housewife, Oxford, and envelope-closure pillowcases in all common hotel sizes and cotton qualities.",
+    intro: "Pillowcases are the closest textile to the guest's face — quality here is disproportionately noticed. We manufacture standard housewife, Oxford, and envelope-closure pillowcases in all common hotel sizes and cotton qualities.",
     specs: [
       "Thread Count: 200–1000 TC",
       "Style: Housewife (side opening), Oxford (bordered flange), Envelope closure",
@@ -182,15 +182,15 @@ const CATEGORY_DATA: Record<string, {
     internalLinks: [
       { label: "hotel pillowcases wholesale", href: "/products/pillowcases" },
       { label: "oxford pillowcase China", href: "/products/pillowcases" },
-      { label: "hotel linen sourcing agent", href: "/about" },
+      { label: "hotel linen manufacturer in China", href: "/about" },
     ],
   },
   "duvet-covers": {
     name: "Duvet Covers",
-    title: "Hotel Duvet Covers — Wholesale Cotton & Sateen Sourcing",
-    description: "Source wholesale hotel duvet covers from Dieshiqiao factories. All TC ranges, cotton types, and closure styles. Custom sizes and embroidery available. Competitive pricing, global shipping.",
+    title: "Hotel Duvet Covers — Factory-Direct Cotton & Sateen",
+    description: "Wholesale hotel duvet covers manufactured factory-direct in Nantong. All TC ranges, cotton types, and closure styles. Custom sizes and embroidery available. Competitive pricing, global shipping.",
     keywords: "hotel duvet covers wholesale, duvet cover supplier China, sateen duvet cover manufacturer, hotel bedding",
-    intro: "Duvet covers define the visual standard of a made bed. We source from factories specializing in large-format duvet covers with reinforced seams, hidden zipper or button closures, and corner ties to keep inserts in place.",
+    intro: "Duvet covers define the visual standard of a made bed. We manufacture large-format duvet covers with reinforced seams, hidden zipper or button closures, and corner ties to keep inserts in place.",
     specs: [
       "Thread Count: 200–600 TC",
       "Weave: Percale, Sateen, Jacquard (stripe/diamond patterns)",
@@ -211,10 +211,10 @@ const CATEGORY_DATA: Record<string, {
   },
   "table-linen": {
     name: "Table Linen",
-    title: "Hotel Table Linen — Wholesale Tablecloths & Napkins Sourcing",
-    description: "Source wholesale hotel table linens from Dieshiqiao: tablecloths, napkins, placemats, and runners. Cotton, polyester, and blended fabrics. Custom sizes and colors for banquet and restaurant use.",
+    title: "Hotel Table Linen — Factory-Direct Tablecloths & Napkins",
+    description: "Wholesale hotel table linens, factory-direct from Nantong: tablecloths, napkins, placemats, and runners. Cotton, polyester, and blended fabrics. Custom sizes and colors for banquet and restaurant use.",
     keywords: "hotel table linen wholesale, tablecloth supplier China, restaurant napkins manufacturer, banquet tablecloth",
-    intro: "Restaurant and banquet table linens face heavy use and frequent laundering. Our sourcing focuses on durable, stain-resistant fabrics with consistent color matching across reorders.",
+    intro: "Restaurant and banquet table linens face heavy use and frequent laundering. Our production focuses on durable, stain-resistant fabrics with consistent color matching across reorders.",
     specs: [
       "Material: Polyester (wrinkle-resistant), Cotton-polyester blend, 100% Cotton",
       "Weave: Plain, damask, satin band, jacquard patterns",
@@ -233,10 +233,10 @@ const CATEGORY_DATA: Record<string, {
   },
   "mattress-toppers": {
     name: "Mattress Toppers",
-    title: "Hotel Mattress Toppers — Wholesale Pillow-Top & Featherbed Sourcing",
-    description: "Source wholesale hotel mattress toppers from Dieshiqiao: pillow-top, featherbed, and memory foam options. Custom sizes, fill weights, and cover fabrics.",
+    title: "Hotel Mattress Toppers — Factory-Direct Pillow-Top & Featherbed",
+    description: "Wholesale hotel mattress toppers, factory-direct from Nantong: pillow-top, featherbed, and memory foam options. Custom sizes, fill weights, and cover fabrics.",
     keywords: "hotel mattress topper wholesale, pillow top supplier China, featherbed manufacturer, hotel mattress protector",
-    intro: "Mattress toppers extend mattress life and elevate guest comfort. We source pillow-top mattress pads, down-alternative featherbeds, and memory foam toppers with fitted skirt options in all hotel bed sizes.",
+    intro: "Mattress toppers extend mattress life and elevate guest comfort. We manufacture pillow-top mattress pads, down-alternative featherbeds, and memory foam toppers with fitted skirt options in all hotel bed sizes.",
     specs: [
       "Type: Pillow-top (quilted), Featherbed (down/down-alternative), Memory foam",
       "Fill: Polyester fiberfill, down-alternative microfiber, goose down blend",
@@ -300,7 +300,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${product.name} — Hotel Linen Specs & Pricing | Nantong Linens`,
-    description: product.shortDescription || `Source ${product.name} in bulk — competitive pricing from Dieshiqiao factories.`,
+    description: product.shortDescription || `${product.name} in bulk — factory-direct pricing from our own Nantong factory.`,
     alternates: { canonical: `/products/${slug}` },
     openGraph: {
       title: `${product.name} — Hotel Linen Specs & Pricing | Nantong Linens`,
@@ -364,7 +364,7 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
           ) : (
             <div className="py-20 text-center">
               <div className="mx-auto max-w-md">
-                <p className="text-lg text-gray-500">No products listed in {data.name} yet, but we source these daily.</p>
+                <p className="text-lg text-gray-500">No products listed in {data.name} yet, but we manufacture these daily.</p>
                 <p className="mt-2 text-sm text-gray-400">Our factory network covers {data.name.toLowerCase()} with every spec combination.</p>
                 <Link href="/rfq" className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-900 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-800 transition-colors">
                   Tell us what you need →
@@ -402,7 +402,7 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
 
           {/* SEO internal links */}
           <aside className="mt-8 rounded-xl bg-gray-50 p-8">
-            <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Explore {data.name} Sourcing</h2>
+            <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Explore {data.name} Manufacturing</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               {data.internalLinks.map((kw) => (
                 <Link key={kw.label} href={kw.href} className="rounded-full bg-white px-3 py-1.5 text-xs text-gray-500 border border-gray-200 hover:text-blue-800 hover:border-blue-200 transition-colors">

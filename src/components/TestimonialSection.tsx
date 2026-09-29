@@ -10,7 +10,7 @@ export function TestimonialSection() {
             Trusted by Hotel Buyers Across 4 Continents
           </h2>
           <p className="mt-2 text-gray-500">
-            Real outcomes from real sourcing projects — on-time delivery, factory-direct pricing, and QC before shipment.
+            Real outcomes from real factory-direct orders — on-time delivery, factory pricing, and QC before shipment.
           </p>
         </div>
 
@@ -19,7 +19,7 @@ export function TestimonialSection() {
             {
               stat: "23% cost reduction",
               quote:
-                "We compared their Dieshiqiao-sourced towel quote against our existing supplier. Same 500 GSM ring-spun cotton, same OEKO-TEX cert, 23% lower landed cost. We switched our annual program.",
+                "We compared their factory-direct towel quote against our existing supplier. Same 500 GSM ring-spun cotton, same OEKO-TEX cert, 23% lower landed cost. We switched our annual program.",
               author: "Procurement Manager",
               role: "Boutique Hotel Group · Middle East",
               badge: "Cost savings",

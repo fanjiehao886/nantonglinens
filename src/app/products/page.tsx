@@ -5,13 +5,13 @@ import { client } from "@/lib/sanity";
 import { PRODUCTS_QUERY, CATEGORIES_QUERY } from "@/lib/queries";
 
 export const metadata: Metadata = {
-  title: "Hotel Linen Wholesale Catalog — Bed Sheets, Towels & Bathrobes by Spec",
+  title: "Hotel Linen Wholesale Catalog — Factory-Direct Bed Sheets, Towels & Bathrobes",
   description:
-    "Wholesale hotel linens by GSM, thread count, and material from Dieshiqiao factories. Low MOQ, 15–20 day lead time, on-site QC, FOB or DDP shipping worldwide.",
+    "Wholesale hotel linens by GSM, thread count, and material — produced in our own Nantong facility. Low MOQ, 15–25 day lead time, in-house QC, factory-direct FOB or DDP shipping worldwide.",
   alternates: { canonical: "/products" },
   openGraph: {
-    title: "Hotel Linen Wholesale Catalog — Bed Sheets, Towels & Bathrobes | Nantong Linens",
-    description: "Source quality hotel linens by specification from Dieshiqiao, China's #1 textile market. Bed sheets, towels, bathrobes, and table linens at competitive prices.",
+    title: "Hotel Linen Wholesale Catalog — Factory-Direct | Nantong Linens",
+    description: "Hotel linens by specification, manufactured factory-direct in Nantong, China. Bed sheets, towels, bathrobes, and table linens — OEM and private label available.",
   },
 };
 
@@ -49,8 +49,8 @@ export default async function ProductsPage({ searchParams }: PageProps) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900">Hotel Linens Catalog</h1>
           <p className="mt-2 text-gray-500">
-            Sourced from Dieshiqiao's best factories — competitive pricing, strict QC, global shipping.
-            Logo customization and private labeling available on all products.
+            Manufactured factory-direct in Nantong — our own production plus audited cluster mills,
+            in-house QC, global shipping. Logo customization and private labeling available on all products.
           </p>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Trust bar */}
         <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-600">
-          <span className="font-semibold text-gray-900">Why source with us:</span>
+          <span className="font-semibold text-gray-900">Why buy factory-direct:</span>
           <span className="flex items-center gap-1"><span className="text-green-600">✓</span> Vetted Dieshiqiao factories</span>
           <span className="flex items-center gap-1"><span className="text-green-600">✓</span> On-site QC before shipment</span>
           <span className="flex items-center gap-1"><span className="text-green-600">✓</span> 15–20 day lead time</span>
@@ -103,7 +103,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
           <div className="py-20 text-center">
             <p className="text-lg text-gray-400">No products found in this category yet.</p>
             <Link href="/rfq" className="mt-4 inline-block text-blue-800 hover:underline">
-              Tell us what you need — we can source it.
+              Tell us what you need — we can manufacture it.
             </Link>
           </div>
         )}
@@ -112,7 +112,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
         <section className="mt-16">
           <h2 className="text-2xl font-bold text-gray-900">Wholesale Hotel Towels by GSM</h2>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-600">
-            We source bulk hotel towels in every weight class — from 400 GSM economy bath towels for motels and gyms,
+            We manufacture bulk hotel towels in every weight class — from 400 GSM economy bath towels for motels and gyms,
             500–600 GSM ring-spun cotton standards for 3–4 star properties, up to 750+ GSM Egyptian cotton luxury towels
             for five-star resorts. Bath sheets, hand towels, washcloths, and bath mats can be mixed in one consolidated order.
             Read the <Link href="/guides/hotel-towel-gsm" className="font-medium text-blue-800 hover:underline">Hotel Towel GSM Guide</Link> for
@@ -132,7 +132,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
           <h2 className="mt-10 text-2xl font-bold text-gray-900">Hotel Bathrobes, Table Linen &amp; More</h2>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-600">
             Complete your property program with waffle and terry bathrobes, pool and beach towels, tablecloths and napkins,
-            and mattress toppers — all from the same vetted Dieshiqiao factory network, consolidated into a single shipment.
+            and mattress toppers — all from our own production and the same audited Nantong mills, consolidated into a single shipment.
             Start with the <Link href="/guides/hotel-bathrobe-buying-guide" className="font-medium text-blue-800 hover:underline">Hotel Bathrobe Buying Guide</Link>.
           </p>
         </section>
@@ -142,19 +142,22 @@ export default async function ProductsPage({ searchParams }: PageProps) {
           <h2 className="text-lg font-semibold text-gray-900">About Our Hotel Linen Collection</h2>
           <div className="mt-4 space-y-3 text-sm leading-relaxed text-gray-600">
             <p>
-              Nantong Linens is a sourcing agent based in Dieshiqiao — China&apos;s largest home textile wholesale market
-              with over 6,000 factories. We handpick the best manufacturers for every product category,
-              ensuring competitive pricing and consistent quality.
+              Nantong Linens is a hotel linen manufacturer and exporter based in Nantong, Jiangsu —
+              minutes from Dieshiqiao, China&apos;s largest home textile market with over 6,000 mills.
+              We produce our core programs in our own facility and run everything else through audited
+              cluster mills, which means you buy factory-direct instead of paying a trading layer.
             </p>
             <p>
-              All hotel linens are sourced from vetted factories using premium long-staple cotton (Egyptian or Pima),
-              bamboo fiber, and microfiber blends. Each product line is selected to withstand
-              commercial laundering cycles of 100+ washes while maintaining colorfastness and softness.
+              All hotel linens are produced with premium long-staple cotton (including Xinjiang
+              long-staple and Egyptian/Pima), bamboo fiber, and microfiber blends. Each product line
+              is engineered to withstand commercial laundering cycles of 100+ washes while maintaining
+              colorfastness and softness.
             </p>
             <p>
-              We support orders starting from as low as 50 pieces per size/color combination,
-              making us ideal for boutique hotels, independent properties, and large chain renovations alike.
-              Our on-site QC team inspects every order before shipment. Standard lead time is 15–20 days from order confirmation.
+              We support orders starting from as low as 50 pieces per size/colour combination,
+              making us ideal for boutique hotels, independent properties, distributors testing new
+              SKUs, and large chain renovations alike. Our in-house QC team inspects every order before
+              shipment. Standard lead time is 15–20 days from order confirmation.
             </p>
           </div>
 

@@ -9,15 +9,15 @@ import { client } from "@/lib/sanity";
 import { FEATURED_PRODUCTS_QUERY } from "@/lib/queries";
 
 export const metadata: Metadata = {
-  title: "Hotel Linen Buying Guide, GSM & Thread Count — Nantong Linens",
+  title: "Hotel Linen Manufacturer & Exporter — Factory-Direct from Nantong, China",
   description:
-    "Free hotel linen procurement guides: GSM explained, thread count comparisons, QC checklists, and sourcing tips from Dieshiqiao — the world's largest textile market. Real specs, real prices, no fluff.",
+    "We manufacture and export hotel linens from our own facility in Nantong, China — factory-direct FOB pricing, no trading-company markup. Free procurement guides, GSM and thread count data, QC checklists.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Hotel Linen Buying Guide, GSM & Thread Count — Nantong Linens",
+    title: "Hotel Linen Manufacturer & Exporter — Factory-Direct Pricing",
     description:
-      "Free hotel linen procurement guides: GSM, thread count, QC checklists, and sourcing tips from Dieshiqiao. Real specs, real prices, no fluff.",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Hotel Linen Buying Guide — Nantong Linens" }],
+      "Factory-direct hotel linens from our own Nantong production facility, plus free buying guides: GSM, thread count, QC checklists. No middlemen, no markup.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Hotel Linen Manufacturer & Exporter — Nantong Linens" }],
   },
 };
 
@@ -44,28 +44,30 @@ export default async function HomePage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <span className="inline-block rounded-full border border-blue-400/30 px-4 py-1.5 text-xs font-medium text-blue-200 sm:text-sm">
-                <span className="sm:hidden">Hotel Linen Knowledge Hub</span>
-                <span className="hidden sm:inline">Hotel Linen Knowledge Hub — Based in Dieshiqiao, China</span>
+                <span className="sm:hidden">Hotel Linen Manufacturer &amp; Exporter</span>
+                <span className="hidden sm:inline">Hotel Linen Manufacturer &amp; Exporter — Own Factory + Dieshiqiao Cluster, China</span>
               </span>
               <h1 className="mt-6 text-3xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-                Everything About
+                Hotel Linens,
                 <br />
-                <span className="text-blue-300">Buying Hotel Linens from China</span>
+                <span className="text-blue-300">Factory-Direct from China</span>
               </h1>
               <p className="mt-6 max-w-lg text-base leading-relaxed text-blue-100/80 sm:text-lg">
-                Free guides, fabric specs, procurement checklists, and pricing insights — built
-                from daily boots-on-the-ground experience inside Dieshiqiao, the world&apos;s
-                largest home textile market. When you&apos;re ready to buy, we source for you.
+                We are a Nantong-based hotel linen manufacturer and exporter (manufacturer + trading
+                company). Our own production facility runs weaving, sewing, inspection, and packing,
+                backed by the Dieshiqiao cluster&apos;s 6,000+ mills — so you buy at{" "}
+                <strong className="text-white">factory-direct FOB prices, with no trading-company layer</strong>.
+                The guides and specs on this site are free: read them, then order direct.
                 <span className="mt-2 block text-blue-200 font-medium">
                   RFQ replies within 24 hours — samples ship worldwide.
                 </span>
               </p>
               <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
                 <Link
-                  href="/guides/hotel-bedding-thread-count"
+                  href="/wholesale"
                   className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-900 hover:bg-gray-100 transition-colors shadow-lg sm:px-7 sm:py-3.5 sm:text-base"
                 >
-                  Browse Free Guides
+                  Wholesale &amp; OEM
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="sm:w-[18px] sm:h-[18px]">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
@@ -76,6 +78,12 @@ export default async function HomePage() {
                 >
                   Request a Quote
                 </Link>
+                <Link
+                  href="/guides/hotel-bedding-thread-count"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors sm:px-7 sm:py-3.5 sm:text-base"
+                >
+                  Browse Free Guides
+                </Link>
               </div>
 
               {/* Trust indicators */}
@@ -85,14 +93,14 @@ export default async function HomePage() {
                     <path d="M9 12l2 2 4-4" />
                     <circle cx="12" cy="12" r="10" />
                   </svg>
-                  Free Guides & Resources
+                  Own factory — factory-direct price
                 </div>
                 <div className="flex items-center gap-2">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M9 12l2 2 4-4" />
                     <circle cx="12" cy="12" r="10" />
                   </svg>
-                  On-site QC Before Shipment
+                  In-house QC Before Shipment
                 </div>
                 <div className="flex items-center gap-2">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -104,16 +112,16 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Desktop card — knowledge focus */}
+            {/* Desktop card — factory capability + knowledge */}
             <div className="hidden lg:block">
               <div className="relative rounded-2xl bg-gradient-to-br from-blue-800/50 to-blue-950/50 p-8 backdrop-blur border border-white/10">
-                <p className="text-xs font-medium text-blue-300/70 uppercase tracking-widest mb-4">Free Resources</p>
+                <p className="text-xs font-medium text-blue-300/70 uppercase tracking-widest mb-4">Factory Capability + Free Resources</p>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { label: "Fabric Guides", value: "GSM/TC", desc: "Weight, density & weave types" },
-                    { label: "QC Checklists", value: "Ready-to-Use", desc: "Pre-shipment inspection" },
-                    { label: "Pricing Data", value: "Real Market", desc: "Price bands by spec" },
-                    { label: "Market Reports", value: "Monthly", desc: "Trends & analysis" },
+                    { label: "Own Production", value: "In-house", desc: "Weaving → sewing → QC → packing" },
+                    { label: "Factory-Direct", value: "FOB Price", desc: "No trading-company layer" },
+                    { label: "Wholesale MOQ", value: "From 50 pcs", desc: "Per size & colour" },
+                    { label: "Buying Guides", value: "Free", desc: "GSM, thread count, QC" },
                   ].map((stat) => (
                     <div key={stat.label} className="rounded-xl bg-white/5 p-5 border border-white/10">
                       <p className="text-lg font-bold text-white">{stat.value}</p>
@@ -147,10 +155,10 @@ export default async function HomePage() {
           {/* Mobile-only compact stats */}
           <div className="mt-10 grid grid-cols-4 gap-3 lg:hidden">
             {[
-              { label: "Fabric Guides", value: "GSM/TC" },
-              { label: "QC Lists", value: "Free" },
-              { label: "Pricing", value: "Real" },
-              { label: "Reports", value: "Monthly" },
+              { label: "Own Factory", value: "Yes" },
+              { label: "Factory-Direct", value: "FOB" },
+              { label: "MOQ", value: "50 pcs" },
+              { label: "Guides", value: "Free" },
             ].map((stat) => (
               <div key={stat.label} className="rounded-xl bg-white/10 backdrop-blur-sm p-3 text-center border border-white/10">
                 <p className="text-lg font-bold text-white">{stat.value}</p>
@@ -332,18 +340,19 @@ export default async function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-6 text-center md:flex-row md:text-left md:justify-between">
             <div>
-              <h2 className="text-lg font-semibold">Based in Dieshiqiao — The World&apos;s Largest Textile Hub</h2>
+              <h2 className="text-lg font-semibold">Our Factory + the World&apos;s Largest Textile Hub</h2>
               <p className="mt-1 text-sm text-blue-200/80 max-w-xl">
-                Dieshiqiao (叠石桥) in Nantong is the global epicenter of home textile production — 6,000+
-                factories within a few square kilometers. Being here means we compare live prices, visit
-                production lines daily, and bring you factory-direct value without the information gap.
+                Our own production facility sits in Chuanjiang, Tongzhou — minutes from Dieshiqiao (叠石桥)
+                in Nantong, where 6,000+ mills operate within a few square kilometers. We manufacture our
+                core programs in-house and draw on the cluster for extra capacity, which is why our prices
+                are factory-direct rather than agent-quoted.
               </p>
             </div>
             <Link
               href="/about"
               className="shrink-0 inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors"
             >
-              About Our Location
+              Inside Our Factory
             </Link>
           </div>
         </div>
@@ -412,7 +421,7 @@ export default async function HomePage() {
           <div className="flex items-end justify-between">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Featured Hotel Linens</h2>
-              <p className="mt-1 text-gray-500">Products sourced from our partner factories — reference only</p>
+              <p className="mt-1 text-gray-500">Produced in-house and across our vetted Nantong cluster — specs for reference</p>
             </div>
             <Link
               href="/products"
@@ -446,36 +455,38 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ========== WHY A SOURCING AGENT ========== */}
+      {/* ========== WHY FACTORY-DIRECT ========== */}
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900">Why Buyers Come to Us — Not Just Any Agent</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Why Buyers Order Factory-Direct — Not Through Agents</h2>
             <p className="mt-2 text-gray-500">
-              Two reasons stand above the rest. Everything else is table stakes.
+              We are a manufacturer and trading company. Two things follow from that. Everything else is table stakes.
             </p>
           </div>
 
           {/* === TOP 2 hero cards === */}
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {/* Card 1 — Group-buy pricing */}
+            {/* Card 1 — Factory-direct pricing */}
             <div className="rounded-2xl border-2 border-blue-900 bg-blue-950 p-8 text-white">
               <div className="flex items-center gap-3">
-                <span className="text-4xl">🏷️</span>
+                <span className="text-4xl">🏭</span>
                 <span className="rounded-full bg-amber-400 px-3 py-0.5 text-xs font-bold uppercase tracking-wide text-blue-950">
                   #1 Reason
                 </span>
               </div>
-              <h3 className="mt-5 text-xl font-bold">Prices You Can&apos;t Get Elsewhere</h3>
+              <h3 className="mt-5 text-xl font-bold">Factory-Direct Price — Literally Our Own Line</h3>
               <p className="mt-3 text-blue-100 leading-relaxed">
-                We consolidate orders across multiple hotel buyers — giving you the buying power of a large chain, even if you&apos;re ordering for a single property.
-                The factory prices we negotiate <strong className="text-white">are simply not available</strong> to buyers who approach factories directly or through importers.
-                No middleman markup. No mystery pricing. Just the real Dieshiqiao wholesale rate.
+                We quote from our own production cost, not from a third-party mill&apos;s price plus a commission.
+                Buying through a sourcing agent means factory price <strong className="text-white">plus agent margin</strong>;
+                buying through an importer means factory price plus landed-cost margin.
+                You buy from the factory, so neither layer is in your quotation.
+                No agent commission. No importer markup. Just the mill rate, FOB Nantong or Shanghai.
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm">
-                <span className="rounded-full border border-blue-400/40 px-3 py-1 text-blue-200">Group purchasing power</span>
-                <span className="rounded-full border border-blue-400/40 px-3 py-1 text-blue-200">Direct factory FOB price</span>
-                <span className="rounded-full border border-blue-400/40 px-3 py-1 text-blue-200">No importer margin</span>
+                <span className="rounded-full border border-blue-400/40 px-3 py-1 text-blue-200">Own production facility</span>
+                <span className="rounded-full border border-blue-400/40 px-3 py-1 text-blue-200">Factory-direct FOB price</span>
+                <span className="rounded-full border border-blue-400/40 px-3 py-1 text-blue-200">No agent commission</span>
               </div>
             </div>
 
@@ -487,14 +498,16 @@ export default async function HomePage() {
                   #2 Reason
                 </span>
               </div>
-              <h3 className="mt-5 text-xl font-bold text-gray-900">Rigorous QC — Every Single Order</h3>
+              <h3 className="mt-5 text-xl font-bold text-gray-900">Rigorous QC — On Our Own Production Line</h3>
               <p className="mt-3 text-gray-600 leading-relaxed">
-                Most buyers only discover quality problems after the container arrives. We inspect at the factory — before it ships.
-                We check GSM weight, stitching, color fastness, and dimensional accuracy on-site, and send you a full photo/video report.
-                Our partner factories hold OEKO-TEX and ISO 9001 certification. <strong className="text-gray-900">If it doesn&apos;t pass our inspection, it doesn&apos;t leave the factory.</strong>
+                Because we make the goods, inspection happens inside our own workshop — not on someone
+                else&apos;s line, on somebody else&apos;s schedule. We verify GSM weight, thread count, stitching,
+                shrinkage, and colour fastness on the running batch, and send you a full photo and video report.
+                Our facility holds OEKO-TEX Standard 100 and ISO 9001.{" "}
+                <strong className="text-gray-900">If it doesn&apos;t pass our inspection, it doesn&apos;t leave the factory.</strong>
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm">
-                <span className="rounded-full border border-gray-300 bg-white px-3 py-1 text-gray-600">Pre-shipment inspection</span>
+                <span className="rounded-full border border-gray-300 bg-white px-3 py-1 text-gray-600">In-house inspection</span>
                 <span className="rounded-full border border-gray-300 bg-white px-3 py-1 text-gray-600">Photo + video QC report</span>
                 <span className="rounded-full border border-gray-300 bg-white px-3 py-1 text-gray-600">OEKO-TEX &amp; ISO 9001</span>
               </div>
@@ -505,22 +518,22 @@ export default async function HomePage() {
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "Local Market Presence",
+                title: "Manufacturer + Trader",
                 description:
-                  "We are physically based in Dieshiqiao — the world's largest home textile hub. We walk the factories. You don't have to.",
-                icon: "📍",
+                  "We run our own production and handle export in-house — one contract, one point of responsibility, from yarn to bill of lading. No hand-offs, no finger-pointing.",
+                icon: "🤝",
               },
               {
-                title: "Deep Product Knowledge",
+                title: "Own Factory + Cluster Capacity",
                 description:
-                  "Thread counts, GSM, weave types, certifications — we match your specs to the right factory, not just the cheapest one.",
+                  "Core programs run on our own line in Chuanjiang, minutes from Dieshiqiao. Surge and multi-category orders draw on 6,000+ vetted mills — so volume has no ceiling.",
+                icon: "🏭",
+              },
+              {
+                title: "We Spec Production, Not Resell It",
+                description:
+                  "Yarn count, GSM, weave, shrinkage, colourfastness, compliance — we set these on the line, which is why we can hold a specification across repeat orders.",
                 icon: "📋",
-              },
-              {
-                title: "Full Export Service",
-                description:
-                  "Factory coordination, customs docs, freight booking (FOB or DDP), and real-time shipping updates from day one.",
-                icon: "🚢",
               },
             ].map((feature) => (
               <div key={feature.title} className="rounded-xl border border-gray-100 p-6">
@@ -531,6 +544,62 @@ export default async function HomePage() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* === Cost-layer comparison — wholesale conversion driver === */}
+          <div className="mt-12 overflow-hidden rounded-2xl border border-gray-100">
+            <div className="bg-gray-50 px-6 py-5">
+              <h3 className="font-semibold text-gray-900">Who Adds What to Your Unit Price</h3>
+              <p className="mt-1 text-sm text-gray-500">
+                The same hotel bed sheet, three supply routes. Only one of them is factory-direct.
+              </p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-white text-xs uppercase tracking-wider text-gray-400">
+                  <tr>
+                    <th className="px-6 py-3 font-semibold">Supply route</th>
+                    <th className="px-6 py-3 font-semibold">What sits between you and the mill</th>
+                    <th className="px-6 py-3 font-semibold">Spec control</th>
+                    <th className="px-6 py-3 font-semibold">Typical cost effect</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 bg-white text-gray-600">
+                  <tr className="bg-blue-50/40">
+                    <td className="px-6 py-4 font-semibold text-blue-900">Buying direct from us (manufacturer + trader)</td>
+                    <td className="px-6 py-4">Nothing — we produce the goods and export them ourselves</td>
+                    <td className="px-6 py-4">Set on our own line</td>
+                    <td className="px-6 py-4 font-medium text-blue-900">Factory FOB price</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-medium text-gray-900">Through a sourcing agent</td>
+                    <td className="px-6 py-4">Agent commission, plus their factory choice</td>
+                    <td className="px-6 py-4">Influenced, not controlled</td>
+                    <td className="px-6 py-4">Factory price + commission</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-medium text-gray-900">Through an importer / distributor</td>
+                    <td className="px-6 py-4">Importer margin, duties financing, local warehousing</td>
+                    <td className="px-6 py-4">Indirect</td>
+                    <td className="px-6 py-4">Landed cost + margin</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="flex flex-col gap-3 border-t border-gray-100 bg-white px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm text-gray-500">
+                Wholesale, OEM, and private-label programs — MOQ from 50 pcs per size and colour.
+              </p>
+              <Link
+                href="/wholesale"
+                className="shrink-0 inline-flex items-center gap-2 rounded-full bg-blue-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-800 transition-colors"
+              >
+                See Wholesale Terms
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -546,9 +615,9 @@ export default async function HomePage() {
           <div className="mt-12 grid gap-8 md:grid-cols-4">
             {[
               { step: "01", title: "Share Your Requirements", desc: "Tell us your product specs, quantity, timeline, and customization needs via the RFQ form or WhatsApp." },
-              { step: "02", title: "We Source & Sample", desc: "We identify the best-matched factory partners and arrange free physical samples for your approval before any commitment." },
-              { step: "03", title: "Quote, QC & Confirm", desc: "You receive a transparent itemized quote. We inspect the production run on-site and send you a photo/video QC report." },
-              { step: "04", title: "Export & Deliver", desc: "We handle all export documentation, customs clearance, and freight — FOB Nantong or DDP to your address." },
+              { step: "02", title: "Sample & Costing", desc: "We cost your spec against our own production line — and against vetted cluster mills for categories we don't run ourselves — then ship free physical samples for approval." },
+              { step: "03", title: "Quote, Produce & QC", desc: "You receive a factory-direct itemized quote. We produce, inspect on our own line, and send you a photo/video QC report before anything is loaded." },
+              { step: "04", title: "Export & Deliver", desc: "As a trading company we handle all export documentation, customs clearance, and freight — FOB Nantong/Shanghai or DDP to your address." },
             ].map((item) => (
               <div key={item.step} className="text-center">
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-900 text-xl font-bold text-white">
@@ -599,23 +668,23 @@ export default async function HomePage() {
       {/* ========== CTA BANNER ========== */}
       <section className="bg-blue-950 py-16">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-          <h2 className="text-3xl font-bold text-white">Read the Guides, Then Let&apos;s Source Together</h2>
+          <h2 className="text-3xl font-bold text-white">Read the Guides — Then Order Factory-Direct</h2>
           <p className="mt-4 text-lg text-blue-200/80">
-            Browse our free procurement resources first. When you&apos;re ready to place an order,
-            send us your requirements — we reply with a sourcing plan within 24 hours.
+            Use our free procurement resources to lock your specifications. When you&apos;re ready to buy,
+            send them to us — we quote factory-direct from our own production and reply within 24 hours.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/guides/hotel-bedding-thread-count"
+              href="/wholesale"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-colors"
             >
-              Browse Free Guides
+              Wholesale &amp; OEM
             </Link>
             <Link
               href="/rfq"
               className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors"
             >
-              Start Your RFQ
+              Get a Factory-Direct Quote
             </Link>
           </div>
         </div>

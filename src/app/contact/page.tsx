@@ -3,9 +3,9 @@ import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Nantong Linens - Hotel Linen Sourcing Agent",
+  title: "Contact Us | Nantong Linens — Hotel Linen Manufacturer & Exporter",
   description:
-    "Contact Nantong Linens for hotel linen sourcing quotes, sample requests, and procurement inquiries. WhatsApp, email, or submit an RFQ online.",
+    "Contact Nantong Linens for factory-direct hotel linen quotes, sample requests, and wholesale or OEM inquiries. WhatsApp, email, or submit an RFQ online.",
   alternates: { canonical: "/contact" },
 };
 

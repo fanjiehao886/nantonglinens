@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Terms of service for Nantong Linens — the rules and agreements governing your use of our website and hotel linen sourcing services.",
+    "Terms of service for Nantong Linens — the rules and agreements governing your use of our website and our hotel linen manufacturing and export services.",
   alternates: { canonical: "/terms" },
 };
 
@@ -12,14 +12,14 @@ export default function TermsOfService() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold text-gray-900">Terms of Service</h1>
-      <p className="mt-2 text-sm text-gray-500">Last updated: May 24, 2026</p>
+      <p className="mt-2 text-sm text-gray-500">Last updated: September 29, 2026</p>
 
       <div className="mt-8 space-y-8 text-gray-600 leading-relaxed">
         <section>
           <h2 className="text-xl font-semibold text-gray-900">1. Agreement to Terms</h2>
           <p className="mt-3">
             By accessing and using the website www.nantonglinens.com (the &quot;Site&quot;) or engaging
-            the sourcing services of Nantong Linens (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), you agree
+            the manufacturing and export services of Nantong Linens (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), you agree
             to be bound by these Terms of Service. If you do not agree with any part of these terms,
             please do not use our Site or services.
           </p>
@@ -28,33 +28,35 @@ export default function TermsOfService() {
         <section>
           <h2 className="text-xl font-semibold text-gray-900">2. Our Services</h2>
           <p className="mt-3">
-            Nantong Linens is a <strong>sourcing agent</strong> based in Dieshiqiao, Nantong, China.
-            We help hospitality buyers source hotel linens (bed sheets, towels, bathrobes, table linens,
-            and related products) from partner factories in the Dieshiqiao home textile market.
+            Nantong Linens is a <strong>hotel linen manufacturer and exporter (manufacturer + trading
+            company)</strong> based in Nantong, Jiangsu, China. We produce hotel linens — bed sheets,
+            pillowcases, duvet covers, towels, bathrobes, and table linens — in our own production
+            facility, and we also produce with audited mills in the surrounding Dieshiqiao home textile
+            cluster when a category or volume falls outside our own lines.
           </p>
           <p className="mt-3">Our services include:</p>
           <ul className="mt-2 list-disc pl-6 space-y-1">
-            <li>Product sourcing and factory matching based on your specifications</li>
-            <li>Price negotiation with partner factories on your behalf</li>
-            <li>Quality control inspections before shipment (pre-shipment QC)</li>
-            <li>Export coordination (documentation, shipping, customs)</li>
-            <li>Sample arrangement and delivery</li>
+            <li>Manufacturing to buyer specifications (thread count, GSM, weave, size, colour)</li>
+            <li>OEM and private-label production, including labelling and packaging</li>
+            <li>Quality control inspection in our own facility before shipment</li>
+            <li>Export coordination and documentation, customs, and freight booking</li>
+            <li>Sampling, written specification sheets, and production reporting</li>
           </ul>
           <p className="mt-3">
-            <strong>Important:</strong> Nantong Linens is a sourcing agent, not a manufacturer.
-            Products are manufactured by independently operated partner factories. We facilitate
-            the sourcing process and provide quality assurance, but we do not manufacture the
-            products ourselves.
+            <strong>Important:</strong> Nantong Linens is both the manufacturer and the exporter of the
+            products it supplies. Where a product is produced by a partner mill within the cluster, we
+            remain your single contractual counterpart and remain responsible for specification,
+            inspection, and export. We do not act as an agent for third-party sellers.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-semibold text-gray-900">3. Quotations and Orders</h2>
           <ul className="mt-3 list-disc pl-6 space-y-2">
-            <li>All quotations provided through our RFQ system are estimates and subject to confirmation based on factory availability, raw material costs, and order specifications.</li>
+            <li>All quotations provided through our RFQ system are estimates and subject to confirmation based on production capacity, raw material costs, and order specifications.</li>
             <li>A quotation is valid for 15 days from the date of issue unless otherwise stated.</li>
             <li>An order is considered confirmed only after we have received your written approval and the required deposit payment.</li>
-            <li>Minimum order quantities (MOQ) vary by product and factory, typically starting from 50 pieces per size/color.</li>
+            <li>Minimum order quantities (MOQ) vary by product, typically starting from 50 pieces per size/colour.</li>
           </ul>
         </section>
 
@@ -64,7 +66,7 @@ export default function TermsOfService() {
             <li>All prices are quoted in USD unless otherwise specified.</li>
             <li>Prices are FOB Shanghai or Ningbo unless otherwise agreed.</li>
             <li>Prices do not include import duties, taxes, or customs fees in the destination country — these are the buyer&apos;s responsibility.</li>
-            <li>We reserve the right to adjust prices due to significant changes in raw material costs, exchange rates, or factory pricing.</li>
+            <li>We reserve the right to adjust prices due to significant changes in raw material costs, exchange rates, or production costs.</li>
           </ul>
         </section>
 
@@ -82,7 +84,7 @@ export default function TermsOfService() {
           <h2 className="text-xl font-semibold text-gray-900">6. Production and Delivery</h2>
           <ul className="mt-3 list-disc pl-6 space-y-2">
             <li>Standard production lead time is 15–20 business days from order confirmation and deposit receipt.</li>
-            <li>Delivery times are estimates and may vary based on factory production schedules, raw material availability, and shipping conditions.</li>
+            <li>Delivery times are estimates and may vary based on our production schedules, raw material availability, and shipping conditions.</li>
             <li>We are not liable for delays caused by force majeure events (natural disasters, pandemics, government actions, port strikes, etc.).</li>
             <li>Shipping methods and carriers will be coordinated with the buyer. Shipping costs are quoted separately.</li>
           </ul>
@@ -102,7 +104,7 @@ export default function TermsOfService() {
           <h2 className="text-xl font-semibold text-gray-900">8. Returns and Refunds</h2>
           <ul className="mt-3 list-disc pl-6 space-y-2">
             <li>Custom-made or custom-labeled products cannot be returned unless they do not match the agreed specifications.</li>
-            <li>If products fail to meet the agreed specifications, we will coordinate with the partner factory for replacement or compensation.</li>
+            <li>If products fail to meet the agreed specifications, we will arrange replacement or compensation, either from our own production or from the partner mill concerned.</li>
             <li>Claims must be filed within 7 days of delivery with supporting evidence (photos, test reports).</li>
             <li>Refund amounts and methods will be determined on a case-by-case basis.</li>
           </ul>
@@ -120,8 +122,8 @@ export default function TermsOfService() {
         <section>
           <h2 className="text-xl font-semibold text-gray-900">10. Limitation of Liability</h2>
           <ul className="mt-3 list-disc pl-6 space-y-2">
-            <li>Nantong Linens acts as a sourcing agent. While we exercise due diligence in selecting partner factories and conducting QC, we are not the manufacturer and cannot guarantee the performance of partner factories beyond our control.</li>
-            <li>Our total liability for any claim arising from our services shall not exceed the total commission earned on the specific order in question.</li>
+            <li>Nantong Linens is the manufacturer and exporter of the products it supplies. While we exercise due diligence in producing to the agreed specifications and in selecting cluster mills where we use them, our liability is limited as set out below.</li>
+            <li>Our total liability for any claim arising from an order shall not exceed the invoiced value of the products in that order.</li>
             <li>We are not liable for indirect, incidental, consequential, or punitive damages.</li>
           </ul>
         </section>

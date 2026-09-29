@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const WHATSAPP_NUMBER = "8615151361119";
 const WHATSAPP_MESSAGE =
-  "Hi! I found your website and I'm interested in hotel linen sourcing. Can you help?";
+  "Hi! I found your website and I'm interested in factory-direct hotel linens. Can you help?";
 
 export function WhatsAppFloat() {
   const [expanded, setExpanded] = useState(false);

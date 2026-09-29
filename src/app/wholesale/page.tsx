@@ -2,16 +2,16 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Hotel Bedding Wholesale — Bulk Supply from Dieshiqiao, Nantong China",
+  title: "Wholesale Hotel Linen Manufacturer & OEM Supplier — Factory-Direct Pricing",
   description:
-    "Wholesale hotel bedding direct from Dieshiqiao factories. As hotel linen suppliers based in Nantong, we offer hotel bed sheets, towels, duvet covers, pillowcases in bulk. Low MOQ, FOB pricing, global shipping. Request a quote today.",
+    "Wholesale hotel linens factory-direct from our own facility in Nantong, China. Bed sheets, towels, duvet covers, bathrobes and table linen in bulk — OEM and private label, low MOQ, FOB pricing, global shipping. Request a wholesale quote today.",
   keywords:
-    "hotel bedding wholesale, hotel bedding suppliers, hotel bedding wholesale manufacturer, hotel linen manufacturer, bulk hotel linen China, Dieshiqiao hotel bedding, Nantong textile wholesale",
+    "wholesale hotel linen manufacturer, hotel linen manufacturer China, hotel bedding wholesale, hotel linen wholesale supplier, OEM hotel linens, private label hotel linens, bulk hotel linen China, hotel linen distributor supply, Dieshiqiao hotel bedding, Nantong textile factory wholesale",
   alternates: { canonical: "/wholesale" },
   openGraph: {
-    title: "Hotel Bedding Wholesale — Bulk Supply from Dieshiqiao, Nantong",
+    title: "Wholesale Hotel Linen Manufacturer — Factory-Direct from Nantong",
     description:
-      "Direct factory pricing on wholesale hotel bedding. Bed sheets, towels, duvet covers, pillowcases — custom specs, global shipping from China's textile hub.",
+      "We manufacture hotel linens in our own Nantong facility and export them ourselves. Wholesale, OEM and private-label programs — bed sheets, towels, duvet covers, bathrobes, table linen.",
   },
 };
 
@@ -29,55 +29,94 @@ const productCategories = [
 
 const advantages = [
   {
-    title: "Factory-direct pricing",
-    desc: "We source from dedicated manufacturers within the Dieshiqiao textile cluster — no middle layers. You pay FOB prices, not distributor markups.",
+    title: "Factory-direct pricing (we own the factory)",
+    desc: "Your quote comes from our own production cost. There is no agent commission and no importer margin built in — which is why wholesale buyers consistently land 15–25% below distributor quotes on comparable specs.",
   },
   {
-    title: "Flexible MOQ",
-    desc: "Unlike large factories that demand container-level minimums, our partners accept orders from 50–200 pieces per spec. Ideal for boutique hotels and pilot orders.",
+    title: "Flexible MOQ from 50 pcs",
+    desc: "Because we run the line ourselves, we can accept 50–200 pieces per spec without waiting for a container-level minimum. Ideal for distributors testing a new SKU, boutique hotels, and pilot orders.",
   },
   {
-    title: "Custom specifications",
-    desc: "Thread count, GSM, weave, size, color, embroidery, packaging — every spec is negotiable. We match your existing hotel linen standards or recommend the right specs for your tier.",
+    title: "OEM & private label",
+    desc: "Your brand on the product: woven labels, printed care labels, jacquard logos, embroidered marks, custom polybags and carton markings. We produce to your artwork and keep your design files confidential.",
   },
   {
-    title: "Strict QC process",
-    desc: "Every batch goes through our independent inspection before shipping. We check GSM, thread count, colorfastness, shrinkage, and construction against your PO specifications.",
+    title: "Stable specifications on repeat orders",
+    desc: "Thread count, GSM, weave, shrinkage limits, and colour references are locked in a written spec sheet and held across reorders — so your shelf product does not drift between shipments.",
   },
   {
-    title: "Global logistics experience",
-    desc: "FOB Nantong/Shanghai, CIF, DDP — we handle documentation for your preferred incoterm. Experienced with US, EU, Middle East, and Southeast Asia customs requirements.",
+    title: "In-house QC before every shipment",
+    desc: "GSM, thread count, measurements, shrinkage, colourfastness, and construction are checked in our own inspection room against your PO spec. You receive a photo/video report before the container is loaded.",
   },
   {
-    title: "Samples within 5 days",
-    desc: "We ship pre-production samples by DHL/FedEx so you can feel the fabric before committing. Production samples from your actual order batch are also available.",
+    title: "Export handled by us, not a third party",
+    desc: "FOB Nantong/Shanghai, CIF, or DDP. We handle documentation for your preferred Incoterm and are experienced with US, EU, Middle East, and Southeast Asia customs and labelling requirements.",
   },
+];
+
+const wholesalePrograms = [
+  {
+    name: "Distributor / Stockist",
+    desc: "Repeat supply of core white programs with stable specs, tiered volume pricing, and consolidated shipments so you can hold stock without tying up capital.",
+    best: "Importers, wholesalers, linen rental & laundry groups",
+  },
+  {
+    name: "OEM / Private Label",
+    desc: "Production under your own brand — labels, care tags, packaging, cartons, and barcode-ready packing lists produced to your artwork.",
+    best: "Hospitality suppliers, e-commerce brands, retail chains",
+  },
+  {
+    name: "Project & Rollout",
+    desc: "Single-property openings through multi-hundred-room rollouts: sampling, colour locking, staged deliveries, and QC reporting per batch.",
+    best: "Hotel groups, resorts, contractors, procurement agencies",
+  },
+];
+
+const moqTiers = [
+  { product: "Bed sheets & pillowcases", moq: "100 pcs per size/colour", lead: "15–20 days" },
+  { product: "Duvet covers", moq: "100 pcs per size/colour", lead: "18–25 days" },
+  { product: "Bath towels & bath mats", moq: "200 pcs per colour", lead: "15–20 days" },
+  { product: "Bathrobes", moq: "100 pcs per size/colour", lead: "20–25 days" },
+  { product: "Table linen", moq: "200 pcs per colour", lead: "18–25 days" },
+  { product: "Trial / sample order", moq: "From 50 pcs", lead: "Quote on request" },
 ];
 
 const faqs = [
   {
-    q: "What is the minimum order quantity for wholesale hotel bedding?",
-    a: "MOQ varies by product: bed sheets and pillowcases from 100 pieces per spec, towels from 200 pieces, bathrobes from 100 pieces. We can negotiate lower MOQs for first-time trial orders. Contact us with your requirements.",
+    q: "Are you a manufacturer or a trading company?",
+    a: "Both. We are a manufacturer and trading company (工贸一体). Production runs in our own facility in Chuanjiang, Tongzhou, Nantong — weaving, dyeing and finishing, cutting, sewing, quilting, inspection and packing. For categories or volumes we do not run in-house, we draw on audited mills in the surrounding Dieshiqiao cluster. Export documentation, customs and freight are handled by our own team, so you deal with one company from production to bill of lading.",
   },
   {
-    q: "Where are your hotel bedding products manufactured?",
-    a: "All products are sourced from factories in Nantong's Dieshiqiao textile cluster — the world's largest home textile manufacturing hub, home to over 6,000 factories. We physically inspect factories and products on-site.",
+    q: "What is the minimum order quantity for wholesale hotel linens?",
+    a: "MOQ varies by product: bed sheets, duvet covers, pillowcases and bathrobes from 100 pieces per size/colour; towels and table linen from 200 pieces per colour. Trial orders can start from 50 pieces. Because we run our own line, we do not require container-level minimums.",
+  },
+  {
+    q: "Where are your hotel linen products manufactured?",
+    a: "Our core programs are manufactured in our own facility in Chuanjiang, Tongzhou District, Nantong — minutes from the Dieshiqiao market, the world's largest home textile cluster with over 6,000 mills. Additional categories and surge volumes are produced by audited mills in the same cluster, under our own specification sheets and inspection.",
+  },
+  {
+    q: "Do you offer OEM and private-label production?",
+    a: "Yes. We produce under your brand with woven labels, printed care labels, jacquard logos, embroidered marks, custom polybags and carton markings produced to your artwork. We keep your designs and specifications confidential and do not resell private-label programmes to other buyers.",
+  },
+  {
+    q: "Do you offer wholesale or distributor pricing tiers?",
+    a: "Yes. Pricing is volume-tiered and quoted per specification — yarn count, GSM, construction and finish all affect unit cost, so we quote from your actual spec rather than publishing a flat price list. Distributors and stockists holding repeat programmes are quoted on an annual volume basis.",
   },
   {
     q: "Do you offer custom sizing and specifications?",
-    a: "Yes. Thread count, GSM, weave type, dimensions, color, embroidery, and packaging are all customizable. We can match your existing hotel linen specs or recommend based on your property tier and budget.",
+    a: "Yes. Thread count, GSM, weave type, dimensions, colour, embroidery, labelling and packaging are all specifiable. We can match your existing hotel linen specifications, provide retailer-ready packaging, or recommend the right spec for your price tier.",
   },
   {
     q: "What are your payment terms?",
-    a: "Standard terms are 30% deposit with order, 70% before shipment. We accept T/T (wire transfer) and L/C at sight. For repeat customers, we can discuss net terms.",
+    a: "Standard terms are 30% deposit with order, 70% before shipment. We accept T/T (wire transfer) and L/C at sight. For repeat customers and distributors, we can discuss net terms.",
   },
   {
     q: "How long does production and shipping take?",
-    a: "Standard lead time is 10–20 days depending on product complexity and order volume. Sea freight to US West Coast is approximately 15–18 days, to Europe 25–30 days. Air freight available for urgent orders.",
+    a: "Production lead time is typically 10–25 days depending on product and volume; towels run faster than bathrobes. Sea freight is approximately 15–18 days to the US West Coast and 25–30 days to Europe. Air freight is available for urgent replenishment.",
   },
   {
     q: "Can you provide samples before bulk production?",
-    a: "Yes. We ship pre-production samples by DHL/FedEx (typically 5 business days). For large orders, we also provide production samples from your actual batch before final payment and shipment.",
+    a: "Yes. Pre-production samples ship by DHL/FedEx, usually within 5 business days, and are free for serious buyers. For larger orders we also provide production samples from your actual batch before final payment and shipment.",
   },
 ];
 
@@ -88,15 +127,17 @@ export default function WholesalePage() {
       <section className="bg-white py-16 border-b border-gray-100">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-sm font-medium text-blue-800 uppercase tracking-wider">
-            Dieshiqiao, Nantong — China's Textile Hub
+            Manufacturer &amp; Exporter — Chuanjiang, Nantong, China
           </span>
           <h1 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl sm:leading-tight">
-            Hotel Bedding Wholesale — Direct from Factory to Your Property
+            Wholesale Hotel Linens — Factory-Direct, No Middleman
           </h1>
           <p className="mt-5 text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto">
-            As hotel bedding suppliers based in Nantong's Dieshiqiao textile cluster, we connect hotels and
-            procurement teams worldwide with vetted factories producing bed sheets, towels, duvet covers,
-            pillowcases, and more — at wholesale FOB prices with flexible MOQ.
+            We are a hotel linen manufacturer and trading company. Our own facility in Nantong
+            produces bed sheets, towels, duvet covers, pillowcases, bathrobes, and table linen —
+            and we export them ourselves. Wholesalers, distributors, hospitality suppliers, and
+            hotel groups buy from us at factory-direct FOB prices, with OEM and private-label
+            programmes available on flexible MOQ.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
@@ -113,13 +154,15 @@ export default function WholesalePage() {
             </Link>
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-400">
-            <span>FOB Nantong / Shanghai</span>
+            <span>Own factory in Nantong</span>
             <span className="w-1 h-1 rounded-full bg-gray-300 self-center hidden sm:inline" />
             <span>MOQ from 50 pcs</span>
             <span className="w-1 h-1 rounded-full bg-gray-300 self-center hidden sm:inline" />
             <span>Samples in 5 days</span>
             <span className="w-1 h-1 rounded-full bg-gray-300 self-center hidden sm:inline" />
-            <span>Global shipping</span>
+            <span>OEM &amp; private label</span>
+            <span className="w-1 h-1 rounded-full bg-gray-300 self-center hidden sm:inline" />
+            <span>FOB Nantong / Shanghai</span>
           </div>
         </div>
       </section>
@@ -128,10 +171,11 @@ export default function WholesalePage() {
       <section className="bg-gray-50 py-14">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 text-center">
-            Wholesale Hotel Bedding Products We Supply
+            Wholesale Hotel Linen Product Range
           </h2>
           <p className="mt-3 text-gray-500 text-center max-w-2xl mx-auto">
-            Every hotel textile category — custom specs, competitive FOB pricing, factory-direct from Nantong
+            Every hotel textile category — produced in-house or in our audited cluster mills,
+            priced factory-direct, FOB from Nantong
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {productCategories.map((cat) => (
@@ -154,10 +198,11 @@ export default function WholesalePage() {
       <section className="bg-white py-14">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 text-center">
-            Why Hotels Choose Us as Their Bedding Supplier
+            Why Wholesalers Buy From Us — Not Through An Agent
           </h2>
           <p className="mt-3 text-gray-500 text-center max-w-2xl mx-auto">
-            Based in Nantong, physically present at Dieshiqiao — we do the legwork so you don't have to
+            We manufacture the goods and export them ourselves. That removes a cost layer and a
+            responsibility gap from your supply chain
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {advantages.map((adv) => (
@@ -170,17 +215,72 @@ export default function WholesalePage() {
         </div>
       </section>
 
+      {/* Wholesale programmes */}
+      <section className="bg-gray-50 py-14 border-t border-gray-100">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 text-center">
+            Three Ways To Buy Wholesale From Us
+          </h2>
+          <p className="mt-3 text-gray-500 text-center max-w-2xl mx-auto">
+            Whether you hold stock, sell under your own brand, or supply a rollout — the production
+            side is the same factory
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {wholesalePrograms.map((p) => (
+              <div key={p.name} className="flex flex-col rounded-2xl border border-gray-200 bg-white p-6">
+                <h3 className="font-semibold text-gray-900">{p.name}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-500">{p.desc}</p>
+                <p className="mt-4 border-t border-gray-100 pt-3 text-xs text-gray-400">
+                  <span className="font-medium text-gray-500">Best for:</span> {p.best}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* MOQ table */}
+          <div className="mt-12 overflow-hidden rounded-2xl border border-gray-200 bg-white">
+            <div className="px-6 py-5">
+              <h3 className="font-semibold text-gray-900">MOQ &amp; Lead Time By Product</h3>
+              <p className="mt-1 text-sm text-gray-500">
+                Indicative figures for standard white programs in 100% cotton. Custom constructions,
+                colours, and branding may adjust MOQ and lead time.
+              </p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-gray-50 text-xs uppercase tracking-wider text-gray-400">
+                  <tr>
+                    <th className="px-6 py-3 font-semibold">Product</th>
+                    <th className="px-6 py-3 font-semibold">MOQ</th>
+                    <th className="px-6 py-3 font-semibold">Production lead time</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 text-gray-600">
+                  {moqTiers.map((t) => (
+                    <tr key={t.product}>
+                      <td className="px-6 py-3.5 font-medium text-gray-900">{t.product}</td>
+                      <td className="px-6 py-3.5">{t.moq}</td>
+                      <td className="px-6 py-3.5">{t.lead}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How it works */}
       <section className="bg-blue-950 py-14">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="text-2xl font-bold">How to Order Wholesale Hotel Bedding</h2>
+          <h2 className="text-2xl font-bold">How To Order Wholesale Hotel Linens</h2>
           <p className="mt-3 text-blue-200/80">A simple 4-step process from inquiry to delivery</p>
           <div className="mt-10 grid gap-6 sm:grid-cols-4">
             {[
-              { step: "01", title: "Send Requirements", desc: "Tell us your hotel tier, product types, specs (TC/GSM/size), and target budget." },
-              { step: "02", title: "Get Quote & Samples", desc: "We source from 3–5 factories, compare pricing and quality, and ship samples." },
-              { step: "03", title: "Confirm & Produce", desc: "After sample approval, production starts. We inspect in-line and pre-shipment." },
-              { step: "04", title: "Ship & Deliver", desc: "FOB, CIF or DDP — we handle export docs, customs clearance, and logistics." },
+              { step: "01", title: "Send Requirements", desc: "Tell us whether you buy as a hotel, wholesaler, or private-label supplier — plus specs (TC/GSM/size), volumes, and target price." },
+              { step: "02", title: "Quote & Samples", desc: "We cost your spec on our own production line and ship free physical samples for approval." },
+              { step: "03", title: "Produce & QC", desc: "Production runs on our line. We inspect the batch in-house and send you a photo/video QC report before loading." },
+              { step: "04", title: "Ship & Deliver", desc: "FOB, CIF or DDP — we handle export docs, customs clearance, and logistics ourselves." },
             ].map((s) => (
               <div key={s.step} className="text-left">
                 <span className="text-3xl font-bold text-blue-400/50">{s.step}</span>
@@ -216,11 +316,12 @@ export default function WholesalePage() {
       <section className="bg-white py-14">
         <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900">
-            Ready to Source Wholesale Hotel Bedding?
+            Ready to Order Wholesale, Factory-Direct?
           </h2>
           <p className="mt-3 text-gray-500">
-            Tell us what you need — hotel tier, product types, quantities, and target budget. We'll source from
-            Dieshiqiao's top factories and respond with pricing and samples within 24 hours.
+            Tell us what you need — buyer type, product categories, quantities, specs, and any
+            branding requirements. We&apos;ll come back with factory-direct pricing, MOQ, and
+            samples within 24 hours.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
@@ -248,13 +349,20 @@ export default function WholesalePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: "Hotel Bedding Wholesale — Bulk Supply from Dieshiqiao",
+            name: "Wholesale Hotel Linens — Factory-Direct from a Nantong Manufacturer",
             description:
-              "Wholesale hotel bedding direct from Dieshiqiao factories. Hotel bed sheets, towels, duvet covers, and pillowcases in bulk. Low MOQ, FOB pricing, global shipping.",
+              "Wholesale hotel linens factory-direct from our own Nantong facility: bed sheets, towels, duvet covers, pillowcases, bathrobes and table linen. OEM, private label, low MOQ, FOB pricing, global shipping.",
             url: "https://www.nantonglinens.com/wholesale",
             publisher: {
-              "@type": "Organization",
+              "@type": ["Organization", "Manufacturer"],
               name: "Nantong Linens",
+              url: "https://www.nantonglinens.com",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Chuanjiang, Tongzhou",
+                addressRegion: "Jiangsu",
+                addressCountry: "CN",
+              },
             },
             mainEntity: {
               "@type": "FAQPage",

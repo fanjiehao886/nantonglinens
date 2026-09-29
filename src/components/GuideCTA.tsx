@@ -20,8 +20,8 @@ interface GuideCTAProps {
 export function GuideCTA({
   category,
   ctaLocation,
-  heading = "Sourcing to these specs?",
-  body = "Send us your target specs and quantity — we compare 3–5 Dieshiqiao factories and quote factory-direct FOB prices within 24 hours. Free samples available.",
+  heading = "Ordering to these specs?",
+  body = "Send us your target specs and quantity — we quote factory-direct FOB prices from our own production line within 24 hours. Free samples available.",
   secondaryHref,
   secondaryLabel = "Browse Products",
 }: GuideCTAProps) {

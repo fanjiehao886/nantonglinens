@@ -55,7 +55,7 @@ export default function NewsletterForm() {
   return (
     <div>
       <p className="text-sm text-gray-600 leading-relaxed">
-        Weekly sourcing tips, market trends, QC guides — free.
+        Weekly buying tips, market trends, QC guides — free.
       </p>
       <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
         <input

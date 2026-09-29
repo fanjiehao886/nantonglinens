@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "550 GSM Towel Meaning — Hotel Housekeeping GSM Guide (300–600 GSM)",
     description:
-      "What does 550 gsm mean? 450 vs 600 gsm for housekeeping: towel weights by hotel tier, cotton types, absorbency, and real pricing from Dieshiqiao sourcing experts.",
+      "What does 550 gsm mean? 450 vs 600 gsm for housekeeping: towel weights by hotel tier, cotton types, absorbency, and real factory-direct pricing from a Nantong hotel towel manufacturer.",
   },
 };
 
@@ -118,7 +118,7 @@ export default function HotelTowelGSMGuide() {
           <p className="mt-4 text-lg text-gray-500 leading-relaxed">
             GSM (grams per square meter) is the most important spec for hotel housekeeping and procurement teams.
             This guide explains what 450 GSM vs 600 GSM means, covers ideal towel weights by hotel tier and cotton type,
-            and breaks down how GSM affects absorbency, durability, and laundry cost — from daily sourcing in Dieshiqiao.
+            and breaks down how GSM affects absorbency, durability, and laundry cost — from daily production in Nantong.
           </p>
           <div className="mt-6 flex items-center gap-4 text-sm text-gray-400">
             <span>Updated August 2026</span>

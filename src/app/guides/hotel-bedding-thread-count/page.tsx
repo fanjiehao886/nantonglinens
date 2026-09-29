@@ -304,8 +304,8 @@ export default function HotelBeddingThreadCountGuide() {
             Need Help Choosing the Right Thread Count?
           </h2>
           <p className="mt-3 text-blue-200/80">
-            We source hotel bedding daily from Dieshiqiao factories. Tell us your hotel tier and we will recommend
-            the right TC, weave, and material — with sample availability and transparent pricing.
+            We manufacture hotel bedding in Nantong every day. Tell us your hotel tier and we will recommend
+            the right TC, weave, and material — with sample availability and factory-direct pricing.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <TrackedLink

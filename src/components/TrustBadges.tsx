@@ -4,7 +4,7 @@ export function TrustBadges() {
       {/* Certifications */}
       <div>
         <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-          Partner Factory Certifications
+          Factory Certifications
         </h4>
         <div className="flex flex-wrap gap-2">
           {[

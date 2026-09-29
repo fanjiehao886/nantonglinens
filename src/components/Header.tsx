@@ -15,6 +15,7 @@ const knowledgeHubLinks = [
 
 const productLinks = [
   { name: "All Products", href: "/products" },
+  { name: "Wholesale & OEM", href: "/wholesale" },
   { name: "---", href: "#", divider: true },
   { name: "Bed Sheets", href: "/products/bed-sheets" },
   { name: "Pillowcases", href: "/products/pillowcases" },

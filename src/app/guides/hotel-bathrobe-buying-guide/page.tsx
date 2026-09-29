@@ -4,12 +4,12 @@ import { TrackedLink } from "@/components/TrackedLink";
 import { GuideCTA } from "@/components/GuideCTA";
 
 export const metadata: Metadata = {
-  title: "Hotel Bathrobe Buying Guide — Waffle, Terry & Velour Robe Sourcing",
+  title: "Hotel Bathrobe Buying Guide — Waffle, Terry & Velour Robes",
   description:
-    "Complete bathrobe sourcing guide for hotel buyers. Waffle vs terry vs velour robes, GSM ranges, kimono vs shawl collar, logo embroidery options, and pricing from Dieshiqiao manufacturers.",
+    "Complete bathrobe buying guide for hotel buyers. Waffle vs terry vs velour robes, GSM ranges, kimono vs shawl collar, logo embroidery options, and factory-direct pricing from a Nantong manufacturer.",
   alternates: { canonical: "/guides/hotel-bathrobe-buying-guide" },
   openGraph: {
-    title: "Hotel Bathrobe Buying Guide — Waffle, Terry & Velour Robe Sourcing",
+    title: "Hotel Bathrobe Buying Guide — Waffle, Terry & Velour Robes",
     description:
       "How to choose the right hotel bathrobe: fabric types, GSM, collar styles, and embroidery options. All based on real Dieshiqiao factory pricing and specifications.",
   },
@@ -241,7 +241,7 @@ export default function HotelBathrobeGuide() {
           <GuideCTA
             category="Bathrobes"
             ctaLocation="guide_bathrobe_mid"
-            heading="Sourcing robes with custom embroidery?"
+            heading="Ordering robes with custom embroidery?"
             body="Send us your fabric, GSM, size range, and logo artwork — we quote factory-direct FOB prices from 3–5 Dieshiqiao factories within 24 hours, including embroidery sampling."
             secondaryHref="/products/bathrobes"
             secondaryLabel="View Bathrobe Catalog"
@@ -336,10 +336,10 @@ export default function HotelBathrobeGuide() {
       <section className="bg-blue-950 py-14">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-white">
-            Ready to Source Custom Hotel Bathrobes?
+            Ready to Order Custom Hotel Bathrobes?
           </h2>
           <p className="mt-3 text-blue-200/80">
-            Tell us your hotel tier, preferred fabric, and style. We will source samples
+            Tell us your hotel tier, preferred fabric, and style. We will make samples
             from Dieshiqiao robe factories — with logo embroidery samples available within 7 business days.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -415,7 +415,7 @@ export default function HotelBathrobeGuide() {
             "@context": "https://schema.org",
             "@type": "Article",
             headline: "Hotel Bathrobe Buying Guide — How to Choose the Right Robe for Your Property",
-            description: "Complete bathrobe sourcing guide for hotel buyers covering fabric types, GSM ranges, collar styles, logo embroidery, and pricing from Dieshiqiao manufacturers.",
+            description: "Complete bathrobe buying guide for hotel buyers covering fabric types, GSM ranges, collar styles, logo embroidery, and factory-direct pricing from a Nantong manufacturer.",
             author: { "@type": "Organization", name: "Nantong Linens" },
             publisher: {
               "@type": "Organization",

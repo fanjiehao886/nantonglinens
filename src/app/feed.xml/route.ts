@@ -28,9 +28,9 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nantong Linens — Hotel Linen Buying Guides &amp; Sourcing Tips</title>
+    <title>Nantong Linens — Hotel Linen Manufacturer &amp; Buying Guides</title>
     <link>${baseUrl}</link>
-    <description>Free procurement guides for hotel buyers. GSM, thread count, fabric types, QC checklists, and sourcing strategies — from daily experience in Dieshiqiao, the world's largest textile hub.</description>
+    <description>Free procurement guides for hotel buyers from a Nantong hotel linen manufacturer: GSM, thread count, fabric types, QC checklists, and factory-direct pricing.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml"/>
