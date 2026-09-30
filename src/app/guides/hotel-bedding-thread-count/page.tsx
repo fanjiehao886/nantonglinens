@@ -73,6 +73,43 @@ const commonTricks = [
   },
 ];
 
+/**
+ * What hotels actually run in service, as opposed to what they advertise.
+ * Answers the "what thread count are hotel sheets" query family directly.
+ */
+const hotelSheetSpecs = [
+  {
+    tc: "180–210 TC",
+    who: "Limited-service, budget and high-turnover properties",
+    build: "Percale weave, cotton-poly blend or basic cotton",
+    life: "100–150 washes",
+  },
+  {
+    tc: "250–300 TC",
+    who: "The most common hotel specification worldwide",
+    build: "Percale or sateen, 100% cotton, carded or ring-spun",
+    life: "150–200 washes",
+  },
+  {
+    tc: "300–400 TC",
+    who: "4-star and upscale properties",
+    build: "Sateen or percale, long-staple cotton, single-ply yarn",
+    life: "200+ washes",
+  },
+  {
+    tc: "400–600 TC",
+    who: "Boutique and luxury properties, often for retail-facing claims",
+    build: "Long-staple or extra-long-staple cotton, single-ply",
+    life: "200+ washes with careful laundering",
+  },
+  {
+    tc: "600 TC and above",
+    who: "Rarely specified in hospitality tenders",
+    build: "Usually multi-ply counting, not a denser single-ply fabric",
+    life: "Not meaningful: the number is inflated",
+  },
+];
+
 export default function HotelBeddingThreadCountGuide() {
   return (
     <>
@@ -101,7 +138,7 @@ export default function HotelBeddingThreadCountGuide() {
             what ranges to specify by hotel tier, and how to spot inflated counts — based on daily sourcing experience in Dieshiqiao.
           </p>
           <div className="mt-6 flex items-center gap-4 text-sm text-gray-400">
-            <span>Updated August 2026</span>
+            <span>Updated September 2026</span>
             <span className="w-1 h-1 rounded-full bg-gray-300" />
             <span>12 min read</span>
             <span className="w-1 h-1 rounded-full bg-gray-300" />
@@ -125,6 +162,45 @@ export default function HotelBeddingThreadCountGuide() {
             commercial laundering conditions (industrial washers, high-temperature drying, bleach). The wrong TC for your
             hotel tier means either overspending on linens or replacing them too frequently.
           </p>
+
+          <h2>What Thread Count Are Hotel Sheets? (Direct Answer)</h2>
+          <p>
+            Most hotels specify between <strong>200 and 400 thread count</strong>. Within that band, a limited-service
+            property typically runs 180–210 TC percale in a cotton-poly blend because the fabric survives high-turnover
+            laundering; a 3-star hotel usually sits at 250–300 TC; and a 4 or 5-star property standardises on
+            300–400 TC in 100% long-staple cotton, choosing the weave and yarn quality rather than pushing the number
+            higher. Counts above 400 TC are rare in hospitality for practical reasons, and counts above 600 TC are
+            almost always a marketing figure rather than a mill specification.
+          </p>
+          <p>
+            So when a hotel tender asks for a thread count, the honest answer to &quot;what do hotels use&quot; is not
+            a single number but a band matched to tier, laundry conditions and expected replacement cycle. A 400 TC
+            sheet that pills after thirty washes performs worse for the property than a well-made 250 TC percale sheet
+            that survives a hundred.
+          </p>
+
+          <div className="not-prose my-8 overflow-x-auto">
+            <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
+              <thead>
+                <tr className="bg-gray-50">
+                  <th className="px-4 py-3 text-left font-semibold text-gray-900">Thread count</th>
+                  <th className="px-4 py-3 text-left font-semibold text-gray-900">Who specifies it</th>
+                  <th className="px-4 py-3 text-left font-semibold text-gray-900">Typical construction</th>
+                  <th className="px-4 py-3 text-left font-semibold text-gray-900">Commercial wash life</th>
+                </tr>
+              </thead>
+              <tbody>
+                {hotelSheetSpecs.map((row) => (
+                  <tr key={row.tc} className="border-t border-gray-100">
+                    <td className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">{row.tc}</td>
+                    <td className="px-4 py-3 text-gray-600">{row.who}</td>
+                    <td className="px-4 py-3 text-gray-600">{row.build}</td>
+                    <td className="px-4 py-3 text-blue-800 font-semibold whitespace-nowrap">{row.life}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
           <h2>Recommended Thread Count by Hotel Tier</h2>
           <p>
@@ -338,6 +414,22 @@ export default function HotelBeddingThreadCountGuide() {
             mainEntity: [
               {
                 "@type": "Question",
+                name: "What thread count are hotel sheets?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most hotel bed sheets are between 200 and 400 thread count. Limited-service and budget properties commonly run 180-210 TC percale, usually in a cotton-poly blend, because the fabric withstands high-turnover laundering. Three-star hotels typically specify 250-300 TC, and four and five-star properties standardise on 300-400 TC in 100% long-staple cotton. Thread counts above 600 TC are rare in hospitality tenders and are usually a multi-ply marketing figure rather than a denser single-ply fabric.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Are 200 thread count sheets good enough for a hotel?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, for many properties. A well-made 200 TC percale sheet in single-ply cotton offers a crisp, cool hand feel that many guests prefer, costs less per piece, and survives commercial laundering well. What matters is the yarn quality and weave, not the headline number. A 200-250 TC percale sheet from a mill using long-staple single-ply yarn will usually outlast a 400 TC sheet built from short-staple multi-ply yarn, and it will feel better after fifty industrial washes.",
+                },
+              },
+              {
+                "@type": "Question",
                 name: "What thread count is best for hotel bedding?",
                 acceptedAnswer: {
                   "@type": "Answer",
@@ -396,7 +488,7 @@ export default function HotelBeddingThreadCountGuide() {
               logo: { "@type": "ImageObject", url: "https://www.nantonglinens.com/logo.png" },
             },
             datePublished: "2026-06-05",
-            dateModified: "2026-08-19",
+            dateModified: "2026-09-30",
             url: "https://www.nantonglinens.com/guides/hotel-bedding-thread-count",
           }),
         }}
