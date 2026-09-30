@@ -51,89 +51,265 @@ export async function generateStaticParams() {
 }
 
 /* ---- Minimal Portable Text renderer ---- */
+type PTSpan = { text?: string; marks?: string[] };
+type PTMarkDef = { _key: string; _type?: string; href?: string };
+type PTBlock = {
+  _type?: string;
+  _key?: string;
+  style?: string;
+  listItem?: string;
+  children?: PTSpan[];
+  markDefs?: PTMarkDef[];
+  content?: PTBlock[];
+  alt?: string;
+  type?: string;
+  caption?: string;
+  headers?: string[];
+  rows?: { _key?: string; cells?: string[] }[];
+};
+
+const MARK_STYLES = new Set(["strong", "em", "underline"]);
+
+/**
+ * Renders inline spans, preserving bold / italic / underline marks and link
+ * annotations. The previous implementation joined raw text and dropped every
+ * mark, so bold emphasis and internal links never reached the page.
+ */
+function renderSpans(children: PTSpan[] = [], markDefs: PTMarkDef[] = []) {
+  return children.map((child, i) => {
+    const text = child.text ?? "";
+    if (!text) return null;
+    const marks = child.marks ?? [];
+    const linkKey = marks.find((m) => !MARK_STYLES.has(m));
+    const href = linkKey
+      ? markDefs.find((d) => d._key === linkKey)?.href
+      : undefined;
+
+    let node: React.ReactNode = text;
+    if (marks.includes("strong")) {
+      node = <strong className="font-semibold text-gray-900">{node}</strong>;
+    }
+    if (marks.includes("em")) node = <em>{node}</em>;
+    if (href) {
+      const isExternal = /^https?:\/\//i.test(href);
+      node = (
+        <a
+          href={href}
+          className="text-blue-800 underline underline-offset-2 hover:text-blue-900"
+          {...(isExternal
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
+        >
+          {node}
+        </a>
+      );
+    }
+    return <span key={i}>{node}</span>;
+  });
+}
+
+function renderTable(block: PTBlock, key: string) {
+  const headers = block.headers ?? [];
+  const rows = block.rows ?? [];
+  if (headers.length === 0 && rows.length === 0) return null;
+  return (
+    <figure key={key} className="my-6">
+      <div className="overflow-x-auto rounded-xl border border-gray-200">
+        <table className="w-full text-sm">
+          {headers.length > 0 && (
+            <thead>
+              <tr className="bg-gray-50">
+                {headers.map((h, hi) => (
+                  <th
+                    key={hi}
+                    className="px-4 py-3 text-left font-semibold text-gray-900"
+                  >
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+          )}
+          <tbody>
+            {rows.map((row, ri) => (
+              <tr key={row._key ?? ri} className="border-t border-gray-100">
+                {(row.cells ?? []).map((cell, ci) => (
+                  <td
+                    key={ci}
+                    className={
+                      ci === 0
+                        ? "px-4 py-3 font-medium text-gray-900"
+                        : "px-4 py-3 text-gray-600"
+                    }
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {block.caption ? (
+        <figcaption className="mt-2 text-sm text-gray-400">
+          {block.caption}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
+}
+
+/**
+ * Flattens portable text into React nodes. Consecutive list blocks are grouped
+ * into a single ul/ol so bullets keep their markers instead of rendering as
+ * standalone paragraphs.
+ */
+function portableTextToNodes(
+  content: PTBlock[],
+  inlineCta?: React.ReactNode
+): React.ReactNode[] {
+  const nodes: React.ReactNode[] = [];
+  const mid = inlineCta ? Math.floor(content.length / 2) : -1;
+  let listBuffer: PTBlock[] = [];
+  let listKind: string | null = null;
+
+  const flushList = () => {
+    if (listBuffer.length === 0) return;
+    const items = listBuffer.map((item, i) => (
+      <li key={i} className="pl-1">
+        {renderSpans(item.children, item.markDefs)}
+      </li>
+    ));
+    nodes.push(
+      listKind === "number" ? (
+        <ol key={`list-${nodes.length}`} className="ml-5 list-decimal space-y-2">
+          {items}
+        </ol>
+      ) : (
+        <ul key={`list-${nodes.length}`} className="ml-5 list-disc space-y-2">
+          {items}
+        </ul>
+      )
+    );
+    listBuffer = [];
+    listKind = null;
+  };
+
+  content.forEach((block, i) => {
+    if (inlineCta && i === mid) {
+      flushList();
+      nodes.push(<div key={`cta-${i}`}>{inlineCta}</div>);
+    }
+    if (!block || typeof block !== "object") return;
+
+    if (block._type === "block" && block.listItem) {
+      if (listKind && listKind !== block.listItem) flushList();
+      listKind = block.listItem;
+      listBuffer.push(block);
+      return;
+    }
+    flushList();
+
+    if (block._type === "image") {
+      const url = urlFor(block).width(1200).url();
+      nodes.push(
+        <img
+          key={`img-${i}`}
+          src={url}
+          alt={block.alt || ""}
+          className="my-6 rounded-xl w-full"
+        />
+      );
+      return;
+    }
+    if (block._type === "table") {
+      const table = renderTable(block, `table-${i}`);
+      if (table) nodes.push(table);
+      return;
+    }
+    if (block._type === "callout") {
+      const color =
+        block.type === "warning"
+          ? "border-yellow-300 bg-yellow-50 text-yellow-800"
+          : block.type === "tip"
+            ? "border-green-300 bg-green-50 text-green-800"
+            : "border-blue-300 bg-blue-50 text-blue-800";
+      nodes.push(
+        <div key={`callout-${i}`} className={`rounded-xl border p-4 ${color}`}>
+          <div className="space-y-2 text-sm leading-relaxed">
+            {portableTextToNodes(block.content ?? [])}
+          </div>
+        </div>
+      );
+      return;
+    }
+    if (block._type !== "block") return;
+
+    const text = (block.children ?? []).map((c) => c.text ?? "").join("");
+    switch (block.style) {
+      case "h1":
+        nodes.push(
+          <h1 key={i} className="mt-8 text-2xl font-bold text-gray-900">
+            {renderSpans(block.children, block.markDefs)}
+          </h1>
+        );
+        return;
+      case "h2":
+        nodes.push(
+          <h2 key={i} className="mt-6 text-xl font-bold text-gray-900">
+            {renderSpans(block.children, block.markDefs)}
+          </h2>
+        );
+        return;
+      case "h3":
+        nodes.push(
+          <h3 key={i} className="mt-4 text-lg font-semibold text-gray-900">
+            {renderSpans(block.children, block.markDefs)}
+          </h3>
+        );
+        return;
+      case "h4":
+        nodes.push(
+          <h4 key={i} className="mt-4 text-base font-semibold text-gray-900">
+            {renderSpans(block.children, block.markDefs)}
+          </h4>
+        );
+        return;
+      case "blockquote":
+        nodes.push(
+          <blockquote
+            key={i}
+            className="border-l-4 border-blue-200 pl-4 italic text-gray-500"
+          >
+            {renderSpans(block.children, block.markDefs)}
+          </blockquote>
+        );
+        return;
+      default:
+        if (!text.trim()) return;
+        nodes.push(
+          <p key={i} className="mt-2">
+            {renderSpans(block.children, block.markDefs)}
+          </p>
+        );
+    }
+  });
+
+  flushList();
+  return nodes;
+}
+
 function PortableTextContent({
   content,
   inlineCta,
 }: {
-  content: any[];
+  content: PTBlock[];
   inlineCta?: React.ReactNode;
 }) {
   if (!content) return null;
-  const mid = inlineCta ? Math.floor(content.length / 2) : -1;
   return (
     <div className="space-y-4 text-base leading-relaxed text-gray-700">
-      {content.map((block: any, i: number) => {
-        if (inlineCta && i === mid) {
-          return (
-            <div key={`cta-${i}`}>
-              {inlineCta}
-            </div>
-          );
-        }
-        if (block._type === "image") {
-          const url = urlFor(block).width(1200).url();
-          return (
-            <img
-              key={i}
-              src={url}
-              alt={block.alt || ""}
-              className="my-6 rounded-xl w-full"
-            />
-          );
-        }
-        if (block._type === "callout") {
-          const color =
-            block.type === "warning"
-              ? "border-yellow-300 bg-yellow-50 text-yellow-800"
-              : block.type === "tip"
-              ? "border-green-300 bg-green-50 text-green-800"
-              : "border-blue-300 bg-blue-50 text-blue-800";
-          return (
-            <div key={i} className={`rounded-xl border p-4 ${color}`}>
-              <PortableTextContent content={block.content} />
-            </div>
-          );
-        }
-        if (block._type !== "block") return null;
-        const text =
-          block.children?.map((c: any) => c.text).join("") || "";
-        switch (block.style) {
-          case "h1":
-            return (
-              <h1 key={i} className="mt-8 text-2xl font-bold text-gray-900">
-                {text}
-              </h1>
-            );
-          case "h2":
-            return (
-              <h2 key={i} className="mt-6 text-xl font-bold text-gray-900">
-                {text}
-              </h2>
-            );
-          case "h3":
-            return (
-              <h3 key={i} className="mt-4 text-lg font-semibold text-gray-900">
-                {text}
-              </h3>
-            );
-          case "blockquote":
-            return (
-              <blockquote
-                key={i}
-                className="border-l-4 border-blue-200 pl-4 italic text-gray-500"
-              >
-                {text}
-              </blockquote>
-            );
-          default:
-            if (!text.trim()) return null;
-            return (
-              <p key={i} className="mt-2">
-                {text}
-              </p>
-            );
-        }
-      })}
+      {portableTextToNodes(content, inlineCta)}
     </div>
   );
 }

@@ -54,6 +54,57 @@ export default defineType({
             defineField({ name: "type", title: "Type", type: "string", options: { list: ["info", "warning", "tip"] } }),
           ],
         }),
+        // Comparison tables. Buyer-decision content lives or dies on side-by-side
+        // product specs, so this needs to be a first-class block type rather than
+        // being flattened into prose.
+        defineArrayMember({
+          type: "object",
+          name: "table",
+          title: "Comparison table",
+          fields: [
+            defineField({ name: "caption", title: "Caption", type: "string" }),
+            defineField({
+              name: "headers",
+              title: "Header cells",
+              type: "array",
+              of: [defineArrayMember({ type: "string" })],
+            }),
+            defineField({
+              name: "rows",
+              title: "Rows",
+              type: "array",
+              of: [
+                defineArrayMember({
+                  type: "object",
+                  name: "row",
+                  fields: [
+                    defineField({
+                      name: "cells",
+                      title: "Cells (same order as headers)",
+                      type: "array",
+                      of: [defineArrayMember({ type: "string" })],
+                    }),
+                  ],
+                  preview: {
+                    select: { cells: "cells" },
+                    prepare({ cells }: { cells?: string[] }) {
+                      return { title: (cells ?? []).join("  |  ") || "Row" };
+                    },
+                  },
+                }),
+              ],
+            }),
+          ],
+          preview: {
+            select: { headers: "headers", rows: "rows" },
+            prepare({ headers, rows }: { headers?: string[]; rows?: unknown[] }) {
+              return {
+                title: (headers ?? []).join("  |  ") || "Table",
+                subtitle: `${(rows ?? []).length} rows`,
+              };
+            },
+          },
+        }),
       ],
     }),
     defineField({
