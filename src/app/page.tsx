@@ -369,19 +369,49 @@ export default async function HomePage() {
             <p className="mt-2 text-gray-500">Complete textile solutions for every hotel department</p>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {[
               {
-                name: "Bed Sheets & Pillowcases",
+                name: "Hotel Bedding Sets",
                 icon: "🛏️",
-                slug: "bed-sheets",
-                desc: "Percale, Sateen, Tencel",
+                slug: "bedding-sets",
+                desc: "Sateen, Percale, Jacquard",
               },
               {
-                name: "Towels & Bath Mats",
+                name: "Bed Sheets & Pillowcases",
+                icon: "🧵",
+                slug: "bed-sheets",
+                desc: "Flat, Fitted, 200–400TC",
+              },
+              {
+                name: "Duvet Covers",
+                icon: "🛌",
+                slug: "duvet-covers",
+                desc: "Hidden zip, corner ties",
+              },
+              {
+                name: "Duvet Inners",
+                icon: "☁️",
+                slug: "duvet-inners",
+                desc: "Down 50/50 to 90/10",
+              },
+              {
+                name: "Pillows",
+                icon: "💤",
+                slug: "pillows",
+                desc: "Down, 3-chamber, fibre",
+              },
+              {
+                name: "Bedding Fabric",
+                icon: "🧶",
+                slug: "bedding-fabric",
+                desc: "By the metre, 3.05m wide",
+              },
+              {
+                name: "Bath Towels",
                 icon: "🧺",
                 slug: "bath-towels",
-                desc: "Egyptian cotton, bamboo",
+                desc: "16S to 32S, 400–900 GSM",
               },
               {
                 name: "Bathrobes",
@@ -396,15 +426,27 @@ export default async function HomePage() {
                 desc: "Napkins, Tablecloths",
               },
               {
-                name: "Duvet & Mattress",
+                name: "Mattress Toppers",
                 icon: "🛋️",
-                slug: "duvet-covers",
-                desc: "Covers, Toppers, Pads",
+                slug: "mattress-toppers",
+                desc: "Topper, featherbed, memory",
+              },
+              {
+                name: "Mattress & Pillow Protectors",
+                icon: "🛡️",
+                slug: "mattress-protectors",
+                desc: "Waterproof, TPU, quilted",
+              },
+              {
+                name: "Bed Runners",
+                icon: "🎀",
+                slug: "bed-runners",
+                desc: "Custom logo & embroidered",
               },
             ].map((cat) => (
               <Link
                 key={cat.slug}
-                href={`/products?category=${cat.slug}`}
+                href={`/products/${cat.slug}`}
                 className="group rounded-xl border border-gray-100 p-5 text-center hover:border-blue-200 hover:bg-blue-50/50 transition-all"
               >
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-gray-50 group-hover:bg-blue-100 transition-colors">

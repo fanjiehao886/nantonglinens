@@ -17,14 +17,22 @@ export const metadata: Metadata = {
 
 const CATEGORIES = [
   { name: "All", href: "/products" },
+  { name: "Bedding Sets", href: "/products/bedding-sets" },
   { name: "Bed Sheets", href: "/products/bed-sheets" },
-  { name: "Pillowcases", href: "/products/pillowcases" },
   { name: "Duvet Covers", href: "/products/duvet-covers" },
+  { name: "Duvet Inners", href: "/products/duvet-inners" },
+  { name: "Pillows", href: "/products/pillows" },
+  { name: "Pillowcases", href: "/products/pillowcases" },
+  { name: "Bedding Fabric", href: "/products/bedding-fabric" },
   { name: "Bath Towels", href: "/products/bath-towels" },
   { name: "Bathrobes", href: "/products/bathrobes" },
   { name: "Pool & Beach Towels", href: "/products/pool-beach-towels" },
   { name: "Bath Mats", href: "/products/bath-mats" },
   { name: "Table Linen", href: "/products/table-linen" },
+  { name: "Mattress Toppers", href: "/products/mattress-toppers" },
+  { name: "Mattress Protectors", href: "/products/mattress-protectors" },
+  { name: "Pillow Protectors", href: "/products/pillow-protectors" },
+  { name: "Bed Runners", href: "/products/bed-runners" },
 ];
 
 interface PageProps {

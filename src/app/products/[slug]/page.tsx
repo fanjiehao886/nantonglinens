@@ -252,6 +252,211 @@ const CATEGORY_DATA: Record<string, {
       { label: "hotel bed sheets", href: "/products/bed-sheets" },
     ],
   },
+  "bedding-sets": {
+    name: "Hotel Bedding Sets",
+    title: "Hotel Bedding Sets — Wholesale Sateen, Percale & Jacquard",
+    description: "Wholesale hotel bedding sets factory-direct from Nantong: sateen, percale, stripe and jacquard lines, 200–400 TC, 40S–80S yarn. Logo embroidery available.",
+    keywords: "hotel bedding set wholesale, hotel bed linen set supplier China, sateen bedding set manufacturer, hotel duvet cover set bulk, embroidered hotel bedding",
+    intro: "A complete bedding set is where a room's standard is set: duvet cover, flat sheet, fitted sheet and pillowcases must match in shade across every room and every reorder. The founding member's bedding mill runs four weave lines — sateen plain, percale, sateen stripe and sateen jacquard — so a single property can specify one construction and hold it for the life of the contract.",
+    specs: [
+      "Weave lines: Sateen plain, Percale plain, Sateen stripe, Sateen jacquard (four separate production lines)",
+      "Thread Count: 250 / 300 / 330 / 350 / 400 TC standard; 500 TC+ on request",
+      "Yarn: 40S, 60S, 80S (combed and long-staple options at 350 TC and above)",
+      "Material: 100% Cotton, 80/20 cotton-polyester blend, 50/50 CVC",
+      "Set composition: Duvet cover + flat sheet + fitted sheet + 2 pillowcases (4-pc); configured to your room list",
+      "Decoration: Embroidery (white, silver or gold thread), satin stripe, jacquard pattern; no-embroidery plain white option",
+      "Color: White standard; dyed-to-match on 1,000 sets+",
+      "MOQ: 100 sets per size/spec combination",
+    ],
+    relatedGuides: [
+      { label: "Thread Count Guide", href: "/guides/hotel-bedding-thread-count" },
+      { label: "Hotel Linen Buying Guide", href: "/guides/download" },
+    ],
+    internalLinks: [
+      { label: "hotel bedding set wholesale", href: "/products/bedding-sets" },
+      { label: "hotel bed linen supplier China", href: "/products/bedding-sets" },
+      { label: "embroidered hotel bedding set", href: "/products/bedding-sets" },
+      { label: "sateen vs percale hotel bedding", href: "/guides/hotel-bedding-thread-count" },
+      { label: "hotel duvet covers", href: "/products/duvet-covers" },
+      { label: "hotel bed sheets", href: "/products/bed-sheets" },
+      { label: "hotel linen manufacturer in China", href: "/about" },
+      { label: "request bedding samples", href: "/rfq" },
+    ],
+  },
+  "bedding-fabric": {
+    name: "Hotel Bedding Fabric",
+    title: "Hotel Bedding Fabric — Wholesale Sateen & Percale by the Metre",
+    description: "Wholesale hotel bedding fabric from Nantong: sateen, percale, stripe and jacquard sheeting, 200–400 TC, widths 2.6m / 2.8m / 3.05m. Sold by the metre or the roll.",
+    keywords: "hotel bedding fabric wholesale, sateen fabric supplier China, percale sheeting fabric, hotel bed linen fabric by the metre, wide width cotton sheeting",
+    intro: "Not every buyer wants finished bed linen. Converters, cut-and-sew factories and bedding brands buy sheeting fabric by the metre — and most hotel linen suppliers cannot sell it that way because they are cutters, not weavers. This is the one category where we are upstream of everyone else: the fabric comes off the founding member's own weaving lines in the 2.6m to 3.05m widths that hotel bedding actually needs.",
+    specs: [
+      "Constructions: Sateen plain, Percale plain, Sateen stripe, Sateen jacquard",
+      "Thread Count: 200 / 250 / 300 / 330 / 350 / 400 TC (percale tops out around 233 TC, by nature of the weave)",
+      "Yarn: 40S, 60S combed, 80S long-staple; single-pick and double-pick options",
+      "Width: 2.6m / 2.8m / 3.05m — wide-rapier weaving, no pieced panels",
+      "State: Prepared-for-dyeing (PFD), bleached white, or dyed to Pantone",
+      "Packing: Rolled by the metre or per roll; roll length and core diameter to your spec",
+      "MOQ: 3,000 m per construction/width combination",
+    ],
+    relatedGuides: [
+      { label: "Thread Count Guide", href: "/guides/hotel-bedding-thread-count" },
+      { label: "Fabric Encyclopedia", href: "/blog/fabric-encyclopedia" },
+    ],
+    internalLinks: [
+      { label: "hotel bedding fabric wholesale", href: "/products/bedding-fabric" },
+      { label: "sateen fabric supplier China", href: "/products/bedding-fabric" },
+      { label: "percale sheeting by the metre", href: "/products/bedding-fabric" },
+      { label: "wide width hotel sheeting 3.05m", href: "/products/bedding-fabric" },
+      { label: "sateen vs percale explained", href: "/guides/hotel-bedding-thread-count" },
+      { label: "finished hotel bedding sets", href: "/products/bedding-sets" },
+      { label: "request a fabric swatch set", href: "/rfq" },
+    ],
+  },
+  "duvet-inners": {
+    name: "Duvet Inners & Comforters",
+    title: "Hotel Duvet Inners — Wholesale Down, Feather & Microfiber",
+    description: "Wholesale hotel duvet inners factory-direct from Nantong: goose and duck down 50/50 to 90/10, 900 fill power, down-proof shells, and microfiber alternatives.",
+    keywords: "hotel duvet inner wholesale, down comforter supplier China, goose down duvet manufacturer, hotel comforter bulk, down proof duvet factory",
+    intro: "The duvet inner is the single item guests notice on a cold night and the one housekeeping replaces most often. We supply two parallel lines — a natural down and feather line for premium properties, and a microfiber line for high-turnover rooms where cost per wash matters more than hand feel — so a group can specify different grades by room class on one contract.",
+    specs: [
+      "Down/feather ratio: 50/50, 70/30, 90/10 (duck and goose); 90% white goose down at 900 fill power for flagship rooms",
+      "Fill: Goose down and feather, duck down and feather, 3D siliconized microfiber, anti-allergenic microfiber",
+      "Shell: 233T / 260T / 280T cotton, down-proof construction to stop fibre migration",
+      "Weight: 200–400 gsm fill",
+      "Construction: Baffle box, sewn-through, piped edge; corner loops to anchor inside the duvet cover",
+      "Tog / warmth: specified by market and season (tropical resort to cold-climate property)",
+      "MOQ: 100 pieces per size/fill combination",
+    ],
+    relatedGuides: [
+      { label: "Hotel Linen Buying Guide", href: "/guides/download" },
+      { label: "Thread Count Guide", href: "/guides/hotel-bedding-thread-count" },
+    ],
+    internalLinks: [
+      { label: "hotel duvet inner wholesale", href: "/products/duvet-inners" },
+      { label: "goose down duvet manufacturer China", href: "/products/duvet-inners" },
+      { label: "down proof comforter supplier", href: "/products/duvet-inners" },
+      { label: "microfiber hotel comforter bulk", href: "/products/duvet-inners" },
+      { label: "hotel duvet covers", href: "/products/duvet-covers" },
+      { label: "hotel pillows", href: "/products/pillows" },
+      { label: "request duvet samples", href: "/rfq" },
+    ],
+  },
+  "pillows": {
+    name: "Hotel Pillows",
+    title: "Hotel Pillows — Wholesale Down, Chamber & Microfiber Iinners",
+    description: "Wholesale hotel pillows factory-direct from Nantong: goose and duck down, multi-chamber construction, 5cm gussets, and microfiber inners for high-turnover rooms.",
+    keywords: "hotel pillow wholesale, down pillow supplier China, hotel pillow manufacturer, 3 chamber down pillow, hotel pillow inner bulk",
+    intro: "Pillows drive guest complaints more than any other textile item — too flat, too firm, or uneven between rooms. We build inners rather than sell a single spec: down and feather for premium rooms, multi-chamber construction to stop the fill shifting to one side, and fabric shells with a down-proof finish so the filling stays put through industrial laundering.",
+    specs: [
+      "Fill: White duck down/feather 50/50 and 70/30, white goose down 90/10, 3D siliconized microfiber, down-alternative microfiber",
+      "Construction: Single chamber, 3-chamber, and multi-chamber (keeps fill evenly distributed side to side)",
+      "Gusset: 5cm gusset for a taller, firmer profile; plain-edge option",
+      "Shell: Cotton 200T / 233T percale, 260TC and 280T down-proof cotton, microfibre casing",
+      "Firmness: Soft / medium / firm fills — specifiable per room class so one property is consistent",
+      "Sizes: Standard 50x75cm, 50x90cm, 65x65cm continental; custom sizes available",
+      "MOQ: 200 pieces per size/fill combination",
+    ],
+    relatedGuides: [
+      { label: "Hotel Linen Buying Guide", href: "/guides/download" },
+      { label: "Thread Count Guide", href: "/guides/hotel-bedding-thread-count" },
+    ],
+    internalLinks: [
+      { label: "hotel pillow wholesale", href: "/products/pillows" },
+      { label: "down pillow manufacturer China", href: "/products/pillows" },
+      { label: "3 chamber hotel pillow", href: "/products/pillows" },
+      { label: "microfiber hotel pillow bulk", href: "/products/pillows" },
+      { label: "hotel pillowcases", href: "/products/pillowcases" },
+      { label: "hotel pillow protectors", href: "/products/pillow-protectors" },
+      { label: "hotel duvet inners", href: "/products/duvet-inners" },
+      { label: "request pillow samples", href: "/rfq" },
+    ],
+  },
+  "mattress-protectors": {
+    name: "Mattress Protectors",
+    title: "Hotel Mattress Protectors — Wholesale Waterproof & Quilted",
+    description: "Wholesale waterproof hotel mattress protectors, factory-direct from Nantong: TPU-laminated, quilted 120gsm, and terry-backed options with corner straps.",
+    keywords: "hotel mattress protector wholesale, waterproof mattress protector supplier China, TPU laminated mattress protector, hotel mattress cover bulk, mattress pad manufacturer",
+    intro: "A mattress protector is the cheapest item in the room and the one that decides whether a mattress survives its warranty. Housekeeping managers buy it for two reasons only: liquid containment and allergen control. We build to both — laminated waterproof barriers that still breathe, and quilted polyester/cotton faces that feel like bedding rather than plastic sheeting.",
+    specs: [
+      "Waterproofing: TPU lamination (breathable) or PU backing; fully waterproof, not water-repellent",
+      "Face fabric: 120gsm quilted polyester, 180gsm poly-cotton terry loop, 200T cotton-poly with 4 corner straps",
+      "Construction: Fitted skirt (stretch knit, 30–40cm drop) or corner straps",
+      "Backing options: Terry-loop backing for a soft touch, plain knit backing for lowest cost",
+      "Allergen control: polyester fibre fill quilted to 120gsm, dust-mite barrier on the sealed models",
+      "Sizes: Single through Emperor, plus custom sizes and drop depths",
+      "MOQ: 200 pieces per size/type combination",
+    ],
+    relatedGuides: [
+      { label: "QC Checklist", href: "/blog/qc-checklist" },
+      { label: "Hotel Linen Buying Guide", href: "/guides/download" },
+    ],
+    internalLinks: [
+      { label: "hotel mattress protector wholesale", href: "/products/mattress-protectors" },
+      { label: "waterproof mattress protector China", href: "/products/mattress-protectors" },
+      { label: "TPU laminated mattress protector", href: "/products/mattress-protectors" },
+      { label: "hotel mattress toppers", href: "/products/mattress-toppers" },
+      { label: "hotel pillow protectors", href: "/products/pillow-protectors" },
+      { label: "hotel bed sheets", href: "/products/bed-sheets" },
+      { label: "request protector samples", href: "/rfq" },
+    ],
+  },
+  "pillow-protectors": {
+    name: "Pillow Protectors",
+    title: "Hotel Pillow Protectors — Wholesale Waterproof & Zippered",
+    description: "Wholesale hotel pillow protectors factory-direct from Nantong: zippered, waterproof TPU-backed and poly-cotton terry options in standard and continental sizes.",
+    keywords: "hotel pillow protector wholesale, waterproof pillow protector supplier China, zippered pillow protector bulk, hotel pillow cover manufacturer, pillow protector factory",
+    intro: "Pillow protectors exist to keep an expensive down pillow out of the bin. A soiled pillow can be washed; a pillow with a stained or torn shell gets written off. The protectors below are built for that specific job — fully enclosing, machine-washable, and sized to the pillow specs hotels actually buy.",
+    specs: [
+      "Closure: Zippered (fully enclosing) or envelope; zipper tested for commercial laundry cycling",
+      "Waterproofing: TPU-laminated quilted 100gsm microfibre, or PU backing on woven microfibre",
+      "Face fabric: 200TC poly-cotton plain, 100gsm quilted microfibre, 50/50 poly-cotton terry loop",
+      "Construction: Quilted (adds loft and hides the inner pillow) or flat woven (adds no bulk)",
+      "Sizes: Standard 50x75cm, 50x90cm, 65x65cm continental; custom sizes available",
+      "Home and healthcare variants available on the same lines (hospital-grade waterproof specification)",
+      "MOQ: 300 pieces per size/type combination",
+    ],
+    relatedGuides: [
+      { label: "QC Checklist", href: "/blog/qc-checklist" },
+      { label: "Hotel Linen Buying Guide", href: "/guides/download" },
+    ],
+    internalLinks: [
+      { label: "hotel pillow protector wholesale", href: "/products/pillow-protectors" },
+      { label: "waterproof pillow protector China", href: "/products/pillow-protectors" },
+      { label: "zippered pillow protector bulk", href: "/products/pillow-protectors" },
+      { label: "hotel pillows", href: "/products/pillows" },
+      { label: "hotel pillowcases", href: "/products/pillowcases" },
+      { label: "hotel mattress protectors", href: "/products/mattress-protectors" },
+      { label: "request protector samples", href: "/rfq" },
+    ],
+  },
+  "bed-runners": {
+    name: "Bed Runners",
+    title: "Hotel Bed Runners — Wholesale Custom Logo & Embroidered",
+    description: "Wholesale hotel bed runners factory-direct from Nantong: woven, printed and embroidered decorative runners with custom logo or slogan. Any size, low MOQ.",
+    keywords: "hotel bed runner wholesale, bed runner supplier China, custom logo bed runner, hotel bed scarf manufacturer, embroidered bed runner bulk",
+    intro: "A bed runner does three jobs at once: it breaks up an all-white bed, it carries the property's logo where a guest sees it every night, and it keeps shoes and luggage off the bedding. Because it is decorative rather than functional, it is the one hotel textile where a property can afford to look different — and the one place logo placement earns its cost back.",
+    specs: [
+      "Function: Decoration, brand display (woven, printed or embroidered logo/slogan), and bedding protection",
+      "Construction: Woven jacquard, printed, quilted, or velvet-faced to match the bedding programme",
+      "Decoration: Logo or slogan by embroidery, woven label, or print; placement and size to your artwork",
+      "Sizes: Standard 45x200cm / 50x220cm plus matching bed sizes; custom cut to any dimension",
+      "Material: Polyester jacquard, cotton-poly blend, velvet, linen-look",
+      "Color: Dyed to match the bedding programme or Pantone-matched to brand colour",
+      "MOQ: 200 pieces per size/design combination",
+    ],
+    relatedGuides: [
+      { label: "Hotel Linen Buying Guide", href: "/guides/download" },
+      { label: "Fabric Encyclopedia", href: "/blog/fabric-encyclopedia" },
+    ],
+    internalLinks: [
+      { label: "hotel bed runner wholesale", href: "/products/bed-runners" },
+      { label: "custom logo bed runner", href: "/products/bed-runners" },
+      { label: "embroidered bed runner manufacturer", href: "/products/bed-runners" },
+      { label: "hotel bedding sets", href: "/products/bedding-sets" },
+      { label: "hotel duvet covers", href: "/products/duvet-covers" },
+      { label: "custom hotel logo embroidery", href: "/rfq" },
+    ],
+  },
 };
 
 const CATEGORY_SLUGS = new Set(Object.keys(CATEGORY_DATA));
@@ -267,6 +472,13 @@ const SLUG_TO_CATEGORY_NAME: Record<string, string> = {
   "duvet-covers": "Duvet Covers",
   "table-linen": "Table Linen",
   "mattress-toppers": "Mattress Toppers",
+  "bedding-sets": "Hotel Bedding Sets",
+  "bedding-fabric": "Hotel Bedding Fabric",
+  "duvet-inners": "Duvet Inners",
+  "pillows": "Pillows",
+  "mattress-protectors": "Mattress Protectors",
+  "pillow-protectors": "Pillow Protectors",
+  "bed-runners": "Bed Runners",
 };
 
 // ----- Page component -----
@@ -430,20 +642,18 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
             </Link>
           </div>
 
-          {/* Cross-sell other categories */}
+          {/* Cross-sell other categories — derived from CATEGORY_DATA so every
+              category page links to every other one (internal-link mesh). */}
           <div className="mt-8 rounded-xl border border-blue-100 bg-blue-50/50 p-8">
             <h2 className="text-lg font-semibold text-gray-900">Looking for other hotel linen categories?</h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { name: "Bed Sheets", key: "bed-sheets" },
-                { name: "Duvet Covers", key: "duvet-covers" },
-                { name: "Bath Towels", key: "bath-towels" },
-                { name: "Bathrobes", key: "bathrobes" },
-              ].filter((c) => c.key !== slug).map((c) => (
-                <Link key={c.key} href={`/products/${c.key}`} className="rounded-lg bg-white border border-gray-100 p-4 text-sm font-medium text-gray-700 hover:border-blue-200 hover:text-blue-800 transition-colors">
-                  {c.name} →
-                </Link>
-              ))}
+              {Object.entries(CATEGORY_DATA)
+                .filter(([key]) => key !== slug)
+                .map(([key, cat]) => (
+                  <Link key={key} href={`/products/${key}`} className="rounded-lg bg-white border border-gray-100 p-4 text-sm font-medium text-gray-700 hover:border-blue-200 hover:text-blue-800 transition-colors">
+                    {cat.name} →
+                  </Link>
+                ))}
             </div>
           </div>
 
