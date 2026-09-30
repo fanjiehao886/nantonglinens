@@ -5,6 +5,7 @@
  * Includes rate limiting and anti-spam timestamp check.
  */
 import { type NextRequest, NextResponse } from "next/server";
+import { utm, CAMPAIGNS } from "@/lib/utm";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const ADMIN_EMAIL = process.env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMALL || "info@nantonglinens.com";
@@ -69,13 +70,13 @@ export async function POST(request: NextRequest) {
               <p>Thanks for subscribing. You'll receive weekly sourcing tips, market trends, and expert guides for hotel linen procurement from China.</p>
               <p><strong>Your free resources:</strong></p>
               <ul>
-                <li><a href="https://www.nantonglinens.com/guides/download" style="color:#1e3a5f;">Free PDF: Complete Hotel Linen Buying Guide</a></li>
-                <li><a href="https://www.nantonglinens.com/blog" style="color:#1e3a5f;">Procurement Knowledge Hub</a></li>
+                <li><a href="${utm("/guides/download", { source: "email", medium: "email", campaign: CAMPAIGNS.newsletter, content: "newsletter-welcome-pdf" })}" style="color:#1e3a5f;">Free PDF: Complete Hotel Linen Buying Guide</a></li>
+                <li><a href="${utm("/blog", { source: "email", medium: "email", campaign: CAMPAIGNS.newsletter, content: "newsletter-welcome-hub" })}" style="color:#1e3a5f;">Procurement Knowledge Hub</a></li>
               </ul>
               <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;" />
               <p style="font-size:12px;color:#999;">
                 Nantong Linens — Dieshiqiao, Nantong, China<br/>
-                <a href="https://www.nantonglinens.com" style="color:#999;">www.nantonglinens.com</a>
+                <a href="${utm("/factory", { source: "email", medium: "email", campaign: CAMPAIGNS.newsletter, content: "newsletter-welcome-factory" })}" style="color:#999;">www.nantonglinens.com</a>
               </p>
             </div>
           `,

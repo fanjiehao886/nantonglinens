@@ -10,6 +10,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
+import { utm, CAMPAIGNS } from "@/lib/utm";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY!;
 const GUIDE_PATH = join(process.cwd(), "public", "downloads", "hotel-linen-buying-guide-2026.pdf");
@@ -52,18 +53,18 @@ export async function POST(request: NextRequest) {
           </ul>
           <p style="font-size:14px;color:#666;">
             The PDF is attached to this email. You can also find more free resources
-            at <a href="https://www.nantonglinens.com/blog" style="color:#1e3a5f;">nantonglinens.com/blog</a>.
+            at <a href="${utm("/blog", { source: "email", medium: "email", campaign: CAMPAIGNS.leadMagnet, content: "guide-email-blog" })}" style="color:#1e3a5f;">nantonglinens.com/blog</a>.
           </p>
           <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;" />
           <p style="font-size:14px;color:#666;">
             Ready to source? Submit an RFQ at
-            <a href="https://www.nantonglinens.com/rfq" style="color:#1e3a5f;">nantonglinens.com/rfq</a>
+            <a href="${utm("/rfq", { source: "email", medium: "email", campaign: CAMPAIGNS.leadMagnet, content: "guide-email-rfq" })}" style="color:#1e3a5f;">nantonglinens.com/rfq</a>
             or message us on
             <a href="https://wa.me/8615151361119" style="color:#1e3a5f;">WhatsApp</a>.
           </p>
           <p style="font-size:12px;color:#999;margin-top:24px;">
             Nantong Linens — Dieshiqiao, Nantong, China<br/>
-            <a href="https://www.nantonglinens.com" style="color:#999;">www.nantonglinens.com</a>
+            <a href="${utm("/", { source: "email", medium: "email", campaign: CAMPAIGNS.leadMagnet, content: "guide-email-footer" })}" style="color:#999;">www.nantonglinens.com</a>
           </p>
         </div>
       `;

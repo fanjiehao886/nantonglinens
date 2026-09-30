@@ -9,6 +9,7 @@
  *   CONTACT_TO_EMALL — recipient email
  */
 import { type NextRequest, NextResponse } from "next/server";
+import { utm, CAMPAIGNS } from "@/lib/utm";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY!;
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMALL || "info@nantonglinens.com";
@@ -104,22 +105,22 @@ export async function POST(request: NextRequest) {
           <p>We have received your RFQ for <strong>${productCategory}</strong> and will review it immediately.</p>
           <p><strong>What happens next:</strong></p>
           <ol>
-            <li>We review your specifications and match them with suitable factories in Dieshiqiao.</li>
+            <li>We review your specifications and confirm which member factory of our alliance will produce the order.</li>
             <li>We prepare a detailed quote with pricing, MOQ, lead time, and shipping options.</li>
             <li>You typically receive our response within <strong>24 hours</strong> (often sooner).</li>
           </ol>
           <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;" />
           <p style="font-size:14px;color:#666;">While you wait, explore our free procurement guides:</p>
           <ul style="font-size:14px;">
-            <li><a href="https://www.nantonglinens.com/blog?category=buying-guide" style="color:#1e3a5f;">Buying Guide — How to Source Hotel Linens from China</a></li>
-            <li><a href="https://www.nantonglinens.com/blog?category=fabric-encyclopedia" style="color:#1e3a5f;">Fabric Encyclopedia — GSM, Thread Count & Weave Types</a></li>
-            <li><a href="https://www.nantonglinens.com/blog?category=qc-checklist" style="color:#1e3a5f;">QC Checklist — Pre-Shipment Inspection Guide</a></li>
-            <li><a href="https://www.nantonglinens.com/blog?category=market-reports" style="color:#1e3a5f;">Market Report — Pricing Trends & Cotton Outlook</a></li>
+            <li><a href="${utm("/blog?category=buying-guide", { source: "email", medium: "email", campaign: CAMPAIGNS.rfqConfirmation, content: "rfq-confirm-buying-guide" })}" style="color:#1e3a5f;">Buying Guide — How to Source Hotel Linens from China</a></li>
+            <li><a href="${utm("/blog?category=fabric-encyclopedia", { source: "email", medium: "email", campaign: CAMPAIGNS.rfqConfirmation, content: "rfq-confirm-fabric-encyclopedia" })}" style="color:#1e3a5f;">Fabric Encyclopedia — GSM, Thread Count & Weave Types</a></li>
+            <li><a href="${utm("/blog?category=qc-checklist", { source: "email", medium: "email", campaign: CAMPAIGNS.rfqConfirmation, content: "rfq-confirm-qc-checklist" })}" style="color:#1e3a5f;">QC Checklist — Pre-Shipment Inspection Guide</a></li>
+            <li><a href="${utm("/blog?category=market-reports", { source: "email", medium: "email", campaign: CAMPAIGNS.rfqConfirmation, content: "rfq-confirm-market-reports" })}" style="color:#1e3a5f;">Market Report — Pricing Trends & Cotton Outlook</a></li>
           </ul>
           <p style="font-size:14px;color:#666;">Questions? Reply to this email or message us on <a href="https://wa.me/8615151361119" style="color:#1e3a5f;">WhatsApp</a>.</p>
           <p style="font-size:12px;color:#999;margin-top:24px;">
             Nantong Linens — Dieshiqiao, Nantong, China<br/>
-            <a href="https://www.nantonglinens.com" style="color:#999;">www.nantonglinens.com</a>
+            <a href="${utm("/factory", { source: "email", medium: "email", campaign: CAMPAIGNS.rfqConfirmation, content: "rfq-confirm-factory" })}" style="color:#999;">www.nantonglinens.com</a>
           </p>
         </div>
       `;
