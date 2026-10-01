@@ -6,7 +6,7 @@ import { company, napLines } from "@/lib/company";
 export const metadata: Metadata = {
   title: "Contact Us | Nantong Linens — Hotel Linen Manufacturer & Exporter",
   description:
-    "Contact Nantong Linens for factory-direct hotel linen quotes, sample requests, and wholesale or OEM inquiries. WhatsApp, email, or submit an RFQ online.",
+    "Contact Nantong Linens for factory-direct hotel linen quotes — quote reply within 24 hours on weekdays. WhatsApp, email, or submit an RFQ with your spec sheet or a photo of the label you use today.",
   alternates: { canonical: "/contact" },
 };
 
@@ -17,7 +17,13 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900">Get in Touch</h1>
           <p className="mt-2 text-gray-500 max-w-xl">
-            Have questions about our hotel linens? Need a quick quote? Reach out — we respond within 24 hours.
+            Have questions about our hotel linens? Need a quick quote? Reach out — we reply with a
+            factory-direct quote within 24 hours on weekdays, and samples follow in{" "}
+            {company.service.sampleDaysLabel}.
+          </p>
+          <p className="mt-3 text-sm text-gray-500 max-w-xl">
+            Attach a specification sheet or a photo of the label you use today and we can usually
+            price the order the same day.
           </p>
         </div>
       </section>

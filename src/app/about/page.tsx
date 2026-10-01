@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { company } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "About Us — Hotel Linen Manufacturer & Exporter in Nantong",
@@ -209,6 +210,9 @@ export default function AboutPage() {
                   { label: "Our role", value: "FOB manufacturer alliance (工贸一体出口厂家联盟)" },
                   { label: "Members", value: "Independent factories, each with its own plant" },
                   { label: "Founding member", value: "Bedding mill in Chuanjiang, Nantong" },
+                  { label: "Bedding capacity", value: `${company.capacity.beddingLabel} across member lines` },
+                  { label: "Quote reply", value: `Within ${company.service.quoteReplyHours} hours, weekdays` },
+                  { label: "Sampling", value: company.service.sampleDaysLabel },
                   { label: "Raw materials", value: "Long-staple cotton, Lyocell/Tencel, blends" },
                   { label: "Cluster access", value: "6,000+ mills within 10 km for surge capacity" },
                   { label: "Compliance", value: "OEKO-TEX Standard 100 · ISO 9001:2015" },
@@ -384,8 +388,9 @@ export default function AboutPage() {
             Ready to Order Factory-Direct?
           </h2>
           <p className="mt-3 text-blue-200/80">
-            Tell us your spec, quantity, and target market. We&apos;ll come back with factory-direct
-            pricing, samples, and a production timeline within 24 hours.
+            Tell us your spec, quantity, and target market — or just attach a photo of the label you
+            use today. We come back with factory-direct pricing, the production timeline and the
+            sample arrangement within 24 hours.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link

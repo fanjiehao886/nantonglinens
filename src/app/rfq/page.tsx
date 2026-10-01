@@ -5,7 +5,7 @@ import RFQForm from "./RFQForm";
 export const metadata: Metadata = {
   title: "Request a Custom Hotel Linen Quote — Nantong Linens",
   description:
-    "Tell us your hotel linen requirements and receive a transparent, itemized quote within 24 hours. Bed sheets, towels, bathrobes, table linen — sourced from Dieshiqiao factories.",
+    "Tell us your hotel linen requirements and receive a transparent, itemized quote within 24 hours. Attach a spec sheet or a photo of the label you use today — usually priced the same day.",
   alternates: { canonical: "/rfq" },
 };
 

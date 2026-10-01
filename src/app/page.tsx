@@ -122,7 +122,9 @@ export default async function HomePage() {
                   {[
                     { label: "Bedding Mill", value: "7 stages", desc: "Weaving → sewing → QC → packing" },
                     { label: "Factory-Direct", value: "FOB Price", desc: "No agent commission layer" },
+                    { label: "Bedding Capacity", value: "100,000 sets/mo", desc: "Across member bedding lines" },
                     { label: "Wholesale MOQ", value: "From 50 pcs", desc: "Per size & colour" },
+                    { label: "Quote Reply", value: "Within 24 hours", desc: "Samples in 5–7 days" },
                     { label: "Factory Visits", value: "Open", desc: "Audit any member factory" },
                   ].map((stat) => (
                     <div key={stat.label} className="rounded-xl bg-white/5 p-5 border border-white/10">
@@ -663,7 +665,7 @@ export default async function HomePage() {
               { step: "01", title: "Share Your Requirements", desc: "Tell us your product specs, quantity, timeline, and customization needs via the RFQ form or WhatsApp." },
               { step: "02", title: "Sample & Costing", desc: "We cost your spec against the member factory that would run it, then ship free physical samples for approval." },
               { step: "03", title: "Quote, Produce & QC", desc: "You receive a factory-direct itemized quote. Production runs in that member factory, inspection runs against the alliance standard, and you get a photo/video QC report before anything is loaded." },
-              { step: "04", title: "Export & Deliver", desc: "As a trading company we handle all export documentation, customs clearance, and freight — FOB Nantong/Shanghai or DDP to your address." },
+              { step: "04", title: "Export & Deliver", desc: "Export documentation, customs clearance and freight are coordinated for you — FOB Nantong/Shanghai or DDP to your address. The member factory that made your order ships it under its own export licence, so the invoice and bill of lading trace back to the plant that produced the goods." },
             ].map((item) => (
               <div key={item.step} className="text-center">
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-900 text-xl font-bold text-white">

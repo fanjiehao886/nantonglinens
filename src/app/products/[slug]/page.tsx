@@ -5,6 +5,8 @@ import Link from "next/link";
 import { client } from "@/lib/sanity";
 import { PRODUCT_BY_SLUG_QUERY, PRODUCTS_QUERY } from "@/lib/queries";
 import { ProductCard } from "@/components/ProductCard";
+import { BuyerConcerns } from "@/components/BuyerConcerns";
+import { company } from "@/lib/company";
 
 // ----- Category data (merged from the dynamic category route) -----
 
@@ -461,6 +463,116 @@ const CATEGORY_DATA: Record<string, {
 
 const CATEGORY_SLUGS = new Set(Object.keys(CATEGORY_DATA));
 
+/**
+ * Decision facts rendered at the top of every category page (2026-10-01):
+ * MOQ · bulk lead time · sample days.
+ *
+ * These are the three numbers a buyer uses to decide whether an enquiry is
+ * worth sending, and they belong above the fold rather than buried in the
+ * technical specification list.
+ *
+ * MOQ is deliberately NOT duplicated here — it is read out of each category's
+ * own spec list, so the two can never disagree. Lead times are the normal-season
+ * ranges; peak season (Aug–Nov) adds 7–10 days, which the block states itself.
+ */
+const SAMPLE_DAYS_DEFAULT = "5–7 days";
+const BULK_LEAD_TIME: Record<string, string> = {
+  "bath-towels": "20–30 days",
+  "bath-mats": "20–30 days",
+  "pool-beach-towels": "25–35 days",
+  bathrobes: "25–35 days",
+  "bed-sheets": "25–35 days",
+  pillowcases: "25–35 days",
+  "duvet-covers": "25–35 days",
+  "table-linen": "25–35 days",
+  "mattress-toppers": "25–35 days",
+  "mattress-protectors": "25–35 days",
+  "pillow-protectors": "25–35 days",
+  "bed-runners": "25–35 days",
+  "bedding-sets": "30–40 days",
+  "duvet-inners": "30–40 days",
+  pillows: "30–40 days",
+  "bedding-fabric": "30–45 days",
+};
+/** Sampling takes longer where a shade is dyed, a fill is specified or a logo is embroidered. */
+const SAMPLE_DAYS_BY_SLUG: Record<string, string> = {
+  bathrobes: "7–10 days",
+  "bedding-sets": "7–10 days",
+  "duvet-inners": "7–10 days",
+  pillows: "7–10 days",
+  "bedding-fabric": "7–10 days",
+  "bed-runners": "7–10 days",
+};
+
+/**
+ * Categories that run on the founding member's bedding lines. Only these pages
+ * state the bedding capacity figure — quoting a bedding number on a towel page
+ * would be a claim about the wrong plant.
+ */
+const BEDDING_LINE_SLUGS = new Set([
+  "bedding-sets",
+  "bed-sheets",
+  "duvet-covers",
+  "duvet-inners",
+  "pillows",
+  "pillowcases",
+  "bedding-fabric",
+  "mattress-toppers",
+  "mattress-protectors",
+  "pillow-protectors",
+  "bed-runners",
+]);
+
+function moqFromSpecs(specs: string[]): string {
+  const line = specs.find((s) => /^moq\s*:/i.test(s));
+  return line ? line.replace(/^moq\s*:\s*/i, "") : "On request";
+}
+
+/**
+ * The decision block. Rendered on category pages and, in a reduced form, on
+ * Sanity product pages, so every product page on the site carries the same three
+ * numbers in the same place.
+ */
+function DecisionFacts({
+  moq,
+  bulkLeadTime,
+  sampleDays,
+}: {
+  moq: string;
+  bulkLeadTime: string;
+  sampleDays: string;
+}) {
+  const facts = [
+    { label: "MOQ", value: moq },
+    { label: "Bulk lead time", value: bulkLeadTime },
+    { label: "Sample lead time", value: sampleDays },
+  ];
+
+  return (
+    <div className="mt-8">
+      <div className="grid gap-3 sm:grid-cols-3">
+        {facts.map((fact) => (
+          <div key={fact.label} className="rounded-xl border border-gray-200 bg-gray-50 px-5 py-4">
+            <p className="text-xs font-medium uppercase tracking-wider text-gray-400">{fact.label}</p>
+            <p className="mt-1 text-base font-semibold text-gray-900">{fact.value}</p>
+          </div>
+        ))}
+      </div>
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 rounded-xl bg-blue-50 px-5 py-3 text-sm text-blue-900">
+        <span className="font-semibold">{company.service.quoteReplyLabel}</span>
+        <span className="text-blue-800/80">
+          {company.service.peakSeasonNote} Attach a photo of the label you use now and we can price
+          most orders the same day.
+        </span>
+        <Link href="/rfq" className="font-semibold text-blue-800 underline underline-offset-2">
+          Send your specification →
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+
 // Map slug to Sanity category display name
 const SLUG_TO_CATEGORY_NAME: Record<string, string> = {
   "bath-towels": "Bath Towels",
@@ -559,6 +671,12 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
             <span className="text-sm font-medium text-blue-800 uppercase tracking-wider">Product Category</span>
             <h1 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">{data.name}</h1>
             <p className="mt-4 text-lg text-gray-500 leading-relaxed">{data.intro}</p>
+            {/* Decision three lines — the numbers a buyer checks before enquiring */}
+            <DecisionFacts
+              moq={moqFromSpecs(data.specs)}
+              bulkLeadTime={BULK_LEAD_TIME[slug] ?? company.service.bulkLeadTimeLabel}
+              sampleDays={SAMPLE_DAYS_BY_SLUG[slug] ?? SAMPLE_DAYS_DEFAULT}
+            />
           </div>
         </section>
 
@@ -624,6 +742,10 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
             </div>
           </aside>
 
+          {/* Buyer objections — the four reasons an enquiry does not get sent.
+              Sits between the product content and the factory/audit block. */}
+          <BuyerConcerns category={data.name} variant="flush" />
+
           {/* Factory / audit internal link — category pages are the top entry point
               for "hotel X manufacturer" queries, so they must link to /factory. */}
           <div className="mt-8 rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
@@ -634,6 +756,15 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
               inspection standard covers, and how to arrange a site visit or a third-party audit before
               you place an order.
             </p>
+            {BEDDING_LINE_SLUGS.has(slug) && (
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600">
+                Bedding capacity across the alliance is{" "}
+                <strong className="font-semibold text-gray-900">
+                  {company.capacity.beddingLabel}
+                </strong>{" "}
+                of sets ({company.capacity.beddingScope}). {company.capacity.note}
+              </p>
+            )}
             <Link
               href="/factory"
               className="mt-4 inline-flex items-center gap-2 rounded-full bg-blue-900 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-800 transition-colors"
@@ -661,7 +792,10 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
           <div className="mt-12 rounded-2xl bg-blue-950 p-10 text-center">
             <h2 className="text-2xl font-bold text-white">Need custom {data.name.toLowerCase()} specifications?</h2>
             <p className="mt-3 text-blue-200/80 max-w-2xl mx-auto">
-              Tell us your required specs and quantity. We will run it on the right member factory&apos;s line — samples shipped within 5 business days.
+              Tell us your required specs and quantity — attach your specification sheet, or just a
+              photo of the label you use today. We run it on the right member factory&apos;s line and
+              come back with a factory-direct quote within 24 hours; samples follow in{" "}
+              {SAMPLE_DAYS_BY_SLUG[slug] ?? SAMPLE_DAYS_DEFAULT}.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link href="/rfq" className="inline-flex items-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-900 hover:bg-gray-100 transition-colors">
@@ -749,26 +883,19 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
                 <p className="mt-4 text-base leading-relaxed text-gray-500">{product.shortDescription}</p>
               )}
 
-              <div className="mt-6 flex flex-wrap gap-4">
-                {product.moq && (
-                  <div className="rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-xs text-gray-400">MOQ</p>
-                    <p className="font-semibold text-gray-900">{product.moq} pcs</p>
-                  </div>
-                )}
-                {product.priceRange && (
-                  <div className="rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-xs text-gray-400">Price Range</p>
-                    <p className="font-semibold text-gray-900">{product.priceRange}</p>
-                  </div>
-                )}
-                {product.leadTime && (
-                  <div className="rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-xs text-gray-400">Lead Time</p>
-                    <p className="font-semibold text-gray-900">{product.leadTime}</p>
-                  </div>
-                )}
-              </div>
+              {/* Decision three lines — same three numbers as every category page */}
+              <DecisionFacts
+                moq={product.moq ? `${product.moq} pcs` : "On request"}
+                bulkLeadTime={product.leadTime || company.service.bulkLeadTimeLabel}
+                sampleDays={SAMPLE_DAYS_DEFAULT}
+              />
+
+              {product.priceRange && (
+                <div className="mt-4 rounded-lg bg-gray-50 px-4 py-3">
+                  <p className="text-xs text-gray-400">Price Range</p>
+                  <p className="font-semibold text-gray-900">{product.priceRange}</p>
+                </div>
+              )}
 
               {product.specifications && (
                 <div className="mt-8">

@@ -2,7 +2,7 @@ export function TrustBar() {
   return (
     <section className="bg-white py-10 border-b border-gray-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
           {[
             {
               value: "15+",
@@ -15,6 +15,11 @@ export function TrustBar() {
               sub: "Visit, or send your own inspector",
             },
             {
+              value: "100,000",
+              label: "Bedding Sets Per Month",
+              sub: "Capacity across member bedding lines",
+            },
+            {
               value: "4 Continents",
               label: "Global Clientele",
               sub: "NA · EU · Middle East · SE Asia",
@@ -22,7 +27,7 @@ export function TrustBar() {
             {
               value: "24h",
               label: "Quote Response Time",
-              sub: "Weekdays, with QC photo reports",
+              sub: "Samples in 5–7 days, QC photos before loading",
             },
           ].map((item) => (
             <div key={item.label} className="text-center">

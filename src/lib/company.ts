@@ -155,6 +155,42 @@ export const company = {
     memberCount: undefined as number | undefined,
   },
 
+  /**
+   * Published production capacity.
+   *
+   * Confirmed by the owner (2026-10-01). We publish a capacity figure but still
+   * do NOT publish a legal name, a street address or a registration number —
+   * buyers want to know the plant can absorb their volume, not what the
+   * business licence says. Keep this to figures a buyer can verify on a factory
+   * visit; do not inflate, and do not add a number nobody has confirmed.
+   */
+  capacity: {
+    /** Bedding lines across the alliance, stated monthly. */
+    beddingSetsPerMonth: 100000,
+    /** Pre-formatted for page copy, so the number is written in one place only. */
+    beddingLabel: "100,000 sets / month",
+    /** What one "set" means, so the figure cannot be read as something larger. */
+    beddingScope: "duvet cover + flat sheet + fitted sheet + pillowcases",
+    note:
+      "Bedding capacity across the alliance's member lines. Larger programmes are staged across lines and confirmed with your quotation; peak season (Aug–Nov) books 6–8 weeks ahead.",
+  },
+
+  /**
+   * Service promises stated on the site. These were documented in the RFQ
+   * confirmation email long before they were visible to a visitor — publish
+   * them, because a promise a buyer cannot see does not exist.
+   */
+  service: {
+    /** Business hours, English, weekdays. Stated as "*within 24 hours*" everywhere. */
+    quoteReplyHours: 24,
+    quoteReplyLabel: "Quote reply within 24 hours",
+    /** Sample turnaround, normal season. */
+    sampleDaysLabel: "5–7 days",
+    /** Bulk production, normal season. Per-category ranges live on product pages. */
+    bulkLeadTimeLabel: "25–45 days",
+    peakSeasonNote: "Peak season (Aug–Nov) adds 7–10 days to bulk lead times.",
+  },
+
   /** Facility facts for the founding member's bedding mill, used on /factory. */
   facility: {
     areaSqm: 5000,
@@ -283,6 +319,16 @@ export function organizationSchema() {
         "@type": "PropertyValue",
         name: "Factory visits",
         value: "Buyer audits and on-site visits are welcome at every member factory",
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Bedding production capacity",
+        value: `${company.capacity.beddingLabel} (${company.capacity.beddingScope})`,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Quote response time",
+        value: `Within ${company.service.quoteReplyHours} hours on weekdays`,
       },
     ],
     hasOfferCatalog: {

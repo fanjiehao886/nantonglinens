@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+import { company } from "@/lib/company";
 
 const knowledgeHubLinks = [
   { name: "All Guides", href: "/blog" },
@@ -63,6 +64,30 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
+      {/* Service-promise bar. The 24-hour reply promise used to live only in the
+          RFQ confirmation email, which no visitor ever sees — so it is stated
+          here, on every page, alongside the capacity figure. */}
+      <div className="bg-blue-950 text-white">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-x-6 gap-y-1 px-4 py-2 text-center text-xs sm:flex-row sm:justify-between sm:px-6 sm:text-left lg:px-8">
+          <p className="font-medium">
+            Free quote within 24 hours
+            <span className="hidden sm:inline"> · samples in {company.service.sampleDaysLabel}</span>
+          </p>
+          <div className="flex items-center gap-x-5 text-blue-200/80">
+            <span className="hidden md:inline">
+              {company.capacity.beddingLabel} bedding capacity
+            </span>
+            <a
+              href={company.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-white hover:text-blue-200 transition-colors"
+            >
+              WhatsApp {company.whatsapp}
+            </a>
+          </div>
+        </div>
+      </div>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">

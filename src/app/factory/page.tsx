@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { company, napLines } from "@/lib/company";
+import { BuyerConcerns } from "@/components/BuyerConcerns";
 
 export const metadata: Metadata = {
   title: "Hotel Linen Factories in Nantong, China — Visit or Audit Any Member",
@@ -29,6 +30,18 @@ const allianceFacts = [
   {
     label: "Categories covered",
     value: "Bed linen · towels · bathrobes · table linen · mattress programmes",
+  },
+  {
+    label: "Bedding capacity",
+    value: `${company.capacity.beddingLabel} across the alliance's bedding lines`,
+  },
+  {
+    label: "Bulk lead time",
+    value: "25–45 days by category — 7–10 days longer in peak season",
+  },
+  {
+    label: "Sampling & quoting",
+    value: `Samples in ${company.service.sampleDaysLabel} · quote reply within ${company.service.quoteReplyHours} hours`,
   },
   {
     label: "Founding member",
@@ -260,6 +273,11 @@ export default function FactoryPage() {
                     "@type": "PropertyValue",
                     name: "Open to buyer audits",
                     value: "Yes — on-site visits and third-party inspection arranged on request",
+                  },
+                  {
+                    "@type": "PropertyValue",
+                    name: "Bedding production capacity",
+                    value: `${company.capacity.beddingLabel} (${company.capacity.beddingScope})`,
                   },
                 ],
               },
@@ -676,6 +694,9 @@ export default function FactoryPage() {
         </div>
       </section>
 
+      {/* ========== BUYER CONCERNS ========== */}
+      <BuyerConcerns />
+
       {/* ========== FAQ ========== */}
       <section className="bg-gray-50 border-t border-gray-100 py-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -704,9 +725,10 @@ export default function FactoryPage() {
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-white">Send us your specification</h2>
           <p className="mt-3 text-blue-200/80">
-            Tell us the product, the specification and the volume. We will come back with a
-            factory-direct price, a lead time, the name of the member factory that would run it,
-            and the sample arrangement — then you can decide whether to audit before you commit.
+            Tell us the product, the specification and the volume — or just attach a photo of the
+            label you use today. We will come back within 24 hours with a factory-direct price, a
+            lead time, the name of the member factory that would run it, and the sample
+            arrangement — then you can decide whether to audit before you commit.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link

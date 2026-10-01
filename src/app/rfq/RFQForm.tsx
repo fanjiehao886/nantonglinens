@@ -38,6 +38,58 @@ const HOTEL_TIERS = [
   "Resort / Vacation Property",
 ];
 
+/**
+ * Optional attachments. A buyer who uploads a photo of the label they use today
+ * can usually be priced the same day instead of after two rounds of emails —
+ * that is the whole point of this field.
+ *
+ * Constraints are set by what the hosting function will accept, not by what we
+ * would like to accept: a serverless request body caps out around 4.5 MB, and
+ * base64 inflates a file by a third. Images are therefore downscaled in the
+ * browser before they are encoded, and the total is capped at 3 MB.
+ */
+const MAX_FILES = 3;
+const MAX_FILE_BYTES = 5 * 1024 * 1024; // before compression
+const MAX_TOTAL_BYTES = 3 * 1024 * 1024; // after compression, base64-decoded
+const ACCEPTED = "image/*,.pdf,.xlsx,.xls,.csv,.doc,.docx";
+
+type Attachment = { name: string; size: number; content: string };
+
+function readAsAttachment(file: File): Promise<Attachment> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = () => reject(new Error(`Could not read ${file.name}`));
+    reader.onload = () => {
+      const result = String(reader.result || "");
+      const base64 = result.includes(",") ? result.slice(result.indexOf(",") + 1) : result;
+      resolve({ name: file.name, size: file.size, content: base64 });
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+/** Downscale a large photo in the browser so a phone snapshot still fits. */
+async function shrinkImage(file: File): Promise<File> {
+  if (!file.type.startsWith("image/") || file.size < 1.5 * 1024 * 1024) return file;
+  try {
+    const bitmap = await createImageBitmap(file);
+    const maxSide = 1600;
+    const scale = Math.min(1, maxSide / Math.max(bitmap.width, bitmap.height));
+    if (scale === 1) return file;
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.round(bitmap.width * scale);
+    canvas.height = Math.round(bitmap.height * scale);
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return file;
+    ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    const blob: Blob | null = await new Promise((res) => canvas.toBlob(res, "image/jpeg", 0.82));
+    if (!blob) return file;
+    return new File([blob], file.name.replace(/\.\w+$/, "") + ".jpg", { type: "image/jpeg" });
+  } catch {
+    return file;
+  }
+}
+
 interface FormData {
   step: number;
   company: string;
@@ -75,6 +127,10 @@ function RFQFormContent() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  /** Optional attachments — spec sheet, logo artwork, or a photo of the current label. */
+  const [attachments, setAttachments] = useState<Attachment[]>([]);
+  const [fileError, setFileError] = useState("");
+  const [readingFiles, setReadingFiles] = useState(false);
 
   // Sync category from URL once hydrated
   useEffect(() => {
@@ -97,6 +153,47 @@ function RFQFormContent() {
     }));
   };
 
+  const handleFiles = async (list: FileList | null) => {
+    if (!list || list.length === 0) return;
+    setFileError("");
+    setReadingFiles(true);
+    try {
+      const incoming = Array.from(list);
+      const next = [...attachments];
+
+      for (const raw of incoming) {
+        if (next.length >= MAX_FILES) {
+          setFileError(`Up to ${MAX_FILES} files. Remove one to add another.`);
+          break;
+        }
+        if (raw.size > MAX_FILE_BYTES) {
+          setFileError(`${raw.name} is larger than 5 MB — please send a smaller file.`);
+          continue;
+        }
+        const file = await shrinkImage(raw);
+        const attachment = await readAsAttachment(file);
+        const total = next.reduce((sum, a) => sum + a.size, 0) + attachment.size;
+        if (total > MAX_TOTAL_BYTES) {
+          setFileError("Attachments total more than 3 MB. Send fewer files, or email the rest to info@nantonglinens.com.");
+          continue;
+        }
+        next.push(attachment);
+      }
+
+      setAttachments(next);
+      trackEvent("rfq_attach", { files: next.length });
+    } catch {
+      setFileError("That file could not be read. Try a JPG, PNG or PDF.");
+    } finally {
+      setReadingFiles(false);
+    }
+  };
+
+  const removeAttachment = (index: number) => {
+    setAttachments((prev) => prev.filter((_, i) => i !== index));
+    setFileError("");
+  };
+
   const handleSubmit = async () => {
     setSubmitError("");
     setSubmitting(true);
@@ -104,7 +201,7 @@ function RFQFormContent() {
       const res = await fetch("/api/rfq", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, attachments }),
       });
       if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
@@ -114,6 +211,7 @@ function RFQFormContent() {
         quantity: form.quantity || "unknown",
         hotel_tier: form.hotelTier || "unknown",
         timeline: form.timeline || "unknown",
+        attachments: attachments.length,
       });
       trackLead("rfq_submit", {
         product_category: form.productCategory,
@@ -140,6 +238,12 @@ function RFQFormContent() {
             Thank you for your inquiry, {form.name || "there"}. Our team will review your requirements
             and get back to you within 24 hours via email.
           </p>
+          {attachments.length > 0 && (
+            <p className="mt-3 text-sm text-gray-500">
+              {attachments.length} file{attachments.length !== 1 ? "s" : ""} received — a photo of
+              your current label is usually enough for us to price the order on the first reply.
+            </p>
+          )}
           <div className="mt-6 flex justify-center gap-4">
             <Link href="/products" className="rounded-full border px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors">
               Browse More Products
@@ -160,9 +264,23 @@ function RFQFormContent() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold">Request a Custom Quote</h1>
           <p className="mt-2 text-blue-200">
-            Tell us about your hotel linen needs. Free quote within 24 hours.
-            No commitment required.
+            Tell us about your hotel linen needs. Free quote within 24 hours. No commitment
+            required.
           </p>
+          <div className="mt-4 flex flex-wrap gap-2 text-xs">
+            {[
+              "Quote reply within 24 hours, weekdays",
+              "Samples in 5–7 days",
+              "Attach a photo of the label you use today — usually priced the same day",
+            ].map((chip) => (
+              <span
+                key={chip}
+                className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-blue-100"
+              >
+                {chip}
+              </span>
+            ))}
+          </div>
 
           {/* Step indicator */}
           <div className="mt-8 flex items-center gap-2 sm:gap-4">
@@ -350,6 +468,71 @@ function RFQFormContent() {
                 />
               </div>
 
+              {/* Optional attachments — the fastest route to a same-day price */}
+              <div className="rounded-xl border border-blue-100 bg-blue-50/50 p-5">
+                <div className="flex flex-wrap items-center gap-2">
+                  <label htmlFor="rfq-files" className="block text-sm font-semibold text-gray-900">
+                    Optional: attach a spec sheet, logo, or a photo of the label you use today
+                  </label>
+                  <span className="rounded-full border border-blue-100 bg-white px-2.5 py-0.5 text-xs font-medium text-blue-800">
+                    Fastest route to a same-day price
+                  </span>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                  A photo of your current label or care tag is usually enough for us to price the
+                  order straight away — it saves the two rounds of emails it normally takes to pin a
+                  specification down. Up to {MAX_FILES} files (JPG, PNG, PDF, Excel or Word), 3 MB
+                  total. This is optional: skip it and we will still quote from your description.
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-3">
+                  <label
+                    htmlFor="rfq-files"
+                    className="cursor-pointer rounded-full bg-blue-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-800"
+                  >
+                    {readingFiles ? "Reading files..." : "Choose files"}
+                  </label>
+                  <input
+                    id="rfq-files"
+                    type="file"
+                    multiple
+                    accept={ACCEPTED}
+                    className="sr-only"
+                    onChange={(e) => {
+                      void handleFiles(e.target.files);
+                      e.target.value = "";
+                    }}
+                  />
+                  <span className="text-xs text-gray-500">
+                    {attachments.length} of {MAX_FILES} attached
+                  </span>
+                </div>
+                {attachments.length > 0 && (
+                  <ul className="mt-4 space-y-2">
+                    {attachments.map((file, i) => (
+                      <li
+                        key={`${file.name}-${i}`}
+                        className="flex items-center justify-between gap-3 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm"
+                      >
+                        <span className="truncate text-gray-700">{file.name}</span>
+                        <span className="flex shrink-0 items-center gap-3">
+                          <span className="text-xs text-gray-400">
+                            {Math.max(1, Math.round(file.size / 1024))} KB
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => removeAttachment(i)}
+                            className="text-xs font-medium text-blue-800 hover:underline"
+                          >
+                            Remove
+                          </button>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {fileError && <p className="mt-3 text-sm text-red-600">{fileError}</p>}
+              </div>
+
               <div className="pt-4 flex justify-between">
                 <button
                   onClick={() => update("step", 1)}
@@ -448,7 +631,14 @@ function RFQFormContent() {
                   <div className="flex justify-between"><span className="text-gray-500">Material:</span><span>{form.materialPreference || "—"}</span></div>
                   <div className="flex justify-between"><span className="text-gray-500">Customization:</span><span>{form.customizations.length > 0 ? form.customizations.join(", ") : "None selected"}</span></div>
                   <div className="flex justify-between"><span className="text-gray-500">Timeline:</span><span>{form.timeline || "—"}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-500">Attachments:</span><span>{attachments.length > 0 ? `${attachments.length} file${attachments.length !== 1 ? "s" : ""}` : "None"}</span></div>
                 </div>
+                {attachments.length === 0 && (
+                  <p className="mt-3 text-xs leading-relaxed text-gray-500">
+                    Have a spec sheet or a photo of the label you use today? Going back one step and
+                    attaching it usually means we can quote on the first reply instead of the second.
+                  </p>
+                )}
               </div>
 
               <div className="pt-4 flex justify-between">

@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { company } from "@/lib/company";
+import { BuyerConcerns } from "@/components/BuyerConcerns";
 
 export const metadata: Metadata = {
   title: "Wholesale Hotel Linen Manufacturer & OEM Supplier — Factory-Direct Pricing",
@@ -72,13 +74,20 @@ const wholesalePrograms = [
   },
 ];
 
+/**
+ * Indicative MOQ and lead times. These must match the decision three lines on
+ * the product pages — a wholesale page quoting 15–20 days against a product page
+ * quoting 25–35 days is the kind of contradiction a buyer notices.
+ */
 const moqTiers = [
-  { product: "Bed sheets & pillowcases", moq: "100 pcs per size/colour", lead: "15–20 days" },
-  { product: "Duvet covers", moq: "100 pcs per size/colour", lead: "18–25 days" },
-  { product: "Bath towels & bath mats", moq: "200 pcs per colour", lead: "15–20 days" },
-  { product: "Bathrobes", moq: "100 pcs per size/colour", lead: "20–25 days" },
-  { product: "Table linen", moq: "200 pcs per colour", lead: "18–25 days" },
-  { product: "Trial / sample order", moq: "From 50 pcs", lead: "Quote on request" },
+  { product: "Bed sheets & pillowcases", moq: "100 pcs per size/colour", lead: "25–35 days" },
+  { product: "Duvet covers", moq: "100 pcs per size/colour", lead: "25–35 days" },
+  { product: "Bedding sets (duvet cover + sheet + 2 pillowcases)", moq: "100 sets per size/spec", lead: "30–40 days" },
+  { product: "Bath towels & bath mats", moq: "200 pcs per colour", lead: "20–30 days" },
+  { product: "Bathrobes", moq: "100 pcs per size/colour", lead: "25–35 days" },
+  { product: "Table linen", moq: "200 pcs per colour", lead: "25–35 days" },
+  { product: "Bedding fabric (by the metre)", moq: "3,000 m per construction", lead: "30–45 days" },
+  { product: "Sample & swatch order", moq: "From 50 pcs (trial runs)", lead: "5–7 days for samples" },
 ];
 
 const faqs = [
@@ -93,6 +102,10 @@ const faqs = [
   {
     q: "Where are your hotel linen products manufactured?",
     a: "Bedding — flat sheets, fitted sheets, duvet covers and pillowcases — is manufactured at our founding member's 5,000 m² mill in Chuanjiang, Tongzhou District, Nantong, minutes from the Dieshiqiao market. Towelling, bathrobes, table linen and mattress programmes are produced by the other member factories in the same cluster, under the same specification sheets and the same inspection standard. Each member owns its plant and its export licence, and every one accepts a buyer audit.",
+  },
+  {
+    q: "What production capacity can you commit to?",
+    a: "Bedding capacity across the alliance's member lines is 100,000 sets a month, where a set means a duvet cover, flat sheet, fitted sheet and pillowcases. Larger programmes are staged across lines rather than promised out of one building, and the schedule is confirmed in writing with your quotation. Peak season runs from August to November and books six to eight weeks ahead, so a first enquiry placed in that window is better sent early.",
   },
   {
     q: "Do you offer OEM and private-label production?",
@@ -112,11 +125,11 @@ const faqs = [
   },
   {
     q: "How long does production and shipping take?",
-    a: "Production lead time is typically 10–25 days depending on product and volume; towels run faster than bathrobes. Sea freight is approximately 15–18 days to the US West Coast and 25–30 days to Europe. Air freight is available for urgent replenishment.",
+    a: "Bulk production runs 20–30 days for towelling and bath mats, 25–35 days for bed sheets, duvet covers, pillowcases, bathrobes and table linen, 30–40 days for complete bedding sets and duvet inners, and 30–45 days for bedding fabric woven to your construction. Counted from approved sample and deposit — fabric has to be woven and dyed before cutting starts, and a Pantone-matched or dark shade books later than white. Peak season (August to November) adds 7–10 days. Sea freight is approximately 15–18 days to the US West Coast and 25–30 days to Europe; air freight is available for urgent replenishment.",
   },
   {
     q: "Can you provide samples before bulk production?",
-    a: "Yes. Pre-production samples ship by DHL/FedEx, usually within 5 business days, and are free for serious buyers. For larger orders we also provide production samples from your actual batch before final payment and shipment.",
+    a: "Yes. Pre-production samples ship by DHL/FedEx in 5–7 days, and are free for serious buyers. Sampling takes 7–10 days where a shade has to be dyed, a fill specified or a logo embroidered. For larger orders we also provide production samples from your actual batch before final payment and shipment.",
   },
 ];
 
@@ -165,7 +178,9 @@ export default function WholesalePage() {
             <span className="w-1 h-1 rounded-full bg-gray-300 self-center hidden sm:inline" />
             <span>MOQ from 50 pcs</span>
             <span className="w-1 h-1 rounded-full bg-gray-300 self-center hidden sm:inline" />
-            <span>Samples in 5 days</span>
+            <span>Samples in {company.service.sampleDaysLabel}</span>
+            <span className="w-1 h-1 rounded-full bg-gray-300 self-center hidden sm:inline" />
+            <span className="font-medium text-blue-800">{company.service.quoteReplyLabel}</span>
             <span className="w-1 h-1 rounded-full bg-gray-300 self-center hidden sm:inline" />
             <span>OEM &amp; private label</span>
             <span className="w-1 h-1 rounded-full bg-gray-300 self-center hidden sm:inline" />
@@ -299,6 +314,9 @@ export default function WholesalePage() {
         </div>
       </section>
 
+      {/* Buyer concerns */}
+      <BuyerConcerns />
+
       {/* FAQ */}
       <section className="bg-gray-50 py-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -327,8 +345,9 @@ export default function WholesalePage() {
           </h2>
           <p className="mt-3 text-gray-500">
             Tell us what you need — buyer type, product categories, quantities, specs, and any
-            branding requirements. We&apos;ll come back with factory-direct pricing, MOQ, and
-            samples within 24 hours.
+            branding requirements. Attach a specification sheet or a photo of the label you use
+            today if you have one. We reply with factory-direct pricing, MOQ and the sample
+            arrangement within 24 hours.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
@@ -338,7 +357,7 @@ export default function WholesalePage() {
               Get a Wholesale Quote
             </Link>
             <a
-              href="https://wa.me/86151361119"
+              href={company.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-gray-300 px-8 py-3.5 text-base font-medium text-gray-700 hover:bg-gray-50 transition-colors"
