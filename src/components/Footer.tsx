@@ -18,6 +18,13 @@ const footerLinks = {
     { name: "Free Guides", href: "/blog" },
     { name: "Free PDF Guide", href: "/guides/download" },
   ],
+  markets: [
+    { name: "All Markets", href: "/markets" },
+    { name: "Southeast Asia", href: "/markets/southeast-asia" },
+    { name: "South America", href: "/markets/south-america" },
+    { name: "Central Asia", href: "/markets/central-asia" },
+    { name: "Africa", href: "/markets/africa" },
+  ],
   support: [
     { name: "Request a Quote", href: "/rfq" },
     { name: "Order Samples", href: "/rfq#samples" },
@@ -73,6 +80,22 @@ export function Footer() {
             </h3>
             <ul className="mt-4 space-y-3">
               {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-sm text-gray-500 hover:text-blue-800 transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Markets */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
+              Markets
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {footerLinks.markets.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-sm text-gray-500 hover:text-blue-800 transition-colors">
                     {link.name}

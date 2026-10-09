@@ -318,23 +318,96 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ========== MARKETS WE SERVE — SEA-first (top traffic source) ========== */}
-      <section className="bg-white py-10 border-b border-gray-100">
+      {/* ========== MARKETS WE SERVE ==========
+          Region entry points. Duty treatment, certificate of origin and transit
+          differ by market, so each region gets its own page rather than a single
+          "we ship worldwide" line that answers nothing. */}
+      <section className="bg-white py-14 border-b border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center gap-5 text-center md:flex-row md:justify-between md:text-left">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-gray-900">Where We Ship — and What Changes by Market</h2>
+            <p className="mt-2 text-gray-500 max-w-2xl mx-auto">
+              Duty treatment, the certificate of origin your customs needs, and the transit band are
+              different in every region. Each page below sets out the detail for that market.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                name: "Southeast Asia",
+                slug: "southeast-asia",
+                duty: "ACFTA / Form E",
+                transit: "5–12 days by sea",
+                note: "Zero or reduced duty on many textile lines with a valid Form E certificate.",
+              },
+              {
+                name: "South America",
+                slug: "south-america",
+                duty: "Agreement by country",
+                transit: "25–45 days by sea",
+                note: "Chile zero-rated with a certificate of origin; Peru excludes textiles; Brazil compounds taxes.",
+              },
+              {
+                name: "Central Asia",
+                slug: "central-asia",
+                duty: "EAEU / EAC",
+                transit: "7–14 days by rail",
+                note: "Rail from Alashankou and Khorgos. EAC conformity is applied for inside the EAEU.",
+              },
+              {
+                name: "Africa",
+                slug: "africa",
+                duty: "COC / SONCAP",
+                transit: "20–50 days by sea",
+                note: "Conformity certificates must be raised in China before the container sails.",
+              },
+            ].map((m) => (
+              <Link
+                key={m.slug}
+                href={`/markets/${m.slug}`}
+                className="group flex flex-col rounded-2xl border border-gray-200 bg-white p-6 hover:border-blue-300 hover:shadow-sm transition-all"
+              >
+                <h3 className="font-bold text-gray-900 group-hover:text-blue-800 transition-colors">
+                  {m.name}
+                </h3>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  <span className="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-1 text-[11px] font-medium text-gray-600">
+                    {m.duty}
+                  </span>
+                  <span className="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-1 text-[11px] font-medium text-gray-600">
+                    {m.transit}
+                  </span>
+                </div>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-500">{m.note}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-800 group-hover:underline">
+                  Market guide
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-col items-center justify-between gap-5 rounded-2xl border border-gray-100 bg-gray-50 px-6 py-5 text-center md:flex-row md:text-left">
             <div>
-              <h2 className="text-lg font-semibold text-gray-900">Shipping Worldwide from Nantong — FOB or DDP</h2>
+              <h3 className="text-base font-semibold text-gray-900">Also shipping to these markets</h3>
               <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                We export hotel linens to <strong className="text-gray-700">Singapore, Vietnam, Thailand &amp; Malaysia</strong>,
-                the UAE, Saudi Arabia &amp; Qatar, the UK, Germany &amp; the EU, the US &amp; Canada, and Australia.
-                Ocean freight consolidation, full export documentation, and WhatsApp-updated order tracking included.
+                The UK, Germany, France and the EU, the Nordics, the UAE, Saudi Arabia, Qatar and Kuwait,
+                the US and Canada, Singapore, Malaysia, Vietnam and Thailand, and Australia. Ocean freight
+                consolidation, full export documentation and order tracking by WhatsApp are included.
               </p>
             </div>
-            <div className="flex shrink-0 flex-wrap justify-center gap-2 text-xs font-medium text-gray-600">
-              {["🇸🇬 Singapore", "🇻🇳 Vietnam", "🇹🇭 Thailand", "🇦🇪 UAE", "🇬🇧 UK", "🇺🇸 USA"].map((m) => (
-                <span key={m} className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5">{m}</span>
-              ))}
-            </div>
+            <Link
+              href="/markets"
+              className="shrink-0 inline-flex items-center gap-2 rounded-full bg-blue-900 px-6 py-2.5 text-sm font-medium text-white hover:bg-blue-800 transition-colors"
+            >
+              All markets
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

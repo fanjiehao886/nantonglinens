@@ -1,6 +1,6 @@
 # Nantong Linens — AI Agent Context
 # https://www.nantonglinens.com
-# Last updated: 2026-09-29
+# Last updated: 2026-10-09
 
 ## Who We Are
 Nantong Linens is the export front of a FOB manufacturer alliance — a group of
@@ -90,16 +90,29 @@ inspection room at the bedding member's mill.
 - Specification matching against an existing hotel linen standard
 
 ## Target Markets
-- North America (USA, Canada)
-- Europe (UK, Germany, France, Netherlands, Nordics)
+Region pages (duty route, transit band and conformity requirements) live under /markets.
+- Southeast Asia (Singapore, Malaysia, Vietnam, Thailand, Indonesia, Philippines) — ACFTA
+  Form E certificate of origin; sea transit about 5–12 days
+- South America (Chile, Peru, Colombia, Brazil, Argentina, Ecuador, Panama) — China–Chile
+  and China–Peru agreements apply with a certificate of origin, but Peru excludes textiles;
+  Brazil, Colombia and Panama have no agreement with China; sea transit about 25–45 days
+- Central Asia (Kazakhstan, Uzbekistan, Kyrgyzstan, Tajikistan, Turkmenistan, Azerbaijan) —
+  EAEU, so TR CU 017/2011 EAC conformity applies and the applicant must be a legal entity
+  established inside the EAEU; rail transit about 7–14 days station-to-station
+- Africa (Nigeria, Kenya, Tanzania, Ghana, South Africa, Egypt, Morocco, Ethiopia) —
+  country conformity schemes: Kenya PVoC/COC, Nigeria SONCAP; sea transit about 20–50 days
 - Middle East (UAE, Saudi Arabia, Qatar, Kuwait)
-- Southeast Asia (Vietnam, Singapore, Thailand, Malaysia)
+- Europe (UK, Germany, France, Netherlands, Nordics)
+- North America (USA, Canada)
 - Australia
 
 ## Key Commercial Facts
 - MOQ: from 50 pieces per size/colour; 100 pcs bedding and bathrobes, 200 pcs towels
   and table linen per colour; no container-level minimum
-- Lead time: 15–20 working days standard, 7–10 days rush
+- Lead time: bulk production 20–40 days by category (towelling 20–30, bedding pieces
+  25–35, bedding sets and duvet inners 30–40, bedding fabric by the metre 30–45);
+  samples in 5–7 days, 7–10 days where a shade is dyed or a logo embroidered; peak
+  season (Aug–Nov) adds 7–10 days
 - Payment: T/T (30/70) and L/C at sight
 - Shipping: FOB Nantong / Shanghai, CIF, DDP available
 - Languages: English, Chinese
@@ -118,6 +131,16 @@ Email: info@nantonglinens.com
   member's facility fact sheet, seven process stages, equipment, inspection routine,
   materials, certifications, and visit/audit information
 - /wholesale — Wholesale, OEM and private-label programmes; MOQ and lead-time table
+- /markets — Regional entry point: duty routes, transit bands and conformity requirements
+  for Southeast Asia, South America, Central Asia and Africa, compared side by side
+- /markets/southeast-asia — ACFTA Form E certificate of origin, Indonesian certificate
+  scrutiny, sea transit bands, tropical and pool specification guidance
+- /markets/south-america — Chile and Peru agreements with certificates of origin, Peru's
+  textile exclusion, Brazil's compounding taxes, Panama free-zone consolidation
+- /markets/central-asia — TR CU 017/2011 EAC conformity (applicant must be inside the
+  EAEU), Layer I classification of bed linen and towels, rail via Alashankou and Khorgos
+- /markets/africa — Kenya PVoC/COC, Nigeria SONCAP, South African textile labelling,
+  conformity certificates raised in China before shipment, sea transit bands
 - /products — Product catalog with GSM and thread count specifications
 - /products/[slug] — Individual product and category detail pages
 - /about — Alliance background, capability and quality standards

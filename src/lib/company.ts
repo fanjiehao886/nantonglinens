@@ -216,6 +216,12 @@ export const company = {
     { name: "BSCI Social Compliance", certificateNumber: undefined as string | undefined },
   ],
 
+  /**
+   * Regions served. These drive `areaServed` in Organization schema, so the
+   * list is kept to countries the alliance genuinely quotes into — not every
+   * country an enquiry has ever arrived from. Region landing pages under
+   * /markets carry the per-market detail (duty route, transit band, conformity).
+   */
   serviceRegions: [
     "United States",
     "Canada",
@@ -228,10 +234,37 @@ export const company = {
     "Saudi Arabia",
     "Qatar",
     "Kuwait",
+    // Southeast Asia
     "Singapore",
     "Vietnam",
     "Thailand",
     "Malaysia",
+    "Indonesia",
+    "Philippines",
+    // South America
+    "Brazil",
+    "Chile",
+    "Peru",
+    "Colombia",
+    "Argentina",
+    "Ecuador",
+    "Panama",
+    // Central Asia
+    "Kazakhstan",
+    "Uzbekistan",
+    "Kyrgyzstan",
+    "Tajikistan",
+    "Turkmenistan",
+    "Azerbaijan",
+    // Africa
+    "Nigeria",
+    "Kenya",
+    "Tanzania",
+    "Ghana",
+    "South Africa",
+    "Egypt",
+    "Morocco",
+    "Ethiopia",
     "Australia",
   ],
 };

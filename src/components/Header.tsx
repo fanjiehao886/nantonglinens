@@ -37,6 +37,20 @@ const productLinks = [
   { name: "Bed Runners", href: "/products/bed-runners" },
 ];
 
+/**
+ * Region entry points. These are the pages that answer "what changes if I import
+ * into my country", so they get first-class navigation rather than living only
+ * in the footer.
+ */
+const marketLinks = [
+  { name: "All Markets", href: "/markets" },
+  { name: "---", href: "#", divider: true },
+  { name: "Southeast Asia", href: "/markets/southeast-asia" },
+  { name: "South America", href: "/markets/south-america" },
+  { name: "Central Asia", href: "/markets/central-asia" },
+  { name: "Africa", href: "/markets/africa" },
+];
+
 const navigation = [
   { name: "Home", href: "/" },
 ];
@@ -45,8 +59,10 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [marketsOpen, setMarketsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const productsRef = useRef<HTMLDivElement>(null);
+  const marketsRef = useRef<HTMLDivElement>(null);
 
   // Close dropdowns on outside click
   useEffect(() => {
@@ -56,6 +72,9 @@ export function Header() {
       }
       if (productsRef.current && !productsRef.current.contains(event.target as Node)) {
         setProductsOpen(false);
+      }
+      if (marketsRef.current && !marketsRef.current.contains(event.target as Node)) {
+        setMarketsOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -195,6 +214,42 @@ export function Header() {
             )}
           </div>
 
+          {/* Markets dropdown — regional duty, transit and conformity entry points */}
+          <div ref={marketsRef} className="relative">
+            <button
+              onClick={() => setMarketsOpen(!marketsOpen)}
+              className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
+            >
+              Markets
+              <svg
+                className={`h-4 w-4 transition-transform ${marketsOpen ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {marketsOpen && (
+              <div className="absolute left-0 mt-2 w-56 rounded-xl border border-gray-100 bg-white shadow-lg py-2 z-50">
+                {marketLinks.map((link) =>
+                  link.divider ? (
+                    <div key="mdivider" className="my-1 border-t border-gray-100" />
+                  ) : (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setMarketsOpen(false)}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-800 transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )
+                )}
+              </div>
+            )}
+          </div>
+
           <Link
             href="/rfq"
             className="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
@@ -302,6 +357,26 @@ export function Header() {
                   </svg>
                   {link.name}
                 </Link>
+              ) : (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block py-2 pl-3 text-sm font-medium text-gray-700 hover:text-blue-800"
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
+          </div>
+          {/* Markets section in mobile */}
+          <div className="py-2 border-t border-gray-50 mt-1">
+            <span className="block py-2 text-xs font-semibold uppercase text-gray-400 tracking-wider">
+              Markets
+            </span>
+            {marketLinks.map((link) =>
+              link.divider ? (
+                <div key="mdivider-m" className="my-1 border-t border-gray-100" />
               ) : (
                 <Link
                   key={link.name}
