@@ -114,6 +114,16 @@ Region pages (duty route, transit band and conformity requirements) live under /
   samples in 5–7 days, 7–10 days where a shade is dyed or a logo embroidered; peak
   season (Aug–Nov) adds 7–10 days
 - Payment: T/T (30/70) and L/C at sight
+- Order-to-dock: add the transit leg to the production window — Southeast Asia about
+  4–10 weeks; Central Asia about 8–13 weeks including the EAC conformity file, which
+  must be started at the sample stage; South America about 10–16 weeks; Africa about
+  10–18 weeks, because a Kenya COC takes 10–15 working days and must be raised before
+  shipment
+- Chinese New Year 2027 falls on 6 February; Jiangsu mills typically close two to three
+  weeks and the order book saturates three to four weeks before the closure
+- Container planning: hotel linen is volume-bound, not weight-bound. LCL is usually
+  cheaper below about 13–15 CBM once destination charges are counted; a 20ft container
+  wins above that, and a 40ft high cube past roughly 35–45 CBM
 - Shipping: FOB Nantong / Shanghai, CIF, DDP available
 - Languages: English, Chinese
 - WhatsApp: +86 15151361119
@@ -141,6 +151,10 @@ Email: info@nantonglinens.com
   EAEU), Layer I classification of bed linen and towels, rail via Alashankou and Khorgos
 - /markets/africa — Kenya PVoC/COC, Nigeria SONCAP, South African textile labelling,
   conformity certificates raised in China before shipment, sea transit bands
+- /markets/[region]/lead-time — Order calendar per region: production by category, the
+  transit leg, the certification window, and the Chinese New Year 2027 cut-off
+- /markets/[region]/first-order — Planning a first order per region: per-size and
+  per-colour minimums, how to compose a mixed container, and the LCL/FCL break-even
 - /products — Product catalog with GSM and thread count specifications
 - /products/[slug] — Individual product and category detail pages
 - /about — Alliance background, capability and quality standards

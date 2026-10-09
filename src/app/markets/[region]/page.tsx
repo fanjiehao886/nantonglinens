@@ -8,6 +8,7 @@ import {
   getMarketRegion,
   membershipTerms,
 } from "@/lib/markets";
+import { SUBPAGE_TOPICS, subpagesForRegion } from "@/lib/market-subpages";
 
 type Props = {
   params: Promise<{ region: string }>;
@@ -373,6 +374,41 @@ export default async function MarketRegionPage({ params }: Props) {
                 </summary>
                 <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed">{faq.a}</div>
               </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ ORDER PLANNING SUB-PAGES ============ */}
+      <section className="bg-white py-14">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900">
+            Once you are ready to order: the calendar and the first container
+          </h2>
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-gray-500">
+            The two questions every {data.shortName} buyer asks next — how far ahead to order, and what the
+            first shipment should actually contain. Each has its own page, with the {data.shortName} numbers
+            already applied.
+          </p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {subpagesForRegion(data.slug).map((s) => (
+              <Link
+                key={s.topic}
+                href={`/markets/${s.regionSlug}/${s.topic}`}
+                className="group rounded-2xl border border-gray-200 bg-white p-6 hover:border-blue-300 hover:shadow-sm transition-all"
+              >
+                <h3 className="font-semibold text-gray-900 group-hover:text-blue-800 transition-colors">
+                  {SUBPAGE_TOPICS[s.topic].name}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-500">{SUBPAGE_TOPICS[s.topic].blurb}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-800 group-hover:underline">
+                  Open the {SUBPAGE_TOPICS[s.topic].short} page
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
             ))}
           </div>
         </div>

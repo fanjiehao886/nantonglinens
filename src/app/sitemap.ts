@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { client } from "@/lib/sanity";
 import { PRODUCTS_QUERY, POSTS_QUERY } from "@/lib/queries";
+import { MARKET_SUBPAGES } from "@/lib/market-subpages";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.nantonglinens.com";
@@ -147,6 +148,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },
+    // Regional sub-pages — lead time / first-order planning, per region.
+    // Generated from the data file so a new region or topic is picked up here
+    // automatically instead of being forgotten.
+    ...MARKET_SUBPAGES.map((s) => ({
+      url: `${baseUrl}/markets/${s.regionSlug}/${s.topic}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     // Guides
     {
       url: `${baseUrl}/guides/hotel-towel-quality-guide`,
