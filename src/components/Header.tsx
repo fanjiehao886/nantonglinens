@@ -109,7 +109,7 @@ export function Header() {
       </div>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex shrink-0 items-center gap-2">
           <div className="h-8 w-8 rounded-lg bg-blue-900 flex items-center justify-center text-white font-bold text-sm">
             NL
           </div>
@@ -118,8 +118,11 @@ export function Header() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-6">
+        {/* Desktop nav. Ten top-level entries only just fit inside a max-w-7xl
+            container, so the desktop bar starts at xl (1280px) instead of lg;
+            below that the hamburger menu takes over rather than letting the
+            links wrap onto a second line. */}
+        <div className="hidden xl:flex items-center gap-5 whitespace-nowrap">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -254,19 +257,19 @@ export function Header() {
             href="/rfq"
             className="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
           >
-            Custom / RFQ
+            Custom Orders
           </Link>
           <Link
             href="/factory"
             className="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
           >
-            Our Factories
+            Factories
           </Link>
           <Link
             href="/about"
             className="text-sm font-medium text-gray-600 hover:text-blue-800 transition-colors"
           >
-            About & Services
+            About
           </Link>
           <Link
             href="/contact"
@@ -282,7 +285,7 @@ export function Header() {
           </Link>
           <Link
             href="/rfq"
-            className="rounded-full bg-blue-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 transition-colors"
+            className="shrink-0 rounded-full bg-blue-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 transition-colors"
           >
             Get a Quote
           </Link>
@@ -291,7 +294,7 @@ export function Header() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-gray-600"
+          className="xl:hidden p-2 text-gray-600"
           aria-label="Toggle menu"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -306,7 +309,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-gray-100 px-4 pb-4 pt-2">
+        <div className="xl:hidden border-t border-gray-100 px-4 pb-4 pt-2">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -394,21 +397,21 @@ export function Header() {
             onClick={() => setMobileOpen(false)}
             className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-800"
           >
-            Custom / RFQ
+            Custom Orders
           </Link>
           <Link
             href="/factory"
             onClick={() => setMobileOpen(false)}
             className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-800"
           >
-            Our Factories
+            Factories
           </Link>
           <Link
             href="/about"
             onClick={() => setMobileOpen(false)}
             className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-800"
           >
-            About & Services
+            About
           </Link>
           <Link
             href="/contact"
