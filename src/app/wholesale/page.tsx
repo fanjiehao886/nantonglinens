@@ -223,8 +223,8 @@ export default function WholesalePage() {
             Why Wholesalers Buy From Us — Not Through An Agent
           </h2>
           <p className="mt-3 text-gray-500 text-center max-w-2xl mx-auto">
-            We manufacture the goods and export them ourselves. That removes a cost layer and a
-            responsibility gap from your supply chain
+            The member factories that make your goods export them under their own export licences.
+            That removes a cost layer and a responsibility gap from your supply chain
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {advantages.map((adv) => (
@@ -244,8 +244,8 @@ export default function WholesalePage() {
             Three Ways To Buy Wholesale From Us
           </h2>
           <p className="mt-3 text-gray-500 text-center max-w-2xl mx-auto">
-            Whether you hold stock, sell under your own brand, or supply a rollout — the production
-            side is the same factory
+            Whether you hold stock, sell under your own brand, or supply a rollout — production runs
+            through member factories working to the same written specification and inspection standard
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {wholesalePrograms.map((p) => (
@@ -332,6 +332,43 @@ export default function WholesalePage() {
                 </summary>
                 <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed">{faq.a}</div>
               </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related reading — internal links */}
+      <section className="bg-white py-12 border-t border-gray-100">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-xl font-bold text-gray-900 text-center">
+            Buying Direct? Read These First
+          </h2>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            {[
+              {
+                title: "Buying Hotel Linens Direct from a Chinese Factory",
+                desc: "What factory-direct changes in your cost, and how to verify the supplier owns the line.",
+                href: "/guides/buying-hotel-linens-direct-from-chinese-factory",
+              },
+              {
+                title: "Hotel Bedding Thread Count Guide (200–1000 TC)",
+                desc: "200 vs 400 vs 600 TC by hotel tier, and the supplier tricks to avoid.",
+                href: "/guides/hotel-bedding-thread-count",
+              },
+              {
+                title: "Hotel Towel GSM Guide: 300–600 GSM Explained",
+                desc: "Towel weights by hotel tier, cotton grades, absorbency and real FOB prices.",
+                href: "/guides/hotel-towel-gsm",
+              },
+            ].map((g) => (
+              <Link
+                key={g.href}
+                href={g.href}
+                className="rounded-xl border border-gray-200 bg-white p-5 transition-colors hover:border-blue-300"
+              >
+                <h3 className="font-semibold text-gray-900">{g.title}</h3>
+                <p className="mt-1 text-sm text-gray-500 leading-relaxed">{g.desc}</p>
+              </Link>
             ))}
           </div>
         </div>

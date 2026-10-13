@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
+import { trackEvent, trackLead } from "@/lib/gtag";
 
 export default function ContactForm() {
   const [sending, setSending] = useState(false);
@@ -37,6 +38,8 @@ export default function ContactForm() {
         throw new Error("Failed to send");
       }
       setDone(true);
+      trackEvent("contact_submit", { subject: data.subject || "General Inquiry" });
+      trackLead("contact_form", { subject: data.subject || "General Inquiry" });
     } catch (err: any) {
       setError(
         err.message === "Too many submissions. Please try again later."

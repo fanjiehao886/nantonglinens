@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>nantonglinens.com — GSC 28 天诊断与快赢清单（2026-09-30）</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#16191d; --muted:#5c6470; --faint:#8b94a1;
+    --line:#e3e6ea; --navy:#1e3a5f; --navy-soft:#eef2f7; --red:#a32d2d; --red-soft:#fceaea;
+    --amber:#8a5a0b; --amber-soft:#fdf3e2; --green:#2f6b3a; --green-soft:#eaf4ec;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#15181c; --card:#1d2126; --ink:#e8ebee; --muted:#a3abb6; --faint:#7d858f;
+      --line:#2b3037; --navy:#9dc0e6; --navy-soft:#1f2a38; --red:#f09595; --red-soft:#2e1c1c;
+      --amber:#f0be6a; --amber-soft:#2c2416; --green:#9ad3a3; --green-soft:#1b2a1e;
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:40px 20px 72px; background:var(--bg); color:var(--ink);
+    font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto}
+  header{border-bottom:2px solid var(--navy);padding-bottom:20px;margin-bottom:32px}
+  .eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+  h1{font-size:26px;line-height:1.35;margin:0 0 10px;font-weight:600;letter-spacing:-.01em}
+  .sub{margin:0;color:var(--muted);font-size:14px}
+  h2{font-size:17px;margin:40px 0 14px;font-weight:600;padding-left:12px;border-left:3px solid var(--navy)}
+  h3{font-size:15px;margin:24px 0 8px;font-weight:600}
+  p{margin:0 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0 4px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .card .k{font-size:12px;color:var(--faint);margin:0 0 6px}
+  .card .v{font-size:26px;font-weight:600;line-height:1.15;margin:0;letter-spacing:-.02em}
+  .card .n{font-size:12px;color:var(--muted);margin:6px 0 0}
+  .v.red{color:var(--red)} .v.navy{color:var(--navy)}
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px;background:var(--card);
+    border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  th,td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--navy-soft);font-weight:600;font-size:12.5px;color:var(--ink);white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;
+    background:var(--navy-soft);padding:2px 6px;border-radius:5px;color:var(--ink)}
+  .tag{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;font-weight:500}
+  .tag.p0{background:var(--red-soft);color:var(--red)}
+  .tag.p1{background:var(--amber-soft);color:var(--amber)}
+  .tag.p2{background:var(--green-soft);color:var(--green)}
+  .tag.done{background:var(--navy-soft);color:var(--navy)}
+  .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--navy);
+    border-radius:8px;padding:14px 18px;margin:18px 0;font-size:14px;color:var(--muted)}
+  .note strong{color:var(--ink)}
+  ul{margin:8px 0 12px;padding-left:22px}
+  li{margin-bottom:6px}
+  footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Google Search Console · 2026-09-02 → 2026-09-29</p>
+  <h1>nantonglinens.com 自然搜索诊断与快赢清单</h1>
+  <p class="sub">数据源：GSC「效果 → 查询」28 天导出（253 条查询）。本文件给出可执行结论，不含推测性建议。</p>
+</header>
+
+<div class="cards">
+  <div class="card"><p class="k">总点击</p><p class="v red">2</p><p class="n">28 天，整站</p></div>
+  <div class="card"><p class="k">总展示</p><p class="v">2,820</p><p class="n">整体 CTR 0.07%</p></div>
+  <div class="card"><p class="k">抓取族展示占比</p><p class="v red">74.4%</p><p class="n">2,097 次 · 0 点击</p></div>
+  <div class="card"><p class="k">真实买家意图展示</p><p class="v navy">628</p><p class="n">GSM + 纱支 + 批发三族</p></div>
+</div>
+
+<h2>一、读这份数据前必须先剔除的一族</h2>
+<p>
+  导出里有 <strong>109 条查询（2,097 次展示，占全部展示 74.4%）</strong>属于同一个模式：
+  <code>&lt;职业&gt; + nantong + whatsapp / contact / phone number</code>。职业词覆盖
+  sourcing agent、buyer、distributor、purchasing manager、procurement manager、export manager、
+  export agent、supply chain manager、wholesaler、trade agent、factory owner、customs broker 等十余种。
+</p>
+<p>
+  这是<strong>搜集南通供应方联系方式</strong>的查询，不是采购需求。证据：全部 2,097 次展示，<strong>0 次点击</strong>——
+  搜的人要的是结果摘要里的号码，不是页面。导出里形如 <code>sourcing agent nantong whatsapp +86 * * *</code>
+  的星号，是 Google 对手机号做的 PII 脱敏，不是数据损坏。
+</p>
+<div class="note">
+  <strong>结论</strong>：这一族不构成任何商业信号，且它解释了此前 GA4 报表里「Direct 44%／Singapore 57%」的异常。
+  优化它没有意义——迎合它只会把更擅长抓取的工具引来。后续读 GSC，先剥离这一族再看其余数字。
+</div>
+
+<h2>二、剔除后剩下什么</h2>
+<table>
+  <thead><tr><th>族群</th><th class="num">查询数</th><th class="num">展示</th><th class="num">点击</th><th>平均排名</th></tr></thead>
+  <tbody>
+    <tr><td>GSM / 毛巾克重</td><td class="num">63</td><td class="num">426</td><td class="num">0</td><td>约 10（多数在前 10 位）</td></tr>
+    <tr><td>纱支 / Thread count</td><td class="num">16</td><td class="num">105</td><td class="num">0</td><td>37 – 55（第 4–6 页）</td></tr>
+    <tr><td>批发 / 供应商 / 经销</td><td class="num">26</td><td class="num">97</td><td class="num">0</td><td>20 – 92（分散）</td></tr>
+    <tr><td>其他</td><td class="num">38</td><td class="num">93</td><td class="num">2</td><td>混合</td></tr>
+  </tbody>
+</table>
+<p>
+  一句话：<strong>全站唯一已经排进 Google 前 10 名的资产是毛巾 GSM 这一族，而它 28 天一次点击都没拿到。</strong>
+  这既是问题，也是唯一现成的杠杆。
+</p>
+
+<h2>三、为什么排在第 6 位却零点击</h2>
+<p>
+  GSM 指南页的标题本来就写着 <code>550 GSM Towel Meaning: 300–600 GSM Hotel Guide</code>，
+  FAQ 结构化数据里也早已有一条「What does 550 GSM mean for a hotel towel?」。也就是说
+  <strong>标题命中了、标记也命中了，缺口在「问法覆盖」</strong>：数据里的问法是
+  <em>towel weight / how much does a towel weigh / how heavy is a towel</em>（另占 45 次展示），
+  而页面只解释了 GSM 这个单位，没有回答「一块毛巾到底多重」。
+</p>
+<p>
+  definitional 类查询（价格、含义、对比）在 2026 年普遍被 AI 概览吃掉点击，这是行业性的，不是这一页独有的问题。
+  因此对策不是继续调标题，而是<strong>把答案做成可直接被抽取的块</strong>，并转向那些必须点进来才能解决的问法。
+</p>
+
+<h2>四、已执行的修改</h2>
+<table>
+  <thead><tr><th>页面</th><th>新增</th><th>针对的查询族</th><th class="num">状态</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><code>/guides/hotel-towel-gsm</code></td>
+      <td>「Quick Answers: 400 / 450 / 500 / 550 / 600 GSM 分别是什么意思」定义表（并覆盖 1400 GSM 这一无关追问，说明它属于地垫类而非毛巾）；「How Much Does a Hotel Towel Weigh?」四尺寸克重换算表（washcloth 30×30、hand 50×100、bath 70×140、bath sheet 90×150）；用报价反推真实克重的验算方法；FAQ schema 增 3 条</td>
+      <td>GSM 族 426 + 克重族 45</td>
+      <td class="num"><span class="tag done">已上线</span></td>
+    </tr>
+    <tr>
+      <td><code>/guides/hotel-bedding-thread-count</code></td>
+      <td>「What Thread Count Are Hotel Sheets?」直接给出 200–400 区间答案 + 酒店实际在用规格表（含 180–210 TC percale 这一实际大量使用的规格）；FAQ schema 增 2 条</td>
+      <td>纱支族 105</td>
+      <td class="num"><span class="tag done">已上线</span></td>
+    </tr>
+  </tbody>
+</table>
+<p>提交 <code>8d80545</code>，已推送 main。Vercel 自动部署。</p>
+
+<h2>五、下一步优先级</h2>
+<table>
+  <thead><tr><th class="num">优先级</th><th>动作</th><th>依据</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="num"><span class="tag p0">P0</span></td>
+      <td>查清 <strong>GSC 与 GA4 的口径差</strong>：GSC 28 天仅 2 次点击，而 GA4 同期 7 天报出 17 次 Organic 会话。核对 GSC 资源是 url-prefix 还是 domain 型、GA 的 Organic 是否混入机器人／VPN、是否有非 Google 引擎来源</td>
+      <td>这个差额不解释清楚，后面所有渠道判断都不可信</td>
+    </tr>
+    <tr>
+      <td class="num"><span class="tag p1">P1</span></td>
+      <td>为 <code>bedding distributor southeast asia</code> 建独立着陆页（面向东南亚经销商/批发商角色）</td>
+      <td>32 次展示，当前平均排名 22.5（第 3 页）。这是全站<strong>商业意图最强</strong>的一个词</td>
+    </tr>
+    <tr>
+      <td class="num"><span class="tag p1">P1</span></td>
+      <td>把 <code>recycled cotton hotel linen supplier</code> 并入相关品类页与指南的内链与正文</td>
+      <td>已排到<strong>第 4 位</strong>，是最接近成交的位置，只需承接</td>
+    </tr>
+    <tr>
+      <td class="num"><span class="tag p2">P2</span></td>
+      <td>继续观察 GSM 页修改后的排名与点击变化（建议 14 天后再导一次 GSC 对照）</td>
+      <td>验证「答案块」策略是否真的能撬动 definitional 查询的点击</td>
+    </tr>
+    <tr>
+      <td class="num"><span class="tag p2">P2</span></td>
+      <td>纱支族 105 次展示但排名 37 位：需要的是内容深度与内链，不是标题微调</td>
+      <td>排名在第 4 页意味着与内容质量/权重相关，改 title 无效</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <strong>关于「每天自动发新文」的节奏</strong>：本次数据显示，150+ 个页面共分到 628 次真实买家意图展示，
+  而真正带来位置的只有两个既有指南页。在这两个页面上加杠杆，回报远高于每天新增一篇。
+  是否调整内容流水线节奏属于你的决定，此处只陈述数据。
+</div>
+
+<h2>六、疑似异常项（需人工判断，暂不处理）</h2>
+<ul>
+  <li><code>is 210 tc 1a</code> —— 57 次展示，平均排名 55。这个问法不像自然人输入，也不构成明确需求，观察即可。</li>
+  <li><code>differences between premium bedding in upscale vs midscale hotel rooms</code>（排名第 1）、
+      <code>microfiber fill vs polyester fill</code>（排名第 1）等仅 1–2 次展示却排名第 1，属小样本波动，不必据此改动页面。</li>
+  <li>一条完整自然语言长问句（「I want to add wholesale towels to my store's bath section…」，排名 2）
+      提示已有采购方通过 AI 助手入口触达，与 GA4 中出现的 AI Assistant 渠道互相印证。</li>
+</ul>
+
+<footer>
+  生成于 2026-09-30 · 数据窗口 2026-09-02 至 2026-09-29（28 天）· 来源：Google Search Console 查询导出 CSV
+</footer>
+
+</div>
+</body>
+</html>
