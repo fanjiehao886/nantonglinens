@@ -317,6 +317,7 @@ export default function BuyingDirectFromFactoryGuide() {
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {[
                 { title: "Hotel Bedding Thread Count Guide (200–1000 TC)", href: "/guides/hotel-bedding-thread-count" },
+                { title: "Container Loading: 20GP, 40GP or 40HQ — How Many Sets Fit", href: "/guides/container-loading-hotel-bedding-volume-weight" },
                 { title: "Hotel Towel Quality Guide: Cotton Grades & QC Checklist", href: "/guides/hotel-towel-quality-guide" },
                 { title: "Hotel Towel GSM Guide: 300–600 GSM Explained", href: "/guides/hotel-towel-gsm" },
                 { title: "Wholesale Hotel Linen Programmes & Factory-Direct Pricing", href: "/wholesale" },

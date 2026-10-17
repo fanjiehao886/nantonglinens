@@ -176,6 +176,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/guides/container-loading-hotel-bedding-volume-weight`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
     // Category landing pages
     {
       url: `${baseUrl}/products/bed-sheets`,

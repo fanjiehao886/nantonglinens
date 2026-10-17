@@ -356,6 +356,7 @@ export default function HotelBeddingThreadCountGuide() {
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {[
                 { title: "Buying Hotel Linens Direct from a Chinese Factory", href: "/guides/buying-hotel-linens-direct-from-chinese-factory" },
+                { title: "Container Loading: How Many Sets Fit in 20GP / 40GP / 40HQ", href: "/guides/container-loading-hotel-bedding-volume-weight" },
                 { title: "Hotel Towel GSM Guide: 300–600 GSM Explained (2026 Prices)", href: "/guides/hotel-towel-gsm" },
                 { title: "Hotel Towel Quality Guide: Cotton Grades & QC Checklist", href: "/guides/hotel-towel-quality-guide" },
                 { title: "Hotel Bathrobe Buying Guide: Fabric, Style & Pricing", href: "/guides/hotel-bathrobe-buying-guide" },

@@ -343,12 +343,17 @@ export default function WholesalePage() {
           <h2 className="text-xl font-bold text-gray-900 text-center">
             Buying Direct? Read These First
           </h2>
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {[
               {
                 title: "Buying Hotel Linens Direct from a Chinese Factory",
                 desc: "What factory-direct changes in your cost, and how to verify the supplier owns the line.",
                 href: "/guides/buying-hotel-linens-direct-from-chinese-factory",
+              },
+              {
+                title: "Container Loading: 20GP, 40GP or 40HQ",
+                desc: "How many sets fit in each box, how to work out CBM, and when to ship LCL instead.",
+                href: "/guides/container-loading-hotel-bedding-volume-weight",
               },
               {
                 title: "Hotel Bedding Thread Count Guide (200–1000 TC)",
