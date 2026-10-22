@@ -15,8 +15,17 @@ const footerLinks = {
     { name: "About Us", href: "/about" },
     { name: "Inside Our Factories", href: "/factory" },
     { name: "Quality Standards", href: "/about#certifications" },
-    { name: "Free Guides", href: "/blog" },
+    { name: "All Procurement Guides", href: "/guides" },
+    { name: "Blog & Articles", href: "/blog" },
     { name: "Free PDF Guide", href: "/guides/download" },
+  ],
+  guides: [
+    { name: "Thread Count Guide (200–1000 TC)", href: "/guides/hotel-bedding-thread-count" },
+    { name: "Towel GSM Guide (300–600 GSM)", href: "/guides/hotel-towel-gsm" },
+    { name: "Towel Quality & QC Guide", href: "/guides/hotel-towel-quality-guide" },
+    { name: "Bathrobe Buying Guide", href: "/guides/hotel-bathrobe-buying-guide" },
+    { name: "Buying Direct from a Chinese Factory", href: "/guides/buying-hotel-linens-direct-from-chinese-factory" },
+    { name: "Container Loading (20GP / 40GP / 40HQ)", href: "/guides/container-loading-hotel-bedding-volume-weight" },
   ],
   markets: [
     { name: "All Markets", href: "/markets" },
@@ -122,7 +131,29 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Contact bar */}
+        {/* Guides strip. The /guides pages carry most of the site's non-brand
+            organic traffic, so they get footer-wide links rather than living
+            only inside the header dropdown. */}
+        <div className="mt-10 border-t border-gray-200 pt-8">
+          <div className="flex flex-wrap items-baseline justify-between gap-3">
+            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
+              Procurement Guides
+            </h3>
+            <Link href="/guides" className="text-sm font-medium text-blue-800 hover:underline">
+              All guides &rarr;
+            </Link>
+          </div>
+          <ul className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+            {footerLinks.guides.map((link) => (
+              <li key={link.name}>
+                <Link href={link.href} className="text-sm text-gray-500 hover:text-blue-800 transition-colors">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <div className="mt-10 flex flex-col gap-4 rounded-xl bg-blue-900 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-medium text-white">Ready to order factory-direct? Get the free buying guide first</p>

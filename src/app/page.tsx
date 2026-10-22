@@ -208,7 +208,7 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: "Thread Count Guide",
@@ -244,6 +244,31 @@ export default async function HomePage() {
                   </svg>
                 ),
                 href: "/guides/hotel-towel-quality-guide",
+              },
+              {
+                title: "Container Loading Guide",
+                subtitle: "How many bed sets fit in a 20GP, 40GP or 40HQ — and when to switch to LCL",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-800">
+                    <path d="M10 17h4V5H2v12h3" />
+                    <path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h1" />
+                    <circle cx="7.5" cy="17.5" r="2.5" />
+                    <circle cx="17.5" cy="17.5" r="2.5" />
+                  </svg>
+                ),
+                href: "/guides/container-loading-hotel-bedding-volume-weight",
+              },
+              {
+                title: "Buying Direct Guide",
+                subtitle: "What factory-direct really changes in your landed cost — and what it asks of you",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-blue-800">
+                    <path d="M3 21h18" />
+                    <path d="M5 21V7l7-4 7 4v14" />
+                    <path d="M9 21v-6h6v6" />
+                  </svg>
+                ),
+                href: "/guides/buying-hotel-linens-direct-from-chinese-factory",
               },
               {
                 title: "Free PDF Download",
@@ -283,10 +308,23 @@ export default async function HomePage() {
               </Link>
             ))}
           </div>
+
+          {/* Single crawlable pointer to the /guides hub. Without it the six
+              guide pages were only reachable through the header dropdown, so
+              link equity stalled at one level depth. */}
+          <div className="mt-10 text-center">
+            <Link
+              href="/guides"
+              className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-6 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-blue-300 hover:bg-blue-50 hover:text-blue-800"
+            >
+              View all 6 procurement guides
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
-
-      {/* ========== TRUST BAR ========== */}
       <TrustBar />
 
       {/* ========== FREE SAMPLES BANNER — low-friction entry ========== */}

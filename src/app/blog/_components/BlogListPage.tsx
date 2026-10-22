@@ -82,6 +82,18 @@ export default function BlogListPage({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900">{heroTitle}</h1>
           <p className="mt-2 text-gray-500 max-w-xl">{heroDescription}</p>
+          {/* The blog archive and the /guides hub answer the same questions at
+              different depths. This keeps the shorter, higher-ranking version
+              reachable from every archive page. */}
+          <Link
+            href="/guides"
+            className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-blue-800 transition-colors hover:border-blue-300 hover:bg-blue-50"
+          >
+            Short on time? Start with the 6 core procurement guides
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </section>
 

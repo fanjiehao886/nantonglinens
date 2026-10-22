@@ -162,10 +162,13 @@ Email: info@nantonglinens.com
 - /contact — Contact details, WhatsApp and quick message form
 - /faq — Frequently asked questions on MOQ, lead times, certifications and shipping
 - /blog — Procurement guides, fabric encyclopedia, QC checklists, market reports
+- /guides — Index of the six core procurement guides (specification, sourcing, logistics)
 - /guides/hotel-bedding-thread-count — Thread count guide
 - /guides/hotel-towel-gsm — Towel GSM guide
 - /guides/hotel-towel-quality-guide — Towel quality and QC guide
 - /guides/hotel-bathrobe-buying-guide — Bathrobe buying guide
+- /guides/buying-hotel-linens-direct-from-chinese-factory — Buying direct from a Chinese factory: cost comparison, risks, factory-verification gates
+- /guides/container-loading-hotel-bedding-volume-weight — Container loading: how many bed sets fit in 20GP, 40GP and 40HQ, CBM maths, LCL break-even
 - /guides/download — Free hotel linen buying guide (PDF)
 
 ## Content Attribution
