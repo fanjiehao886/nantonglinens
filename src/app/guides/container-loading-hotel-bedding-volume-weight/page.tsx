@@ -120,7 +120,7 @@ export default function ContainerLoadingGuide() {
           <nav className="flex items-center gap-2 text-sm text-gray-400">
             <Link href="/" className="hover:text-blue-800">Home</Link>
             <span>/</span>
-            <Link href="/blog" className="hover:text-blue-800">Guides</Link>
+            <Link href="/guides" className="hover:text-blue-800">Guides</Link>
             <span>/</span>
             <span className="text-gray-600">Container Loading for Hotel Bedding</span>
           </nav>

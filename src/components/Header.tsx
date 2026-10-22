@@ -5,7 +5,12 @@ import { useState, useRef, useEffect } from "react";
 import { company } from "@/lib/company";
 
 const knowledgeHubLinks = [
-  { name: "All Guides", href: "/blog" },
+  // The /guides/* pages carry most of the site's organic traffic but had no
+  // entry point in the header until /guides existed as an index. This first
+  // row is the front door for them; the /blog rows below stay as the archive.
+  { name: "All Procurement Guides", href: "/guides" },
+  { name: "---", href: "#", divider: true },
+  { name: "Blog & Articles", href: "/blog" },
   { name: "Buying Guide", href: "/blog/buying-guide" },
   { name: "Fabric Encyclopedia", href: "/blog/fabric-encyclopedia" },
   { name: "QC Checklist", href: "/blog/qc-checklist" },
@@ -187,9 +192,9 @@ export function Header() {
             </button>
             {dropdownOpen && (
               <div className="absolute left-0 mt-2 w-56 rounded-xl border border-gray-100 bg-white shadow-lg py-2 z-50">
-                {knowledgeHubLinks.map((link) =>
+                {knowledgeHubLinks.map((link, i) =>
                   link.divider ? (
-                    <div key="divider" className="my-1 border-t border-gray-100" />
+                    <div key={`divider-${i}`} className="my-1 border-t border-gray-100" />
                   ) : link.highlight ? (
                     <Link
                       key={link.name}
@@ -345,9 +350,9 @@ export function Header() {
             <span className="block py-2 text-xs font-semibold uppercase text-gray-400 tracking-wider">
               Knowledge Hub
             </span>
-            {knowledgeHubLinks.map((link) =>
+            {knowledgeHubLinks.map((link, i) =>
               link.divider ? (
-                <div key="divider-m" className="my-1 border-t border-gray-100" />
+                <div key={`divider-m-${i}`} className="my-1 border-t border-gray-100" />
               ) : link.highlight ? (
                 <Link
                   key={link.name}
