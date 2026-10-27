@@ -970,7 +970,9 @@ export default async function ProductOrCategoryPage({ params }: PageProps) {
           let minPrice: number | undefined;
           let maxPrice: number | undefined;
           if (product.priceRange) {
-            const numbers = product.priceRange.match(/\d+(?:\.\d+)?/g)?.map(Number);
+            // 只取两位小数的金额，避免 "1 flat + 2 cases" 这类说明里的整数被当成价格
+            const money = product.priceRange.match(/\d+\.\d{2}/g);
+            const numbers = (money && money.length ? money : product.priceRange.match(/\d+/g) || []).map(Number);
             if (numbers && numbers.length > 0) { minPrice = Math.min(...numbers); maxPrice = Math.max(...numbers); }
           }
           return JSON.stringify({
