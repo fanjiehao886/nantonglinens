@@ -8,6 +8,10 @@ import { ProductCard } from "@/components/ProductCard";
 import { BuyerConcerns } from "@/components/BuyerConcerns";
 import { company } from "@/lib/company";
 
+// 价格标签在 Sanity 里按月复核（见《酒店布草报价方法与参考价目表》第四章），
+// 10 分钟 ISR 让改价不必走一次完整部署。
+export const revalidate = 600;
+
 // ----- Category data (merged from the dynamic category route) -----
 
 const CATEGORY_DATA: Record<string, {
