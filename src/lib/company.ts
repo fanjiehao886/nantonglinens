@@ -42,7 +42,7 @@ export const company = {
   alternateName: ["Nantong Linens"],
 
   url: "https://www.nantonglinens.com",
-  email: "info@nantonglinens.com",
+  email: "fanjieboy@gmail.com",
   /** E.164. Kept consistent everywhere so phone matches on every page. */
   telephone: "+86-151-5136-1119",
   whatsapp: "+86 15151361119",

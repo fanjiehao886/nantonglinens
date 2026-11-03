@@ -12,7 +12,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import { utm, CAMPAIGNS } from "@/lib/utm";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY!;
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMALL || "info@nantonglinens.com";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMALL || "fanjieboy@gmail.com";
 
 interface RFQAttachment {
   name: string;
@@ -139,7 +139,7 @@ export async function POST(request: NextRequest) {
         body: JSON.stringify({
           from: "Nantong Linens <info@nantonglinens.com>",
           to: [TO_EMAIL],
-          bcc: ["info@nantonglinens.com"],
+          bcc: ["fanjieboy@gmail.com"],
           reply_to: email,
           subject: `[RFQ] ${productCategory} — ${company || name}${
             attachments.length > 0 ? ` (${attachments.length} attachment${attachments.length !== 1 ? "s" : ""})` : ""

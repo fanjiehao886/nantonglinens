@@ -8,7 +8,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import { utm, CAMPAIGNS } from "@/lib/utm";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const ADMIN_EMAIL = process.env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMALL || "info@nantonglinens.com";
+const ADMIN_EMAIL = process.env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMALL || "fanjieboy@gmail.com";
 
 // Rate limiter
 const rateMap = new Map<string, { count: number; resetAt: number }>();

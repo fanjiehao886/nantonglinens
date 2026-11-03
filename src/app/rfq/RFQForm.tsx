@@ -174,7 +174,7 @@ function RFQFormContent() {
         const attachment = await readAsAttachment(file);
         const total = next.reduce((sum, a) => sum + a.size, 0) + attachment.size;
         if (total > MAX_TOTAL_BYTES) {
-          setFileError("Attachments total more than 3 MB. Send fewer files, or email the rest to info@nantonglinens.com.");
+          setFileError("Attachments total more than 3 MB. Send fewer files, or email the rest to fanjieboy@gmail.com.");
           continue;
         }
         next.push(attachment);
@@ -218,7 +218,7 @@ function RFQFormContent() {
         country: form.country || "unknown",
       });
     } catch {
-      setSubmitError("Something went wrong. Please email us directly at info@nantonglinens.com.");
+      setSubmitError("Something went wrong. Please email us directly at fanjieboy@gmail.com.");
     } finally {
       setSubmitting(false);
     }
